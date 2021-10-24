@@ -47,7 +47,7 @@ You'll need to build the app in XCode. Releases will be provided later.
 
 ## Special Thanks
 
-Some of the code and the basic technique was taken from (FluffyDisplay)[https://github.com/tml1024/FluffyDisplay]. Thanks to @tml1024!
+Some of the code and the basic technique was taken from (FluffyDisplay)[https://github.com/tml1024/FluffyDisplay]. Thanks to (@tml1024)[https://github.com/tml1024]!
 
 ## How to help
 
