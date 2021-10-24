@@ -25,6 +25,8 @@ If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) e
 - Click `Show all resolutions`
 - You'll see a long list of available resolutions (normal resolutions followed by HiDPI resolutions) - select the desired resolution
 
+The app saves the dummy display configuratio and automatically restore it upon next restart.
+
 The app and instructions was tested on Monterey.
 
 ## TODOs
@@ -34,7 +36,6 @@ The app is being actively developed. Here are some things I plan to do:
 - Improve serial number, vendor and product id settings
 - Add sleep detection and virtual screen disconnect during sleep
 - Add autostart option
-- Add option to restore virtual screens upon startup
 - Nicer app icon
 - Update [MonitorControl](https://monitorcontrol.app) to interoperate seamlessly with this (MC will not attempt to control displays with 'Dummy' name in them).
 - Add releases
