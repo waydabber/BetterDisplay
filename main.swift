@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let menuItem = sender as? NSMenuItem {
             if menuItem.tag >= 0 && menuItem.tag < displayDefinitions.count {
                 let displayDefinition = displayDefinitions[menuItem.tag]
-                let name: String = "Dummy \(displayDefinition.description)"
+                let name: String = "Dummy \(displayDefinition.description.components(separatedBy: " ").first ?? displayDefinition.description)"
                 if let display = createDisplay(displayDefinition, name) {
                     virtualDisplays[virtualDisplayCounter] = VirtualDisplay(number: virtualDisplayCounter, display: display)
                     let menuItem = NSMenuItem(title: "\(displayDefinition.description) display", action: #selector(deleteDisplay(_:)), keyEquivalent: "")
