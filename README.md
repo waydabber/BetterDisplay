@@ -29,21 +29,6 @@ The app saves the dummy display configuratio and automatically restore it upon n
 
 The app and instructions was tested on Monterey.
 
-## TODOs
-
-The app is being actively developed. Here are some things I plan to do:
-
-- Improve serial number, vendor and product id settings
-- Add sleep detection and virtual screen disconnect during sleep
-- Add autostart option
-- Nicer app icon
-- Update [MonitorControl](https://monitorcontrol.app) to interoperate seamlessly with this (MC will not attempt to control displays with 'Dummy' name in them).
-- Add releases
-
-## Known issues
-
-- Sleep mode has issues with some configurations (the virtual screen prevents the display from turning off). This is being investigated.
-
 ## Installation
 
 You'll need to build the app in XCode. Releases will be provided later.

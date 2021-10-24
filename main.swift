@@ -1,6 +1,7 @@
 import Cocoa
 import CoreGraphics
 import Foundation
+import os.log
 
 autoreleasepool { () -> Void in
     let app = NSApplication.shared
@@ -12,11 +13,10 @@ autoreleasepool { () -> Void in
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     struct DisplayDefinition {
-        let aspectWidth, aspectHeight, multiplierStep: Float
-        let minMultiplier, maxMultiplier: Int
+        let aspectWidth, aspectHeight, multiplierStep, minMultiplier, maxMultiplier: Int
         let refreshRates: [Double]
         let description: String
-        init(_ aspectWidth: Float, _ aspectHeight: Float, _ minMultiplier: Int, _ maxMultiplier: Int, _ step: Float, _ refreshRates: [Double], _ description: String) {
+        init(_ aspectWidth: Int, _ aspectHeight: Int, _ minMultiplier: Int, _ maxMultiplier: Int, _ step: Int, _ refreshRates: [Double], _ description: String) {
             self.aspectWidth = aspectWidth
             self.aspectHeight = aspectHeight
             self.minMultiplier = minMultiplier
@@ -41,12 +41,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     ]
     struct VirtualDisplay {
         let number: Int
-        let display: Any
+        var display: Any?
         let displayDefinitionItem: Int
     }
     var virtualDisplayCounter: Int = 0
     var virtualDisplays = [Int: VirtualDisplay]()
     var statusBarItem: NSStatusItem!
+    var transientDisplay: Any?
     let newSubmenu = NSMenuItem(title: "Connect Dummy", action: nil, keyEquivalent: "")
     let deleteSubmenu = NSMenuItem(title: "Disconnect Dummy", action: nil, keyEquivalent: "")
     let deleteMenu = NSMenu()
@@ -77,8 +78,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if virtualDisplays.count == 0 {
             deleteSubmenu.isHidden = true
         }
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
     }
-    
+        
     func restoreSettings() {
         guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
             return
@@ -117,7 +122,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         saveSettings()
     }
-
+    
     @objc func handleConnectDummy(_ sender: AnyObject?) {
         if let menuItem = sender as? NSMenuItem, menuItem.tag >= 0, menuItem.tag < displayDefinitions.count {
             connectDummy(displayDefinitionItem: menuItem.tag)
@@ -135,21 +140,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc private func wakeNotification() {
+        os_log("Wake intercepted, removing transient display if there is any.", type: .info)
+        transientDisplay = nil
+    }
+
+    @objc private func sleepNotification() {
+        if virtualDisplays.count > 0 {
+            transientDisplay = createDisplay(DisplayDefinition(3840,2160, 1, 1, 1, [60], "Transient"), "Transient")
+            os_log("Sleep intercepted, created transient display.", type: .info)
+            // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
+        }
+    }
+    
     func createDisplay(_ displayDefinition: DisplayDefinition, _ name: String) -> CGVirtualDisplay? {
         if let descriptor = CGVirtualDisplayDescriptor() {
             descriptor.queue = DispatchQueue.global(qos: .userInteractive)
             descriptor.name = name
-            descriptor.maxPixelsWide = UInt32(displayDefinition.aspectWidth * displayDefinition.multiplierStep * Float(displayDefinition.maxMultiplier))
-            descriptor.maxPixelsHigh = UInt32(displayDefinition.aspectHeight * displayDefinition.multiplierStep * Float(displayDefinition.maxMultiplier))
+            descriptor.maxPixelsWide = UInt32(displayDefinition.aspectWidth * displayDefinition.multiplierStep * displayDefinition.maxMultiplier)
+            descriptor.maxPixelsHigh = UInt32(displayDefinition.aspectHeight * displayDefinition.multiplierStep * displayDefinition.maxMultiplier)
             descriptor.sizeInMillimeters = CGSize(width: 25.4 * Double(descriptor.maxPixelsWide) / 200, height: 25.4 * Double(descriptor.maxPixelsHigh) / 200)
-            descriptor.serialNum = 0
-            descriptor.productID = 0
-            descriptor.vendorID = 0
+            descriptor.serialNum = UInt32(min(displayDefinition.aspectWidth-1,255)*256+min(displayDefinition.aspectHeight-1,255))
+            descriptor.productID = UInt32(min(displayDefinition.aspectWidth-1,255)*256+min(displayDefinition.aspectHeight-1,255))
+            descriptor.vendorID = UInt32(0xF0F0)
             if let display = CGVirtualDisplay(descriptor: descriptor) {
                 var modes = [CGVirtualDisplayMode?](repeating: nil, count: displayDefinition.maxMultiplier-displayDefinition.minMultiplier+1)
                 for multiplier in displayDefinition.minMultiplier...displayDefinition.maxMultiplier  {
                     for refreshRate in displayDefinition.refreshRates {
-                        modes[multiplier-displayDefinition.minMultiplier] = CGVirtualDisplayMode(width: UInt32(displayDefinition.aspectWidth*Float(multiplier)*displayDefinition.multiplierStep), height: UInt32(displayDefinition.aspectHeight*Float(multiplier)*displayDefinition.multiplierStep), refreshRate: refreshRate)!
+                        modes[multiplier-displayDefinition.minMultiplier] = CGVirtualDisplayMode(width: UInt32(displayDefinition.aspectWidth * multiplier * displayDefinition.multiplierStep), height: UInt32(displayDefinition.aspectHeight * multiplier * displayDefinition.multiplierStep), refreshRate: refreshRate)!
                     }
                 }
                 if let settings = CGVirtualDisplaySettings() {
