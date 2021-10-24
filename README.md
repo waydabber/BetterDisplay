@@ -31,7 +31,6 @@ The app and instructions was tested on Monterey.
 
 The app is being actively developed. Here are some things I plan to do:
 
-- Need to add more aspect ratios
 - Improve serial number, vendor and product id settings
 - Add sleep detection and virtual screen disconnect during sleep
 - Add autostart option
