@@ -27,7 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     let displayDefinitions: [DisplayDefinition] = [
-        DisplayDefinition(aW: 16, aH: 09, minX: 25, maxX: 94, step: 4, rR: [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], desc: "16:9")
+        DisplayDefinition(aW: 16, aH: 09, minX: 25, maxX: 94, step: 4, rR: [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], desc: "16:9"),
+        DisplayDefinition(aW: 16, aH: 10, minX: 25, maxX: 94, step: 4, rR: [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], desc: "16:10")
     ]
     struct VirtualDisplay {
         let number: Int
@@ -36,8 +37,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var virtualDisplayCounter: Int = 0
     var virtualDisplays = [Int: VirtualDisplay]()
     var statusBarItem: NSStatusItem!
-    let newSubmenu = NSMenuItem(title: "New", action: nil, keyEquivalent: "")
-    let deleteSubmenu = NSMenuItem(title: "Delete", action: nil, keyEquivalent: "")
+    let newSubmenu = NSMenuItem(title: "Connect Dummy", action: nil, keyEquivalent: "")
+    let deleteSubmenu = NSMenuItem(title: "Disconnect Dummy", action: nil, keyEquivalent: "")
     let deleteMenu = NSMenu()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -67,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let menuItem = sender as? NSMenuItem {
             if menuItem.tag >= 0 && menuItem.tag < displayDefinitions.count {
                 let displayDefinition = displayDefinitions[menuItem.tag]
-                let name: String = "Dummy \(displayDefinition.description) " + (virtualDisplayCounter > 1 ? "(\(virtualDisplayCounter))" : "")
+                let name: String = "Dummy \(displayDefinition.description)"
                 if let display = createDisplay(displayDefinition, name) {
                     virtualDisplays[virtualDisplayCounter] = VirtualDisplay(number: virtualDisplayCounter, display: display)
                     let menuItem = NSMenuItem(title: "\(displayDefinition.description) display", action: #selector(deleteDisplay(_:)), keyEquivalent: "")

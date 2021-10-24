@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA8AA0AE272552E600F66F8A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA8AA0AD272552E600F66F8A /* README.md */; };
 		BEB26A432530B2F600744C86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB26A422530B2F600744C86 /* main.swift */; };
 		BEB26A472530B2F700744C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB26A462530B2F700744C86 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA8AA0AD272552E600F66F8A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BEB26A3F2530B2F600744C86 /* BetterDummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterDummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB26A422530B2F600744C86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BEB26A462530B2F700744C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +36,7 @@
 		BEB26A362530B2F600744C86 = {
 			isa = PBXGroup;
 			children = (
+				AA8AA0AD272552E600F66F8A /* README.md */,
 				BEB26A462530B2F700744C86 /* Assets.xcassets */,
 				BEB26A4E2530B2F700744C86 /* Info.plist */,
 				BEB26A4F2530B2F700744C86 /* BetterDummy.entitlements */,
@@ -109,6 +112,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8AA0AE272552E600F66F8A /* README.md in Resources */,
 				BEB26A472530B2F700744C86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
