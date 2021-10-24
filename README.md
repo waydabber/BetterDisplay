@@ -29,9 +29,16 @@ The app saves the dummy display configuratio and automatically restore it upon n
 
 The app and instructions was tested on Monterey.
 
-## Installation
+## Build and Installation
 
-You'll need to build the app in XCode. Releases will be provided later.
+You'll need to build the app in XCode:
+
+- Clone the app
+- Open the project in XCode
+- Change signing settings to suit your configuration
+- Build & Run
+
+An unsigned release is also provided.
 
 ## Special Thanks
 
