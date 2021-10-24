@@ -10,7 +10,7 @@ To fix this issue, many resort to buying a 4K HDMI dummy dongle to fool macOS in
 
 To alleviate this problem, DummyDisplay creates a virtual dummy display for you which you can then utilize as a mirror main.
 
-More info about the problem: https://forums.macrumors.com/threads/solution-quadhd-monitor-with-hidpi-and-mac-mini-m1.2303291/
+More info about the problem in the [MacRumors thread](https://forums.macrumors.com/threads/solution-quadhd-monitor-with-hidpi-and-mac-mini-m1.2303291/)
 
 ## Usage
 
@@ -47,7 +47,7 @@ You'll need to build the app in XCode. Releases will be provided later.
 
 ## Special Thanks
 
-Some of the code and the basic technique was taken from (FluffyDisplay)[https://github.com/tml1024/FluffyDisplay]. Thanks to (@tml1024)[https://github.com/tml1024]!
+Some of the code and the basic technique was taken from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
 
 ## How to help
 
