@@ -10,7 +10,14 @@ To fix this issue, many resort to buying a 4K HDMI dummy dongle to fool macOS in
 
 To alleviate this problem, DummyDisplay creates a virtual dummy display for you which you can then utilize as a mirror main.
 
-**If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) even more!**
+Advantages of BetterDummy over a physical 4K HDMI dummy plug:
+
+- Available instantly + totally free. :)
+- Your HDMI port will remain usable for an other display.
+- Does not utilize graphics hardware so it is somewhat faster.
+- Does not suffer from issues that prevalent with the physical dummy route (like jittery mouse cursor).
+- Offers a wide variety of HiDPI and standard resolutions.
+- Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 
 ## Usage
 
@@ -54,10 +61,14 @@ You'll need to build the app in XCode:
 
 An unsigned beta release is [also provided](https://github.com/waydabber/BetterDummy/releases/tag/v1.0.0-beta1).
 
+## Don't forget to check out
+
+**If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) even more!** Control the brightness, volume of your external display like it would be a native Apple display!
+
 ## Special Thanks
 
-Some of the code and the basic technique was taken from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
+The basic idea and some of the code was adapted from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
 
 ## How to help
 
-You can contribute to the code. If you want to donate or buy me a lunch, please let me know!
+You can contribute to the code. If you want to donate or buy me a lunch, please let me know! :)
