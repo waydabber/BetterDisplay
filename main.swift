@@ -36,12 +36,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DisplayDefinition( 24,  10, 20, 62, 4, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "24:10 (UW-QHD+)"),
         DisplayDefinition( 32,  10, 40, 94, 2, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "32:10 (D-W*XGA)"),
         DisplayDefinition( 32,   9, 40, 94, 2, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "32:9 (D-HD/QHD)"),
+        DisplayDefinition( 20,  20, 19, 42, 4, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "1:1 (Square)"),
         DisplayDefinition(  9,  16, 25, 94, 4, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "9:16 (HD/4K/5K/6K - Rotated)"),
         DisplayDefinition( 10,  16, 20, 84, 4, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "10:16 (W*XGA - Rotated)"),
         DisplayDefinition( 12,  16, 24, 70, 4, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "12:16 (VGA - Rotated)"),
         DisplayDefinition(135, 256,  6, 23, 1, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "9:17 (4K-DCI - Rotated)"),
-        DisplayDefinition( 20,  25, 31, 84, 2, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "10:12.5 (SXGA - Rotated)"),
-        DisplayDefinition( 20,  20, 19, 42, 4, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "1:1 (Square)")
+        DisplayDefinition( 20,  25, 31, 84, 2, [24, 25, 30, 48, 50, 60, 72, 75, 90, 96, 100, 120, 125, 144, 150], "10:12.5 (SXGA - Rotated)")
     ]
     struct VirtualDisplay {
         let number: Int
@@ -76,6 +76,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         deleteSubmenu.submenu = deleteMenu
         menu.addItem(deleteSubmenu)
         menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(handleAbout(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Visit GitHub Page", action: #selector(handleVisitGithubPage(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit BetterDummy", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         statusBarItem.menu = menu
         restoreSettings()
@@ -88,31 +91,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
     }
         
-    func restoreSettings() {
-        guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
-            return
-        }
-        for i in 1 ... prefs.integer(forKey: "numOfDummyDisplays") where prefs.object(forKey: String(i)) != nil {
-            connectDummy(displayDefinitionItem: prefs.integer(forKey: String(i)))
-        }
-    }
-    
-    func saveSettings() {
-        if let bundleID = Bundle.main.bundleIdentifier {
-          prefs.removePersistentDomain(forName: bundleID)
-        }
-        guard virtualDisplays.count > 0 else {
-            return
-        }
-        prefs.set(virtualDisplays.count, forKey: "numOfDummyDisplays")
-        prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: "buildNumber")
-        var i = 1
-        for virtualDisplay in virtualDisplays {
-            prefs.set(virtualDisplay.value.displayDefinitionItem, forKey: String(i))
-            i += 1
-        }
-    }
-
     func connectDummy(displayDefinitionItem: Int) {
         let displayDefinition = displayDefinitions[displayDefinitionItem]
         let name: String = "Dummy \(displayDefinition.description.components(separatedBy: " ").first ?? displayDefinition.description)"
@@ -125,36 +103,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             virtualDisplayCounter += 1
         }
         saveSettings()
-    }
-    
-    @objc func handleConnectDummy(_ sender: AnyObject?) {
-        if let menuItem = sender as? NSMenuItem, menuItem.tag >= 0, menuItem.tag < displayDefinitions.count {
-            connectDummy(displayDefinitionItem: menuItem.tag)
-        }
-    }
-    
-    @objc func handleDisconnectDummy(_ sender: AnyObject?) {
-        if let menuItem = sender as? NSMenuItem {
-            virtualDisplays[menuItem.tag] = nil
-            menuItem.menu?.removeItem(menuItem)
-            saveSettings()
-            if virtualDisplays.count == 0 {
-                deleteSubmenu.isHidden = true
-            }
-        }
-    }
-    
-    @objc private func wakeNotification() {
-        os_log("Wake intercepted, removing transient display if there is any.", type: .info)
-        transientDisplay = nil
-    }
-
-    @objc private func sleepNotification() {
-        if virtualDisplays.count > 0 {
-            transientDisplay = createDisplay(DisplayDefinition(3840,2160, 1, 1, 1, [60], "Transient"), "Transient")
-            os_log("Sleep intercepted, created transient display.", type: .info)
-            // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
-        }
     }
     
     func createDisplay(_ displayDefinition: DisplayDefinition, _ name: String) -> CGVirtualDisplay? {
@@ -185,5 +133,76 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         return nil
     }
+    
+    func restoreSettings() {
+        guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
+            return
+        }
+        for i in 1 ... prefs.integer(forKey: "numOfDummyDisplays") where prefs.object(forKey: String(i)) != nil {
+            connectDummy(displayDefinitionItem: prefs.integer(forKey: String(i)))
+        }
+    }
+    
+    func saveSettings() {
+        if let bundleID = Bundle.main.bundleIdentifier {
+          prefs.removePersistentDomain(forName: bundleID)
+        }
+        guard virtualDisplays.count > 0 else {
+            return
+        }
+        prefs.set(virtualDisplays.count, forKey: "numOfDummyDisplays")
+        prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: "buildNumber")
+        var i = 1
+        for virtualDisplay in virtualDisplays {
+            prefs.set(virtualDisplay.value.displayDefinitionItem, forKey: String(i))
+            i += 1
+        }
+    }
+    
+    @objc func handleConnectDummy(_ sender: AnyObject?) {
+        if let menuItem = sender as? NSMenuItem, menuItem.tag >= 0, menuItem.tag < displayDefinitions.count {
+            connectDummy(displayDefinitionItem: menuItem.tag)
+        }
+    }
+    
+    @objc func handleDisconnectDummy(_ sender: AnyObject?) {
+        if let menuItem = sender as? NSMenuItem {
+            virtualDisplays[menuItem.tag] = nil
+            menuItem.menu?.removeItem(menuItem)
+            saveSettings()
+            if virtualDisplays.count == 0 {
+                deleteSubmenu.isHidden = true
+            }
+        }
+    }
+    
+    @objc func wakeNotification() {
+        os_log("Wake intercepted, removing transient display if there is any.", type: .info)
+        transientDisplay = nil
+    }
 
+    @objc func sleepNotification() {
+        if virtualDisplays.count > 0 {
+            transientDisplay = createDisplay(DisplayDefinition(3840,2160, 1, 1, 1, [60], "Transient"), "Transient")
+            os_log("Sleep intercepted, created transient display.", type: .info)
+            // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
+        }
+    }
+    
+    @objc func handleAbout(_ sender: AnyObject?) {
+        let alert = NSAlert()
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "UNKNOWN"
+        let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") ?? "UNKNOWN"
+        let year = Calendar.current.component(.year, from: Date())
+        alert.messageText = "About BetterDummy"
+        alert.informativeText = "Version \(version) Build \(build)\n\nCopyright Ⓒ \(year) @waydabber. \nMIT Licensed, feel free to improve.\nContact me on the GitHub page if you want to help out. :)"
+        alert.runModal()
+    }
+    
+    @objc func handleVisitGithubPage(_ sender: AnyObject?) {
+        if let url = URL(string: "https://github.com/waydabber/BetterDummy#readme") {
+            NSWorkspace.shared.open(url)
+        }
+    }
+    
 }
