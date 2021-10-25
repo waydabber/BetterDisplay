@@ -12,12 +12,12 @@ To alleviate this problem, DummyDisplay creates a virtual dummy display for you 
 
 Advantages of BetterDummy over a physical 4K HDMI dummy plug:
 
-- Available instantly + totally free. :)
 - Your HDMI port will remain usable for an other display.
-- Does not utilize graphics hardware so it is somewhat faster.
 - Does not suffer from issues that prevalent with the physical dummy route (like jittery mouse cursor).
-- Offers a wide variety of HiDPI and standard resolutions.
+- Offers a much wideer variety of HiDPI and standard resolutions.
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
+- Does not utilize graphics hardware in vain so it is somewhat faster.
+- Available instantly + totally free. :)
 
 ## Usage
 
