@@ -10,24 +10,38 @@ To fix this issue, many resort to buying a 4K HDMI dummy dongle to fool macOS in
 
 To alleviate this problem, DummyDisplay creates a virtual dummy display for you which you can then utilize as a mirror main.
 
-More info about the problem in the [MacRumors thread](https://forums.macrumors.com/threads/solution-quadhd-monitor-with-hidpi-and-mac-mini-m1.2303291/).
-
-If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) even more!
+**If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) even more!**
 
 ## Usage
 
-- Start the app
-- In the menu choose `Connect Dummy` and select your desired aspect ratio
-- In `System Preferences` -> `Displays` you'll see the new screen (for example `Dummy 16:9`)
-- Activate mirroring
-- Set the dummy display as `Optimize for`
-- Set `Resolution` as `Scaled`
-- Click `Show all resolutions`
-- You'll see a long list of available resolutions (normal resolutions followed by HiDPI resolutions) - select the desired resolution
+1. Start the app
+1. In the app menu choose `Connect Dummy` and select your desired aspect ratio
+<br/>
+<div align="center">
+<img src=".github/menu.png" width="430"/>
+</div>
+<br/>
+  
+3. In `System Preferences` -> `Displays` you'll see the new screen (for example `Dummy 16:9`)
+4. Activate mirroring with main display being the Dummy display
+5. Set the dummy display as `Optimize for`
+6. Set `Resolution` as `Scaled`
+7. Click `Show all resolutions`
+
+<div align="center">
+<img src=".github/displayprefs.png" width="500"/>
+</div>
+
+9. You'll see a long list of available resolutions - select the desired resolution.
+
+NOTES:
+
+- HiDPI resolutions are followed by non-HiDPI resolutions so **don't forget to scroll down**, it's a long list!
+- You might have to fight with the `Displays` tab in Preferences sometimes as (at least on Monterey) the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons while changing the settings (the `Displays` tab appears to be rather buggy in general).
 
 The app saves the dummy display configuratio and automatically restore it upon next restart.
 
-The app and instructions was tested on Monterey.
+The app and instructions was tested on Monterey RC (hopefully it works on Big Sur as well).
 
 ## Build and Installation
 
