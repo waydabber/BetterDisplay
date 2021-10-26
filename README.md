@@ -48,7 +48,9 @@ NOTES:
 
 The app saves the dummy display configuratio and automatically restore it upon next restart.
 
-The app and instructions was tested on Monterey RC (hopefully it works on Big Sur as well).
+## Compatibility
+
+The app and instructions were tested on an M1 MBA and mini running Monterey but according to reports works on Big Sur as well.
 
 ## Build and Installation
 
