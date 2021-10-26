@@ -47,6 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let number: Int
         var display: Any?
         let displayDefinitionItem: Int
+        let serialNum: UInt32
     }
     var virtualDisplayCounter: Int = 0
     var virtualDisplays = [Int: VirtualDisplay]()
@@ -102,15 +103,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             item.tag = i
             newMenu.addItem(item)
             i += 1
-            os_log("New dummy menu populated.", type: .info)
         }
+        os_log("New dummy menu populated.", type: .info)
     }
     
-    func connectDummy(displayDefinitionItem: Int, skipSaveSettings: Bool = false) {
+    func connectDummy(displayDefinitionItem: Int, serialNum: UInt32 = 0, skipSaveSettings: Bool = false) {
         let displayDefinition = displayDefinitions[displayDefinitionItem]
         let name: String = "Dummy \(displayDefinition.description.components(separatedBy: " ").first ?? displayDefinition.description)"
-        if let display = createVirtualDisplay(displayDefinition, name) {
-            virtualDisplays[virtualDisplayCounter] = VirtualDisplay(number: virtualDisplayCounter, display: display, displayDefinitionItem: displayDefinitionItem)
+        var storedSerialNum: UInt32 = serialNum
+        if storedSerialNum == 0 {
+            storedSerialNum = UInt32.random(in: 0...UInt32.max)
+        }
+        if let display = createVirtualDisplay(displayDefinition, name: name, serialNum: storedSerialNum) {
+            virtualDisplays[virtualDisplayCounter] = VirtualDisplay(number: virtualDisplayCounter, display: display, displayDefinitionItem: displayDefinitionItem, serialNum: storedSerialNum)
             let menuItem = NSMenuItem(title: "\(displayDefinition.description)", action: #selector(handleDisconnectDummy(_:)), keyEquivalent: "")
             menuItem.tag = virtualDisplayCounter
             deleteMenu.addItem(menuItem)
@@ -125,17 +130,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func createVirtualDisplay(_ displayDefinition: DisplayDefinition, _ name: String) -> CGVirtualDisplay? {
+    func createVirtualDisplay(_ displayDefinition: DisplayDefinition, name: String, serialNum: UInt32) -> CGVirtualDisplay? {
+        os_log("Creating virtual display: %{public}@", type: .info, "\(name)")
         if let descriptor = CGVirtualDisplayDescriptor() {
+            os_log("- Preparing descriptor...", type: .info)
             descriptor.queue = DispatchQueue.global(qos: .userInteractive)
             descriptor.name = name
             descriptor.maxPixelsWide = UInt32(displayDefinition.aspectWidth * displayDefinition.multiplierStep * displayDefinition.maxMultiplier)
             descriptor.maxPixelsHigh = UInt32(displayDefinition.aspectHeight * displayDefinition.multiplierStep * displayDefinition.maxMultiplier)
             descriptor.sizeInMillimeters = CGSize(width: 25.4 * Double(descriptor.maxPixelsWide) / 200, height: 25.4 * Double(descriptor.maxPixelsHigh) / 200)
-            descriptor.serialNum = UInt32(min(displayDefinition.aspectWidth-1,255)*256+min(displayDefinition.aspectHeight-1,255))
+            descriptor.serialNum = serialNum
             descriptor.productID = UInt32(min(displayDefinition.aspectWidth-1,255)*256+min(displayDefinition.aspectHeight-1,255))
             descriptor.vendorID = UInt32(0xF0F0)
             if let display = CGVirtualDisplay(descriptor: descriptor) {
+                os_log("- Creating display, preparing modes...", type: .info)
                 var modes = [CGVirtualDisplayMode?](repeating: nil, count: displayDefinition.maxMultiplier-displayDefinition.minMultiplier+1)
                 for multiplier in displayDefinition.minMultiplier...displayDefinition.maxMultiplier  {
                     for refreshRate in displayDefinition.refreshRates {
@@ -143,9 +151,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     }
                 }
                 if let settings = CGVirtualDisplaySettings() {
+                    os_log("- Preparing settings for display...", type: .info)
                     settings.hiDPI = 1
                     settings.modes = modes as [Any]
                     if display.applySettings(settings) {
+                        os_log("- Settings are successfully applied.", type: .info)
                         return display
                     }
                 }
@@ -155,11 +165,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func restoreSettings() {
+        os_log("Restoring settings.", type: .info)
         guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
             return
         }
-        for i in 1 ... prefs.integer(forKey: "numOfDummyDisplays") where prefs.object(forKey: String(i)) != nil {
-            connectDummy(displayDefinitionItem: prefs.integer(forKey: String(i)), skipSaveSettings: true)
+        for i in 1 ... prefs.integer(forKey: "numOfDummyDisplays") where prefs.object(forKey: "Display\(i)") != nil {
+            connectDummy(displayDefinitionItem: prefs.integer(forKey: "Display\(i)"), serialNum: UInt32(prefs.integer(forKey: "Serial\(i)")), skipSaveSettings: true)
         }
     }
     
@@ -175,7 +186,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: "buildNumber")
         var i = 1
         for virtualDisplay in virtualDisplays {
-            prefs.set(virtualDisplay.value.displayDefinitionItem, forKey: String(i))
+            prefs.set(virtualDisplay.value.displayDefinitionItem, forKey: "Display\(i)")
+            prefs.set(virtualDisplay.value.serialNum, forKey: "Serial\(i)")
             i += 1
         }
         os_log("Preferences stored.", type: .info)
@@ -207,7 +219,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func sleepNotification() {
         if virtualDisplays.count > 0 {
-            transientDisplay = createVirtualDisplay(DisplayDefinition(3840,2160, 1, 1, 1, [60], "Transient"), "Transient")
+            transientDisplay = createVirtualDisplay(DisplayDefinition(3840,2160, 1, 1, 1, [60], "Transient"), name: "Transient", serialNum: 0)
             os_log("Sleep intercepted, created transient display.", type: .info)
             // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
         }
