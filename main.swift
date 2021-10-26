@@ -52,60 +52,80 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var virtualDisplays = [Int: VirtualDisplay]()
     var statusBarItem: NSStatusItem!
     var transientDisplay: Any?
-    let newSubmenu = NSMenuItem(title: "Connect Dummy", action: nil, keyEquivalent: "")
-    let deleteSubmenu = NSMenuItem(title: "Disconnect Dummy", action: nil, keyEquivalent: "")
     let deleteMenu = NSMenu()
+    let deleteSubmenu = NSMenuItem(title: "Disconnect Dummy", action: nil, keyEquivalent: "")
     let prefs = UserDefaults.standard
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
-        if let button = self.statusBarItem.button {
-             button.image = NSImage(systemSymbolName: "display.2", accessibilityDescription: "BetterDummy")
-        }
-        let menu = NSMenu()
+        setupMenu()
+        restoreSettings()
+        setupNotifications()
+    }
+
+    func setupNotifications() {
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
+    }
+
+    func setupMenu() {
+
         let newMenu = NSMenu()
-        var i = 0
-        for displayDefinition in displayDefinitions {
-            let item = NSMenuItem(title: "\(displayDefinition.description)", action: #selector(handleConnectDummy(_:)), keyEquivalent: "")
-            item.tag = i
-            newMenu.addItem(item)
-            i += 1
-        }
+        populateNewMenu(newMenu)
+        let newSubmenu = NSMenuItem(title: "Connect Dummy", action: nil, keyEquivalent: "")
         newSubmenu.submenu = newMenu
-        menu.addItem(newSubmenu)
+
         deleteSubmenu.submenu = deleteMenu
+        deleteSubmenu.isHidden = true
+
+        let menu = NSMenu()
+        menu.addItem(newSubmenu)
         menu.addItem(deleteSubmenu)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(handleAbout(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Visit GitHub Page", action: #selector(handleVisitGithubPage(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit BetterDummy", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        statusBarItem.menu = menu
-        restoreSettings()
-        if virtualDisplays.count == 0 {
-            deleteSubmenu.isHidden = true
+
+        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+        if let button = self.statusBarItem.button {
+             button.image = NSImage(systemSymbolName: "display.2", accessibilityDescription: "BetterDummy")
         }
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
-        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
+        statusBarItem.menu = menu
     }
-        
-    func connectDummy(displayDefinitionItem: Int) {
+    
+    func populateNewMenu(_ newMenu: NSMenu) {
+        var i = 0
+        for displayDefinition in displayDefinitions {
+            let item = NSMenuItem(title: "\(displayDefinition.description)", action: #selector(handleConnectDummy(_:)), keyEquivalent: "")
+            item.tag = i
+            newMenu.addItem(item)
+            i += 1
+            os_log("New dummy menu populated.", type: .info)
+        }
+    }
+    
+    func connectDummy(displayDefinitionItem: Int, skipSaveSettings: Bool = false) {
         let displayDefinition = displayDefinitions[displayDefinitionItem]
         let name: String = "Dummy \(displayDefinition.description.components(separatedBy: " ").first ?? displayDefinition.description)"
-        if let display = createDisplay(displayDefinition, name) {
+        if let display = createVirtualDisplay(displayDefinition, name) {
             virtualDisplays[virtualDisplayCounter] = VirtualDisplay(number: virtualDisplayCounter, display: display, displayDefinitionItem: displayDefinitionItem)
-            let menuItem = NSMenuItem(title: "\(displayDefinition.description) display", action: #selector(handleDisconnectDummy(_:)), keyEquivalent: "")
+            let menuItem = NSMenuItem(title: "\(displayDefinition.description)", action: #selector(handleDisconnectDummy(_:)), keyEquivalent: "")
             menuItem.tag = virtualDisplayCounter
             deleteMenu.addItem(menuItem)
             deleteSubmenu.isHidden = false
             virtualDisplayCounter += 1
+            os_log("Display %{public}@ successfully created", type: .info, "\(name)")
+            if !skipSaveSettings {
+                saveSettings()
+            }
+        } else {
+            os_log("Failed to create display %{public}@", type: .info, "\(name)")
         }
-        saveSettings()
     }
     
-    func createDisplay(_ displayDefinition: DisplayDefinition, _ name: String) -> CGVirtualDisplay? {
+    func createVirtualDisplay(_ displayDefinition: DisplayDefinition, _ name: String) -> CGVirtualDisplay? {
         if let descriptor = CGVirtualDisplayDescriptor() {
             descriptor.queue = DispatchQueue.global(qos: .userInteractive)
             descriptor.name = name
@@ -139,13 +159,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         for i in 1 ... prefs.integer(forKey: "numOfDummyDisplays") where prefs.object(forKey: String(i)) != nil {
-            connectDummy(displayDefinitionItem: prefs.integer(forKey: String(i)))
+            connectDummy(displayDefinitionItem: prefs.integer(forKey: String(i)), skipSaveSettings: true)
         }
     }
     
     func saveSettings() {
         if let bundleID = Bundle.main.bundleIdentifier {
-          prefs.removePersistentDomain(forName: bundleID)
+            prefs.removePersistentDomain(forName: bundleID)
+            os_log("Preferences wiped.", type: .info)
         }
         guard virtualDisplays.count > 0 else {
             return
@@ -157,16 +178,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             prefs.set(virtualDisplay.value.displayDefinitionItem, forKey: String(i))
             i += 1
         }
+        os_log("Preferences stored.", type: .info)
     }
     
     @objc func handleConnectDummy(_ sender: AnyObject?) {
         if let menuItem = sender as? NSMenuItem, menuItem.tag >= 0, menuItem.tag < displayDefinitions.count {
+            os_log("Connecting display tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
             connectDummy(displayDefinitionItem: menuItem.tag)
         }
     }
     
     @objc func handleDisconnectDummy(_ sender: AnyObject?) {
         if let menuItem = sender as? NSMenuItem {
+            os_log("Removing display  tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
             virtualDisplays[menuItem.tag] = nil
             menuItem.menu?.removeItem(menuItem)
             saveSettings()
@@ -183,7 +207,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func sleepNotification() {
         if virtualDisplays.count > 0 {
-            transientDisplay = createDisplay(DisplayDefinition(3840,2160, 1, 1, 1, [60], "Transient"), "Transient")
+            transientDisplay = createVirtualDisplay(DisplayDefinition(3840,2160, 1, 1, 1, [60], "Transient"), "Transient")
             os_log("Sleep intercepted, created transient display.", type: .info)
             // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
         }
