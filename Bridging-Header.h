@@ -1,3 +1,10 @@
+//
+//  Bridging-Header.h
+//  BetterDummy
+//
+//  Created by @waydabber
+//
+
 #import <Foundation/Foundation.h>
 #import <objc/NSObject.h>
 
