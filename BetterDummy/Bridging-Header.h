@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <objc/NSObject.h>
 
-
 @interface CGVirtualDisplay : NSObject
 {
     unsigned int _vendorID;

@@ -39,7 +39,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA1861802728A46E0095590C /* Support */ = {
+		AA1861802728A46E0095590C /* BetterDummy */ = {
 			isa = PBXGroup;
 			children = (
 				BEB26A772531163C00744C86 /* Bridging-Header.h */,
@@ -47,7 +47,7 @@
 				AA59EAB227288EF700B7C833 /* Dummy.swift */,
 				AA59EAB42728911900B7C833 /* DummyDefinition.swift */,
 			);
-			path = Support;
+			path = BetterDummy;
 			sourceTree = "<group>";
 		};
 		BEB26A362530B2F600744C86 = {
@@ -58,7 +58,7 @@
 				BEB26A4E2530B2F700744C86 /* Info.plist */,
 				BEB26A4F2530B2F700744C86 /* BetterDummy.entitlements */,
 				BEB26A422530B2F600744C86 /* main.swift */,
-				AA1861802728A46E0095590C /* Support */,
+				AA1861802728A46E0095590C /* BetterDummy */,
 				BEB26A402530B2F600744C86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 139;
+				CURRENT_PROJECT_VERSION = 142;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 53RQTTY9DR;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -313,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BetterDummy/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -328,7 +328,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 139;
+				CURRENT_PROJECT_VERSION = 142;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 53RQTTY9DR;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -345,7 +345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BetterDummy/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
