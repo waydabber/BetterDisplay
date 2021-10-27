@@ -21,9 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and Reconnect After Sleep", action: #selector(handleReconnectAfterSleep(_:)), keyEquivalent: "")
     let prefs = UserDefaults.standard
 
-    // MARK: Setup app
+    // MARK: *** Setup app
     
-    @available(macOS, deprecated: 10.10)
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         app = self
         setupMenu()
@@ -38,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
     }
     
-    // MARK: Menus
+    // MARK: *** Menus
 
     func setupMenu() {
         let newMenu = NSMenu()
@@ -95,6 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func addDummyToManageMenu(_ dummy: Dummy) {
+        // MARK: TODO: Make manage menu look better
         var disconnectDisconnectItem: NSMenuItem
         if dummy.isConnected {
             disconnectDisconnectItem = NSMenuItem(title: "\(dummy.getMenuItemTitle()) - Disconnect", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
@@ -115,7 +115,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dummyCounter += 1
     }
     
-    // MARK: Save and restore
+    // MARK: *** Save and restore
     
     func saveSettings() {
         if let bundleID = Bundle.main.bundleIdentifier {
@@ -139,12 +139,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         os_log("Preferences stored.", type: .info)
     }
 
-    @available(macOS, deprecated: 10.10)
     func restoreSettings() {
         os_log("Restoring settings.", type: .info)
-        // This is marked as deprectated but according to the function header it still does not have a replacement as of macOS 12 Monterey and is valid to use.
-        let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
-        startAtLoginMenuItem.state = startAtLogin ? .on : .off
+        // startAtLoginMenuItem.state = false ? .on : .off // MARK: TODO: Implement auto-start
         reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) ? .on : .off
         guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
             return
@@ -155,7 +152,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    // MARK: Handlers
+    // MARK: *** Handlers
     
     @objc func handleCreateDummy(_ sender: AnyObject?) {
         if let menuItem = sender as? NSMenuItem, menuItem.tag >= 0, menuItem.tag < DummyDefinition.dummyDefinitions.count {
@@ -208,14 +205,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func handleStartAtLogin(_ sender: NSMenuItem) {
-        let identifier = "\(Bundle.main.bundleIdentifier!)Helper" as CFString
-        switch sender.state {
-        case .on:
-            SMLoginItemSetEnabled(identifier, true)
-        case .off:
-            SMLoginItemSetEnabled(identifier, false)
-        default: break
-        }
+        // MARK: TODO: Implement Start at Login
     }
 
     @objc func handleReconnectAfterSleep(_ sender: AnyObject?) {
