@@ -7,6 +7,7 @@
 
 import Cocoa
 import os.log
+import ServiceManagement
 
 class AppDelegate: NSObject, NSApplicationDelegate {
         
@@ -16,10 +17,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var sleepTemporaryDisplay: Any?
     let manageMenu = NSMenu()
     let manageSubmenu = NSMenuItem(title: "Manage Dummy", action: nil, keyEquivalent: "")
+    let startAtLoginMenuItem = NSMenuItem(title: "Start at Login", action: #selector(handleStartAtLogin(_:)), keyEquivalent: "")
+    let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and Reconnect After Sleep", action: #selector(handleReconnectAfterSleep(_:)), keyEquivalent: "")
     let prefs = UserDefaults.standard
 
     // MARK: Setup app
     
+    @available(macOS, deprecated: 10.10)
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         app = self
         setupMenu()
@@ -44,9 +48,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         manageSubmenu.submenu = manageMenu
         manageSubmenu.isHidden = true
         let menu = NSMenu()
+        let settingsMenu = NSMenu()
+        settingsMenu.addItem(startAtLoginMenuItem)
+        settingsMenu.addItem(reconnectAfterSleepMenuItem)
+        let settingsSubmenu = NSMenuItem(title: "Settings", action: nil, keyEquivalent: "")
+        settingsSubmenu.submenu = settingsMenu
         menu.addItem(newSubmenu)
         menu.addItem(manageSubmenu)
         menu.addItem(NSMenuItem.separator())
+        menu.addItem(settingsSubmenu)
         menu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(handleAbout(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Visit GitHub Page", action: #selector(handleVisitGithubPage(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
@@ -115,8 +125,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard dummies.count > 0 else {
             return
         }
-        prefs.set(dummies.count, forKey: PrefKeys.numOfDummyDisplays.rawValue)
         prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKeys.buildNumber.rawValue)
+        prefs.set(startAtLoginMenuItem.state == .on, forKey: PrefKeys.startAtLogin.rawValue)
+        prefs.set(reconnectAfterSleepMenuItem.state == .on, forKey: PrefKeys.reconnectAfterSleep.rawValue)
+        prefs.set(dummies.count, forKey: PrefKeys.numOfDummyDisplays.rawValue)
         var i = 1
         for virtualDisplay in dummies {
             prefs.set(virtualDisplay.value.dummyDefinitionItem, forKey: "\(PrefKeys.display.rawValue)\(i)")
@@ -127,8 +139,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         os_log("Preferences stored.", type: .info)
     }
 
+    @available(macOS, deprecated: 10.10)
     func restoreSettings() {
         os_log("Restoring settings.", type: .info)
+        // This is marked as deprectated but according to the function header it still does not have a replacement as of macOS 12 Monterey and is valid to use.
+        let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
+        startAtLoginMenuItem.state = startAtLogin ? .on : .off
+        reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) ? .on : .off
         guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
             return
         }
@@ -190,6 +207,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc func handleStartAtLogin(_ sender: NSMenuItem) {
+        let identifier = "\(Bundle.main.bundleIdentifier!)Helper" as CFString
+        switch sender.state {
+        case .on:
+            SMLoginItemSetEnabled(identifier, true)
+        case .off:
+            SMLoginItemSetEnabled(identifier, false)
+        default: break
+        }
+    }
+
+    @objc func handleReconnectAfterSleep(_ sender: AnyObject?) {
+        reconnectAfterSleepMenuItem.state = reconnectAfterSleepMenuItem.state == .on ? .off : .on
+        saveSettings()
+    }
+    
     @objc func handleAbout(_ sender: AnyObject?) {
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "UNKNOWN"
         let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") ?? "UNKNOWN"
@@ -209,11 +242,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func handleWakeNotification() {
         os_log("Wake intercepted, removing temporary display if there is any.", type: .info)
         sleepTemporaryDisplay = nil
+        if reconnectAfterSleepMenuItem.state == .on {
+            os_log("Disconnecting and reconnecting dummies.", type: .info)
+            for i in dummies.keys {
+                if let dummy = dummies[i], dummy.isConnected {
+                    dummy.disconnect()
+                    _ = dummy.connect()
+                }
+             }
+        }
     }
 
     @objc func handleSleepNotification() {
         if dummies.count > 0 {
-            sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(3840,2160, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 1)
+            sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(3840,2160, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 0)
             os_log("Sleep intercepted, created temporary display.", type: .info)
             // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
         }

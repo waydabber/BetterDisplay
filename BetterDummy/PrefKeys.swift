@@ -15,5 +15,7 @@ enum PrefKeys: String {
     // General
     case numOfDummyDisplays
     case buildNumber
-    
+    case startAtLogin
+    case reconnectAfterSleep
+
 }
