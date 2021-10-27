@@ -15,28 +15,54 @@ class Dummy {
     var display: Any?
     let dummyDefinitionItem: Int
     let serialNum: UInt32
+    var isConnected: Bool = false
     
-    init?(number: Int, dummyDefinitionItem: Int, serialNum: UInt32 = 0) {
-        let displayDefinition = DummyDefinition.dummyDefinitions[dummyDefinitionItem]
-        let name: String = "Dummy \(displayDefinition.description.components(separatedBy: " ").first ?? displayDefinition.description)"
+    init(number: Int, dummyDefinitionItem: Int, serialNum: UInt32 = 0, doConnect: Bool = true) {
         var storedSerialNum: UInt32 = serialNum
         if storedSerialNum == 0 {
             storedSerialNum = UInt32.random(in: 0...UInt32.max)
         }
-        if let display = Dummy.createVirtualDisplay(displayDefinition, name: name, serialNum: storedSerialNum) {
-            self.number = number
-            self.display = display
-            self.dummyDefinitionItem = dummyDefinitionItem
-            self.serialNum = storedSerialNum
-            os_log("Display %{public}@ successfully created", type: .info, "\(name)")
-        } else {
-            os_log("Failed to create display %{public}@", type: .info, "\(name)")
-            return nil
+        self.number = number
+        self.dummyDefinitionItem = dummyDefinitionItem
+        self.serialNum = storedSerialNum
+        if doConnect {
+            _ = self.connect()
         }
     }
     
+    func getDummyDefinition() -> DummyDefinition {
+        return DummyDefinition.dummyDefinitions[self.dummyDefinitionItem]
+    }
+    
+    func getName() -> String {
+        let dummyDefinition = getDummyDefinition()
+        return "Dummy \(dummyDefinition.description.components(separatedBy: " ").first ?? dummyDefinition.description)"
+    }
+        
     func getMenuItemTitle() -> String {
         return "\(DummyDefinition.dummyDefinitions[self.dummyDefinitionItem].description) - S/N: \(String(format:"%02X", self.serialNum))"
+    }
+    
+    func connect() -> Bool {
+        if self.display != nil || self.isConnected {
+            os_log("Attempted to connect the already connected display %{public}@. Interpreting as connect cycle.", type: .info, "\(self.getName())")
+            self.disconnect()
+        }
+        let name: String = self.getName()
+        if let display = Dummy.createVirtualDisplay(self.getDummyDefinition(), name: name, serialNum: self.serialNum) {
+            self.display = display
+            self.isConnected = true
+            os_log("Display %{public}@ successfully connected", type: .info, "\(name)")
+            return true
+        } else {
+            os_log("Failed to connect display %{public}@", type: .info, "\(name)")
+            return false
+        }
+    }
+    
+    func disconnect() {
+        self.display = nil
+        self.isConnected = false
     }
     
     static func createVirtualDisplay(_ definition: DummyDefinition, name: String, serialNum: UInt32) -> CGVirtualDisplay? {

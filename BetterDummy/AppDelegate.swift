@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var dummyCounter: Int = 0
     var dummies = [Int: Dummy]()
     var statusBarItem: NSStatusItem!
-    var transientDisplay: Any?
+    var sleepTemporaryDisplay: Any?
     let deleteMenu = NSMenu()
     let deleteSubmenu = NSMenuItem(title: "Delete Dummy", action: nil, keyEquivalent: "")
     let prefs = UserDefaults.standard
@@ -105,7 +105,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         for i in 1 ... prefs.integer(forKey: "numOfDummyDisplays") where prefs.object(forKey: "Display\(i)") != nil {
-            if let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "Display\(i)"), serialNum: UInt32(prefs.integer(forKey: "Serial\(i)"))) {
+            let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "Display\(i)"), serialNum: UInt32(prefs.integer(forKey: "Serial\(i)")))
+            if dummy.isConnected {
                 processCreatedDummy(dummy)
             }
         }
@@ -116,7 +117,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func handleCreateDummy(_ sender: AnyObject?) {
         if let menuItem = sender as? NSMenuItem, menuItem.tag >= 0, menuItem.tag < DummyDefinition.dummyDefinitions.count {
             os_log("Connecting display tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
-            if let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: menuItem.tag) {
+            let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: menuItem.tag)
+            if dummy.isConnected {
                 processCreatedDummy(dummy)
                 app.saveSettings()
             }
@@ -152,14 +154,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func handleWakeNotification() {
-        os_log("Wake intercepted, removing transient display if there is any.", type: .info)
-        transientDisplay = nil
+        os_log("Wake intercepted, removing temporary display if there is any.", type: .info)
+        sleepTemporaryDisplay = nil
     }
 
     @objc func handleSleepNotification() {
         if dummies.count > 0 {
-            transientDisplay = Dummy.createVirtualDisplay(DummyDefinition(3840,2160, 1, 1, 1, [60], "Transient"), name: "Transient", serialNum: 0)
-            os_log("Sleep intercepted, created transient display.", type: .info)
+            sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(3840,2160, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 1)
+            os_log("Sleep intercepted, created temporary display.", type: .info)
             // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
         }
     }
