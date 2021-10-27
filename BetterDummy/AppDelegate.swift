@@ -245,7 +245,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func handleSleepNotification() {
         if dummies.count > 0 {
-            sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(3840,2160, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 0)
+            sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920,1080, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 0)
             os_log("Sleep intercepted, created temporary display.", type: .info)
             // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
         }
