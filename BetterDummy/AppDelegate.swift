@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBarItem: NSStatusItem!
     var sleepTemporaryDisplay: Any?
     let manageMenu = NSMenu()
-    let manageSubmenu = NSMenuItem(title: "Delete Dummy", action: nil, keyEquivalent: "") // TODO: This text will be renamed to Manage Dummy
+    let manageSubmenu = NSMenuItem(title: "Manage Dummy", action: nil, keyEquivalent: "")
     let prefs = UserDefaults.standard
 
     // MARK: Setup app
@@ -69,16 +69,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         os_log("New dummy menu populated.", type: .info)
     }
     
-    func populateManageMenu(_ manageMenu: NSMenu) {
-        // TODO
+    func repopulateManageMenu() {
+        var items: [NSMenuItem] = []
+        for i in 0 ..< manageMenu.items.count {
+            items.append(manageMenu.items[i])
+        }
+        for item in items {
+            manageMenu.removeItem(item)
+        }
+        for i in dummies.keys {
+            if let dummy = dummies[i] {
+                addDummyToManageMenu(dummy)
+            }
+        }
+    }
+    
+    func addDummyToManageMenu(_ dummy: Dummy) {
+        var disconnectDisconnectItem: NSMenuItem
+        if dummy.isConnected {
+            disconnectDisconnectItem = NSMenuItem(title: "\(dummy.getMenuItemTitle()) - Disconnect", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
+        } else {
+            disconnectDisconnectItem = NSMenuItem(title: "\(dummy.getMenuItemTitle()) - Connect", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
+        }
+        disconnectDisconnectItem.tag = dummy.number
+        let deleteItem = NSMenuItem(title: "\(dummy.getMenuItemTitle()) - Discard", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
+        deleteItem.tag = dummy.number
+        app.manageMenu.addItem(disconnectDisconnectItem)
+        app.manageMenu.addItem(deleteItem)
+        app.manageSubmenu.isHidden = false
     }
     
     func processCreatedDummy(_ dummy: Dummy) {
         dummies[dummy.number] = dummy
-        let menuItem = NSMenuItem(title: dummy.getMenuItemTitle(), action: #selector(app.handleDestroyDummy(_:)), keyEquivalent: "")
-        menuItem.tag = dummy.number
-        app.manageMenu.addItem(menuItem)
-        app.manageSubmenu.isHidden = false
+        addDummyToManageMenu(dummy)
         dummyCounter += 1
     }
     
@@ -111,9 +134,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         for i in 1 ... prefs.integer(forKey: PrefKeys.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKeys.display.rawValue)\(i)") != nil {
             let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "\(PrefKeys.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKeys.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKeys.isConnected.rawValue)\(i)"))
-            if dummy.isConnected {
-                processCreatedDummy(dummy)
-            }
+            processCreatedDummy(dummy)
         }
     }
     
@@ -126,15 +147,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if dummy.isConnected {
                 processCreatedDummy(dummy)
                 app.saveSettings()
+            } else {
+                os_log("Discarding new dummy tagged as %{public}@", type: .info, "\(menuItem.tag)")
             }
         }
     }
-    
-    @objc func handleDestroyDummy(_ sender: AnyObject?) {
+
+    @objc func handleDisconnectDummy(_ sender: AnyObject?) {
         if let menuItem = sender as? NSMenuItem {
-            os_log("Removing display  tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+            os_log("Disconnecting display tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+            dummies[menuItem.tag]?.disconnect()
+            self.repopulateManageMenu()
+            saveSettings()
+        }
+    }
+    
+    @objc func handleConnectDummy(_ sender: AnyObject?) {
+        if let menuItem = sender as? NSMenuItem {
+            os_log("Connecting display tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+            if let dummy = dummies[menuItem.tag] {
+                if !dummy.connect() {
+                    let alert = NSAlert()
+                    alert.messageText = "Unable to Connect Dummy"
+                    alert.informativeText = "An error occured during connecting Dummy."
+                    alert.runModal()
+                }
+            }
+            self.repopulateManageMenu()
+            saveSettings()
+        }
+    }
+    
+    @objc func handleDiscardDummy(_ sender: AnyObject?) {
+        if let menuItem = sender as? NSMenuItem {
+            os_log("Removing display tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
             dummies[menuItem.tag] = nil
-            menuItem.menu?.removeItem(menuItem)
+            self.repopulateManageMenu()
             saveSettings()
             if dummies.count == 0 {
                 manageSubmenu.isHidden = true
@@ -143,10 +191,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func handleAbout(_ sender: AnyObject?) {
-        let alert = NSAlert()
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "UNKNOWN"
         let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") ?? "UNKNOWN"
         let year = Calendar.current.component(.year, from: Date())
+        let alert = NSAlert()
         alert.messageText = "About BetterDummy"
         alert.informativeText = "Version \(version) Build \(build)\n\nCopyright Ⓒ \(year) @waydabber. \nMIT Licensed, feel free to improve.\nContact me on the GitHub page if you want to help out. :)"
         alert.runModal()
