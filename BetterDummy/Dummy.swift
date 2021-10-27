@@ -45,6 +45,10 @@ class Dummy {
             os_log("- Preparing descriptor...", type: .info)
             descriptor.queue = DispatchQueue.global(qos: .userInteractive)
             descriptor.name = name
+            descriptor.whitePoint = CGPoint(x: 0.950, y: 1.000) // "Taken from Generic RGB Profile.icc"
+            descriptor.redPrimary = CGPoint(x: 0.454, y: 0.242) // "Taken from Generic RGB Profile.icc"
+            descriptor.greenPrimary = CGPoint(x: 0.353, y: 0.674) // "Taken from Generic RGB Profile.icc"
+            descriptor.bluePrimary = CGPoint(x: 0.157, y: 0.084) // "Taken from Generic RGB Profile.icc"
             descriptor.maxPixelsWide = UInt32(definition.aspectWidth * definition.multiplierStep * definition.maxMultiplier)
             descriptor.maxPixelsHigh = UInt32(definition.aspectHeight * definition.multiplierStep * definition.maxMultiplier)
             descriptor.sizeInMillimeters = CGSize(width: 25.4 * Double(descriptor.maxPixelsWide) / 200, height: 25.4 * Double(descriptor.maxPixelsHigh) / 200)
