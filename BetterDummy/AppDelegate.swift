@@ -9,13 +9,13 @@ import Cocoa
 import os.log
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+        
     var dummyCounter: Int = 0
     var dummies = [Int: Dummy]()
     var statusBarItem: NSStatusItem!
     var sleepTemporaryDisplay: Any?
-    let deleteMenu = NSMenu()
-    let deleteSubmenu = NSMenuItem(title: "Delete Dummy", action: nil, keyEquivalent: "")
+    let manageMenu = NSMenu()
+    let manageSubmenu = NSMenuItem(title: "Delete Dummy", action: nil, keyEquivalent: "") // TODO: This text will be renamed to Manage Dummy
     let prefs = UserDefaults.standard
 
     // MARK: Setup app
@@ -41,11 +41,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         populateNewMenu(newMenu)
         let newSubmenu = NSMenuItem(title: "Create Dummy", action: nil, keyEquivalent: "")
         newSubmenu.submenu = newMenu
-        deleteSubmenu.submenu = deleteMenu
-        deleteSubmenu.isHidden = true
+        manageSubmenu.submenu = manageMenu
+        manageSubmenu.isHidden = true
         let menu = NSMenu()
         menu.addItem(newSubmenu)
-        menu.addItem(deleteSubmenu)
+        menu.addItem(manageSubmenu)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(handleAbout(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Visit GitHub Page", action: #selector(handleVisitGithubPage(_:)), keyEquivalent: ""))
@@ -69,12 +69,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         os_log("New dummy menu populated.", type: .info)
     }
     
+    func populateManageMenu(_ manageMenu: NSMenu) {
+        // TODO
+    }
+    
     func processCreatedDummy(_ dummy: Dummy) {
         dummies[dummy.number] = dummy
         let menuItem = NSMenuItem(title: dummy.getMenuItemTitle(), action: #selector(app.handleDestroyDummy(_:)), keyEquivalent: "")
         menuItem.tag = dummy.number
-        app.deleteMenu.addItem(menuItem)
-        app.deleteSubmenu.isHidden = false
+        app.manageMenu.addItem(menuItem)
+        app.manageSubmenu.isHidden = false
         dummyCounter += 1
     }
     
@@ -88,12 +92,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard dummies.count > 0 else {
             return
         }
-        prefs.set(dummies.count, forKey: "numOfDummyDisplays")
-        prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: "buildNumber")
+        prefs.set(dummies.count, forKey: PrefKeys.numOfDummyDisplays.rawValue)
+        prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKeys.buildNumber.rawValue)
         var i = 1
         for virtualDisplay in dummies {
-            prefs.set(virtualDisplay.value.dummyDefinitionItem, forKey: "Display\(i)")
-            prefs.set(virtualDisplay.value.serialNum, forKey: "Serial\(i)")
+            prefs.set(virtualDisplay.value.dummyDefinitionItem, forKey: "\(PrefKeys.display.rawValue)\(i)")
+            prefs.set(virtualDisplay.value.serialNum, forKey: "\(PrefKeys.serial.rawValue)\(i)")
+            prefs.set(virtualDisplay.value.isConnected, forKey: "\(PrefKeys.isConnected.rawValue)\(i)")
             i += 1
         }
         os_log("Preferences stored.", type: .info)
@@ -104,8 +109,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
             return
         }
-        for i in 1 ... prefs.integer(forKey: "numOfDummyDisplays") where prefs.object(forKey: "Display\(i)") != nil {
-            let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "Display\(i)"), serialNum: UInt32(prefs.integer(forKey: "Serial\(i)")))
+        for i in 1 ... prefs.integer(forKey: PrefKeys.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKeys.display.rawValue)\(i)") != nil {
+            let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "\(PrefKeys.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKeys.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKeys.isConnected.rawValue)\(i)"))
             if dummy.isConnected {
                 processCreatedDummy(dummy)
             }
@@ -132,7 +137,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             menuItem.menu?.removeItem(menuItem)
             saveSettings()
             if dummies.count == 0 {
-                deleteSubmenu.isHidden = true
+                manageSubmenu.isHidden = true
             }
         }
     }
