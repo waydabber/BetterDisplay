@@ -39,7 +39,9 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug:
 <img src=".github/displayprefs.png" width="500"/>
 </div>
 
-9. You'll see a long list of available resolutions - select the desired resolution.
+9. You'll see a long list of available resolutions. Select the desired mode.
+
+**Important info:** depending on configration, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_ **OR** you might see HiDPI resolutions _without a tag_ and non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list. It is adviced to choose always choose the high resolution option.
 
 NOTES:
 
@@ -50,7 +52,7 @@ The app saves the dummy display configuratio and automatically restore it upon n
 
 ## Compatibility
 
-The app and instructions were tested on an M1 MBA and mini running Monterey but according to reports works on Big Sur as well.
+The app and instructions were tested on an M1 MBA and mini running macOS 12 Monterey.
 
 ## Build and Installation
 
