@@ -41,7 +41,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug:
 
 9. You'll see a long list of available resolutions. Select the desired mode.
 
-**Important:** depending on configration, you might see HiDPI (high resolution) display modes listed with a `(HiDPI)` tag _OR_ you might see HiDPI resolutions without a tag and non-HiDPI resolutions with a `(low resolution)` tag in the list. It is adviced to choose always choose the high resolution option.
+**Important info to avoid confusion:** depending on configration, you might see HiDPI (high resolution) display modes listed with a `(HiDPI)` tag and standard resolutions _without a tag_ **_OR_** you might see HiDPI resolutions _without a tag_ and non-HiDPI resolutions marked with a `(low resolution)` tag in the list. It is adviced to choose always choose the high resolution option.
 
 NOTES:
 
