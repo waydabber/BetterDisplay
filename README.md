@@ -52,7 +52,7 @@ The app saves the dummy display configuratio and automatically restore it upon n
 
 ## Compatibility
 
-The app and instructions were tested on an M1 MBA and mini running Monterey but according to reports works on Big Sur as well.
+The app and instructions were tested on an M1 MBA and mini running macOS 12 Monterey.
 
 ## Build and Installation
 
