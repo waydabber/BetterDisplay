@@ -73,6 +73,10 @@ You can contribute to the code. [You can now also donate](https://opencollective
 
 Thank you for your care and help, really appreciated! :)
 
+## Discord channel
+
+You can join the (mostly self help) discussion on the new [BetterDummy discord channel](https://discord.gg/aKe5yCWXSp).
+
 ## Special Thanks
 
 The basic idea and some of the code was adapted from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
