@@ -67,10 +67,12 @@ An unsigned beta release is [also provided](https://github.com/waydabber/BetterD
 
 **If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) even more!** Control the brightness, volume of your external display like it would be a native Apple display!
 
+## How to help
+
+You can contribute to the code. [You can now also donate](https://opencollective.com/betterdummy/donate).
+
+Thank you for your care and help, really appreciated! :)
+
 ## Special Thanks
 
 The basic idea and some of the code was adapted from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
-
-## How to help
-
-You can contribute to the code. If you want to donate or buy me a lunch, please let me know! :)
