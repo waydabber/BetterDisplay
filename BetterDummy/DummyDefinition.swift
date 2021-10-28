@@ -30,10 +30,10 @@ class DummyDefinition {
     ]
     
     convenience init(_ aspectWidth: Int, _ aspectHeight: Int, _ step: Int, _ refreshRates: [Double], _ description: String) {
-        let minX: Int = 1280
-        let minY: Int = 720
+        let minX: Int = 700
+        let minY: Int = 700
         let maxX: Int = 7000
-        let maxY: Int = 3500
+        let maxY: Int = 7000
         let minMultiplier = max(Int(ceil(Float(minX)/(Float(aspectWidth)*Float(step)))), Int(ceil(Float(minY)/(Float(aspectHeight)*Float(step)))))
         let maxMultiplier = min(Int(floor(Float(maxX)/(Float(aspectWidth)*Float(step)))), Int(floor(Float(maxY)/(Float(aspectHeight)*Float(step)))))
         self.init(aspectWidth, aspectHeight, minMultiplier, maxMultiplier, step, refreshRates, description)
