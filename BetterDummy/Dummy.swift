@@ -63,6 +63,7 @@ class Dummy {
     func disconnect() {
         self.display = nil
         self.isConnected = false
+        os_log("Disconnected virtual display: %{public}@", type: .info, "\(getName())")
     }
     
     static func createVirtualDisplay(_ definition: DummyDefinition, name: String, serialNum: UInt32) -> CGVirtualDisplay? {
