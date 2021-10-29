@@ -12,14 +12,14 @@ class MenuHandler {
   var appMenu = NSMenu()
   var statusBarItem: NSStatusItem!
   let manageMenu = NSMenu()
-  let manageSubmenu = NSMenuItem(title: "Manage Dummy", action: nil, keyEquivalent: "")
+  let manageSubmenu = NSMenuItem(title: "Manage Dummies", action: nil, keyEquivalent: "")
   let startAtLoginMenuItem = NSMenuItem(title: "Start at Login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
   let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleAutomaticallyCheckForUpdates(_:)), keyEquivalent: "")
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and Reconnect on Sleep", action: #selector(app.handleReconnectAfterSleep(_:)), keyEquivalent: "")
 
   func setupMenu() {
     let newMenu = NSMenu()
-    let newSubmenu = NSMenuItem(title: "Create Dummy", action: nil, keyEquivalent: "")
+    let newSubmenu = NSMenuItem(title: "Create New Dummy", action: nil, keyEquivalent: "")
     newSubmenu.submenu = newMenu
     self.manageSubmenu.submenu = self.manageMenu
     self.manageSubmenu.isHidden = true

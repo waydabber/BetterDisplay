@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @available(macOS, deprecated: 10.10)
   func applicationDidFinishLaunching(_: Notification) {
     app = self
-    menu.setupMenu()
+    self.menu.setupMenu()
     self.setDefaultPrefs()
     self.restoreSettings()
     self.setupNotifications()
@@ -151,20 +151,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     SMLoginItemSetEnabled(identifier, sender.state == .on ? true : false)
   }
 
-  @objc func handleReconnectAfterSleep(_: AnyObject?) {
-    self.menu.reconnectAfterSleepMenuItem.state = self.menu.reconnectAfterSleepMenuItem.state == .on ? .off : .on
+  @objc func handleReconnectAfterSleep(_ sender: NSMenuItem) {
+    sender.state = sender.state == .on ? .off : .on
     self.saveSettings()
   }
 
   @objc func handleAutomaticallyCheckForUpdates(_ sender: NSMenuItem) {
     sender.state = sender.state == .on ? .off : .on
-    switch sender.state {
-    case .on:
-      self.prefs.set(true, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
-    case .off:
-      self.prefs.set(false, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
-    default: break
-    }
+    self.saveSettings()
   }
 
   @objc func handleAbout(_: AnyObject?) {

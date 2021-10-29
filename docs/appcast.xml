@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>BetterDummy</title>
+        <link>https://https://waydabber.github.io/BetterDummy</link>
+        <item>
+            <title>1.0.6b2</title>
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.0.6b
+            </sparkle:releaseNotesLink>
+            <pubDate>Fri, 29 Oct 2021 20:28:49 +0200</pubDate>
+            <sparkle:version>240</sparkle:version>
+            <sparkle:shortVersionString>1.0.6b2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="BetterDummy-v1.0.6b2.zip" length="743340" type="application/octet-stream"/>
+        </item>
+    </channel>
+</rss>
