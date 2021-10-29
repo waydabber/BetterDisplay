@@ -49,12 +49,12 @@ class MenuHandler {
   }
 
   func populateNewMenu(_ newMenu: NSMenu) {
-    var i = 0
-    for displayDefinition in DummyDefinition.dummyDefinitions {
-      let item = NSMenuItem(title: "\(displayDefinition.description)", action: #selector(app.handleCreateDummy(_:)), keyEquivalent: "")
-      item.tag = i
-      newMenu.addItem(item)
-      i += 1
+    for key in DummyDefinition.dummyDefinitions.keys.sorted() {
+      if let dummyDefinition = DummyDefinition.dummyDefinitions[key] {
+        let item = NSMenuItem(title: "\(dummyDefinition.description)", action: #selector(app.handleCreateDummy(_:)), keyEquivalent: "")
+        item.tag = key
+        newMenu.addItem(item)
+      }
     }
     os_log("New dummy menu populated.", type: .info)
   }
@@ -67,22 +67,35 @@ class MenuHandler {
     for item in items {
       self.manageMenu.removeItem(item)
     }
-    for i in app.dummies.keys {
-      if let dummy = app.dummies[i] {
+    var first = true
+    for key in app.dummies.keys.sorted(by: <) {
+      if let dummy = app.dummies[key] {
+        if !first {
+          self.manageMenu.addItem(NSMenuItem.separator())
+        }
         self.addDummyToManageMenu(dummy)
+        first = false
       }
     }
   }
 
   func addDummyToManageMenu(_ dummy: Dummy) {
+    let dummyHeaderItem = NSMenuItem()
+    let dummyTypeItem = NSMenuItem()
+    let attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 12)]
+    let attrsSub: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 10)]
+    dummyHeaderItem.attributedTitle = NSAttributedString(string: "\(dummy.getMenuItemTitle())", attributes: attrsHeader)
+    dummyTypeItem.attributedTitle = NSAttributedString(string: "Serial: \(dummy.getSerialNumber())", attributes: attrsSub)
+    self.manageMenu.addItem(dummyHeaderItem)
+    self.manageMenu.addItem(dummyTypeItem)
     var disconnectDisconnectItem: NSMenuItem
     if dummy.isConnected {
-      disconnectDisconnectItem = NSMenuItem(title: "\(dummy.getMenuItemTitle()) - Disconnect", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
+      disconnectDisconnectItem = NSMenuItem(title: "Disconnect", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
     } else {
-      disconnectDisconnectItem = NSMenuItem(title: "\(dummy.getMenuItemTitle()) - Connect", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
+      disconnectDisconnectItem = NSMenuItem(title: "Connect", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
     }
     disconnectDisconnectItem.tag = dummy.number
-    let deleteItem = NSMenuItem(title: "\(dummy.getMenuItemTitle()) - Discard", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
+    let deleteItem = NSMenuItem(title: "Discard", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
     deleteItem.tag = dummy.number
     self.manageMenu.addItem(disconnectDisconnectItem)
     self.manageMenu.addItem(deleteItem)

@@ -91,12 +91,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   func processCreatedDummy(_ dummy: Dummy) {
     self.dummies[dummy.number] = dummy
-    self.menu.addDummyToManageMenu(dummy)
     self.dummyCounter += 1
+    self.menu.repopulateManageMenu()
   }
 
   @objc func handleCreateDummy(_ sender: AnyObject?) {
-    if let menuItem = sender as? NSMenuItem, menuItem.tag >= 0, menuItem.tag < DummyDefinition.dummyDefinitions.count {
+    if let menuItem = sender as? NSMenuItem {
       os_log("Connecting display tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
       let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: menuItem.tag)
       if dummy.isConnected {

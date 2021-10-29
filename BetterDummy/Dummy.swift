@@ -30,17 +30,24 @@ class Dummy {
     }
   }
 
-  func getDummyDefinition() -> DummyDefinition {
+  func getDummyDefinition() -> DummyDefinition? {
     DummyDefinition.dummyDefinitions[self.dummyDefinitionItem]
   }
 
   func getName() -> String {
-    let dummyDefinition = self.getDummyDefinition()
-    return "Dummy \(dummyDefinition.description.components(separatedBy: " ").first ?? dummyDefinition.description)"
+    if let dummyDefinition = self.getDummyDefinition() {
+      return "Dummy \(dummyDefinition.description.components(separatedBy: " ").first ?? dummyDefinition.description)"
+    } else {
+      return ""
+    }
   }
 
   func getMenuItemTitle() -> String {
-    "\(DummyDefinition.dummyDefinitions[self.dummyDefinitionItem].description) - S/N: \(String(format: "%02X", self.serialNum))"
+    "\(DummyDefinition.dummyDefinitions[self.dummyDefinitionItem]!.description)"
+  }
+
+  func getSerialNumber() -> String {
+    "\(String(format: "%02X", self.serialNum))"
   }
 
   func connect(sleepConnect: Bool = false) -> Bool {
@@ -53,7 +60,7 @@ class Dummy {
       self.disconnect()
     }
     let name: String = self.getName()
-    if let display = Dummy.createVirtualDisplay(self.getDummyDefinition(), name: name, serialNum: self.serialNum) {
+    if let dummyDefinition = self.getDummyDefinition(), let display = Dummy.createVirtualDisplay(dummyDefinition, name: name, serialNum: self.serialNum) {
       self.display = display
       self.isConnected = true
       os_log("Display %{public}@ successfully connected", type: .info, "\(name)")
