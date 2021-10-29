@@ -11,7 +11,7 @@ class DummyDefinition {
     let refreshRates: [Double]
     let description: String
     
-    static let refreshRates: [Double] = [60] // [24, 25, 30, 48, 50, 60, 90, 120]
+    static let refreshRates: [Double] = [60] // [24, 25, 30, 48, 50, 60, 90, 120] -- only 60Hz seems to work in practice
     static let dummyDefinitions: [DummyDefinition] = [
         DummyDefinition( 16,   9, 2, DummyDefinition.refreshRates, "16:9 (HD/4K/5K/6K)"),
         DummyDefinition( 16,  10, 2, DummyDefinition.refreshRates, "16:10 (W*XGA)"),

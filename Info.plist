@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>244</string>
+	<string>256</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
@@ -30,6 +30,8 @@
 	<array>
 		<string>_fi-iki-tml-flfd._tcp</string>
 	</array>
+	<key>NSHumanReadableCopyright</key>
+	<string>MIT Licensed, 2021.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
