@@ -5,9 +5,6 @@
         <link>https://waydabber.github.io/BetterDummy</link>
         <item>
             <title>1.0.7</title>
-            <sparkle:releaseNotesLink>
-              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.0.6b
-            </sparkle:releaseNotesLink>
             <pubDate>Fri, 29 Oct 2021 21:04:05 +0200</pubDate>
             <sparkle:version>349</sparkle:version>
             <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
