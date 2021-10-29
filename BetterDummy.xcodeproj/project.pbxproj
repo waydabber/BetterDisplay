@@ -16,6 +16,7 @@
 		AA162C21272C396A003CFC89 /* marked.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AA162C20272C396A003CFC89 /* marked.min.js */; };
 		AA162C24272C3A21003CFC89 /* changelog.css in Resources */ = {isa = PBXBuildFile; fileRef = AA162C23272C3A21003CFC89 /* changelog.css */; };
 		AA162C26272C3B5B003CFC89 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AA162C25272C3B5B003CFC89 /* LICENSE */; };
+		AA162C2A272C5306003CFC89 /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA162C29272C5306003CFC89 /* MenuHandler.swift */; };
 		AA59EAB127288E4E00B7C833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB027288E4E00B7C833 /* AppDelegate.swift */; };
 		AA59EAB327288EF700B7C833 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB227288EF700B7C833 /* Dummy.swift */; };
 		AA59EAB52728911900B7C833 /* DummyDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB42728911900B7C833 /* DummyDefinition.swift */; };
@@ -51,6 +52,7 @@
 		AA162C20272C396A003CFC89 /* marked.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = marked.min.js; sourceTree = "<group>"; };
 		AA162C23272C3A21003CFC89 /* changelog.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = changelog.css; sourceTree = "<group>"; };
 		AA162C25272C3B5B003CFC89 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AA162C29272C5306003CFC89 /* MenuHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
 		AA59EAB027288E4E00B7C833 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA59EAB227288EF700B7C833 /* Dummy.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		AA59EAB42728911900B7C833 /* DummyDefinition.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DummyDefinition.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				BEB26A772531163C00744C86 /* Bridging-Header.h */,
 				BEB26A422530B2F600744C86 /* main.swift */,
 				AA59EAB027288E4E00B7C833 /* AppDelegate.swift */,
+				AA162C29272C5306003CFC89 /* MenuHandler.swift */,
 				AA59EAB227288EF700B7C833 /* Dummy.swift */,
 				AA59EAB42728911900B7C833 /* DummyDefinition.swift */,
 				AA964A8B2729C67F0064F7C7 /* PrefKeys.swift */,
@@ -153,6 +156,7 @@
 				AAA2D674272BF77200F71CF0 /* BetterDummyHelper */,
 				BEB26A402530B2F600744C86 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
 		};
 		BEB26A402530B2F600744C86 /* Products */ = {
@@ -341,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA59EAB127288E4E00B7C833 /* AppDelegate.swift in Sources */,
+				AA162C2A272C5306003CFC89 /* MenuHandler.swift in Sources */,
 				AA964A8C2729C67F0064F7C7 /* PrefKeys.swift in Sources */,
 				AA59EAB52728911900B7C833 /* DummyDefinition.swift in Sources */,
 				AA59EAB327288EF700B7C833 /* Dummy.swift in Sources */,
@@ -360,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = BetterDummyHelper/BetterDummyHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 297;
+				CURRENT_PROJECT_VERSION = 305;
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -390,7 +395,7 @@
 				CODE_SIGN_ENTITLEMENTS = BetterDummyHelper/BetterDummyHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 297;
+				CURRENT_PROJECT_VERSION = 305;
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -535,7 +540,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 297;
+				CURRENT_PROJECT_VERSION = 305;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -567,7 +572,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 297;
+				CURRENT_PROJECT_VERSION = 305;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
