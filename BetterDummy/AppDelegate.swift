@@ -123,6 +123,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if let dummy = dummies[menuItem.tag] {
         if !dummy.connect() {
           let alert = NSAlert()
+          alert.alertStyle = .warning
           alert.messageText = "Unable to Connect Dummy"
           alert.informativeText = "An error occured during connecting Dummy."
           alert.runModal()
@@ -135,12 +136,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func handleDiscardDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
-      os_log("Removing display tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
-      self.dummies[menuItem.tag] = nil
-      self.menu.repopulateManageMenu()
-      self.saveSettings()
-      if self.dummies.count == 0 {
-        self.menu.manageSubmenu.isHidden = true
+      let alert = NSAlert()
+      alert.alertStyle = .critical
+      alert.messageText = "Do you want to discard Dummy?"
+      alert.informativeText = "If you would like to use a Dummy later, use disconnect so macOS display configuration data is preserved."
+      alert.addButton(withTitle: "Cancel")
+      alert.addButton(withTitle: "Discard")
+      if alert.runModal() == .alertSecondButtonReturn {
+        os_log("Removing display tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
+        self.dummies[menuItem.tag] = nil
+        self.menu.repopulateManageMenu()
+        self.saveSettings()
+        if self.dummies.count == 0 {
+          self.menu.manageSubmenu.isHidden = true
+        }
       }
     }
   }
@@ -181,7 +190,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleDonate(_: NSMenuItem) {
     let alert = NSAlert()
     alert.messageText = "Would you like to help out?"
-    alert.informativeText = "If you find the app useful, please consider supporting the developer. :) Thank you!"
+    alert.informativeText = "If you find the app useful, please consider supporting the developer. :)\nThank you!"
     alert.addButton(withTitle: "Of course!")
     alert.addButton(withTitle: "Not this time.")
     if alert.runModal() == .alertFirstButtonReturn {

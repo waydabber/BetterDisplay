@@ -43,7 +43,7 @@ class Dummy {
   }
 
   func getMenuItemTitle() -> String {
-    "\(DummyDefinition.dummyDefinitions[self.dummyDefinitionItem]!.description)"
+    "\(DummyDefinition.dummyDefinitions[self.dummyDefinitionItem]!.description.components(separatedBy: " ").first ?? "") - #\(String(format: "%02X", self.serialNum))"
   }
 
   func getSerialNumber() -> String {

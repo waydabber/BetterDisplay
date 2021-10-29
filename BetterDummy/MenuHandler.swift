@@ -14,7 +14,7 @@ class MenuHandler {
   let manageMenu = NSMenu()
   let manageSubmenu = NSMenuItem(title: "Manage Dummies", action: nil, keyEquivalent: "")
   let startAtLoginMenuItem = NSMenuItem(title: "Start at Login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
-  let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleAutomaticallyCheckForUpdates(_:)), keyEquivalent: "")
+  let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically Check for Updates", action: #selector(app.handleAutomaticallyCheckForUpdates(_:)), keyEquivalent: "")
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and Reconnect on Sleep", action: #selector(app.handleReconnectAfterSleep(_:)), keyEquivalent: "")
 
   func setupMenu() {
@@ -33,7 +33,7 @@ class MenuHandler {
     self.appMenu.addItem(self.manageSubmenu)
     self.appMenu.addItem(NSMenuItem.separator())
     self.appMenu.addItem(settingsSubmenu)
-    let updateItem = NSMenuItem(title: "Check for updates...", action: #selector(app.updaterController.checkForUpdates(_:)), keyEquivalent: "")
+    let updateItem = NSMenuItem(title: "Check for Updates...", action: #selector(app.updaterController.checkForUpdates(_:)), keyEquivalent: "")
     updateItem.target = app.updaterController
     self.appMenu.addItem(updateItem)
     self.appMenu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(app.handleAbout(_:)), keyEquivalent: ""))
@@ -81,21 +81,17 @@ class MenuHandler {
 
   func addDummyToManageMenu(_ dummy: Dummy) {
     let dummyHeaderItem = NSMenuItem()
-    let dummyTypeItem = NSMenuItem()
-    let attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 12)]
-    let attrsSub: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 10)]
+    let attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
     dummyHeaderItem.attributedTitle = NSAttributedString(string: "\(dummy.getMenuItemTitle())", attributes: attrsHeader)
-    dummyTypeItem.attributedTitle = NSAttributedString(string: "Serial: \(dummy.getSerialNumber())", attributes: attrsSub)
     self.manageMenu.addItem(dummyHeaderItem)
-    self.manageMenu.addItem(dummyTypeItem)
     var disconnectDisconnectItem: NSMenuItem
     if dummy.isConnected {
-      disconnectDisconnectItem = NSMenuItem(title: "Disconnect", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
+      disconnectDisconnectItem = NSMenuItem(title: "Disconnect Dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
     } else {
-      disconnectDisconnectItem = NSMenuItem(title: "Connect", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
+      disconnectDisconnectItem = NSMenuItem(title: "Connect Dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
     }
     disconnectDisconnectItem.tag = dummy.number
-    let deleteItem = NSMenuItem(title: "Discard", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
+    let deleteItem = NSMenuItem(title: "Discard Dummy", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
     deleteItem.tag = dummy.number
     self.manageMenu.addItem(disconnectDisconnectItem)
     self.manageMenu.addItem(deleteItem)
