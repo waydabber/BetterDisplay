@@ -23,11 +23,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: *** Setup app
     
+    @available(macOS, deprecated: 10.10)
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         app = self
         setupMenu()
         restoreSettings()
         setupNotifications()
+        let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
+        self.startAtLoginMenuItem.state = startAtLogin ? .on : .off
     }
 
     func setupNotifications() {
@@ -41,7 +44,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func setupMenu() {
         let newMenu = NSMenu()
-        populateNewMenu(newMenu)
         let newSubmenu = NSMenuItem(title: "Create Dummy", action: nil, keyEquivalent: "")
         newSubmenu.submenu = newMenu
         manageSubmenu.submenu = manageMenu
@@ -64,6 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = self.statusBarItem.button {
              button.image = NSImage(systemSymbolName: "display.2", accessibilityDescription: "BetterDummy")
         }
+        populateNewMenu(newMenu)
         statusBarItem.menu = menu
     }
     
@@ -205,7 +208,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func handleStartAtLogin(_ sender: NSMenuItem) {
-        // MARK: TODO: Implement Start at Login
+        sender.state = sender.state == .on ? .off : .on
+        let identifier = "\(Bundle.main.bundleIdentifier!)Helper" as CFString
+        SMLoginItemSetEnabled(identifier, sender.state == .on ? true : false)
     }
 
     @objc func handleReconnectAfterSleep(_ sender: AnyObject?) {

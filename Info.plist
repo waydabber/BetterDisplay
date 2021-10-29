@@ -19,17 +19,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>256</string>
+	<string>270</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
-	<key>NSBonjourServices</key>
-	<array>
-		<string>_fi-iki-tml-flfd._tcp</string>
-	</array>
 	<key>NSHumanReadableCopyright</key>
 	<string>MIT Licensed, 2021.</string>
 	<key>NSMainStoryboardFile</key>
