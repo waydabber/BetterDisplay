@@ -15,6 +15,7 @@ class Dummy {
   let dummyDefinitionItem: Int
   let serialNum: UInt32
   var isConnected: Bool = false
+  var isSleepDisconnected: Bool = false
 
   init(number: Int, dummyDefinitionItem: Int, serialNum: UInt32 = 0, doConnect: Bool = true) {
     var storedSerialNum: UInt32 = serialNum
@@ -42,7 +43,11 @@ class Dummy {
     "\(DummyDefinition.dummyDefinitions[self.dummyDefinitionItem].description) - S/N: \(String(format: "%02X", self.serialNum))"
   }
 
-  func connect() -> Bool {
+  func connect(sleepConnect: Bool = false) -> Bool {
+    guard sleepConnect && self.isSleepDisconnected || !sleepConnect else {
+      return false
+    }
+    self.isSleepDisconnected = false
     if self.display != nil || self.isConnected {
       os_log("Attempted to connect the already connected display %{public}@. Interpreting as connect cycle.", type: .info, "\(self.getName())")
       self.disconnect()
@@ -59,9 +64,10 @@ class Dummy {
     }
   }
 
-  func disconnect() {
+  func disconnect(sleepDisconnect: Bool = false) {
     self.display = nil
     self.isConnected = false
+    self.isSleepDisconnected = sleepDisconnect
     os_log("Disconnected virtual display: %{public}@", type: .info, "\(self.getName())")
   }
 

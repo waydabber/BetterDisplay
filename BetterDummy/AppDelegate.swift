@@ -14,10 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var dummies = [Int: Dummy]()
   var statusBarItem: NSStatusItem!
   var sleepTemporaryDisplay: Any?
+  var isSleep: Bool = false
   let manageMenu = NSMenu()
   let manageSubmenu = NSMenuItem(title: "Manage Dummy", action: nil, keyEquivalent: "")
   let startAtLoginMenuItem = NSMenuItem(title: "Start at Login", action: #selector(handleStartAtLogin(_:)), keyEquivalent: "")
-  let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and Reconnect After Sleep", action: #selector(handleReconnectAfterSleep(_:)), keyEquivalent: "")
+  let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(handleAutomaticallyCheckForUpdates(_:)), keyEquivalent: "")
+  let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and Reconnect on Sleep", action: #selector(handleReconnectAfterSleep(_:)), keyEquivalent: "")
   let prefs = UserDefaults.standard
 
   // MARK: *** Setup app
@@ -48,6 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let menu = NSMenu()
     let settingsMenu = NSMenu()
     settingsMenu.addItem(self.startAtLoginMenuItem)
+    settingsMenu.addItem(self.automaticallyCheckForUpdatesMenuItem)
     settingsMenu.addItem(self.reconnectAfterSleepMenuItem)
     let settingsSubmenu = NSMenuItem(title: "Settings", action: nil, keyEquivalent: "")
     settingsSubmenu.submenu = settingsMenu
@@ -55,8 +58,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     menu.addItem(self.manageSubmenu)
     menu.addItem(NSMenuItem.separator())
     menu.addItem(settingsSubmenu)
+    menu.addItem(NSMenuItem(title: "Check for updates...", action: #selector(self.handleCheckForUpdates(_:)), keyEquivalent: ""))
     menu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(self.handleAbout(_:)), keyEquivalent: ""))
-    menu.addItem(NSMenuItem(title: "Visit GitHub Page", action: #selector(self.handleVisitGithubPage(_:)), keyEquivalent: ""))
     menu.addItem(NSMenuItem.separator())
     menu.addItem(NSMenuItem(title: "Quit BetterDummy", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
     self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
@@ -225,34 +228,70 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let alert = NSAlert()
     alert.messageText = "About BetterDummy"
     alert.informativeText = "Version \(version) Build \(build)\n\nCopyright Ⓒ \(year) @waydabber. \nMIT Licensed, feel free to improve.\nContact me on the GitHub page if you want to help out. :)"
-    alert.runModal()
+    alert.addButton(withTitle: "Visit GitHub page")
+    alert.addButton(withTitle: "OK")
+    alert.alertStyle = NSAlert.Style.informational
+    if alert.runModal() == .alertFirstButtonReturn {
+      if let url = URL(string: "https://github.com/waydabber/BetterDummy#readme") {
+        NSWorkspace.shared.open(url)
+      }
+    }
   }
 
-  @objc func handleVisitGithubPage(_: AnyObject?) {
-    if let url = URL(string: "https://github.com/waydabber/BetterDummy#readme") {
+  @objc func handleCheckForUpdates(_: AnyObject?) {
+    // TODO: Add sparkle
+    if let url = URL(string: "https://github.com/waydabber/BetterDummy/releases") {
       NSWorkspace.shared.open(url)
     }
   }
 
+  @objc func handleAutomaticallyCheckForUpdates(_: NSMenuItem) {
+    // TODO: Add sparkle
+  }
+
   @objc func handleWakeNotification() {
+    guard self.isSleep else {
+      return
+    }
+    self.isSleep = false
     os_log("Wake intercepted, removing temporary display if there is any.", type: .info)
     self.sleepTemporaryDisplay = nil
     if self.reconnectAfterSleepMenuItem.state == .on {
-      os_log("Disconnecting and reconnecting dummies.", type: .info)
-      for i in self.dummies.keys {
-        if let dummy = dummies[i], dummy.isConnected {
-          dummy.disconnect()
-          _ = dummy.connect()
-        }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        self.asyncWakeReconnect()
+      }
+    }
+  }
+
+  func asyncWakeReconnect() {
+    guard !self.isSleep else {
+      return
+    }
+    os_log("Reconnecting dummies on wake.", type: .info)
+    for i in self.dummies.keys {
+      if let dummy = dummies[i], !dummy.isConnected {
+        _ = dummy.connect(sleepConnect: true)
       }
     }
   }
 
   @objc func handleSleepNotification() {
+    guard !self.isSleep else {
+      return
+    }
+    self.isSleep = true
     if self.dummies.count > 0 {
       self.sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display.", type: .info)
       // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
+    }
+    if self.reconnectAfterSleepMenuItem.state == .on {
+      os_log("Disconnecting dummies on sleep.", type: .info)
+      for i in self.dummies.keys {
+        if let dummy = dummies[i], dummy.isConnected {
+          dummy.disconnect(sleepDisconnect: true)
+        }
+      }
     }
   }
 }
