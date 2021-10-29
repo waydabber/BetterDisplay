@@ -192,12 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEB26A522530B2F700744C86 /* Build configuration list for PBXNativeTarget "BetterDummy" */;
 			buildPhases = (
+				AAA2D68B272C01B100F71CF0 /* Increase Build Number */,
 				AA162C0E272C3072003CFC89 /* SwiftFormat */,
 				AA162C0F272C309C003CFC89 /* SwiftLint */,
 				BEB26A3B2530B2F600744C86 /* Sources */,
 				BEB26A3C2530B2F600744C86 /* Frameworks */,
 				BEB26A3D2530B2F600744C86 /* Resources */,
-				AAA2D68B272C01B100F71CF0 /* Increase Build Number */,
 				AAA2D689272BFC6A00F71CF0 /* [Login] Copy Helper to start at Login */,
 			);
 			buildRules = (
@@ -313,7 +313,7 @@
 		};
 		AAA2D68B272C01B100F71CF0 /* Increase Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -325,7 +325,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "agvtool next-version -all\nbuild_number=\"$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\"\nnew_build_number=\"$((build_number))\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${new_build_number}\" \"${INFOPLIST_FILE}\"\n";
 		};
@@ -365,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = BetterDummyHelper/BetterDummyHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 316;
+				CURRENT_PROJECT_VERSION = 334;
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -395,7 +395,7 @@
 				CODE_SIGN_ENTITLEMENTS = BetterDummyHelper/BetterDummyHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 316;
+				CURRENT_PROJECT_VERSION = 334;
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -540,7 +540,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 316;
+				CURRENT_PROJECT_VERSION = 334;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -572,7 +572,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 316;
+				CURRENT_PROJECT_VERSION = 334;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
