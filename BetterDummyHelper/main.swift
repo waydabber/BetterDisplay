@@ -8,9 +8,8 @@
 import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    @available(macOS, deprecated: 11.00)
-    func applicationDidFinishLaunching(_: Notification) {
+  @available(macOS, deprecated: 11.00)
+  func applicationDidFinishLaunching(_: Notification) {
     let mainBundleID = Bundle.main.bundleIdentifier!.replacingOccurrences(of: "Helper", with: "")
 
     let bundlePath = Bundle.main.bundlePath as NSString

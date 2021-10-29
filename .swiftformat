@@ -1,0 +1,5 @@
+--indent 2
+--nospaceoperators
+--self insert
+--exponentcase lowercase
+--exclude Carthage
