@@ -2,7 +2,18 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>BetterDummy</title>
-        <link>https://https://waydabber.github.io/BetterDummy</link>
+        <link>https://waydabber.github.io/BetterDummy</link>
+        <item>
+            <title>1.0.7</title>
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.0.6b
+            </sparkle:releaseNotesLink>
+            <pubDate>Fri, 29 Oct 2021 21:04:05 +0200</pubDate>
+            <sparkle:version>349</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.0.7/BetterDummy-v1.0.7.zip" length="1990494" type="application/octet-stream" sparkle:edSignature="t4m3gKOq83vDsjgoXfRlV+H0Ggx+oQb3VVSNtLF44HIg8d+4mXJ6QF7B268DoP81KOG1D/Eq4V3hYN8+NcM4Bw=="/>
+        </item>
         <item>
             <title>1.0.6b2</title>
             <sparkle:releaseNotesLink>
@@ -12,7 +23,7 @@
             <sparkle:version>240</sparkle:version>
             <sparkle:shortVersionString>1.0.6b2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="BetterDummy-v1.0.6b2.zip" length="743340" type="application/octet-stream"/>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.0.6b/BetterDummy-v1.0.6b2.zip" length="743340" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>

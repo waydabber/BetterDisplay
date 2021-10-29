@@ -26,21 +26,21 @@
 		AA8AA0AE272552E600F66F8A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA8AA0AD272552E600F66F8A /* README.md */; };
 		AA964A8C2729C67F0064F7C7 /* PrefKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA964A8B2729C67F0064F7C7 /* PrefKeys.swift */; };
 		AAA2D676272BF77200F71CF0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2D675272BF77200F71CF0 /* main.swift */; };
-		AAA2D68A272BFC7E00F71CF0 /* BetterDummyHelper.app in [Login] Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = AAA2D673272BF77200F71CF0 /* BetterDummyHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AAA2D68A272BFC7E00F71CF0 /* BetterDummyHelper.app in Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = AAA2D673272BF77200F71CF0 /* BetterDummyHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BEB26A432530B2F600744C86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB26A422530B2F600744C86 /* main.swift */; };
 		BEB26A472530B2F700744C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB26A462530B2F700744C86 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AAA2D689272BFC6A00F71CF0 /* [Login] Copy Helper to start at Login */ = {
+		AAA2D689272BFC6A00F71CF0 /* Copy Helper to start at Login */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				AAA2D68A272BFC7E00F71CF0 /* BetterDummyHelper.app in [Login] Copy Helper to start at Login */,
+				AAA2D68A272BFC7E00F71CF0 /* BetterDummyHelper.app in Copy Helper to start at Login */,
 			);
-			name = "[Login] Copy Helper to start at Login";
+			name = "Copy Helper to start at Login";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -200,13 +200,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEB26A522530B2F700744C86 /* Build configuration list for PBXNativeTarget "BetterDummy" */;
 			buildPhases = (
-				AAA2D68B272C01B100F71CF0 /* Increase Build Number */,
 				AA162C0E272C3072003CFC89 /* SwiftFormat */,
 				AA162C0F272C309C003CFC89 /* SwiftLint */,
 				BEB26A3B2530B2F600744C86 /* Sources */,
 				BEB26A3C2530B2F600744C86 /* Frameworks */,
 				BEB26A3D2530B2F600744C86 /* Resources */,
-				AAA2D689272BFC6A00F71CF0 /* [Login] Copy Helper to start at Login */,
+				AAA2D689272BFC6A00F71CF0 /* Copy Helper to start at Login */,
+				AA162C33272C7B0E003CFC89 /* Increase Build Number */,
 			);
 			buildRules = (
 			);
@@ -326,9 +326,9 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" >&2\nfi\n";
 		};
-		AAA2D68B272C01B100F71CF0 /* Increase Build Number */ = {
+		AA162C33272C7B0E003CFC89 /* Increase Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -340,9 +340,9 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "agvtool next-version -all\nbuild_number=\"$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\"\nnew_build_number=\"$((build_number))\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${new_build_number}\" \"${INFOPLIST_FILE}\"\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -381,7 +381,7 @@
 				CODE_SIGN_ENTITLEMENTS = BetterDummyHelper/BetterDummyHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 334;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -394,6 +394,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -411,7 +412,7 @@
 				CODE_SIGN_ENTITLEMENTS = BetterDummyHelper/BetterDummyHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 334;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -424,6 +425,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummyHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -556,7 +558,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 334;
+				CURRENT_PROJECT_VERSION = 346;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -588,7 +590,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 334;
+				CURRENT_PROJECT_VERSION = 346;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 299YSU96J7;
 				ENABLE_HARDENED_RUNTIME = YES;
