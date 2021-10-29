@@ -22,33 +22,31 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug:
 ## Usage
 
 1. Start the app
-1. In the app menu choose `Connect Dummy` and select your desired aspect ratio
+1. In the app menu choose `Create New Dummy` and select your desired aspect ratio
 <br/>
 <div align="center">
 <img src=".github/menu.png" width="430"/>
 </div>
 <br/>
   
-3. In `System Preferences` -> `Displays` you'll see the new screen (for example `Dummy 16:9`)
-4. Activate mirroring with main display being the Dummy display
-5. Set the dummy display as `Optimize for`
-6. Set `Resolution` as `Scaled`
-7. Click `Show all resolutions`
+3. In `System Preferences` -> `Displays` you'll see the new Dummy display (for example `Dummy 16:9`)
+4. Activate mirroring. The `Main` display should be the Dummy display
+5. Set the Dummy display as `Optimize for`
+6. Set `Resolution` as `Scaled` - you might have to hold the `Option` key to see a detailed list of available resolutions
+7. You can also click `Show all resolutions` for even more resolutions
 
 <div align="center">
 <img src=".github/displayprefs.png" width="500"/>
 </div>
 
-9. You'll see a long list of available resolutions. Select the desired mode.
+9. Select the desired mode.
 
-**Important info:** depending on configration, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_ **OR** you might see HiDPI resolutions _without a tag_ and non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list. It is adviced to choose always choose the high resolution option.
+Notes:
 
-NOTES:
+- For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
+- You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
 
-- HiDPI resolutions are followed by non-HiDPI resolutions so **don't forget to scroll down**, it's a long list!
-- You might have to fight with the `Displays` tab in Preferences sometimes as (at least on Monterey) the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons while changing the settings (the `Displays` tab appears to be rather buggy in general).
-
-The app saves the dummy display configuratio and automatically restore it upon next restart.
+The app saves the dummy display configuratio and automatically restores it upon next restart.
 
 ## Installation
 
@@ -59,7 +57,7 @@ The app saves the dummy display configuratio and automatically restore it upon n
 
 ## Compatibility
 
-The app should be compatible with all M1 class machines running Monterey.
+The app should be compatible with all M1 class machines (MacBook Air, Mini, 2020 and 2021 MacBook Pros) running Monterey.
 
 ## How can I help?
 
@@ -70,11 +68,11 @@ Some of the options:
 - Don't forget to star the GitHub page!
 - Spread the word.
 
-Thank you for your care and help, really appreciated! :)
+Thank you for your help, it is really appreciated! :)
 
 ## Don't forget to check out
 
-**If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) even more!** Control the brightness, volume of your external display like it would be a native Apple display!
+**If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) as well!** Control the brightness, volume of your external display like it would be a native Apple display!
 
 ## Discord channel
 
@@ -82,4 +80,4 @@ You can join the (mostly self help) discussion on the new [BetterDummy discord c
 
 ## Special Thanks
 
-The basic idea and some of the code was adapted from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
+Some of the original code was adapted from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
