@@ -33,7 +33,7 @@ class MenuHandler {
     self.appMenu.addItem(self.manageSubmenu)
     self.appMenu.addItem(NSMenuItem.separator())
     self.appMenu.addItem(settingsSubmenu)
-    self.appMenu.addItem(NSMenuItem(title: "Check for updates...", action: #selector(app.handleCheckForUpdates(_:)), keyEquivalent: ""))
+    self.appMenu.addItem(NSMenuItem(title: "Check for updates...", action: #selector(app.updaterController.checkForUpdates(_:)), keyEquivalent: ""))
     self.appMenu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(app.handleAbout(_:)), keyEquivalent: ""))
     self.appMenu.addItem(NSMenuItem(title: "Contribute...", action: #selector(app.handleDonate(_:)), keyEquivalent: ""))
     self.appMenu.addItem(NSMenuItem.separator())

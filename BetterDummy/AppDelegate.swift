@@ -8,20 +8,23 @@
 import Cocoa
 import os.log
 import ServiceManagement
+import Sparkle
 
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   var dummyCounter: Int = 0
   var dummies = [Int: Dummy]()
   var sleepTemporaryDisplay: Any?
   var isSleep: Bool = false
   let menu = MenuHandler()
   let prefs = UserDefaults.standard
+  let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
 
   // MARK: *** Setup app
 
   @available(macOS, deprecated: 10.10)
   func applicationDidFinishLaunching(_: Notification) {
     app = self
+    self.setDefaultPrefs()
     self.restoreSettings()
     self.setupNotifications()
   }
@@ -35,6 +38,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   // MARK: *** Save and restore
 
+  func setDefaultPrefs() {
+    if !self.prefs.bool(forKey: PrefKeys.appAlreadyLaunched.rawValue) {
+      self.prefs.set(true, forKey: PrefKeys.appAlreadyLaunched.rawValue)
+      self.prefs.set(true, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
+    }
+  }
+
   func saveSettings() {
     if let bundleID = Bundle.main.bundleIdentifier {
       self.prefs.removePersistentDomain(forName: bundleID)
@@ -43,6 +53,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     guard self.dummies.count > 0 else {
       return
     }
+    self.prefs.set(true, forKey: PrefKeys.appAlreadyLaunched.rawValue)
+    self.prefs.set(self.menu.automaticallyCheckForUpdatesMenuItem.state == .on, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
     self.prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKeys.buildNumber.rawValue)
     self.prefs.set(self.menu.startAtLoginMenuItem.state == .on, forKey: PrefKeys.startAtLogin.rawValue)
     self.prefs.set(self.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKeys.reconnectAfterSleep.rawValue)
@@ -62,6 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     os_log("Restoring settings.", type: .info)
     let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
     self.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
+    self.menu.automaticallyCheckForUpdatesMenuItem.state = self.prefs.bool(forKey: PrefKeys.SUEnableAutomaticChecks.rawValue) ? .on : .off
     self.menu.reconnectAfterSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) ? .on : .off
     guard self.prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
       return
@@ -141,15 +154,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.saveSettings()
   }
 
-  @objc func handleCheckForUpdates(_: AnyObject?) {
-    // TODO: Add sparkle
-    if let url = URL(string: "https://github.com/waydabber/BetterDummy/releases") {
-      NSWorkspace.shared.open(url)
+  @objc func handleAutomaticallyCheckForUpdates(_ sender: NSMenuItem) {
+    sender.state = sender.state == .on ? .off : .on
+    switch sender.state {
+    case .on:
+      self.prefs.set(true, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
+    case .off:
+      self.prefs.set(false, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
+    default: break
     }
-  }
-
-  @objc func handleAutomaticallyCheckForUpdates(_: NSMenuItem) {
-    // TODO: Add sparkle
   }
 
   @objc func handleAbout(_: AnyObject?) {
@@ -158,7 +171,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let year = Calendar.current.component(.year, from: Date())
     let alert = NSAlert()
     alert.messageText = "About BetterDummy"
-    alert.informativeText = "Version \(version) Build \(build)\n\nCopyright Ⓒ \(year) @waydabber. \nMIT Licensed, feel free to improve.\nContact me on the GitHub page if you want to help out. :)"
+    alert.informativeText = "Version \(version) Build \(build)\n\nCopyright Ⓒ \(year) @waydabber. \nMIT Licensed, feel free to improve.\n\nCheck out the GitHub page for instructions or to report issues!"
     alert.addButton(withTitle: "Visit GitHub page")
     alert.addButton(withTitle: "OK")
     alert.alertStyle = NSAlert.Style.informational
@@ -173,9 +186,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let alert = NSAlert()
     alert.messageText = "Would you like to help out?"
     alert.informativeText = "If you find the app useful, please consider supporting the developer. :) Thank you!"
-    alert.addButton(withTitle: "Not this time.")
     alert.addButton(withTitle: "Of course!")
-    if alert.runModal() == .alertSecondButtonReturn {
+    alert.addButton(withTitle: "Not this time.")
+    if alert.runModal() == .alertFirstButtonReturn {
       if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
         NSWorkspace.shared.open(url)
       }

@@ -32,5 +32,11 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUEnableJavaScript</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://waydabber.github.io/BetterDummy/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>ITSTMp8AypsLawojJ+UR3tm2mN18AFoNMvXf1G3t62s=</string>
 </dict>
 </plist>

@@ -12,8 +12,11 @@ enum PrefKeys: String {
   case isConnected
 
   // General
+  case appAlreadyLaunched
   case numOfDummyDisplays
   case buildNumber
   case startAtLogin
   case reconnectAfterSleep
+  case SUEnableAutomaticChecks
+  case isBetaChannel
 }
