@@ -50,30 +50,31 @@ NOTES:
 
 The app saves the dummy display configuratio and automatically restore it upon next restart.
 
+## Installation
+
+- Download the [latest release](https://github.com/waydabber/BetterDummy/releases)
+- Move the app to Applications
+- Start the app
+- Use the app menu bar item to interact.
+
 ## Compatibility
 
-The app and instructions were tested on an M1 MBA and mini running macOS 12 Monterey.
+The app should be compatible with all M1 class machines running Monterey.
 
-## Build and Installation
+## How can I help?
 
-You'll need to build the app in XCode:
+Some of the options:
 
-- Clone the app
-- Open the project in XCode
-- Change signing settings to suit your configuration
-- Build & Run
+- You can contribute to the code (via Pull Requests)
+- If you like the app, [you can support the developer](https://opencollective.com/betterdummy/donate). :)
+- Don't forget to star the GitHub page!
+- Spread the word.
 
-An unsigned beta release is [also provided](https://github.com/waydabber/BetterDummy/releases/tag/v1.0.0-beta1).
+Thank you for your care and help, really appreciated! :)
 
 ## Don't forget to check out
 
 **If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) even more!** Control the brightness, volume of your external display like it would be a native Apple display!
-
-## How to help
-
-You can contribute to the code. [You can now also donate](https://opencollective.com/betterdummy/donate).
-
-Thank you for your care and help, really appreciated! :)
 
 ## Discord channel
 

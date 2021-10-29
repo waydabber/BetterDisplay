@@ -141,6 +141,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.saveSettings()
   }
 
+  @objc func handleCheckForUpdates(_: AnyObject?) {
+    // TODO: Add sparkle
+    if let url = URL(string: "https://github.com/waydabber/BetterDummy/releases") {
+      NSWorkspace.shared.open(url)
+    }
+  }
+
+  @objc func handleAutomaticallyCheckForUpdates(_: NSMenuItem) {
+    // TODO: Add sparkle
+  }
+
   @objc func handleAbout(_: AnyObject?) {
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "UNKNOWN"
     let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") ?? "UNKNOWN"
@@ -158,15 +169,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
-  @objc func handleCheckForUpdates(_: AnyObject?) {
-    // TODO: Add sparkle
-    if let url = URL(string: "https://github.com/waydabber/BetterDummy/releases") {
-      NSWorkspace.shared.open(url)
+  @objc func handleDonate(_: NSMenuItem) {
+    let alert = NSAlert()
+    alert.messageText = "Would you like to help out?"
+    alert.informativeText = "If you find the app useful, please consider supporting the developer. :) Thank you!"
+    alert.addButton(withTitle: "Not this time.")
+    alert.addButton(withTitle: "Of course!")
+    if alert.runModal() == .alertSecondButtonReturn {
+      if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
+        NSWorkspace.shared.open(url)
+      }
     }
-  }
-
-  @objc func handleAutomaticallyCheckForUpdates(_: NSMenuItem) {
-    // TODO: Add sparkle
   }
 
   @objc func handleWakeNotification() {
