@@ -32,7 +32,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug:
 3. In `System Preferences` -> `Displays` you'll see the new Dummy display (for example `Dummy 16:9`)
 4. Activate mirroring. The `Main` display should be the Dummy display
 5. Set the Dummy display as `Optimize for`
-6. Set `Resolution` as `Scaled` - you might have to hold the `Option` key to see a detailed list of available resolutions
+6. Set `Resolution` as `Scaled` - **you might have to hold the `Option` key to see a detailed list of available resolutions!**
 7. You can also click `Show all resolutions` for even more resolutions
 
 <div align="center">
