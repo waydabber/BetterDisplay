@@ -15,18 +15,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   var dummies = [Int: Dummy]()
   var sleepTemporaryDisplay: Any?
   var isSleep: Bool = false
-  let menu = MenuHandler()
   let prefs = UserDefaults.standard
   let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
+  let menu = MenuHandler()
 
   // MARK: *** Setup app
 
   @available(macOS, deprecated: 10.10)
   func applicationDidFinishLaunching(_: Notification) {
     app = self
+    menu.setupMenu()
     self.setDefaultPrefs()
     self.restoreSettings()
     self.setupNotifications()
+    self.updaterController.startUpdater()
   }
 
   func setupNotifications() {
