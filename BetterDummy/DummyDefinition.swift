@@ -14,6 +14,8 @@ class DummyDefinition {
   static let dummyDefinitions: [Int: DummyDefinition] = [
     10: DummyDefinition(16, 9, 2, DummyDefinition.refreshRates, "16:9 (HD/4K/5K/6K)"),
     20: DummyDefinition(16, 10, 2, DummyDefinition.refreshRates, "16:10 (W*XGA)"),
+    23: DummyDefinition(77, 50, 2, DummyDefinition.refreshRates, "15.4:10 (14\" MBP 2021)"), // 3024x1964, 1.539714867617108 -- resulting resolutions are approximations
+    26: DummyDefinition(155, 100, 2, DummyDefinition.refreshRates, "15.5:10 (16\" MBP 2021)"), // 3456x2234, 1.547000895255148 -- resulting resolutions are approximations
     30: DummyDefinition(16, 12, 2, DummyDefinition.refreshRates, "16:12 (VGA)"),
     40: DummyDefinition(256, 135, 2, DummyDefinition.refreshRates, "17:9 (4K-DCI)"),
     50: DummyDefinition(64, 27, 2, DummyDefinition.refreshRates, "21.3:9 (UW-HD/4K/5K)"),
