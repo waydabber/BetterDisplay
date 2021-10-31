@@ -30,7 +30,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug:
 1. In the app menu choose `Create New Dummy` and select your desired aspect ratio
 <br/>
 <div align="center">
-<img src=".github/menu.png" width="430"/>
+<img src=".github/menu.png" width="468"/>
 </div>
 <br/>
   
@@ -41,7 +41,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug:
 7. You can also click `Show all resolutions` for even more resolutions
 
 <div align="center">
-<img src=".github/displayprefs.png" width="500"/>
+<img src=".github/displayprefs.png" width="550"/>
 </div>
 
 9. Select the desired mode.
