@@ -97,6 +97,7 @@
 		AA162C18272C344C003CFC89 /* docs */ = {
 			isa = PBXGroup;
 			children = (
+				AAA10D87272F054C008B342D /* images */,
 				AA162C22272C3A0C003CFC89 /* styles */,
 				AA162C1D272C38FA003CFC89 /* scripts */,
 				AA162C19272C34A8003CFC89 /* index.html */,
@@ -139,6 +140,13 @@
 				AA162C2E272C69F5003CFC89 /* UpdaterDelegate.swift */,
 			);
 			path = BetterDummy;
+			sourceTree = "<group>";
+		};
+		AAA10D87272F054C008B342D /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		AAA2D674272BF77200F71CF0 /* BetterDummyHelper */ = {
@@ -570,7 +578,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.7c;
+				MARKETING_VERSION = 1.0.7d;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -602,7 +610,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.7c;
+				MARKETING_VERSION = 1.0.7d;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

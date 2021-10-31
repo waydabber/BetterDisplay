@@ -43,7 +43,7 @@ class MenuHandler {
     self.populateNewMenu(newMenu)
     self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
     if let button = self.statusBarItem.button {
-      button.image = NSImage(systemSymbolName: "display.2", accessibilityDescription: "BetterDummy")
+      button.image = NSImage(named: "status")
     }
     self.statusBarItem.menu = self.appMenu
   }
