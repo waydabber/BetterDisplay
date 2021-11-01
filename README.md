@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDummy</h2>
 <p>Dummy Display for Macs to Have Custom Resolutions<br/>
-Create Custom HiDPI Resolutions for Any Display!
+Create Custom HiDPI Resolutions for Any Display!<br/>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
