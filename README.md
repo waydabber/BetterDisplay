@@ -17,13 +17,13 @@ To fix this problem, BetterDummy creates a virtual dummy display which you can t
 
 Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your internal display:
 
-- Your HDMI port will remain usable for an other display on the Mac Mini
-- Your internal screen will be available as an extended space on a MacBook (or you can use clamshell mode)
+- Your HDMI port will remain usable for an other display on the Mac Mini.
+- Your internal screen will be available as an extended space on a MacBook (or you can use clamshell mode).
 - Does not suffer from issues that prevalent with the physical dummy (like jittery mouse cursor).
 - Offers a much wider variety of HiDPI and standard resolutions.
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 - Does not utilize graphics hardware in vain so it is somewhat faster.
-- Available instantly
+- Available instantly.
 - It is free ([donations accepted](https://opencollective.com/betterdummy)). :)
 
 The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting (this affects many Wide or UltraWide displays).
