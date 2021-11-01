@@ -32,7 +32,7 @@ Some other possible uses:
 
 - The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting - especially on Wide or UltraWide displays.
 - Scale Sidecar resolutions.
-- Possible use on a headless Mac for custom resolutions.
+- Use headless Macs (servers) with any resolution and HiDPI mode (tested on Mac with Intel UHD 630).
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on Full HD displays.
 - You can use it instead of or alongside other apps that create custom native resolutions.
 
@@ -60,11 +60,12 @@ Some other possible uses:
 
 Notes:
 
+- The tutorial was compiled on an Apple Silicon Mac running macOS Monterey (the app works on Big Sur and Intel as well but steps are slightly differnt).
 - For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
 - You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
 - You might want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
 
-The app saves the dummy display configuratio and automatically restores it upon next restart.
+The app saves the dummy display configuration and automatically restores it upon next restart.
 
 ## Installation
 
@@ -75,9 +76,9 @@ The app saves the dummy display configuratio and automatically restores it upon 
 
 ## Compatibility
 
-The app should be compatible with all M1 class machines (MacBook Air, Mini, 2020 and 2021 MacBook Pros) running Monterey.
-
-_Note about Intel: I did not check on x64 but the app is compiled universal and probably works (happy to update this section based on feedbacks)._
+- The app should be compatible with all M1 class machines running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
+- The app is also compatible with Intel and macOS Big Sur (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
+- The app is compatible with headless mode as well (this was tested on Intel).
 
 ## How can I help?
 
