@@ -2,8 +2,8 @@
 
 <div>
 <h2>BetterDummy</h2>
-<p>Dummy Display for Macs to Have Custom Resolutions<br/>
-Create Custom HiDPI Resolutions for Any Display!<p>
+<p>Dummy Display for Macs to Have Custom HiDPI Resolutions<br/>
+From one of the creators of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
