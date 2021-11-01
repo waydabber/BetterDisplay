@@ -2,8 +2,8 @@
 
 <div>
 <h2>BetterDummy</h2>
-<p>Dummy Display for Apple Silicon Macs to achieve custom resolutions.<br/>
-Create your custom HiDPI resolutions for any of your displays!</p>
+<p>Dummy Display for Apple Silicon Macs to Achieve Custom Resolutions.<br/>
+Create Your Custom HiDPI Resolutions for Any of Your Displays!</p>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
