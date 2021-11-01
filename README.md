@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDummy</h2>
 <p>Dummy Display for Macs to Have Custom HiDPI Resolutions<br/>
-From one of the creators of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
+From one of the maintainers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
@@ -28,7 +28,12 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 - Available instantly.
 - It is free ([donations humbly accepted](https://opencollective.com/betterdummy)). :)
 
-The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting (this affects many Wide or UltraWide displays). Possible other use case might be to use it on a headless Mac.
+Some other possible uses:
+
+- The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting - especially on Wide or UltraWide displays.
+- Scale Sidecar resolutions.
+- Possible use on a headless Mac for custom resolutions.
+- You can use it instead of or alongside other apps that create custom native resolutions.
 
 ## Usage
 
