@@ -33,7 +33,7 @@ Some other possible uses:
 - The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting - especially on Wide or UltraWide displays.
 - Scale Sidecar resolutions.
 - Possible use on a headless Mac for custom resolutions.
-- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`»`Use scroll gesture...`) or High Quality screenshots even on Full HD displays.
+- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on Full HD displays.
 - You can use it instead of or alongside other apps that create custom native resolutions.
 
 ## Usage
