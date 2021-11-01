@@ -9,20 +9,24 @@ Create your custom HiDPI resolutions for any of your displays!</p>
 
 ## About
 
-M1 macs tend to have issues with custom resolutions. Notoriously they don't allow sub 4K resolution displays to have HiDPI ("Retina") resolutions even though for example a 24" QHD display would greatly benefit from having an 1920x1080 HiDPI "Retina" mode.
+M1 macs tend to have issues with custom resolutions. Notoriously they don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though (for example) a 24" QHD 1440p display would greatly benefit from having an 1920x1080 HiDPI "Retina" mode.
 
-To fix this issue, many resort to buying a 4K HDMI dummy dongle to fool macOS into thinking that a 4K display is connected and then mirror the contents of this dummy display to the physical display in order to have HiDPI resolution. Others use the built in screens of their MacBooks to mirror to the external display. These approaches have obvious drawbacks and cannot solve all problems (for example HiDPI support for wide and ultrawide displays).
+To fix this issue, some resort to buying a 4K HDMI dummy dongle to fool macOS into thinking that a 4K display is connected and then mirror the contents of this dummy display to their actual monitor in order to have HiDPI resolution. Others use the built in screens of their MacBooks to mirror to the external display. These approaches have obvious drawbacks and cannot solve all problems (for example HiDPI support for wide and ultrawide displays).
 
 To fix this problem, BetterDummy creates a virtual dummy display which you can then utilize as a mirror main.
 
-Advantages of BetterDummy over a physical 4K HDMI dummy plug:
+Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your internal display:
 
 - Your HDMI port will remain usable for an other display on the Mac Mini
+- Your internal screen will be available as an extended space on a MacBook (or you can use clamshell mode)
 - Does not suffer from issues that prevalent with the physical dummy (like jittery mouse cursor).
 - Offers a much wider variety of HiDPI and standard resolutions.
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 - Does not utilize graphics hardware in vain so it is somewhat faster.
-- Available instantly + it is free. :)
+- Available instantly
+- It is free ([donations accepted](https://opencollective.com/betterdummy)). :)
+
+The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting (this affects many UltraWide displays).
 
 ## Usage
 
