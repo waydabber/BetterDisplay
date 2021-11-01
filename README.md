@@ -11,7 +11,7 @@ Create Your Custom HiDPI Resolutions for Any of Your Displays!</p>
 
 M1 macs tend to have issues with custom resolutions. Notoriously they don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though (for example) a 24" QHD 1440p display would greatly benefit from having an 1920x1080 HiDPI "Retina" mode.
 
-To fix this issue, some resort to buying a 4K HDMI dummy dongle to fool macOS into thinking that a 4K display is connected and then mirror the contents of this dummy display to their actual monitor in order to have HiDPI resolution. Others use the built in screens of their MacBooks to mirror to the external display. These approaches have obvious drawbacks and cannot solve all problems (for example HiDPI support for wide and ultrawide displays).
+To fix this issue, some resort to buying a 4K HDMI dummy dongle to fool macOS into thinking that a 4K display is connected and then mirror the contents of this dummy display to their actual monitor in order to have HiDPI resolutions available. Others use the built in screens of their MacBooks to mirror to the external display. These approaches have obvious drawbacks and cannot solve all problems.
 
 To fix this problem, BetterDummy creates a virtual dummy display which you can then utilize as a mirror main.
 
