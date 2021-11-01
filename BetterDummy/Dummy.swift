@@ -11,7 +11,7 @@ import os.log
 
 class Dummy {
   let number: Int
-  var display: Any?
+  var display: CGVirtualDisplay?
   let dummyDefinitionItem: Int
   let serialNum: UInt32
   var isConnected: Bool = false
@@ -69,6 +69,15 @@ class Dummy {
       os_log("Failed to connect display %{public}@", type: .info, "\(name)")
       return false
     }
+  }
+
+  func getResolutionList() -> [Any] {
+    // TODO: Implement this
+    []
+  }
+
+  func changeResolution(resolution _: Any) {
+    // TODO: Implement this
   }
 
   func disconnect(sleepDisconnect: Bool = false) {

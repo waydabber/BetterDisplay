@@ -37,7 +37,7 @@ class MenuHandler {
     updateItem.target = app.updaterController
     self.appMenu.addItem(updateItem)
     self.appMenu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(app.handleAbout(_:)), keyEquivalent: ""))
-    self.appMenu.addItem(NSMenuItem(title: "Contribute...", action: #selector(app.handleDonate(_:)), keyEquivalent: ""))
+    self.appMenu.addItem(NSMenuItem(title: "Support the Project...", action: #selector(app.handleDonate(_:)), keyEquivalent: ""))
     self.appMenu.addItem(NSMenuItem.separator())
     self.appMenu.addItem(NSMenuItem(title: "Quit BetterDummy", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
     self.populateNewMenu(newMenu)
@@ -79,21 +79,45 @@ class MenuHandler {
     }
   }
 
+  func getResolutionSubmenuItem(_ dummy: Dummy) -> NSMenuItem {
+    let resolutionMenu = NSMenu()
+    // TODO: Implement
+    _ = dummy.getResolutionList()
+    resolutionMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
+    let resolutionSubmenu = NSMenuItem(title: "Set Resolution", action: nil, keyEquivalent: "")
+    resolutionSubmenu.submenu = resolutionMenu
+    return resolutionSubmenu
+  }
+
+  func getAssociateSubmenuItem() -> NSMenuItem {
+    let associateMenu = NSMenu()
+    // TODO: Implement
+    associateMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
+    let associateSubmenu = NSMenuItem(title: "Associate Display", action: nil, keyEquivalent: "")
+    associateSubmenu.submenu = associateMenu
+    return associateSubmenu
+  }
+
   func addDummyToManageMenu(_ dummy: Dummy) {
     let dummyHeaderItem = NSMenuItem()
     let attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
     dummyHeaderItem.attributedTitle = NSAttributedString(string: "\(dummy.getMenuItemTitle())", attributes: attrsHeader)
     self.manageMenu.addItem(dummyHeaderItem)
-    var disconnectDisconnectItem: NSMenuItem
     if dummy.isConnected {
-      disconnectDisconnectItem = NSMenuItem(title: "Disconnect Dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
+      var connectItem: NSMenuItem
+      connectItem = NSMenuItem(title: "Disconnect Dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
+      self.manageMenu.addItem(connectItem)
+      connectItem.tag = dummy.number
+      self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
+      self.manageMenu.addItem(self.getAssociateSubmenuItem())
     } else {
-      disconnectDisconnectItem = NSMenuItem(title: "Connect Dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
+      var disconnectItem: NSMenuItem
+      disconnectItem = NSMenuItem(title: "Connect Dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
+      self.manageMenu.addItem(disconnectItem)
+      disconnectItem.tag = dummy.number
     }
-    disconnectDisconnectItem.tag = dummy.number
     let deleteItem = NSMenuItem(title: "Discard Dummy", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
     deleteItem.tag = dummy.number
-    self.manageMenu.addItem(disconnectDisconnectItem)
     self.manageMenu.addItem(deleteItem)
     self.manageSubmenu.isHidden = false
   }

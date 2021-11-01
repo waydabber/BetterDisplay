@@ -13,7 +13,7 @@ import Sparkle
 class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   var dummyCounter: Int = 0
   var dummies = [Int: Dummy]()
-  var sleepTemporaryDisplay: Any?
+  var sleepTemporaryDisplay: CGVirtualDisplay?
   var isSleep: Bool = false
   let prefs = UserDefaults.standard
   let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
@@ -190,9 +190,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleDonate(_: NSMenuItem) {
     let alert = NSAlert()
     alert.messageText = "Would you like to help out?"
-    alert.informativeText = "If you find the app useful, please consider supporting the developer. :)\nThank you!"
+    alert.informativeText = "If you find this app useful, please consider supporting the project with a financial contribution. :)\n\nThank you!"
     alert.addButton(withTitle: "Of course!")
-    alert.addButton(withTitle: "Not this time.")
+    alert.addButton(withTitle: "Nope")
     if alert.runModal() == .alertFirstButtonReturn {
       if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
         NSWorkspace.shared.open(url)
