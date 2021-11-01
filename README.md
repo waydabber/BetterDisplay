@@ -7,6 +7,8 @@ Create Custom HiDPI Resolutions for Any Display!<p>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
+<hr>
+
 ## About
 
 M1 macs tend to have issues with custom resolutions. Notoriously they don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though (for example) a 24" QHD 1440p display would greatly benefit from having an 1920x1080 HiDPI "Retina" mode.
