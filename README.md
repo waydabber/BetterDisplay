@@ -28,7 +28,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 - Available instantly.
 - It is free ([donations humbly accepted](https://opencollective.com/betterdummy)). :)
 
-The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting (this affects many Wide or UltraWide displays).
+The app is also useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS - as in some cases this could be rather limiting (this affects many Wide or UltraWide displays). Possible other use case might be to use it on a headless Mac.
 
 ## Usage
 
@@ -70,6 +70,8 @@ The app saves the dummy display configuratio and automatically restores it upon 
 ## Compatibility
 
 The app should be compatible with all M1 class machines (MacBook Air, Mini, 2020 and 2021 MacBook Pros) running Monterey.
+
+_Note about Intel: I did not check on x64 but the app is compiled universal and probably works (happy to update this section based on feedbacks)._
 
 ## How can I help?
 
