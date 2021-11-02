@@ -14,7 +14,7 @@ class DummyDefinition {
   static let dummyDefinitions: [Int: DummyDefinition] = [
     10: DummyDefinition(16, 9, 2, DummyDefinition.refreshRates, "16:9 (HD/4K/5K/6K)"),
     20: DummyDefinition(16, 10, 2, DummyDefinition.refreshRates, "16:10 (W*XGA)"),
-    30: DummyDefinition(16, 12, 2, DummyDefinition.refreshRates, "16:12 (VGA)"),
+    30: DummyDefinition(16, 12, 2, DummyDefinition.refreshRates, "4:3 (VGA, iPad)"),
     40: DummyDefinition(256, 135, 2, DummyDefinition.refreshRates, "17:9 (4K-DCI)"),
     50: DummyDefinition(64, 27, 2, DummyDefinition.refreshRates, "21.3:9 (UW-HD/4K/5K)"),
     60: DummyDefinition(43, 18, 2, DummyDefinition.refreshRates, "21.5:9 (UW-QHD)"),
@@ -26,6 +26,11 @@ class DummyDefinition {
     120: DummyDefinition(10, 16, 2, DummyDefinition.refreshRates, "10:16 (W*XGA - Portrait)"),
     130: DummyDefinition(12, 16, 2, DummyDefinition.refreshRates, "12:16 (VGA - Portrait)"),
     140: DummyDefinition(135, 256, 2, DummyDefinition.refreshRates, "9:17 (4K-DCI - Portrait)"),
+    210: DummyDefinition(15, 10, 2, DummyDefinition.refreshRates, "3:2 (Photography)"),
+    220: DummyDefinition(15, 12, 2, DummyDefinition.refreshRates, "5:4 (Photography)"),
+    350: DummyDefinition(152, 100, 1, DummyDefinition.refreshRates, "15.2:10 (iPad Mini 2021)"),
+    360: DummyDefinition(66, 41, 2, DummyDefinition.refreshRates, "23:16 (iPad Air 2020)"), //
+    370: DummyDefinition(199, 139, 2, DummyDefinition.refreshRates, "14.3:10 (iPad Pro 11\")"), //
   ]
 
   convenience init(_ aspectWidth: Int, _ aspectHeight: Int, _ step: Int, _ refreshRates: [Double], _ description: String) {
