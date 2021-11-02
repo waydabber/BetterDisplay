@@ -81,8 +81,8 @@ class MenuHandler {
 
   func getResolutionSubmenuItem(_ dummy: Dummy) -> NSMenuItem {
     let resolutionMenu = NSMenu()
-    // TODO: Implement
-    let _ = dummy.getResolutionList()
+    // TODO: Implement resolution submenu
+    _ = dummy.getResolutionList()
     resolutionMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
     let resolutionSubmenu = NSMenuItem(title: "Set Resolution", action: nil, keyEquivalent: "")
     resolutionSubmenu.submenu = resolutionMenu
@@ -91,14 +91,14 @@ class MenuHandler {
 
   func getAssociateSubmenuItem() -> NSMenuItem {
     let associateMenu = NSMenu()
-    // TODO: Implement
-    let _ = DisplayHandler.getDisplayList()
+    // TODO: Implement display association submenu
+    _ = DisplayHandler.getDisplayList()
     associateMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
     let associateSubmenu = NSMenuItem(title: "Associate Display", action: nil, keyEquivalent: "")
     associateSubmenu.submenu = associateMenu
     return associateSubmenu
   }
-  
+
   func addDummyToManageMenu(_ dummy: Dummy) {
     let dummyHeaderItem = NSMenuItem()
     let attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
@@ -109,8 +109,8 @@ class MenuHandler {
       connectItem = NSMenuItem(title: "Disconnect Dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(connectItem)
       connectItem.tag = dummy.number
-      self.manageMenu.addItem(getResolutionSubmenuItem(dummy))
-      self.manageMenu.addItem(getAssociateSubmenuItem())
+      self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
+      self.manageMenu.addItem(self.getAssociateSubmenuItem())
     } else {
       var disconnectItem: NSMenuItem
       disconnectItem = NSMenuItem(title: "Connect Dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")

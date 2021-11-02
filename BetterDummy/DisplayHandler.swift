@@ -8,10 +8,8 @@
 import Foundation
 
 class DisplayHandler {
-
   static func getDisplayList() -> [Any] {
-    // TODO: Implement
-    return []
+    // TODO: Implement getting the display list
+    []
   }
-
 }

@@ -72,12 +72,20 @@ class Dummy {
   }
 
   func getResolutionList() -> [Any] {
-    // TODO: Implement this
+    // TODO: Implement getting resolution list
     []
   }
 
   func changeResolution(resolution _: Any) {
-    // TODO: Implement this
+    // TODO: Implement resolution change
+  }
+
+  func associate(display _: CGDirectDisplayID) {
+    // TODO: Implement display association
+  }
+
+  func disassociate(display _: CGDirectDisplayID) {
+    // TODO: Implement display disassociation
   }
 
   func disconnect(sleepDisconnect: Bool = false) {

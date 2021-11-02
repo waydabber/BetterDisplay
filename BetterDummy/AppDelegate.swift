@@ -134,6 +134,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
+  @objc func handleResolution(_: AnyObject?) {
+    // TODO: Implement handle resolution change
+  }
+
+  @objc func handleAssociate(_: AnyObject?) {
+    // TODO: Implement handle display association
+  }
+
+  @objc func handleDisassociate(_: AnyObject?) {
+    // TODO: Implement handle display disassociation
+  }
+
   @objc func handleDiscardDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       let alert = NSAlert()
