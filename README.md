@@ -59,7 +59,7 @@ Some other possible uses:
 
 Notes:
 
-- The tutorial was compiled on an Apple Silicon Mac running macOS Monterey (the app works on Big Sur and Intel as well but steps are slightly differnt).
+- The tutorial was compiled on an Apple Silicon Mac running macOS Monterey (the app works on Intel and Big Sur as well - steps are slightly differnt, see [this article](https://macfinder.co.uk/blog/how-to-mirror-specific-displays-in-os-x-mirror-some-but-not-all-of-your-monitors-on-an-apple-system/) on how to customize mirroring on Big Sur).
 - For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
 - You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
 - You might want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
