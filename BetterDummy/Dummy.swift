@@ -111,7 +111,7 @@ class Dummy {
       descriptor.bluePrimary = CGPoint(x: 0.157, y: 0.084) // "Taken from Generic RGB Profile.icc"
       descriptor.maxPixelsWide = UInt32(definition.aspectWidth * definition.multiplierStep * definition.maxMultiplier)
       descriptor.maxPixelsHigh = UInt32(definition.aspectHeight * definition.multiplierStep * definition.maxMultiplier)
-      descriptor.sizeInMillimeters = CGSize(width: 25.4 * Double(descriptor.maxPixelsWide) / 200, height: 25.4 * Double(descriptor.maxPixelsHigh) / 200)
+      descriptor.sizeInMillimeters = CGSize(width: Double(descriptor.maxPixelsWide) / 15, height: Double(descriptor.maxPixelsHigh) / 15)
       descriptor.serialNum = serialNum
       descriptor.productID = UInt32(min(definition.aspectWidth - 1, 255) * 256 + min(definition.aspectHeight - 1, 255))
       descriptor.vendorID = UInt32(0xF0F0)

@@ -60,6 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKeys.buildNumber.rawValue)
     self.prefs.set(self.menu.startAtLoginMenuItem.state == .on, forKey: PrefKeys.startAtLogin.rawValue)
     self.prefs.set(self.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKeys.reconnectAfterSleep.rawValue)
+    self.prefs.set(self.menu.disableTempSleepMenuItem.state == .on, forKey: PrefKeys.disableTempSleep.rawValue)
     self.prefs.set(self.dummies.count, forKey: PrefKeys.numOfDummyDisplays.rawValue)
     var i = 1
     for virtualDisplay in self.dummies {
@@ -78,6 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
     self.menu.automaticallyCheckForUpdatesMenuItem.state = self.prefs.bool(forKey: PrefKeys.SUEnableAutomaticChecks.rawValue) ? .on : .off
     self.menu.reconnectAfterSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) ? .on : .off
+    self.menu.disableTempSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.disableTempSleep .rawValue) ? .on : .off
     guard self.prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
       return
     }
@@ -172,12 +174,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     SMLoginItemSetEnabled(identifier, sender.state == .on ? true : false)
   }
 
-  @objc func handleReconnectAfterSleep(_ sender: NSMenuItem) {
-    sender.state = sender.state == .on ? .off : .on
-    self.saveSettings()
-  }
-
-  @objc func handleAutomaticallyCheckForUpdates(_ sender: NSMenuItem) {
+  @objc func handleSimpleCheckMenu(_ sender: NSMenuItem) {
     sender.state = sender.state == .on ? .off : .on
     self.saveSettings()
   }
@@ -217,20 +214,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       return
     }
     self.isSleep = false
-    os_log("Wake intercepted, removing temporary display if there is any.", type: .info)
-    self.sleepTemporaryDisplay = nil
+    if self.sleepTemporaryDisplay != nil {
+      os_log("Wake intercepted, removing temporary display.", type: .info)
+      self.sleepTemporaryDisplay = nil
+    }
     if self.menu.reconnectAfterSleepMenuItem.state == .on {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-        self.asyncWakeReconnect()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        self.delayedWakeReconnect()
       }
     }
   }
 
-  func asyncWakeReconnect() {
+  func delayedWakeReconnect() {
     guard !self.isSleep else {
       return
     }
-    os_log("Reconnecting dummies on wake.", type: .info)
+    os_log("Delayed reconnecting dummies after wake.", type: .info)
     for i in self.dummies.keys {
       if let dummy = dummies[i], !dummy.isConnected {
         _ = dummy.connect(sleepConnect: true)
@@ -243,10 +242,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       return
     }
     self.isSleep = true
-    if self.dummies.count > 0 {
+    if self.dummies.count > 0, self.menu.disableTempSleepMenuItem.state == .off {
       self.sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display.", type: .info)
-      // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal. This is a result of some trial & error and might not work on all systems.
+      // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal even when a virtual screen is mirrored. This is a result of some trial & error and might not work on all systems. The problem itself is a macOS one as the same sleep issue can be reproduced with a mirrored Sidecar display (without BetterDummy).
     }
     if self.menu.reconnectAfterSleepMenuItem.state == .on {
       os_log("Disconnecting dummies on sleep.", type: .info)

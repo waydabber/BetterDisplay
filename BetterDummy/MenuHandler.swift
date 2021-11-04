@@ -12,32 +12,35 @@ class MenuHandler {
   var appMenu = NSMenu()
   var statusBarItem: NSStatusItem!
   let manageMenu = NSMenu()
-  let manageSubmenu = NSMenuItem(title: "Manage Dummies", action: nil, keyEquivalent: "")
-  let startAtLoginMenuItem = NSMenuItem(title: "Start at Login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
-  let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically Check for Updates", action: #selector(app.handleAutomaticallyCheckForUpdates(_:)), keyEquivalent: "")
-  let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and Reconnect on Sleep", action: #selector(app.handleReconnectAfterSleep(_:)), keyEquivalent: "")
+  let manageSubmenu = NSMenuItem(title: "Manage dummies", action: nil, keyEquivalent: "")
+  let startAtLoginMenuItem = NSMenuItem(title: "Start at login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
+  let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
+  let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and reconnect on sleep", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
+  let disableTempSleepMenuItem = NSMenuItem(title: "Disable temporary screen sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
 
   func setupMenu() {
     let newMenu = NSMenu()
-    let newSubmenu = NSMenuItem(title: "Create New Dummy", action: nil, keyEquivalent: "")
+    let newSubmenu = NSMenuItem(title: "Create new dummy", action: nil, keyEquivalent: "")
     newSubmenu.submenu = newMenu
     self.manageSubmenu.submenu = self.manageMenu
     self.manageSubmenu.isHidden = true
     let settingsMenu = NSMenu()
     settingsMenu.addItem(self.startAtLoginMenuItem)
     settingsMenu.addItem(self.automaticallyCheckForUpdatesMenuItem)
+    settingsMenu.addItem(NSMenuItem.separator())
     settingsMenu.addItem(self.reconnectAfterSleepMenuItem)
+    settingsMenu.addItem(self.disableTempSleepMenuItem)
     let settingsSubmenu = NSMenuItem(title: "Settings", action: nil, keyEquivalent: "")
     settingsSubmenu.submenu = settingsMenu
     self.appMenu.addItem(newSubmenu)
     self.appMenu.addItem(self.manageSubmenu)
     self.appMenu.addItem(NSMenuItem.separator())
     self.appMenu.addItem(settingsSubmenu)
-    let updateItem = NSMenuItem(title: "Check for Updates...", action: #selector(app.updaterController.checkForUpdates(_:)), keyEquivalent: "")
+    let updateItem = NSMenuItem(title: "Check for updates...", action: #selector(app.updaterController.checkForUpdates(_:)), keyEquivalent: "")
     updateItem.target = app.updaterController
     self.appMenu.addItem(updateItem)
     self.appMenu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(app.handleAbout(_:)), keyEquivalent: ""))
-    self.appMenu.addItem(NSMenuItem(title: "Support the Project...", action: #selector(app.handleDonate(_:)), keyEquivalent: ""))
+    self.appMenu.addItem(NSMenuItem(title: "Support the project...", action: #selector(app.handleDonate(_:)), keyEquivalent: ""))
     self.appMenu.addItem(NSMenuItem.separator())
     self.appMenu.addItem(NSMenuItem(title: "Quit BetterDummy", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
     self.populateNewMenu(newMenu)

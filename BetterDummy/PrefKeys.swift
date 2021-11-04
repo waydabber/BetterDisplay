@@ -17,6 +17,7 @@ enum PrefKeys: String {
   case buildNumber
   case startAtLogin
   case reconnectAfterSleep
+  case disableTempSleep
   case SUEnableAutomaticChecks
   case isBetaChannel
 }
