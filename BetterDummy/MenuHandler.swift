@@ -16,7 +16,7 @@ class MenuHandler {
   let startAtLoginMenuItem = NSMenuItem(title: "Start at login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
   let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and reconnect on sleep", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
-  let disableTempSleepMenuItem = NSMenuItem(title: "Disable temporary screen sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
+  let disableTempSleepMenuItem = NSMenuItem(title: "Disable mirrored screen sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
 
   func setupMenu() {
     let newMenu = NSMenu()

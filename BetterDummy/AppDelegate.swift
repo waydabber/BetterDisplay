@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
     self.menu.automaticallyCheckForUpdatesMenuItem.state = self.prefs.bool(forKey: PrefKeys.SUEnableAutomaticChecks.rawValue) ? .on : .off
     self.menu.reconnectAfterSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) ? .on : .off
-    self.menu.disableTempSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.disableTempSleep .rawValue) ? .on : .off
+    self.menu.disableTempSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.disableTempSleep.rawValue) ? .on : .off
     guard self.prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
       return
     }
