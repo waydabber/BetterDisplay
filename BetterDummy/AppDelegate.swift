@@ -60,7 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKeys.buildNumber.rawValue)
     self.prefs.set(self.menu.startAtLoginMenuItem.state == .on, forKey: PrefKeys.startAtLogin.rawValue)
     self.prefs.set(self.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKeys.reconnectAfterSleep.rawValue)
-    self.prefs.set(self.menu.disableTempSleepMenuItem.state == .on, forKey: PrefKeys.disableTempSleep.rawValue)
+    self.prefs.set(self.menu.useTempSleepMenuItem.state == .off, forKey: PrefKeys.disableTempSleep.rawValue)
     self.prefs.set(self.dummies.count, forKey: PrefKeys.numOfDummyDisplays.rawValue)
     var i = 1
     for virtualDisplay in self.dummies {
@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
     self.menu.automaticallyCheckForUpdatesMenuItem.state = self.prefs.bool(forKey: PrefKeys.SUEnableAutomaticChecks.rawValue) ? .on : .off
     self.menu.reconnectAfterSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) ? .on : .off
-    self.menu.disableTempSleepMenuItem.state = self.prefs.bool(forKey: PrefKeys.disableTempSleep.rawValue) ? .on : .off
+    self.menu.useTempSleepMenuItem.state = !self.prefs.bool(forKey: PrefKeys.disableTempSleep.rawValue) ? .on : .off
     guard self.prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
       return
     }
@@ -199,8 +199,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleDonate(_: NSMenuItem) {
     let alert = NSAlert()
     alert.messageText = "Would you like to help out?"
-    alert.informativeText = "If you find this app useful, please consider supporting the project with a financial contribution. :)\n\nThank you!"
-    alert.addButton(withTitle: "Of course!")
+    alert.informativeText = "If you find this app useful, please consider supporting the project with a financial contribution. :)"
+    alert.addButton(withTitle: "Yes!")
     alert.addButton(withTitle: "Nope")
     if alert.runModal() == .alertFirstButtonReturn {
       if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
@@ -242,7 +242,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       return
     }
     self.isSleep = true
-    if self.dummies.count > 0, self.menu.disableTempSleepMenuItem.state == .off {
+    if self.dummies.count > 0, self.menu.useTempSleepMenuItem.state == .on {
       self.sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display.", type: .info)
       // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal even when a virtual screen is mirrored. This is a result of some trial & error and might not work on all systems. The problem itself is a macOS one as the same sleep issue can be reproduced with a mirrored Sidecar display (without BetterDummy).

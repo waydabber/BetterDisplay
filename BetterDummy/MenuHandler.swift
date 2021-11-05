@@ -9,14 +9,14 @@ import AppKit
 import os.log
 
 class MenuHandler {
-  var appMenu = NSMenu()
+  let appMenu = NSMenu()
   var statusBarItem: NSStatusItem!
   let manageMenu = NSMenu()
   let manageSubmenu = NSMenuItem(title: "Manage dummies", action: nil, keyEquivalent: "")
   let startAtLoginMenuItem = NSMenuItem(title: "Start at login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
   let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and reconnect on sleep", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
-  let disableTempSleepMenuItem = NSMenuItem(title: "Disable mirrored screen sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
+  let useTempSleepMenuItem = NSMenuItem(title: "Use mirrored dummy sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
 
   func setupMenu() {
     let newMenu = NSMenu()
@@ -28,8 +28,8 @@ class MenuHandler {
     settingsMenu.addItem(self.startAtLoginMenuItem)
     settingsMenu.addItem(self.automaticallyCheckForUpdatesMenuItem)
     settingsMenu.addItem(NSMenuItem.separator())
+    settingsMenu.addItem(self.useTempSleepMenuItem)
     settingsMenu.addItem(self.reconnectAfterSleepMenuItem)
-    settingsMenu.addItem(self.disableTempSleepMenuItem)
     let settingsSubmenu = NSMenuItem(title: "Settings", action: nil, keyEquivalent: "")
     settingsSubmenu.submenu = settingsMenu
     self.appMenu.addItem(newSubmenu)
@@ -57,6 +57,9 @@ class MenuHandler {
         let item = NSMenuItem(title: "\(dummyDefinition.description)", action: #selector(app.handleCreateDummy(_:)), keyEquivalent: "")
         item.tag = key
         newMenu.addItem(item)
+        if dummyDefinition.addSeparatorAfter {
+          newMenu.addItem(NSMenuItem.separator())
+        }
       }
     }
     os_log("New dummy menu populated.", type: .info)
