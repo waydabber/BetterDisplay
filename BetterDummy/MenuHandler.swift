@@ -115,8 +115,8 @@ class MenuHandler {
       connectItem = NSMenuItem(title: "Disconnect Dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(connectItem)
       connectItem.tag = dummy.number
-      self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
-      self.manageMenu.addItem(self.getAssociateSubmenuItem())
+      // self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
+      // self.manageMenu.addItem(self.getAssociateSubmenuItem())
     } else {
       var disconnectItem: NSMenuItem
       disconnectItem = NSMenuItem(title: "Connect Dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
