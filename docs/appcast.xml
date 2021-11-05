@@ -12,7 +12,7 @@
             <sparkle:version>525</sparkle:version>
             <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.0.7/BetterDummy-v1.0.8.zip" length="2212451" type="application/octet-stream" sparkle:edSignature="iSGXVhN5wQZP7gi6Z1lXEG1AblFauTVpMea0yWtozekvn9gMJRG2GPkSAA3qS7DIRgXcbZs2pSXndXHdUYJHCQ=="/>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.0.8/BetterDummy-v1.0.8.zip" length="2212451" type="application/octet-stream" sparkle:edSignature="iSGXVhN5wQZP7gi6Z1lXEG1AblFauTVpMea0yWtozekvn9gMJRG2GPkSAA3qS7DIRgXcbZs2pSXndXHdUYJHCQ=="/>
         </item>
         <item>
             <title>1.0.7</title>
