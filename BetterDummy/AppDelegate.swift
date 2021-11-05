@@ -44,14 +44,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if !self.prefs.bool(forKey: PrefKeys.appAlreadyLaunched.rawValue) {
       self.prefs.set(true, forKey: PrefKeys.appAlreadyLaunched.rawValue)
       self.prefs.set(true, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
+      os_log("Setting default preferences.", type: .info)
     }
   }
 
   func saveSettings() {
-    if let bundleID = Bundle.main.bundleIdentifier {
-      self.prefs.removePersistentDomain(forName: bundleID)
-      os_log("Preferences wiped.", type: .info)
-    }
     guard self.dummies.count > 0 else {
       return
     }
@@ -174,6 +171,28 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     SMLoginItemSetEnabled(identifier, sender.state == .on ? true : false)
   }
 
+  @available(macOS, deprecated: 10.10)
+  @objc func handleReset(_: NSMenuItem) {
+    let alert = NSAlert()
+    alert.alertStyle = .critical
+    alert.messageText = "Are sure you want to reset BetterDummy?"
+    alert.informativeText = "This restores the default settings and discards all dummies."
+    alert.addButton(withTitle: "Cancel")
+    alert.addButton(withTitle: "Reset")
+    if alert.runModal() == .alertSecondButtonReturn {
+      for key in self.dummies.keys {
+        self.dummies[key] = nil
+      }
+      os_log("Cleared dummies.", type: .info)
+      if let bundleID = Bundle.main.bundleIdentifier {
+        self.prefs.removePersistentDomain(forName: bundleID)
+      }
+      os_log("Preferences reset complete.", type: .info)
+      self.setDefaultPrefs()
+      self.restoreSettings()
+    }
+  }
+
   @objc func handleSimpleCheckMenu(_ sender: NSMenuItem) {
     sender.state = sender.state == .on ? .off : .on
     self.saveSettings()
@@ -213,12 +232,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     guard self.isSleep else {
       return
     }
+    self.sleepTemporaryDisplay = nil
+    os_log("Wake intercepted, removed temporary display if present.", type: .info)
     self.isSleep = false
-    if self.sleepTemporaryDisplay != nil {
-      os_log("Wake intercepted, removing temporary display.", type: .info)
-      self.sleepTemporaryDisplay = nil
-    }
-    if self.menu.reconnectAfterSleepMenuItem.state == .on {
+    if self.prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) {
       DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
         self.delayedWakeReconnect()
       }
@@ -242,10 +259,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       return
     }
     self.isSleep = true
-    if self.dummies.count > 0, self.menu.useTempSleepMenuItem.state == .on {
-      self.sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp"), name: "Dummy Temp", serialNum: 0)
+    if self.dummies.count > 0, !self.prefs.bool(forKey: PrefKeys.disableTempSleep.rawValue) {
+      self.sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display.", type: .info)
-      // Note: for some reason, if we create a transient virtual display on sleep, the sleep proceeds as normal even when a virtual screen is mirrored. This is a result of some trial & error and might not work on all systems. The problem itself is a macOS one as the same sleep issue can be reproduced with a mirrored Sidecar display (without BetterDummy).
     }
     if self.menu.reconnectAfterSleepMenuItem.state == .on {
       os_log("Disconnecting dummies on sleep.", type: .info)

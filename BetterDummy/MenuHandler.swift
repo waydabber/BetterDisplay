@@ -18,6 +18,7 @@ class MenuHandler {
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and reconnect on sleep", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let useTempSleepMenuItem = NSMenuItem(title: "Use mirrored dummy sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
 
+  @available(macOS, deprecated: 10.10)
   func setupMenu() {
     let newMenu = NSMenu()
     let newSubmenu = NSMenuItem(title: "Create new dummy", action: nil, keyEquivalent: "")
@@ -30,6 +31,8 @@ class MenuHandler {
     settingsMenu.addItem(NSMenuItem.separator())
     settingsMenu.addItem(self.useTempSleepMenuItem)
     settingsMenu.addItem(self.reconnectAfterSleepMenuItem)
+    settingsMenu.addItem(NSMenuItem.separator())
+    settingsMenu.addItem(NSMenuItem(title: "Reset BetterDummy", action: #selector(app.handleReset(_:)), keyEquivalent: ""))
     let settingsSubmenu = NSMenuItem(title: "Settings", action: nil, keyEquivalent: "")
     settingsSubmenu.submenu = settingsMenu
     self.appMenu.addItem(newSubmenu)
@@ -112,18 +115,18 @@ class MenuHandler {
     self.manageMenu.addItem(dummyHeaderItem)
     if dummy.isConnected {
       var connectItem: NSMenuItem
-      connectItem = NSMenuItem(title: "Disconnect Dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
+      connectItem = NSMenuItem(title: "Disconnect dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(connectItem)
       connectItem.tag = dummy.number
       // self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
       // self.manageMenu.addItem(self.getAssociateSubmenuItem())
     } else {
       var disconnectItem: NSMenuItem
-      disconnectItem = NSMenuItem(title: "Connect Dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
+      disconnectItem = NSMenuItem(title: "Connect dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(disconnectItem)
       disconnectItem.tag = dummy.number
     }
-    let deleteItem = NSMenuItem(title: "Discard Dummy", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
+    let deleteItem = NSMenuItem(title: "Discard dummy", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
     deleteItem.tag = dummy.number
     self.manageMenu.addItem(deleteItem)
     self.manageSubmenu.isHidden = false
