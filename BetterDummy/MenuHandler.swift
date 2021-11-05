@@ -68,7 +68,7 @@ class MenuHandler {
     os_log("New dummy menu populated.", type: .info)
   }
 
-  func repopulateManageMenu() {
+  func emptyManageMenu() {
     var items: [NSMenuItem] = []
     for i in 0 ..< self.manageMenu.items.count {
       items.append(self.manageMenu.items[i])
@@ -76,6 +76,10 @@ class MenuHandler {
     for item in items {
       self.manageMenu.removeItem(item)
     }
+  }
+
+  func repopulateManageMenu() {
+    self.emptyManageMenu()
     var first = true
     for key in app.dummies.keys.sorted(by: <) {
       if let dummy = app.dummies[key] {

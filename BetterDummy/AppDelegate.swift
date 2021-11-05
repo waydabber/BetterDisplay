@@ -183,6 +183,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       for key in self.dummies.keys {
         self.dummies[key] = nil
       }
+      self.menu.emptyManageMenu()
       os_log("Cleared dummies.", type: .info)
       if let bundleID = Bundle.main.bundleIdentifier {
         self.prefs.removePersistentDomain(forName: bundleID)
