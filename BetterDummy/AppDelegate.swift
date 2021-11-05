@@ -237,7 +237,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     os_log("Wake intercepted, removed temporary display if present.", type: .info)
     self.isSleep = false
     if self.prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
         self.delayedWakeReconnect()
       }
     }
