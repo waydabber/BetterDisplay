@@ -15,6 +15,7 @@ class MenuHandler {
   let manageSubmenu = NSMenuItem(title: "Manage dummies", action: nil, keyEquivalent: "")
   let startAtLoginMenuItem = NSMenuItem(title: "Start at login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
   let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
+  let enable16KMenuItem = NSMenuItem(title: "Enable up to 16K resolutions", action: #selector(app.handleEnable16K(_:)), keyEquivalent: "")
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and reconnect on sleep", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let useTempSleepMenuItem = NSMenuItem(title: "Use mirrored dummy sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
 
@@ -28,6 +29,8 @@ class MenuHandler {
     let settingsMenu = NSMenu()
     settingsMenu.addItem(self.startAtLoginMenuItem)
     settingsMenu.addItem(self.automaticallyCheckForUpdatesMenuItem)
+    settingsMenu.addItem(NSMenuItem.separator())
+    settingsMenu.addItem(self.enable16KMenuItem)
     settingsMenu.addItem(NSMenuItem.separator())
     settingsMenu.addItem(self.useTempSleepMenuItem)
     settingsMenu.addItem(self.reconnectAfterSleepMenuItem)

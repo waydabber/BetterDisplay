@@ -7,6 +7,7 @@
 
 import Cocoa
 
+let prefs = UserDefaults.standard
 var app: AppDelegate!
 
 autoreleasepool { () -> Void in

@@ -20,4 +20,5 @@ enum PrefKeys: String {
   case disableTempSleep
   case SUEnableAutomaticChecks
   case isBetaChannel
+  case enable16K
 }
