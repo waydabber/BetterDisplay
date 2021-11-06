@@ -8,7 +8,7 @@
 import AppKit
 import os.log
 
-class MenuHandler {
+class AppMenu {
   let appMenu = NSMenu()
   var statusBarItem: NSStatusItem!
   let manageMenu = NSMenu()
@@ -58,8 +58,8 @@ class MenuHandler {
   }
 
   func populateNewMenu(_ newMenu: NSMenu) {
-    for key in DummyDefinition.dummyDefinitions.keys.sorted() {
-      if let dummyDefinition = DummyDefinition.dummyDefinitions[key] {
+    for key in DummyManager.dummyDefinitions.keys.sorted() {
+      if let dummyDefinition = DummyManager.dummyDefinitions[key] {
         let item = NSMenuItem(title: "\(dummyDefinition.description)", action: #selector(app.handleCreateDummy(_:)), keyEquivalent: "")
         item.tag = key
         newMenu.addItem(item)
@@ -84,8 +84,8 @@ class MenuHandler {
   func repopulateManageMenu() {
     self.emptyManageMenu()
     var first = true
-    for key in app.dummies.keys.sorted(by: <) {
-      if let dummy = app.dummies[key] {
+    for key in DummyManager.dummies.keys.sorted(by: <) {
+      if let dummy = DummyManager.dummies[key] {
         if !first {
           self.manageMenu.addItem(NSMenuItem.separator())
         }

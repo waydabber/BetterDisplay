@@ -31,7 +31,7 @@ class Dummy {
   }
 
   func getDummyDefinition() -> DummyDefinition? {
-    DummyDefinition.dummyDefinitions[self.dummyDefinitionItem]
+    DummyManager.dummyDefinitions[self.dummyDefinitionItem]
   }
 
   func getName() -> String {
@@ -43,7 +43,7 @@ class Dummy {
   }
 
   func getMenuItemTitle() -> String {
-    if let dummyDefinition = DummyDefinition.dummyDefinitions[self.dummyDefinitionItem] {
+    if let dummyDefinition = DummyManager.dummyDefinitions[self.dummyDefinitionItem] {
       return "\(dummyDefinition.description.components(separatedBy: " ").first ?? "") - #\(String(format: "%02X", self.serialNum))"
     } else {
       return "Unknown"

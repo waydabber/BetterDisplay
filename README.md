@@ -98,6 +98,8 @@ Thank you for your help, it is really appreciated! :)
 
 You can join the (mostly self help) discussion on the new [BetterDummy discord channel](https://discord.gg/aKe5yCWXSp).
 
-## Special Thanks
+## Thanks
 
-Some of the original code was adapted from [FluffyDisplay](https://github.com/tml1024/FluffyDisplay). Thanks to [@tml1024](https://github.com/tml1024)!
+- [@tml1024](https://github.com/tml1024)! - FluffyDisplay + reused adapted CGVirtualDisplay headers reverse engineered by [@w0lfschild](https://github.com/w0lfschild)
+- [@JoniVR](https://github.com/JoniVR) - MonitorControl + sparkle scripts
+- [@the0neyouseek](https://github.com/the0neyouseek) - MonitorControl + sparkle scripts
