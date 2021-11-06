@@ -105,11 +105,14 @@ class MenuHandler {
     return resolutionSubmenu
   }
 
-  func getAssociateSubmenuItem() -> NSMenuItem {
+  func getAssociateSubmenuItem(_ dummy: Dummy) -> NSMenuItem {
     let associateMenu = NSMenu()
-    // TODO: Implement display association submenu
-    // _ = DisplayManager.getDisplayList()
-    associateMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
+    for display in DisplayManager.getAllDisplays() where !display.isDummy {
+      var displayItem: NSMenuItem
+      displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociate(_:)), keyEquivalent: "")
+      displayItem.tag = dummy.number // TODO: We need to devise a tag that signifies both the dummy and the display in question (like dummy.number*256+display.number)
+      associateMenu.addItem(displayItem)
+    }
     let associateSubmenu = NSMenuItem(title: "Associate Display", action: nil, keyEquivalent: "")
     associateSubmenu.submenu = associateMenu
     return associateSubmenu
@@ -126,7 +129,7 @@ class MenuHandler {
       self.manageMenu.addItem(connectItem)
       connectItem.tag = dummy.number
       // self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
-      self.manageMenu.addItem(self.getAssociateSubmenuItem())
+      self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy))
     } else {
       var disconnectItem: NSMenuItem
       disconnectItem = NSMenuItem(title: "Connect dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")

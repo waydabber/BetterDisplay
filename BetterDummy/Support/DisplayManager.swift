@@ -94,10 +94,10 @@ class DisplayManager {
   }
 
   static func isDummy(displayID: CGDirectDisplayID) -> Bool {
-    let rawName = DisplayManager.getDisplayRawNameByID(displayID: displayID)
+    let rawName = DisplayManager.getDisplayNameByID(displayID: displayID)
     var isDummy: Bool = false
     if rawName.lowercased().contains("dummy") {
-      os_log("NOTE: Display is a dummy!", type: .info)
+      os_log("Display is a dummy.", type: .info)
       isDummy = true
     }
     return isDummy
@@ -170,23 +170,9 @@ class DisplayManager {
     NSScreen.screens.first { $0.displayID == displayID }
   }
 
-  static func getDisplayRawNameByID(displayID: CGDirectDisplayID) -> String {
-    let defaultName: String = ""
-    if let dictionary = ((CoreDisplay_DisplayCreateInfoDictionary(displayID))?.takeRetainedValue() as NSDictionary?), let nameList = dictionary["DisplayProductName"] as? [String: String], let name = nameList["en_US"] ?? nameList.first?.value {
-      return name
-    }
-    return defaultName
-  }
-
   static func getDisplayNameByID(displayID: CGDirectDisplayID) -> String {
-    let defaultName: String = NSLocalizedString("Unknown", comment: "Unknown display name")
-    if let dictionary = ((CoreDisplay_DisplayCreateInfoDictionary(displayID))?.takeRetainedValue() as NSDictionary?), let nameList = dictionary["DisplayProductName"] as? [String: String], var name = nameList[Locale.current.identifier] ?? nameList["en_US"] ?? nameList.first?.value {
-      if CGDisplayIsInHWMirrorSet(displayID) != 0 || CGDisplayIsInMirrorSet(displayID) != 0 {
-        let mirroredDisplayID = CGDisplayMirrorsDisplay(displayID)
-        if mirroredDisplayID != 0, let dictionary = ((CoreDisplay_DisplayCreateInfoDictionary(mirroredDisplayID))?.takeRetainedValue() as NSDictionary?), let nameList = dictionary["DisplayProductName"] as? [String: String], let mirroredName = nameList[Locale.current.identifier] ?? nameList["en_US"] ?? nameList.first?.value {
-          name.append(" | " + mirroredName)
-        }
-      }
+    let defaultName: String = "Unknown"
+    if let dictionary = ((CoreDisplay_DisplayCreateInfoDictionary(displayID))?.takeRetainedValue() as NSDictionary?), let nameList = dictionary["DisplayProductName"] as? [String: String], let name = nameList["en_US"] ?? nameList.first?.value {
       return name
     }
     return defaultName
