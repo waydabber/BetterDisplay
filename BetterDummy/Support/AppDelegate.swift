@@ -84,24 +84,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
     for i in 1 ... prefs.integer(forKey: PrefKey.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKey.display.rawValue)\(i)") != nil {
       let dummy = Dummy(number: DummyManager.dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)"))
-      processCreatedDummy(dummy)
+      DummyManager.processCreatedDummy(dummy)
     }
+    self.menu.repopulateManageMenu()
   }
 
   // MARK: *** Handlers - Dummy management
-
-  func processCreatedDummy(_ dummy: Dummy) {
-    DummyManager.dummies[dummy.number] = dummy
-    DummyManager.dummyCounter += 1
-    self.menu.repopulateManageMenu()
-  }
 
   @objc func handleCreateDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       os_log("Connecting display tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
       let dummy = Dummy(number: DummyManager.dummyCounter, dummyDefinitionItem: menuItem.tag)
       if dummy.isConnected {
-        self.processCreatedDummy(dummy)
+        DummyManager.processCreatedDummy(dummy)
+        self.menu.repopulateManageMenu()
         app.saveSettings()
       } else {
         os_log("Discarding new dummy tagged as %{public}@", type: .info, "\(menuItem.tag)")

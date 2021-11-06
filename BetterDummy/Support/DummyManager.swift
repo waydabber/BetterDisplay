@@ -15,6 +15,11 @@ class DummyManager {
   static let refreshRates: [Double] = [60] // [24, 25, 30, 48, 50, 60, 90, 120] -- only 60Hz seems to work in practice
   static var dummyDefinitions: [Int: DummyDefinition] = [:]
 
+  static func processCreatedDummy(_ dummy: Dummy) {
+    self.dummies[dummy.number] = dummy
+    self.dummyCounter += 1
+  }
+
   static func updateDummyDefinitions() {
     self.dummyDefinitions = [
       10: DummyDefinition(16, 9, 2, self.refreshRates, "16:9 (HD/4K/5K/6K)", false),
