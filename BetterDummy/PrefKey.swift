@@ -1,11 +1,11 @@
 //
-//  PrefKeys.swift
+//  PrefKey.swift
 //  BetterDummy
 //
 //  Created by @waydabber
 //
 
-enum PrefKeys: String {
+enum PrefKey: String {
   // Dummy specific
   case display
   case serial

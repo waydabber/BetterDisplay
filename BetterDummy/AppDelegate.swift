@@ -41,9 +41,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   // MARK: *** Save and restore
 
   func setDefaultPrefs() {
-    if !prefs.bool(forKey: PrefKeys.appAlreadyLaunched.rawValue) {
-      prefs.set(true, forKey: PrefKeys.appAlreadyLaunched.rawValue)
-      prefs.set(true, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
+    if !prefs.bool(forKey: PrefKey.appAlreadyLaunched.rawValue) {
+      prefs.set(true, forKey: PrefKey.appAlreadyLaunched.rawValue)
+      prefs.set(true, forKey: PrefKey.SUEnableAutomaticChecks.rawValue)
       os_log("Setting default preferences.", type: .info)
     }
   }
@@ -52,19 +52,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     guard self.dummies.count > 0 else {
       return
     }
-    prefs.set(true, forKey: PrefKeys.appAlreadyLaunched.rawValue)
-    prefs.set(self.menu.automaticallyCheckForUpdatesMenuItem.state == .on, forKey: PrefKeys.SUEnableAutomaticChecks.rawValue)
-    prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKeys.buildNumber.rawValue)
-    prefs.set(self.menu.startAtLoginMenuItem.state == .on, forKey: PrefKeys.startAtLogin.rawValue)
-    prefs.set(self.menu.enable16KMenuItem.state == .on, forKey: PrefKeys.enable16K.rawValue)
-    prefs.set(self.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKeys.reconnectAfterSleep.rawValue)
-    prefs.set(self.menu.useTempSleepMenuItem.state == .off, forKey: PrefKeys.disableTempSleep.rawValue)
-    prefs.set(self.dummies.count, forKey: PrefKeys.numOfDummyDisplays.rawValue)
+    prefs.set(true, forKey: PrefKey.appAlreadyLaunched.rawValue)
+    prefs.set(self.menu.automaticallyCheckForUpdatesMenuItem.state == .on, forKey: PrefKey.SUEnableAutomaticChecks.rawValue)
+    prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKey.buildNumber.rawValue)
+    prefs.set(self.menu.startAtLoginMenuItem.state == .on, forKey: PrefKey.startAtLogin.rawValue)
+    prefs.set(self.menu.enable16KMenuItem.state == .on, forKey: PrefKey.enable16K.rawValue)
+    prefs.set(self.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKey.reconnectAfterSleep.rawValue)
+    prefs.set(self.menu.useTempSleepMenuItem.state == .off, forKey: PrefKey.disableTempSleep.rawValue)
+    prefs.set(self.dummies.count, forKey: PrefKey.numOfDummyDisplays.rawValue)
     var i = 1
     for dummy in self.dummies {
-      prefs.set(dummy.value.dummyDefinitionItem, forKey: "\(PrefKeys.display.rawValue)\(i)")
-      prefs.set(dummy.value.serialNum, forKey: "\(PrefKeys.serial.rawValue)\(i)")
-      prefs.set(dummy.value.isConnected, forKey: "\(PrefKeys.isConnected.rawValue)\(i)")
+      prefs.set(dummy.value.dummyDefinitionItem, forKey: "\(PrefKey.display.rawValue)\(i)")
+      prefs.set(dummy.value.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
+      prefs.set(dummy.value.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
       i += 1
     }
     os_log("Preferences stored.", type: .info)
@@ -75,15 +75,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     os_log("Restoring settings.", type: .info)
     let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
     self.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
-    self.menu.automaticallyCheckForUpdatesMenuItem.state = prefs.bool(forKey: PrefKeys.SUEnableAutomaticChecks.rawValue) ? .on : .off
-    self.menu.enable16KMenuItem.state = prefs.bool(forKey: PrefKeys.enable16K.rawValue) ? .on : .off
-    self.menu.reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) ? .on : .off
-    self.menu.useTempSleepMenuItem.state = !prefs.bool(forKey: PrefKeys.disableTempSleep.rawValue) ? .on : .off
+    self.menu.automaticallyCheckForUpdatesMenuItem.state = prefs.bool(forKey: PrefKey.SUEnableAutomaticChecks.rawValue) ? .on : .off
+    self.menu.enable16KMenuItem.state = prefs.bool(forKey: PrefKey.enable16K.rawValue) ? .on : .off
+    self.menu.reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) ? .on : .off
+    self.menu.useTempSleepMenuItem.state = !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) ? .on : .off
     guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
       return
     }
-    for i in 1 ... prefs.integer(forKey: PrefKeys.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKeys.display.rawValue)\(i)") != nil {
-      let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "\(PrefKeys.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKeys.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKeys.isConnected.rawValue)\(i)"))
+    for i in 1 ... prefs.integer(forKey: PrefKey.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKey.display.rawValue)\(i)") != nil {
+      let dummy = Dummy(number: dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)"))
       processCreatedDummy(dummy)
     }
   }
@@ -259,7 +259,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.sleepTemporaryDisplay = nil
     os_log("Wake intercepted, removed temporary display if present.", type: .info)
     self.isSleep = false
-    if prefs.bool(forKey: PrefKeys.reconnectAfterSleep.rawValue) {
+    if prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) {
       DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
         self.delayedWakeReconnect()
       }
@@ -283,7 +283,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       return
     }
     self.isSleep = true
-    if self.dummies.count > 0, !prefs.bool(forKey: PrefKeys.disableTempSleep.rawValue) {
+    if self.dummies.count > 0, !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) {
       self.sleepTemporaryDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display.", type: .info)
     }

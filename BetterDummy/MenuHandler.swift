@@ -108,7 +108,7 @@ class MenuHandler {
   func getAssociateSubmenuItem() -> NSMenuItem {
     let associateMenu = NSMenu()
     // TODO: Implement display association submenu
-    _ = DisplayHandler.getDisplayList()
+    // _ = DisplayManager.getDisplayList()
     associateMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
     let associateSubmenu = NSMenuItem(title: "Associate Display", action: nil, keyEquivalent: "")
     associateSubmenu.submenu = associateMenu
@@ -126,7 +126,7 @@ class MenuHandler {
       self.manageMenu.addItem(connectItem)
       connectItem.tag = dummy.number
       // self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
-      // self.manageMenu.addItem(self.getAssociateSubmenuItem())
+      self.manageMenu.addItem(self.getAssociateSubmenuItem())
     } else {
       var disconnectItem: NSMenuItem
       disconnectItem = NSMenuItem(title: "Connect dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")

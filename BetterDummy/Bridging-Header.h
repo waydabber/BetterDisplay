@@ -7,6 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/NSObject.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+extern CFDictionaryRef CoreDisplay_DisplayCreateInfoDictionary(CGDirectDisplayID);
 
 @interface CGVirtualDisplay : NSObject
 {

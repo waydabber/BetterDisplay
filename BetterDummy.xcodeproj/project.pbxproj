@@ -20,14 +20,17 @@
 		AA162C2D272C63DC003CFC89 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = AA162C2C272C63DC003CFC89 /* Sparkle */; };
 		AA162C2F272C69F5003CFC89 /* UpdaterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA162C2E272C69F5003CFC89 /* UpdaterDelegate.swift */; };
 		AA162C31272C73D8003CFC89 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = AA162C30272C73D8003CFC89 /* appcast.xml */; };
+		AA457C622736DC8A002018C1 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA457C612736DC8A002018C1 /* Display.swift */; };
+		AA457C642736E1B2002018C1 /* NSScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA457C632736E1B2002018C1 /* NSScreen+Extension.swift */; };
+		AA457C672736E2CB002018C1 /* CoreDisplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA457C662736E2CB002018C1 /* CoreDisplay.framework */; };
 		AA59EAB127288E4E00B7C833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB027288E4E00B7C833 /* AppDelegate.swift */; };
 		AA59EAB327288EF700B7C833 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB227288EF700B7C833 /* Dummy.swift */; };
 		AA59EAB52728911900B7C833 /* DummyDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB42728911900B7C833 /* DummyDefinition.swift */; };
 		AA8AA0AE272552E600F66F8A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA8AA0AD272552E600F66F8A /* README.md */; };
-		AA964A8C2729C67F0064F7C7 /* PrefKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA964A8B2729C67F0064F7C7 /* PrefKeys.swift */; };
+		AA964A8C2729C67F0064F7C7 /* PrefKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA964A8B2729C67F0064F7C7 /* PrefKey.swift */; };
 		AAA2D676272BF77200F71CF0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2D675272BF77200F71CF0 /* main.swift */; };
 		AAA2D68A272BFC7E00F71CF0 /* BetterDummyHelper.app in Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = AAA2D673272BF77200F71CF0 /* BetterDummyHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AACBDF4827308B060087638C /* DisplayHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACBDF4727308B060087638C /* DisplayHandler.swift */; };
+		AACBDF4827308B060087638C /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACBDF4727308B060087638C /* DisplayManager.swift */; };
 		BEB26A432530B2F600744C86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB26A422530B2F600744C86 /* main.swift */; };
 		BEB26A472530B2F700744C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB26A462530B2F700744C86 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -59,16 +62,19 @@
 		AA162C29272C5306003CFC89 /* MenuHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
 		AA162C2E272C69F5003CFC89 /* UpdaterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterDelegate.swift; sourceTree = "<group>"; };
 		AA162C30272C73D8003CFC89 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		AA457C612736DC8A002018C1 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		AA457C632736E1B2002018C1 /* NSScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen+Extension.swift"; sourceTree = "<group>"; };
+		AA457C662736E2CB002018C1 /* CoreDisplay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDisplay.framework; path = ../../../../../../System/Library/Frameworks/CoreDisplay.framework; sourceTree = "<group>"; };
 		AA59EAB027288E4E00B7C833 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA59EAB227288EF700B7C833 /* Dummy.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		AA59EAB42728911900B7C833 /* DummyDefinition.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DummyDefinition.swift; sourceTree = "<group>"; };
 		AA8AA0AD272552E600F66F8A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		AA964A8B2729C67F0064F7C7 /* PrefKeys.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PrefKeys.swift; sourceTree = "<group>"; };
+		AA964A8B2729C67F0064F7C7 /* PrefKey.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PrefKey.swift; sourceTree = "<group>"; };
 		AAA2D673272BF77200F71CF0 /* BetterDummyHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterDummyHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA2D675272BF77200F71CF0 /* main.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AAA2D67E272BF77300F71CF0 /* BetterDummyHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetterDummyHelper.entitlements; sourceTree = "<group>"; };
 		AAA2D682272BF86800F71CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		AACBDF4727308B060087638C /* DisplayHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayHandler.swift; sourceTree = "<group>"; };
+		AACBDF4727308B060087638C /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
 		BEB26A3F2530B2F600744C86 /* BetterDummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterDummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB26A422530B2F600744C86 /* main.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BEB26A462530B2F700744C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA457C672736E2CB002018C1 /* CoreDisplay.framework in Frameworks */,
 				AA162C2D272C63DC003CFC89 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,16 +140,58 @@
 				BEB26A462530B2F700744C86 /* Assets.xcassets */,
 				BEB26A4E2530B2F700744C86 /* Info.plist */,
 				BEB26A772531163C00744C86 /* Bridging-Header.h */,
+				AA457C682736E2E5002018C1 /* Model */,
+				AA457C692736E2F9002018C1 /* Support */,
+				AA457C6A2736E30F002018C1 /* Enums */,
+				AA457C6B2736E321002018C1 /* Extensions */,
 				BEB26A422530B2F600744C86 /* main.swift */,
 				AA59EAB027288E4E00B7C833 /* AppDelegate.swift */,
 				AA162C29272C5306003CFC89 /* MenuHandler.swift */,
-				AACBDF4727308B060087638C /* DisplayHandler.swift */,
+				AA457C612736DC8A002018C1 /* Display.swift */,
+				AACBDF4727308B060087638C /* DisplayManager.swift */,
 				AA59EAB227288EF700B7C833 /* Dummy.swift */,
 				AA59EAB42728911900B7C833 /* DummyDefinition.swift */,
-				AA964A8B2729C67F0064F7C7 /* PrefKeys.swift */,
+				AA964A8B2729C67F0064F7C7 /* PrefKey.swift */,
 				AA162C2E272C69F5003CFC89 /* UpdaterDelegate.swift */,
+				AA457C632736E1B2002018C1 /* NSScreen+Extension.swift */,
 			);
 			path = BetterDummy;
+			sourceTree = "<group>";
+		};
+		AA457C652736E2AD002018C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA457C662736E2CB002018C1 /* CoreDisplay.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA457C682736E2E5002018C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA457C692736E2F9002018C1 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		AA457C6A2736E30F002018C1 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		AA457C6B2736E321002018C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AAA10D87272F054C008B342D /* images */ = {
@@ -165,6 +214,7 @@
 		BEB26A362530B2F600744C86 = {
 			isa = PBXGroup;
 			children = (
+				AA457C652736E2AD002018C1 /* Frameworks */,
 				AA162C18272C344C003CFC89 /* docs */,
 				AA8AA0AD272552E600F66F8A /* README.md */,
 				AA162C25272C3B5B003CFC89 /* LICENSE */,
@@ -372,8 +422,10 @@
 			files = (
 				AA59EAB127288E4E00B7C833 /* AppDelegate.swift in Sources */,
 				AA162C2A272C5306003CFC89 /* MenuHandler.swift in Sources */,
-				AA964A8C2729C67F0064F7C7 /* PrefKeys.swift in Sources */,
-				AACBDF4827308B060087638C /* DisplayHandler.swift in Sources */,
+				AA457C642736E1B2002018C1 /* NSScreen+Extension.swift in Sources */,
+				AA964A8C2729C67F0064F7C7 /* PrefKey.swift in Sources */,
+				AACBDF4827308B060087638C /* DisplayManager.swift in Sources */,
+				AA457C622736DC8A002018C1 /* Display.swift in Sources */,
 				AA59EAB52728911900B7C833 /* DummyDefinition.swift in Sources */,
 				AA59EAB327288EF700B7C833 /* Dummy.swift in Sources */,
 				BEB26A432530B2F600744C86 /* main.swift in Sources */,
@@ -582,7 +634,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = "1.0.10-beta";
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -614,7 +666,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = "1.0.10-beta";
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

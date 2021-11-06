@@ -11,7 +11,7 @@ import os.log
 
 class Dummy {
   let number: Int
-  var display: CGVirtualDisplay?
+  var virtualDisplay: CGVirtualDisplay?
   let dummyDefinitionItem: Int
   let serialNum: UInt32
   var isConnected: Bool = false
@@ -59,13 +59,13 @@ class Dummy {
       return false
     }
     self.isSleepDisconnected = false
-    if self.display != nil || self.isConnected {
+    if self.virtualDisplay != nil || self.isConnected {
       os_log("Attempted to connect the already connected display %{public}@. Interpreting as connect cycle.", type: .info, "\(self.getName())")
       self.disconnect()
     }
     let name: String = self.getName()
     if let dummyDefinition = self.getDummyDefinition(), let display = Dummy.createVirtualDisplay(dummyDefinition, name: name, serialNum: self.serialNum) {
-      self.display = display
+      self.virtualDisplay = display
       self.isConnected = true
       os_log("Display %{public}@ successfully connected", type: .info, "\(name)")
       return true
@@ -93,7 +93,7 @@ class Dummy {
   }
 
   func disconnect(sleepDisconnect: Bool = false) {
-    self.display = nil
+    self.virtualDisplay = nil
     self.isConnected = false
     self.isSleepDisconnected = sleepDisconnect
     os_log("Disconnected virtual display: %{public}@", type: .info, "\(self.getName())")
