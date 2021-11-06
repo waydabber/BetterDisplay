@@ -10,10 +10,9 @@ import CoreGraphics
 import os.log
 
 class DisplayManager {
-  public static let shared = DisplayManager()
-  var displays: [Display] = []
+  static var displays: [Display] = []
 
-  func configureDisplays() {
+  static func configureDisplays() {
     self.clearDisplays()
     var onlineDisplayIDs = [CGDirectDisplayID](repeating: 0, count: 16)
     var displayCount: UInt32 = 0
@@ -34,7 +33,7 @@ class DisplayManager {
     }
   }
 
-  func normalizedName(_ name: String) -> String {
+  static func normalizedName(_ name: String) -> String {
     var normalizedName = name.replacingOccurrences(of: "(", with: "")
     normalizedName = normalizedName.replacingOccurrences(of: ")", with: "")
     normalizedName = normalizedName.replacingOccurrences(of: " ", with: "")
@@ -44,15 +43,15 @@ class DisplayManager {
     return normalizedName
   }
 
-  func getAllDisplays() -> [Display] {
+  static func getAllDisplays() -> [Display] {
     self.displays
   }
 
-  func getBuiltInDisplay() -> Display? {
+  static func getBuiltInDisplay() -> Display? {
     self.displays.first { CGDisplayIsBuiltin($0.identifier) != 0 }
   }
 
-  func getCurrentDisplay(byFocus: Bool = false) -> Display? {
+  static func getCurrentDisplay(byFocus: Bool = false) -> Display? {
     if byFocus {
       guard let mainDisplayID = NSScreen.main?.displayID else {
         return nil
@@ -68,15 +67,15 @@ class DisplayManager {
     }
   }
 
-  func addDisplay(display: Display) {
+  static func addDisplay(display: Display) {
     self.displays.append(display)
   }
 
-  func clearDisplays() {
+  static func clearDisplays() {
     self.displays = []
   }
 
-  func addDisplayCounterSuffixes() {
+  static func addDisplayCounterSuffixes() {
     var nameDisplays: [String: [Display]] = [:]
     for display in self.displays {
       if nameDisplays[display.name] != nil {

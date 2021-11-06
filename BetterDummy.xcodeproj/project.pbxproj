@@ -162,6 +162,7 @@
 			children = (
 				AA457C612736DC8A002018C1 /* Display.swift */,
 				AA59EAB227288EF700B7C833 /* Dummy.swift */,
+				AA59EAB42728911900B7C833 /* DummyDefinition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,7 +172,6 @@
 			children = (
 				AA59EAB027288E4E00B7C833 /* AppDelegate.swift */,
 				AA162C29272C5306003CFC89 /* MenuHandler.swift */,
-				AA59EAB42728911900B7C833 /* DummyDefinition.swift */,
 				AACBDF4727308B060087638C /* DisplayManager.swift */,
 				AA162C2E272C69F5003CFC89 /* UpdaterDelegate.swift */,
 			);

@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   var dummies = [Int: Dummy]()
   var sleepTemporaryDisplay: CGVirtualDisplay?
   var isSleep: Bool = false
+  var reconfigureID: Int = 0 // dispatched reconfigure command ID
   let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
   let menu = MenuHandler()
 
@@ -29,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.restoreSettings()
     self.setupNotifications()
     self.updaterController.startUpdater()
+    self.configure()
   }
 
   func setupNotifications() {
@@ -36,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleSleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
+    CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.displayReconfigured() }, nil)
   }
 
   // MARK: *** Save and restore
@@ -88,7 +91,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  // MARK: *** Handlers
+  // MARK: *** Handlers - Dummy management
 
   func processCreatedDummy(_ dummy: Dummy) {
     self.dummies[dummy.number] = dummy
@@ -166,6 +169,33 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       }
     }
   }
+
+  // MARK: *** Handlers - Displays
+
+  @objc func displayReconfigured() {
+    self.reconfigureID += 1
+    os_log("Bumping reconfigureID to %{public}@", type: .info, String(self.reconfigureID))
+    if !self.isSleep {
+      let dispatchedReconfigureID = self.reconfigureID
+      os_log("Display to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        self.configure(dispatchedReconfigureID: dispatchedReconfigureID)
+      }
+    }
+  }
+
+  func configure(dispatchedReconfigureID: Int = 0) {
+    guard !self.isSleep, dispatchedReconfigureID == self.reconfigureID else {
+      return
+    }
+    os_log("Request for configuration with reconfigreID %{public}@", type: .info, String(dispatchedReconfigureID))
+    self.reconfigureID = 0
+    DisplayManager.configureDisplays()
+    DisplayManager.addDisplayCounterSuffixes()
+    self.menu.repopulateManageMenu()
+  }
+
+  // MARK: *** Handlers - Settings and others
 
   @objc func handleStartAtLogin(_ sender: NSMenuItem) {
     sender.state = sender.state == .on ? .off : .on
@@ -252,6 +282,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
+  // MARK: *** Handlers - Sleep and wake
+
+  func delayedWakeReconnect() {
+    guard !self.isSleep else {
+      return
+    }
+    os_log("Delayed reconnecting dummies after wake.", type: .info)
+    for i in self.dummies.keys {
+      if let dummy = dummies[i], !dummy.isConnected {
+        _ = dummy.connect(sleepConnect: true)
+      }
+    }
+  }
+
   @objc func handleWakeNotification() {
     guard self.isSleep else {
       return
@@ -262,18 +306,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) {
       DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
         self.delayedWakeReconnect()
-      }
-    }
-  }
-
-  func delayedWakeReconnect() {
-    guard !self.isSleep else {
-      return
-    }
-    os_log("Delayed reconnecting dummies after wake.", type: .info)
-    for i in self.dummies.keys {
-      if let dummy = dummies[i], !dummy.isConnected {
-        _ = dummy.connect(sleepConnect: true)
       }
     }
   }
