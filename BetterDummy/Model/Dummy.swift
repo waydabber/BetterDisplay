@@ -15,6 +15,7 @@ class Dummy {
   var isConnected: Bool = false
   var isSleepDisconnected: Bool = false
   var associatedDisplayPrefId: String = ""
+  var associatedDisplayName: String = ""
 
   init(dummyDefinition: DummyDefinition, serialNum: UInt32 = 0, doConnect: Bool = true) {
     var storedSerialNum: UInt32 = serialNum
@@ -75,12 +76,14 @@ class Dummy {
     // MARK: Placeholder
   }
 
-  func associateDisplay(displayPrefId: String) {
-    self.associatedDisplayPrefId = displayPrefId
+  func associateDisplay(display: Display) {
+    self.associatedDisplayPrefId = display.prefsId
+    self.associatedDisplayName = display.name
   }
 
   func disassociateDisplay() {
     self.associatedDisplayPrefId = ""
+    self.associatedDisplayName = ""
   }
 
   func hasAssociatedDisplay() -> Bool {
@@ -89,6 +92,10 @@ class Dummy {
 
   func getAssociatedDisplayPrefId() -> String? {
     self.associatedDisplayPrefId
+  }
+
+  func getAssociatedDisplayName() -> String? {
+    self.associatedDisplayName
   }
 
   func disconnect(sleepDisconnect: Bool = false) {

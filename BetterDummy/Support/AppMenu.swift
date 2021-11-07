@@ -121,15 +121,20 @@ class AppMenu {
     return resolutionSubmenu
   }
 
-  func getAssociateSubmenuItem(_: Dummy, _ number: Int) -> NSMenuItem {
+  func getAssociateSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
     let associateMenu = NSMenu()
     for displayNumber in DisplayManager.displays.keys {
       if let display = DisplayManager.displays[displayNumber], !display.isDummy {
-        var displayItem: NSMenuItem
-        displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
+        let displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
         displayItem.tag = 256 * displayNumber + number // This is a composite tag identifying both the display and the dummy number
         associateMenu.addItem(displayItem)
       }
+    }
+    if dummy.hasAssociatedDisplay() {
+      associateMenu.addItem(NSMenuItem.separator())
+      let disassociateItem = NSMenuItem(title: "Disassociate", action: #selector(app.handleDisassociateDummy(_:)), keyEquivalent: "")
+      disassociateItem.tag = number
+      associateMenu.addItem(disassociateItem)
     }
     let associateSubmenu = NSMenuItem(title: "Associate with display", action: nil, keyEquivalent: "")
     associateSubmenu.submenu = associateMenu

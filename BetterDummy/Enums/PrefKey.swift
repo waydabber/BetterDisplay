@@ -9,6 +9,8 @@ enum PrefKey: String {
   case display
   case serial
   case isConnected
+  case associatedDisplayPrefId
+  case associatedDisplayName
 
   // General
   case appAlreadyLaunched
