@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func handleCreateDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
-      os_log("Connecting display tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
+      os_log("Connecting dummy tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
       let dummy = Dummy(number: DummyManager.dummyCounter, dummyDefinitionItem: menuItem.tag)
       if dummy.isConnected {
         DummyManager.processCreatedDummy(dummy)
@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func handleDisconnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
-      os_log("Disconnecting display tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+      os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
       DummyManager.dummies[menuItem.tag]?.disconnect()
       self.menu.repopulateManageMenu()
       Util.saveSettings()
@@ -56,15 +56,57 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func handleConnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
-      os_log("Connecting display tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+      os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
       if let dummy = DummyManager.dummies[menuItem.tag] {
         if !dummy.connect() {
           let alert = NSAlert()
           alert.alertStyle = .warning
-          alert.messageText = "Unable to Connect Dummy"
-          alert.informativeText = "An error occured during connecting Dummy."
+          alert.messageText = "Unable to connect dummy"
+          alert.informativeText = "An error occured during connecting the dummy."
           alert.runModal()
         }
+      }
+      self.menu.repopulateManageMenu()
+      Util.saveSettings()
+    }
+  }
+
+  @objc func handleDiscardDummy(_ sender: AnyObject?) {
+    if let menuItem = sender as? NSMenuItem {
+      let alert = NSAlert()
+      alert.alertStyle = .critical
+      alert.messageText = "Do you want to discard dummy?"
+      alert.informativeText = "If you would like to use a dummy later, use disconnect so macOS display configuration data is preserved."
+      alert.addButton(withTitle: "Cancel")
+      alert.addButton(withTitle: "Discard")
+      if alert.runModal() == .alertSecondButtonReturn {
+        os_log("Removing dummy tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
+        DummyManager.dummies[menuItem.tag] = nil
+        self.menu.repopulateManageMenu()
+        Util.saveSettings()
+      }
+    }
+  }
+
+  @objc func handleConnectAllDummies(_: AnyObject?) {
+    // TODO: Implement connect all dummies
+  }
+
+  @objc func handleDisconnectAllDummies(_: AnyObject?) {
+    // TODO: Implement disconnect all dummies
+  }
+
+  @objc func handleDiscardAllDummies(_: AnyObject?) {
+    let alert = NSAlert()
+    alert.alertStyle = .critical
+    alert.messageText = "Do you want to discard all dummies?"
+    alert.informativeText = "If you would like to use the dummies later, use disconnect so macOS display configuration data is preserved."
+    alert.addButton(withTitle: "Cancel")
+    alert.addButton(withTitle: "Discard")
+    if alert.runModal() == .alertSecondButtonReturn {
+      os_log("Removing dummies.", type: .info)
+      for dummy in DummyManager.dummies.values {
+        dummy.disconnect()
       }
       self.menu.repopulateManageMenu()
       Util.saveSettings()
@@ -83,26 +125,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     // TODO: Implement handle display disassociation
   }
 
-  @objc func handleDiscardDummy(_ sender: AnyObject?) {
-    if let menuItem = sender as? NSMenuItem {
-      let alert = NSAlert()
-      alert.alertStyle = .critical
-      alert.messageText = "Do you want to discard Dummy?"
-      alert.informativeText = "If you would like to use a Dummy later, use disconnect so macOS display configuration data is preserved."
-      alert.addButton(withTitle: "Cancel")
-      alert.addButton(withTitle: "Discard")
-      if alert.runModal() == .alertSecondButtonReturn {
-        os_log("Removing display tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
-        DummyManager.dummies[menuItem.tag] = nil
-        self.menu.repopulateManageMenu()
-        Util.saveSettings()
-        if DummyManager.dummies.count == 0 {
-          self.menu.manageSubmenu.isHidden = true
-        }
-      }
-    }
-  }
-
   // MARK: *** Handlers - Display reconfiguration
 
   @objc func handleDisplayReconfiguration(dispatchedReconfigureID: Int = 0, force: Bool = false) {
@@ -111,13 +133,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       os_log("Bumping reconfigureID to %{public}@", type: .info, String(self.reconfigureID))
       if !self.isSleep {
         let dispatchedReconfigureID = self.reconfigureID
-        os_log("Display to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
+        os_log("Displays to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
           self.handleDisplayReconfiguration(dispatchedReconfigureID: dispatchedReconfigureID)
         }
       }
     } else if dispatchedReconfigureID == self.reconfigureID || force {
-      os_log("Request for configuration with reconfigreID %{public}@", type: .info, String(dispatchedReconfigureID))
+      os_log("Request for display configuration with reconfigreID %{public}@", type: .info, String(dispatchedReconfigureID))
       self.reconfigureID = 0
       DisplayManager.configureDisplays()
       DisplayManager.addDisplayCounterSuffixes()

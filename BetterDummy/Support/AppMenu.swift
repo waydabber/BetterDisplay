@@ -92,6 +92,19 @@ class AppMenu {
         first = false
       }
     }
+    self.addStandardManageMenuOptions()
+    if DummyManager.dummies.count == 0 {
+      self.manageSubmenu.isHidden = true
+    }
+  }
+
+  func addStandardManageMenuOptions() {
+    if DummyManager.dummyCounter > 1 {
+      self.manageMenu.addItem(NSMenuItem.separator())
+      self.manageMenu.addItem(NSMenuItem(title: "Connect all dummies", action: #selector(app.handleConnectAllDummies(_:)), keyEquivalent: ""))
+      self.manageMenu.addItem(NSMenuItem(title: "Disconnect all dummies", action: #selector(app.handleDisconnectAllDummies(_:)), keyEquivalent: ""))
+      self.manageMenu.addItem(NSMenuItem(title: "Discard all dummies", action: #selector(app.handleDiscardAllDummies(_:)), keyEquivalent: ""))
+    }
   }
 
   func getResolutionSubmenuItem(_ dummy: Dummy) -> NSMenuItem {
