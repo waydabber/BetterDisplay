@@ -32,6 +32,7 @@
 		AAA2D676272BF77200F71CF0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2D675272BF77200F71CF0 /* main.swift */; };
 		AAA2D68A272BFC7E00F71CF0 /* BetterDummyHelper.app in Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = AAA2D673272BF77200F71CF0 /* BetterDummyHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AACBDF4827308B060087638C /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACBDF4727308B060087638C /* DisplayManager.swift */; };
+		AADCC3722737F1C500392B4B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADCC3712737F1C500392B4B /* Util.swift */; };
 		BEB26A432530B2F600744C86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB26A422530B2F600744C86 /* main.swift */; };
 		BEB26A472530B2F700744C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB26A462530B2F700744C86 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		AAA2D67E272BF77300F71CF0 /* BetterDummyHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetterDummyHelper.entitlements; sourceTree = "<group>"; };
 		AAA2D682272BF86800F71CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AACBDF4727308B060087638C /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
+		AADCC3712737F1C500392B4B /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		BEB26A3F2530B2F600744C86 /* BetterDummy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterDummy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB26A422530B2F600744C86 /* main.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BEB26A462530B2F700744C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				AA59EAB027288E4E00B7C833 /* AppDelegate.swift */,
+				AADCC3712737F1C500392B4B /* Util.swift */,
 				AA162C29272C5306003CFC89 /* AppMenu.swift */,
 				AACBDF4727308B060087638C /* DisplayManager.swift */,
 				AA457C6C2736FBDA002018C1 /* DummyManager.swift */,
@@ -434,6 +437,7 @@
 				AA59EAB327288EF700B7C833 /* Dummy.swift in Sources */,
 				BEB26A432530B2F600744C86 /* main.swift in Sources */,
 				AA162C2F272C69F5003CFC89 /* UpdaterDelegate.swift in Sources */,
+				AADCC3722737F1C500392B4B /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

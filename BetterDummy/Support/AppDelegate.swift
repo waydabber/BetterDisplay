@@ -22,70 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     app = self
     DummyManager.updateDummyDefinitions()
     self.menu.setupMenu()
-    self.setDefaultPrefs()
-    self.restoreSettings()
-    self.setupNotifications()
+    Util.setDefaultPrefs()
+    Util.restoreSettings()
+    Util.setupNotifications()
     self.updaterController.startUpdater()
-    self.configure()
-  }
-
-  func setupNotifications() {
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleSleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleSleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
-    CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.displayReconfigured() }, nil)
-  }
-
-  // MARK: *** Save and restore
-
-  func setDefaultPrefs() {
-    if !prefs.bool(forKey: PrefKey.appAlreadyLaunched.rawValue) {
-      prefs.set(true, forKey: PrefKey.appAlreadyLaunched.rawValue)
-      prefs.set(true, forKey: PrefKey.SUEnableAutomaticChecks.rawValue)
-      os_log("Setting default preferences.", type: .info)
-    }
-  }
-
-  func saveSettings() {
-    guard DummyManager.dummies.count > 0 else {
-      return
-    }
-    prefs.set(true, forKey: PrefKey.appAlreadyLaunched.rawValue)
-    prefs.set(self.menu.automaticallyCheckForUpdatesMenuItem.state == .on, forKey: PrefKey.SUEnableAutomaticChecks.rawValue)
-    prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKey.buildNumber.rawValue)
-    prefs.set(self.menu.startAtLoginMenuItem.state == .on, forKey: PrefKey.startAtLogin.rawValue)
-    prefs.set(self.menu.enable16KMenuItem.state == .on, forKey: PrefKey.enable16K.rawValue)
-    prefs.set(self.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKey.reconnectAfterSleep.rawValue)
-    prefs.set(self.menu.useTempSleepMenuItem.state == .off, forKey: PrefKey.disableTempSleep.rawValue)
-    prefs.set(DummyManager.dummies.count, forKey: PrefKey.numOfDummyDisplays.rawValue)
-    var i = 1
-    for dummy in DummyManager.dummies {
-      prefs.set(dummy.value.dummyDefinitionItem, forKey: "\(PrefKey.display.rawValue)\(i)")
-      prefs.set(dummy.value.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
-      prefs.set(dummy.value.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
-      i += 1
-    }
-    os_log("Preferences stored.", type: .info)
-  }
-
-  @available(macOS, deprecated: 10.10)
-  func restoreSettings() {
-    os_log("Restoring settings.", type: .info)
-    let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
-    self.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
-    self.menu.automaticallyCheckForUpdatesMenuItem.state = prefs.bool(forKey: PrefKey.SUEnableAutomaticChecks.rawValue) ? .on : .off
-    self.menu.enable16KMenuItem.state = prefs.bool(forKey: PrefKey.enable16K.rawValue) ? .on : .off
-    self.menu.reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) ? .on : .off
-    self.menu.useTempSleepMenuItem.state = !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) ? .on : .off
-    guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {
-      return
-    }
-    for i in 1 ... prefs.integer(forKey: PrefKey.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKey.display.rawValue)\(i)") != nil {
-      let dummy = Dummy(number: DummyManager.dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)"))
-      DummyManager.processCreatedDummy(dummy)
-    }
-    self.menu.repopulateManageMenu()
+    self.handleDisplayReconfiguration(force: true)
   }
 
   // MARK: *** Handlers - Dummy management
@@ -97,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if dummy.isConnected {
         DummyManager.processCreatedDummy(dummy)
         self.menu.repopulateManageMenu()
-        app.saveSettings()
+        Util.saveSettings()
       } else {
         os_log("Discarding new dummy tagged as %{public}@", type: .info, "\(menuItem.tag)")
       }
@@ -109,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       os_log("Disconnecting display tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
       DummyManager.dummies[menuItem.tag]?.disconnect()
       self.menu.repopulateManageMenu()
-      self.saveSettings()
+      Util.saveSettings()
     }
   }
 
@@ -126,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         }
       }
       self.menu.repopulateManageMenu()
-      self.saveSettings()
+      Util.saveSettings()
     }
   }
 
@@ -154,7 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         os_log("Removing display tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
         DummyManager.dummies[menuItem.tag] = nil
         self.menu.repopulateManageMenu()
-        self.saveSettings()
+        Util.saveSettings()
         if DummyManager.dummies.count == 0 {
           self.menu.manageSubmenu.isHidden = true
         }
@@ -162,29 +103,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  // MARK: *** Handlers - Displays
+  // MARK: *** Handlers - Display reconfiguration
 
-  @objc func displayReconfigured() {
-    self.reconfigureID += 1
-    os_log("Bumping reconfigureID to %{public}@", type: .info, String(self.reconfigureID))
-    if !self.isSleep {
-      let dispatchedReconfigureID = self.reconfigureID
-      os_log("Display to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
-      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-        self.configure(dispatchedReconfigureID: dispatchedReconfigureID)
+  @objc func handleDisplayReconfiguration(dispatchedReconfigureID: Int = 0, force: Bool = false) {
+    if !force, dispatchedReconfigureID == 0 || self.isSleep {
+      self.reconfigureID += 1
+      os_log("Bumping reconfigureID to %{public}@", type: .info, String(self.reconfigureID))
+      if !self.isSleep {
+        let dispatchedReconfigureID = self.reconfigureID
+        os_log("Display to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+          self.handleDisplayReconfiguration(dispatchedReconfigureID: dispatchedReconfigureID)
+        }
       }
+    } else if dispatchedReconfigureID == self.reconfigureID || force {
+      os_log("Request for configuration with reconfigreID %{public}@", type: .info, String(dispatchedReconfigureID))
+      self.reconfigureID = 0
+      DisplayManager.configureDisplays()
+      DisplayManager.addDisplayCounterSuffixes()
+      self.menu.repopulateManageMenu()
     }
-  }
-
-  func configure(dispatchedReconfigureID: Int = 0) {
-    guard !self.isSleep, dispatchedReconfigureID == self.reconfigureID else {
-      return
-    }
-    os_log("Request for configuration with reconfigreID %{public}@", type: .info, String(dispatchedReconfigureID))
-    self.reconfigureID = 0
-    DisplayManager.configureDisplays()
-    DisplayManager.addDisplayCounterSuffixes()
-    self.menu.repopulateManageMenu()
   }
 
   // MARK: *** Handlers - Settings and others
@@ -213,14 +151,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         prefs.removePersistentDomain(forName: bundleID)
       }
       os_log("Preferences reset complete.", type: .info)
-      self.setDefaultPrefs()
-      self.restoreSettings()
+      Util.setDefaultPrefs()
+      Util.restoreSettings()
     }
   }
 
   @objc func handleSimpleCheckMenu(_ sender: NSMenuItem) {
     sender.state = sender.state == .on ? .off : .on
-    self.saveSettings()
+    Util.saveSettings()
   }
 
   @objc func handleEnable16K(_ sender: NSMenuItem) {
@@ -236,7 +174,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       }
     }
     sender.state = sender.state == .on ? .off : .on
-    self.saveSettings()
+    Util.saveSettings()
     DummyManager.updateDummyDefinitions()
     for dummy in DummyManager.dummies.values where dummy.isConnected {
       dummy.disconnect()
@@ -276,18 +214,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   // MARK: *** Handlers - Sleep and wake
 
-  func delayedWakeReconnect() {
-    guard !self.isSleep else {
-      return
-    }
-    os_log("Delayed reconnecting dummies after wake.", type: .info)
-    for i in DummyManager.dummies.keys {
-      if let dummy = DummyManager.dummies[i], !dummy.isConnected {
-        _ = dummy.connect(sleepConnect: true)
-      }
-    }
-  }
-
   @objc func handleWakeNotification() {
     guard self.isSleep else {
       return
@@ -297,7 +223,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.isSleep = false
     if prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) {
       DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-        self.delayedWakeReconnect()
+        if !self.isSleep {
+          os_log("Delayed reconnecting dummies after wake.", type: .info)
+          for i in DummyManager.dummies.keys {
+            if let dummy = DummyManager.dummies[i], !dummy.isConnected {
+              _ = dummy.connect(sleepConnect: true)
+            }
+          }
+        }
       }
     }
   }
