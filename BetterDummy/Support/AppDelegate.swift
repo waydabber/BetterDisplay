@@ -91,7 +91,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleConnectAllDummies(_: AnyObject?) {
     os_log("Connecting all dummies.", type: .info)
     for dummy in DummyManager.dummies.values {
-      dummy.connect()
+      _ = dummy.connect()
     }
     self.menu.repopulateManageMenu()
     Util.saveSettings()
