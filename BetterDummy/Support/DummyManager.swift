@@ -18,6 +18,15 @@ class DummyManager {
     self.dummies[dummy.number] = dummy
     self.dummyCounter += 1
   }
+  
+  static func createDummy(dummyDefinition: DummyDefinition) -> Dummy? {
+    // TODO: Implement create dummy and use this everywhere in the app
+    return nil
+  }
+  
+  static func destroyDummy(dummy: Dummy) {
+    // TODO: Implement destroy dummy and use this everywhere in the app
+  }
 
   static func updateDummyDefinitions() {
     self.dummyDefinitions = [

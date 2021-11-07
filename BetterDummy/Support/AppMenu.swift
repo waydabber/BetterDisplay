@@ -103,6 +103,7 @@ class AppMenu {
       self.manageMenu.addItem(NSMenuItem.separator())
       self.manageMenu.addItem(NSMenuItem(title: "Connect all dummies", action: #selector(app.handleConnectAllDummies(_:)), keyEquivalent: ""))
       self.manageMenu.addItem(NSMenuItem(title: "Disconnect all dummies", action: #selector(app.handleDisconnectAllDummies(_:)), keyEquivalent: ""))
+      self.manageMenu.addItem(NSMenuItem(title: "Disassociate all dummies", action: #selector(app.handleDisassociateAllDummies(_:)), keyEquivalent: ""))
       self.manageMenu.addItem(NSMenuItem(title: "Discard all dummies", action: #selector(app.handleDiscardAllDummies(_:)), keyEquivalent: ""))
     }
   }
@@ -121,7 +122,7 @@ class AppMenu {
     let associateMenu = NSMenu()
     for display in DisplayManager.getAllDisplays() where !display.isDummy {
       var displayItem: NSMenuItem
-      displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociate(_:)), keyEquivalent: "")
+      displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
       displayItem.tag = dummy.number // TODO: We need to devise a tag that signifies both the dummy and the display in question (like dummy.number*256+display.number)
       associateMenu.addItem(displayItem)
     }

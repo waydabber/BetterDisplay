@@ -72,4 +72,18 @@ class Display: Equatable {
       return false
     }
   }
+
+  func getResolutionList() -> [Any] {
+    // MARK: Placeholder
+
+    []
+  }
+
+  func changeResolution(resolution _: Any) {
+    // MARK: Placeholder
+  }
+
+  func getCurrentResolution(resolution _: Any) {
+    // MARK: Placeholder
+  }
 }

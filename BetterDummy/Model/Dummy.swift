@@ -75,12 +75,17 @@ class Dummy {
   }
 
   func getResolutionList() -> [Any] {
-    // TODO: Implement getting resolution list
+    // MARK: Placeholder
+
     []
   }
 
   func changeResolution(resolution _: Any) {
-    // TODO: Implement resolution change
+    // MARK: Placeholder
+  }
+
+  func getCurrentResolution(resolution _: Any) {
+    // MARK: Placeholder
   }
 
   func associate(display _: CGDirectDisplayID) {

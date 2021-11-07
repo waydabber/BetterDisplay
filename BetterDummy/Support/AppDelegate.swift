@@ -88,6 +88,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
+  @objc func handleAssociateDummy(_: AnyObject?) {
+    // TODO: Implement handle display association
+  }
+
+  @objc func handleDisassociateDummy(_: AnyObject?) {
+    // TODO: Implement handle display disassociation
+  }
+
   @objc func handleConnectAllDummies(_: AnyObject?) {
     os_log("Connecting all dummies.", type: .info)
     for dummy in DummyManager.dummies.values {
@@ -123,16 +131,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func handleResolution(_: AnyObject?) {
-    // TODO: Implement handle resolution change
-  }
-
-  @objc func handleAssociate(_: AnyObject?) {
-    // TODO: Implement handle display association
-  }
-
-  @objc func handleDisassociate(_: AnyObject?) {
+  @objc func handleDisassociateAllDummies(_: AnyObject?) {
     // TODO: Implement handle display disassociation
+  }
+
+  @objc func handleDummyResolution(_: AnyObject?) {
+    // MARK: Placeholder
+  }
+
+  @objc func handleDisplayResolution(_: AnyObject?) {
+    // MARK: Placeholder
   }
 
   // MARK: *** Handlers - Display reconfiguration
