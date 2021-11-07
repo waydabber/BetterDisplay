@@ -31,7 +31,7 @@ class Util {
   }
 
   static func saveSettings() {
-    guard DummyManager.dummies.count > 0 else {
+    guard DummyManager.getNumOfDummies() > 0 else {
       return
     }
     prefs.set(true, forKey: PrefKey.appAlreadyLaunched.rawValue)
@@ -41,9 +41,9 @@ class Util {
     prefs.set(app.menu.enable16KMenuItem.state == .on, forKey: PrefKey.enable16K.rawValue)
     prefs.set(app.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKey.reconnectAfterSleep.rawValue)
     prefs.set(app.menu.useTempSleepMenuItem.state == .off, forKey: PrefKey.disableTempSleep.rawValue)
-    prefs.set(DummyManager.dummies.count, forKey: PrefKey.numOfDummyDisplays.rawValue)
+    prefs.set(DummyManager.getNumOfDummies(), forKey: PrefKey.numOfDummyDisplays.rawValue)
     var i = 1
-    for definedDummy in DummyManager.dummies.values {
+    for definedDummy in DummyManager.definedDummies.values {
       prefs.set(definedDummy.definitionId, forKey: "\(PrefKey.display.rawValue)\(i)")
       prefs.set(definedDummy.dummy.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
       prefs.set(definedDummy.dummy.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")

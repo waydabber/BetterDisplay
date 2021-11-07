@@ -83,7 +83,7 @@ class AppMenu {
   func repopulateManageMenu() {
     self.emptyManageMenu()
     var first = true
-    for key in DummyManager.dummies.keys.sorted(by: <) {
+    for key in DummyManager.definedDummies.keys.sorted(by: <) {
       if let dummy = DummyManager.getDummyByNumber(key) {
         if !first {
           self.manageMenu.addItem(NSMenuItem.separator())
@@ -93,7 +93,7 @@ class AppMenu {
       }
     }
     self.addStandardManageMenuOptions()
-    if DummyManager.dummies.count == 0 {
+    if DummyManager.getNumOfDummies() == 0 {
       self.manageSubmenu.isHidden = true
     }
   }

@@ -12,7 +12,7 @@ class DummyManager {
     var definitionId: Int?
   }
 
-  static var dummies: [Int: DefinedDummy] = [:]
+  static var definedDummies: [Int: DefinedDummy] = [:]
   static var dummyCounter: Int = 0 // This is an ever increasing temporary number, does not reflect the actual number of dummies.
   static var sleepTempVirtualDisplay: CGVirtualDisplay?
   static var dummyDefinitions: [Int: DummyDefinition] = [:]
@@ -27,28 +27,38 @@ class DummyManager {
   static func createDummy(_ dummyDefinition: DummyDefinition, dummyDefinitionId: Int? = nil, serialNum: UInt32 = 0, doConnect: Bool = true) -> Int {
     let dummy = Dummy(dummyDefinition: dummyDefinition, serialNum: serialNum, doConnect: doConnect)
     self.dummyCounter += 1
-    self.dummies[self.dummyCounter] = DefinedDummy(dummy: dummy, definitionId: dummyDefinitionId)
+    self.definedDummies[self.dummyCounter] = DefinedDummy(dummy: dummy, definitionId: dummyDefinitionId)
     return self.dummyCounter
   }
 
   static func getDummies() -> [Dummy] {
     var dummyList: [Dummy] = []
-    for definedDummy in self.dummies.values {
+    for definedDummy in self.definedDummies.values {
       dummyList.append(definedDummy.dummy)
     }
     return dummyList
   }
 
+  static func discardDummyByNumber(_ number: Int) {
+    self.definedDummies[number] = nil
+  }
+
+  static func discardAllDummies() {
+    for key in self.definedDummies.keys {
+      self.definedDummies[key] = nil
+    }
+  }
+
   static func getDummyByNumber(_ number: Int) -> Dummy? {
-    self.dummies[number]?.dummy
+    self.definedDummies[number]?.dummy
   }
 
   static func getDefinitionIdByNumber(_ number: Int) -> Int? {
-    self.dummies[number]?.definitionId
+    self.definedDummies[number]?.definitionId
   }
 
   static func getNumOfDummies() -> Int {
-    self.dummies.count
+    self.definedDummies.count
   }
 
   static func updateDummyDefinitions() {

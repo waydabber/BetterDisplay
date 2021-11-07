@@ -84,7 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.addButton(withTitle: "Discard")
       if alert.runModal() == .alertSecondButtonReturn {
         os_log("Removing dummy tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
-        DummyManager.dummies[menuItem.tag] = nil
+        DummyManager.discardDummyByNumber(menuItem.tag)
         self.menu.repopulateManageMenu()
         Util.saveSettings()
       }
@@ -126,9 +126,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     alert.addButton(withTitle: "Discard")
     if alert.runModal() == .alertSecondButtonReturn {
       os_log("Removing dummies.", type: .info)
-      for key in DummyManager.dummies.keys {
-        DummyManager.dummies[key] = nil
-      }
+      DummyManager.discardAllDummies()
       self.menu.repopulateManageMenu()
       Util.saveSettings()
     }
@@ -185,9 +183,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     alert.addButton(withTitle: "Cancel")
     alert.addButton(withTitle: "Reset")
     if alert.runModal() == .alertSecondButtonReturn {
-      for key in DummyManager.dummies.keys {
-        DummyManager.dummies[key] = nil
-      }
+      DummyManager.discardAllDummies()
       DummyManager.dummyCounter = 0
       self.menu.emptyManageMenu()
       os_log("Cleared dummies.", type: .info)
@@ -282,7 +278,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       return
     }
     self.isSleep = true
-    if DummyManager.dummies.count > 0, !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) {
+    if DummyManager.getNumOfDummies() > 0, !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) {
       DummyManager.sleepTempVirtualDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display.", type: .info)
     }
