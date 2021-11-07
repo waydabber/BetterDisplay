@@ -57,14 +57,15 @@ Some other possible uses:
 
 9. Select the desired mode.
 
+The app saves the dummy display configuration and automatically restores it upon next restart.
+
 Notes:
 
 - The tutorial was compiled on an Apple Silicon Mac running macOS Monterey (the app works on Intel and Big Sur as well - steps are slightly differnt, see [this article](https://macfinder.co.uk/blog/how-to-mirror-specific-displays-in-os-x-mirror-some-but-not-all-of-your-monitors-on-an-apple-system/) on how to customize mirroring on Big Sur).
 - For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
 - You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
-- You might want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
-
-The app saves the dummy display configuration and automatically restores it upon next restart.
+- You may want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
+- Please note that the app cannot "magically" increase the number of pixels on your display and is unable to make a 1080p display look like a 4K display (the only benefit for a 1080p display is better clarity in zooming or the ability to make high resolution screenshots).
 
 ## Installation
 
@@ -78,6 +79,18 @@ The app saves the dummy display configuration and automatically restores it upon
 - The app should be compatible with all M1 class machines running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
 - The app is also compatible with Intel and macOS Big Sur (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
 - The app is compatible with headless mode as well (this was tested on Intel).
+
+## Known issues
+
+There are some issues which are related to limitations/issues in macOS itself:
+
+- High refresh displays (refresh rates above 60Hz) are not supported.
+- Only SDR content is supported.
+- Mirroring any content to the internal display of the 2021 MacBook Pros will force the mirror under the notch.
+- Due to a bug present in the current macOS versions, mirroring virtual displays (Sidecar, BetterDummy, etc) might cause sleep issues on some configurations. The app has some workarounds for this issue but these might not work on all configurations.
+- Due to a bug present in the current macOS versions, swiping or keyboard shortcuts to switch spaces do not work on extended (secondary) mirror sets that involve virtual displays.
+
+Some of these issues affect physical dummy mirrors as well.
 
 ## How can I help?
 
