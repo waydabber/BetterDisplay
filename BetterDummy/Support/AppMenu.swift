@@ -123,13 +123,15 @@ class AppMenu {
 
   func getAssociateSubmenuItem(_: Dummy, _ number: Int) -> NSMenuItem {
     let associateMenu = NSMenu()
-    for display in DisplayManager.getAllDisplays() where !display.isDummy {
-      var displayItem: NSMenuItem
-      displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
-      displayItem.tag = number // TODO: We need to devise a tag that signifies both the dummy and the display in question (like dummy.number*256+display.number)
-      associateMenu.addItem(displayItem)
+    for displayNumber in DisplayManager.displays.keys {
+      if let display = DisplayManager.displays[displayNumber], !display.isDummy {
+        var displayItem: NSMenuItem
+        displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
+        displayItem.tag = 256 * displayNumber + number // This is a composite tag identifying both the display and the dummy number
+        associateMenu.addItem(displayItem)
+      }
     }
-    let associateSubmenu = NSMenuItem(title: "Associate Display", action: nil, keyEquivalent: "")
+    let associateSubmenu = NSMenuItem(title: "Associate with display", action: nil, keyEquivalent: "")
     associateSubmenu.submenu = associateMenu
     return associateSubmenu
   }
@@ -145,13 +147,13 @@ class AppMenu {
       self.manageMenu.addItem(connectItem)
       connectItem.tag = number
       self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy, number))
-      self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
     } else {
       var disconnectItem: NSMenuItem
       disconnectItem = NSMenuItem(title: "Connect dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(disconnectItem)
       disconnectItem.tag = number
     }
+    self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
     let deleteItem = NSMenuItem(title: "Discard dummy", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
     deleteItem.tag = number
     self.manageMenu.addItem(deleteItem)

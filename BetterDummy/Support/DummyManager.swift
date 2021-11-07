@@ -32,11 +32,11 @@ class DummyManager {
   }
 
   static func getDummies() -> [Dummy] {
-    var dummyList: [Dummy] = []
+    var dummies: [Dummy] = []
     for definedDummy in self.definedDummies.values {
-      dummyList.append(definedDummy.dummy)
+      dummies.append(definedDummy.dummy)
     }
-    return dummyList
+    return dummies
   }
 
   static func discardDummyByNumber(_ number: Int) {
@@ -44,9 +44,8 @@ class DummyManager {
   }
 
   static func discardAllDummies() {
-    for key in self.definedDummies.keys {
-      self.definedDummies[key] = nil
-    }
+    self.definedDummies = [:]
+    self.dummyCounter = 0
   }
 
   static func getDummyByNumber(_ number: Int) -> Dummy? {

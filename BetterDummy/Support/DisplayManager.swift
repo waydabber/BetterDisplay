@@ -9,7 +9,8 @@ import CoreGraphics
 import os.log
 
 class DisplayManager {
-  static var displays: [Display] = []
+  static var displays: [Int: Display] = [:]
+  static var displayCounter: Int = 0 // This is an ever increasing temporary number, does not reflect the actual number of displays.
 
   static func configureDisplays() {
     self.clearDisplays()
@@ -30,6 +31,7 @@ class DisplayManager {
       os_log("Display found - %{public}@", type: .info, "ID: \(display.identifier), Name: \(display.name) (Vendor: \(display.vendorNumber ?? 0), Model: \(display.modelNumber ?? 0))")
       self.addDisplay(display: display)
     }
+    self.addDisplayCounterSuffixes()
   }
 
   static func normalizedName(_ name: String) -> String {
@@ -42,12 +44,16 @@ class DisplayManager {
     return normalizedName
   }
 
-  static func getAllDisplays() -> [Display] {
-    self.displays
+  static func getDisplays() -> [Display] {
+    var displays: [Display] = []
+    for display in self.displays.values {
+      displays.append(display)
+    }
+    return displays
   }
 
   static func getBuiltInDisplay() -> Display? {
-    self.displays.first { CGDisplayIsBuiltin($0.identifier) != 0 }
+    self.displays.values.first { CGDisplayIsBuiltin($0.identifier) != 0 }
   }
 
   static func getCurrentDisplay(byFocus: Bool = false) -> Display? {
@@ -55,28 +61,30 @@ class DisplayManager {
       guard let mainDisplayID = NSScreen.main?.displayID else {
         return nil
       }
-      return self.displays.first { $0.identifier == mainDisplayID }
+      return self.displays.values.first { $0.identifier == mainDisplayID }
     } else {
       let mouseLocation = NSEvent.mouseLocation
       let screens = NSScreen.screens
       if let screenWithMouse = (screens.first { NSMouseInRect(mouseLocation, $0.frame, false) }) {
-        return self.displays.first { $0.identifier == screenWithMouse.displayID }
+        return self.displays.values.first { $0.identifier == screenWithMouse.displayID }
       }
       return nil
     }
   }
 
   static func addDisplay(display: Display) {
-    self.displays.append(display)
+    self.displayCounter += 1
+    self.displays[self.displayCounter] = display
   }
 
   static func clearDisplays() {
-    self.displays = []
+    self.displays = [:]
+    self.displayCounter = 0
   }
 
   static func addDisplayCounterSuffixes() {
     var nameDisplays: [String: [Display]] = [:]
-    for display in self.displays {
+    for display in self.displays.values {
       if nameDisplays[display.name] != nil {
         nameDisplays[display.name]?.append(display)
       } else {
