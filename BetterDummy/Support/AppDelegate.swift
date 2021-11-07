@@ -89,11 +89,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleConnectAllDummies(_: AnyObject?) {
-    // TODO: Implement connect all dummies
+    os_log("Connecting all dummies.", type: .info)
+    for dummy in DummyManager.dummies.values {
+      dummy.connect()
+    }
+    self.menu.repopulateManageMenu()
+    Util.saveSettings()
   }
 
   @objc func handleDisconnectAllDummies(_: AnyObject?) {
-    // TODO: Implement disconnect all dummies
+    os_log("Disconnecting all dummies.", type: .info)
+    for dummy in DummyManager.dummies.values {
+      dummy.disconnect()
+    }
+    self.menu.repopulateManageMenu()
+    Util.saveSettings()
   }
 
   @objc func handleDiscardAllDummies(_: AnyObject?) {
@@ -105,8 +115,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     alert.addButton(withTitle: "Discard")
     if alert.runModal() == .alertSecondButtonReturn {
       os_log("Removing dummies.", type: .info)
-      for dummy in DummyManager.dummies.values {
-        dummy.disconnect()
+      for key in DummyManager.dummies.keys {
+        DummyManager.dummies[key] = nil
       }
       self.menu.repopulateManageMenu()
       Util.saveSettings()
