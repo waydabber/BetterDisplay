@@ -1,5 +1,4 @@
 //
-//  main.swift
 //  BetterDummy
 //
 //  Created by @waydabber

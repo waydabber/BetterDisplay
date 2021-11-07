@@ -1,5 +1,4 @@
 //
-//  DummyDefinition.swift
 //  BetterDummy
 //
 //  Created by @waydabber

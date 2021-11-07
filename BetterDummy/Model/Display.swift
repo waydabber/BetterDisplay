@@ -1,5 +1,4 @@
 //
-//  DisplayHandler.swift
 //  BetterDummy
 //
 //  Created by @waydabber

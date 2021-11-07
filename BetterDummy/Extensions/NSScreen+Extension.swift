@@ -1,5 +1,4 @@
 //
-//  UpdaterDelegate.swift
 //  BetterDummy
 //
 //  Created by @waydabber
