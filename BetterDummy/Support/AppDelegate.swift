@@ -91,12 +91,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func handleAssociateDummy(_: AnyObject?) {
+  @objc func handleAssociateDummy(_ sender: NSMenuItem) {
     // TODO: Implement handle display association
+    _ = sender.tag
   }
 
-  @objc func handleDisassociateDummy(_: AnyObject?) {
+  @objc func handleDisassociateDummy(_ sender: NSMenuItem) {
     // TODO: Implement handle display disassociation
+    _ = sender.tag
   }
 
   @objc func handleConnectAllDummies(_: AnyObject?) {

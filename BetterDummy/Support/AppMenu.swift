@@ -122,6 +122,7 @@ class AppMenu {
   }
 
   func getAssociateSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
+    // TODO: Unfinished
     let associateMenu = NSMenu()
     for displayNumber in DisplayManager.displays.keys {
       if let display = DisplayManager.displays[displayNumber], !display.isDummy {
