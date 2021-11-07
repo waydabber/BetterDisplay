@@ -34,13 +34,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleCreateDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       os_log("Connecting dummy tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
-      let dummy = Dummy(number: DummyManager.dummyCounter, dummyDefinitionItem: menuItem.tag)
-      if dummy.isConnected {
-        DummyManager.processCreatedDummy(dummy)
+      if let number = DummyManager.createDummyByDefinitionId(menuItem.tag) {
         self.menu.repopulateManageMenu()
         Util.saveSettings()
+        if let dummy = DummyManager.getDummyByNumber(number), dummy.isConnected {
+          os_log("Dummy successfully created and connected.", type: .info)
+        } else {
+          os_log("There seems to be a problem with the created dummy.", type: .info)
+        }
       } else {
-        os_log("Discarding new dummy tagged as %{public}@", type: .info, "\(menuItem.tag)")
+        os_log("Could not create dummy using menu item tag number.", type: .info)
       }
     }
   }
@@ -48,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleDisconnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-      DummyManager.dummies[menuItem.tag]?.disconnect()
+      DummyManager.getDummyByNumber(menuItem.tag)?.disconnect()
       self.menu.repopulateManageMenu()
       Util.saveSettings()
     }
@@ -57,7 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleConnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-      if let dummy = DummyManager.dummies[menuItem.tag] {
+      if let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
         if !dummy.connect() {
           let alert = NSAlert()
           alert.alertStyle = .warning
@@ -98,7 +101,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func handleConnectAllDummies(_: AnyObject?) {
     os_log("Connecting all dummies.", type: .info)
-    for dummy in DummyManager.dummies.values {
+    for dummy in DummyManager.getDummies() {
       _ = dummy.connect()
     }
     self.menu.repopulateManageMenu()
@@ -107,7 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func handleDisconnectAllDummies(_: AnyObject?) {
     os_log("Disconnecting all dummies.", type: .info)
-    for dummy in DummyManager.dummies.values {
+    for dummy in DummyManager.getDummies() {
       dummy.disconnect()
     }
     self.menu.repopulateManageMenu()
@@ -185,6 +188,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       for key in DummyManager.dummies.keys {
         DummyManager.dummies[key] = nil
       }
+      DummyManager.dummyCounter = 0
       self.menu.emptyManageMenu()
       os_log("Cleared dummies.", type: .info)
       if let bundleID = Bundle.main.bundleIdentifier {
@@ -216,7 +220,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     sender.state = sender.state == .on ? .off : .on
     Util.saveSettings()
     DummyManager.updateDummyDefinitions()
-    for dummy in DummyManager.dummies.values where dummy.isConnected {
+    for dummy in DummyManager.getDummies() where dummy.isConnected {
       dummy.disconnect()
       _ = dummy.connect()
     }
@@ -258,17 +262,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     guard self.isSleep else {
       return
     }
-    DummyManager.sleepTempDummy = nil
+    DummyManager.sleepTempVirtualDisplay = nil
     os_log("Wake intercepted, removed temporary display if present.", type: .info)
     self.isSleep = false
     if prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) {
       DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
         if !self.isSleep {
           os_log("Delayed reconnecting dummies after wake.", type: .info)
-          for i in DummyManager.dummies.keys {
-            if let dummy = DummyManager.dummies[i], !dummy.isConnected {
-              _ = dummy.connect(sleepConnect: true)
-            }
+          for dummy in DummyManager.getDummies() where !dummy.isConnected {
+            _ = dummy.connect(sleepConnect: true)
           }
         }
       }
@@ -281,15 +283,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
     self.isSleep = true
     if DummyManager.dummies.count > 0, !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) {
-      DummyManager.sleepTempDummy = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
+      DummyManager.sleepTempVirtualDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display.", type: .info)
     }
     if self.menu.reconnectAfterSleepMenuItem.state == .on {
       os_log("Disconnecting dummies on sleep.", type: .info)
-      for i in DummyManager.dummies.keys {
-        if let dummy = DummyManager.dummies[i], dummy.isConnected {
-          dummy.disconnect(sleepDisconnect: true)
-        }
+      for dummy in DummyManager.getDummies() where dummy.isConnected {
+        dummy.disconnect(sleepDisconnect: true)
       }
     }
   }

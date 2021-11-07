@@ -9,44 +9,30 @@ import Foundation
 import os.log
 
 class Dummy {
-  let number: Int
   var virtualDisplay: CGVirtualDisplay?
-  let dummyDefinitionItem: Int
+  let dummyDefinition: DummyDefinition
   let serialNum: UInt32
   var isConnected: Bool = false
   var isSleepDisconnected: Bool = false
 
-  init(number: Int, dummyDefinitionItem: Int, serialNum: UInt32 = 0, doConnect: Bool = true) {
+  init(dummyDefinition: DummyDefinition, serialNum: UInt32 = 0, doConnect: Bool = true) {
     var storedSerialNum: UInt32 = serialNum
     if storedSerialNum == 0 {
       storedSerialNum = UInt32.random(in: 0 ... UInt32.max)
     }
-    self.number = number
-    self.dummyDefinitionItem = dummyDefinitionItem
+    self.dummyDefinition = dummyDefinition
     self.serialNum = storedSerialNum
     if doConnect {
       _ = self.connect()
     }
   }
 
-  func getDummyDefinition() -> DummyDefinition? {
-    DummyManager.dummyDefinitions[self.dummyDefinitionItem]
-  }
-
   func getName() -> String {
-    if let dummyDefinition = self.getDummyDefinition() {
-      return "Dummy \(dummyDefinition.description.components(separatedBy: " ").first ?? dummyDefinition.description)"
-    } else {
-      return ""
-    }
+    "Dummy \(self.dummyDefinition.description.components(separatedBy: " ").first ?? self.dummyDefinition.description)"
   }
 
   func getMenuItemTitle() -> String {
-    if let dummyDefinition = DummyManager.dummyDefinitions[self.dummyDefinitionItem] {
-      return "\(dummyDefinition.description.components(separatedBy: " ").first ?? "") - #\(String(format: "%02X", self.serialNum))"
-    } else {
-      return "Unknown"
-    }
+    "\(self.dummyDefinition.description.components(separatedBy: " ").first ?? "") - #\(String(format: "%02X", self.serialNum))"
   }
 
   func getSerialNumber() -> String {
@@ -63,8 +49,8 @@ class Dummy {
       self.disconnect()
     }
     let name: String = self.getName()
-    if let dummyDefinition = self.getDummyDefinition(), let display = Dummy.createVirtualDisplay(dummyDefinition, name: name, serialNum: self.serialNum) {
-      self.virtualDisplay = display
+    if let virtualDisplay = Dummy.createVirtualDisplay(self.dummyDefinition, name: name, serialNum: self.serialNum) {
+      self.virtualDisplay = virtualDisplay
       self.isConnected = true
       os_log("Display %{public}@ successfully connected", type: .info, "\(name)")
       return true
@@ -88,11 +74,11 @@ class Dummy {
     // MARK: Placeholder
   }
 
-  func associate(display _: CGDirectDisplayID) {
+  func associateDisplay(display _: Display) {
     // TODO: Implement display association
   }
 
-  func disassociate(display _: CGDirectDisplayID) {
+  func disassociateDisplay() {
     // TODO: Implement display disassociation
   }
 

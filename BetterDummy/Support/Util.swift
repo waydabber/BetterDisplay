@@ -43,10 +43,10 @@ class Util {
     prefs.set(app.menu.useTempSleepMenuItem.state == .off, forKey: PrefKey.disableTempSleep.rawValue)
     prefs.set(DummyManager.dummies.count, forKey: PrefKey.numOfDummyDisplays.rawValue)
     var i = 1
-    for dummy in DummyManager.dummies {
-      prefs.set(dummy.value.dummyDefinitionItem, forKey: "\(PrefKey.display.rawValue)\(i)")
-      prefs.set(dummy.value.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
-      prefs.set(dummy.value.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
+    for definedDummy in DummyManager.dummies.values {
+      prefs.set(definedDummy.definitionId, forKey: "\(PrefKey.display.rawValue)\(i)")
+      prefs.set(definedDummy.dummy.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
+      prefs.set(definedDummy.dummy.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
       i += 1
     }
     os_log("Preferences stored.", type: .info)
@@ -65,8 +65,7 @@ class Util {
       return
     }
     for i in 1 ... prefs.integer(forKey: PrefKey.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKey.display.rawValue)\(i)") != nil {
-      let dummy = Dummy(number: DummyManager.dummyCounter, dummyDefinitionItem: prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)"))
-      DummyManager.processCreatedDummy(dummy)
+      _ = DummyManager.createDummyByDefinitionId(prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)"))
     }
     app.menu.repopulateManageMenu()
   }

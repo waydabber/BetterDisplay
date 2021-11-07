@@ -4,13 +4,13 @@
 //  Created by @waydabber
 //
 
-class DummyDefinition {
+struct DummyDefinition {
   let aspectWidth, aspectHeight, multiplierStep, minMultiplier, maxMultiplier: Int
   let refreshRates: [Double]
   let description: String
   let addSeparatorAfter: Bool
 
-  convenience init(_ aspectWidth: Int, _ aspectHeight: Int, _ step: Int, _ refreshRates: [Double], _ description: String, _ addSeparatorAfter: Bool = false) {
+  init(_ aspectWidth: Int, _ aspectHeight: Int, _ step: Int, _ refreshRates: [Double], _ description: String, _ addSeparatorAfter: Bool = false) {
     let minX: Int = 720
     let minY: Int = 720
     let maxX: Int = prefs.bool(forKey: PrefKey.enable16K.rawValue) ? 16384 : 8192

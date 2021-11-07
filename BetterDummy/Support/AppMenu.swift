@@ -84,11 +84,11 @@ class AppMenu {
     self.emptyManageMenu()
     var first = true
     for key in DummyManager.dummies.keys.sorted(by: <) {
-      if let dummy = DummyManager.dummies[key] {
+      if let dummy = DummyManager.getDummyByNumber(key) {
         if !first {
           self.manageMenu.addItem(NSMenuItem.separator())
         }
-        self.addDummyToManageMenu(dummy)
+        self.addDummyToManageMenu(dummy, key)
         first = false
       }
     }
@@ -108,22 +108,25 @@ class AppMenu {
     }
   }
 
-  func getResolutionSubmenuItem(_ dummy: Dummy) -> NSMenuItem {
+  func getResolutionSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
     let resolutionMenu = NSMenu()
-    // TODO: Implement resolution submenu
-    _ = dummy.getResolutionList()
+
+    _ = number // MARK: These are just placeholders only
+
+    _ = dummy.getResolutionList() // MARK: These are just placeholders only
+
     resolutionMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
     let resolutionSubmenu = NSMenuItem(title: "Set Resolution", action: nil, keyEquivalent: "")
     resolutionSubmenu.submenu = resolutionMenu
     return resolutionSubmenu
   }
 
-  func getAssociateSubmenuItem(_ dummy: Dummy) -> NSMenuItem {
+  func getAssociateSubmenuItem(_: Dummy, _ number: Int) -> NSMenuItem {
     let associateMenu = NSMenu()
     for display in DisplayManager.getAllDisplays() where !display.isDummy {
       var displayItem: NSMenuItem
       displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
-      displayItem.tag = dummy.number // TODO: We need to devise a tag that signifies both the dummy and the display in question (like dummy.number*256+display.number)
+      displayItem.tag = number // TODO: We need to devise a tag that signifies both the dummy and the display in question (like dummy.number*256+display.number)
       associateMenu.addItem(displayItem)
     }
     let associateSubmenu = NSMenuItem(title: "Associate Display", action: nil, keyEquivalent: "")
@@ -131,7 +134,7 @@ class AppMenu {
     return associateSubmenu
   }
 
-  func addDummyToManageMenu(_ dummy: Dummy) {
+  func addDummyToManageMenu(_ dummy: Dummy, _ number: Int) {
     let dummyHeaderItem = NSMenuItem()
     let attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
     dummyHeaderItem.attributedTitle = NSAttributedString(string: "\(dummy.getMenuItemTitle())", attributes: attrsHeader)
@@ -140,17 +143,17 @@ class AppMenu {
       var connectItem: NSMenuItem
       connectItem = NSMenuItem(title: "Disconnect dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(connectItem)
-      connectItem.tag = dummy.number
-      // self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy))
-      self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy))
+      connectItem.tag = number
+      self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy, number))
+      self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
     } else {
       var disconnectItem: NSMenuItem
       disconnectItem = NSMenuItem(title: "Connect dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(disconnectItem)
-      disconnectItem.tag = dummy.number
+      disconnectItem.tag = number
     }
     let deleteItem = NSMenuItem(title: "Discard dummy", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
-    deleteItem.tag = dummy.number
+    deleteItem.tag = number
     self.manageMenu.addItem(deleteItem)
     self.manageSubmenu.isHidden = false
   }
