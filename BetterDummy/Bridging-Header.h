@@ -1,5 +1,4 @@
 //
-//  Bridging-Header.h
 //  BetterDummy
 //
 //  Created by @waydabber
