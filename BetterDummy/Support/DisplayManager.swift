@@ -12,6 +12,36 @@ class DisplayManager {
   static var displays: [Int: Display] = [:]
   static var displayCounter: Int = 0 // This is an ever increasing temporary number, does not reflect the actual number of displays.
 
+  static func getDisplays() -> [Display] {
+    var displays: [Display] = []
+    for display in self.displays.values {
+      displays.append(display)
+    }
+    return displays
+  }
+
+  static func getDisplayByPrefsId(_ DisplayPrefsId: String) -> Display? {
+    self.displays.values.first { $0.prefsId == DisplayPrefsId }
+  }
+
+  static func getDisplayByNumber(_ number: Int) -> Display? {
+    self.displays[number]
+  }
+
+  static func getBuiltInDisplay() -> Display? {
+    self.displays.values.first { CGDisplayIsBuiltin($0.identifier) != 0 }
+  }
+
+  static func addDisplay(display: Display) {
+    self.displayCounter += 1
+    self.displays[self.displayCounter] = display
+  }
+
+  static func clearDisplays() {
+    self.displays = [:]
+    self.displayCounter = 0
+  }
+
   static func configureDisplays() {
     self.clearDisplays()
     var onlineDisplayIDs = [CGDirectDisplayID](repeating: 0, count: 16)
@@ -32,58 +62,6 @@ class DisplayManager {
       self.addDisplay(display: display)
     }
     self.addDisplayCounterSuffixes()
-  }
-
-  static func normalizedName(_ name: String) -> String {
-    var normalizedName = name.replacingOccurrences(of: "(", with: "")
-    normalizedName = normalizedName.replacingOccurrences(of: ")", with: "")
-    normalizedName = normalizedName.replacingOccurrences(of: " ", with: "")
-    for i in 0 ... 9 {
-      normalizedName = normalizedName.replacingOccurrences(of: String(i), with: "")
-    }
-    return normalizedName
-  }
-
-  static func getDisplays() -> [Display] {
-    var displays: [Display] = []
-    for display in self.displays.values {
-      displays.append(display)
-    }
-    return displays
-  }
-
-  static func getDisplayByPrefsId(_ DisplayPrefsId: String) -> Display? {
-    self.displays.values.first { $0.prefsId == DisplayPrefsId }
-  }
-
-  static func getBuiltInDisplay() -> Display? {
-    self.displays.values.first { CGDisplayIsBuiltin($0.identifier) != 0 }
-  }
-
-  static func getCurrentDisplay(byFocus: Bool = false) -> Display? {
-    if byFocus {
-      guard let mainDisplayID = NSScreen.main?.displayID else {
-        return nil
-      }
-      return self.displays.values.first { $0.identifier == mainDisplayID }
-    } else {
-      let mouseLocation = NSEvent.mouseLocation
-      let screens = NSScreen.screens
-      if let screenWithMouse = (screens.first { NSMouseInRect(mouseLocation, $0.frame, false) }) {
-        return self.displays.values.first { $0.identifier == screenWithMouse.displayID }
-      }
-      return nil
-    }
-  }
-
-  static func addDisplay(display: Display) {
-    self.displayCounter += 1
-    self.displays[self.displayCounter] = display
-  }
-
-  static func clearDisplays() {
-    self.displays = [:]
-    self.displayCounter = 0
   }
 
   static func addDisplayCounterSuffixes() {
@@ -107,8 +85,8 @@ class DisplayManager {
   static func isDummy(displayID: CGDirectDisplayID) -> Bool {
     let rawName = DisplayManager.getDisplayNameByID(displayID: displayID)
     var isDummy: Bool = false
-    if rawName.lowercased().contains("dummy") {
-      os_log("Display is a dummy.", type: .info)
+    if rawName.lowercased().contains("dummy"), self.isVirtual(displayID: displayID) {
+      os_log("Display seems to be a BetterDummy created dummy.", type: .info)
       isDummy = true
     }
     return isDummy
@@ -126,46 +104,6 @@ class DisplayManager {
     return isVirtual
   }
 
-  static func engageMirror() -> Bool {
-    var onlineDisplayIDs = [CGDirectDisplayID](repeating: 0, count: 16)
-    var displayCount: UInt32 = 0
-    guard CGGetOnlineDisplayList(16, &onlineDisplayIDs, &displayCount) == .success, displayCount > 1 else {
-      return false
-    }
-    // Break display mirror if there is any
-    var mirrorBreak = false
-    var displayConfigRef: CGDisplayConfigRef?
-    for onlineDisplayID in onlineDisplayIDs where onlineDisplayID != 0 {
-      if CGDisplayIsInHWMirrorSet(onlineDisplayID) != 0 || CGDisplayIsInMirrorSet(onlineDisplayID) != 0 {
-        if mirrorBreak == false {
-          CGBeginDisplayConfiguration(&displayConfigRef)
-        }
-        CGConfigureDisplayMirrorOfDisplay(displayConfigRef, onlineDisplayID, kCGNullDirectDisplay)
-        mirrorBreak = true
-      }
-    }
-    if mirrorBreak {
-      CGCompleteDisplayConfiguration(displayConfigRef, CGConfigureOption.permanently)
-      return true
-    }
-    // Build display mirror
-    var mainDisplayId = kCGNullDirectDisplay
-    for onlineDisplayID in onlineDisplayIDs where onlineDisplayID != 0 {
-      if CGDisplayIsBuiltin(onlineDisplayID) == 0, mainDisplayId == kCGNullDirectDisplay {
-        mainDisplayId = onlineDisplayID
-      }
-    }
-    guard mainDisplayId != kCGNullDirectDisplay else {
-      return false
-    }
-    CGBeginDisplayConfiguration(&displayConfigRef)
-    for onlineDisplayID in onlineDisplayIDs where onlineDisplayID != 0 && onlineDisplayID != mainDisplayId {
-      CGConfigureDisplayMirrorOfDisplay(displayConfigRef, onlineDisplayID, mainDisplayId)
-    }
-    CGCompleteDisplayConfiguration(displayConfigRef, CGConfigureOption.permanently)
-    return true
-  }
-
   static func resolveEffectiveDisplayID(_ displayID: CGDirectDisplayID) -> CGDirectDisplayID {
     var realDisplayID = displayID
     if CGDisplayIsInHWMirrorSet(displayID) != 0 || CGDisplayIsInMirrorSet(displayID) != 0 {
@@ -177,8 +115,14 @@ class DisplayManager {
     return realDisplayID
   }
 
-  static func getByDisplayID(displayID: CGDirectDisplayID) -> NSScreen? {
-    NSScreen.screens.first { $0.displayID == displayID }
+  static func normalizedName(_ name: String) -> String {
+    var normalizedName = name.replacingOccurrences(of: "(", with: "")
+    normalizedName = normalizedName.replacingOccurrences(of: ")", with: "")
+    normalizedName = normalizedName.replacingOccurrences(of: " ", with: "")
+    for i in 0 ... 9 {
+      normalizedName = normalizedName.replacingOccurrences(of: String(i), with: "")
+    }
+    return normalizedName
   }
 
   static func getDisplayNameByID(displayID: CGDirectDisplayID) -> String {

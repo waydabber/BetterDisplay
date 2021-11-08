@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import os.log
 
 class DummyManager {
   struct DefinedDummy {
@@ -58,6 +59,24 @@ class DummyManager {
 
   static func getNumOfDummies() -> Int {
     self.definedDummies.count
+  }
+  
+  static func connectDisconnectAssociatedDummies() {
+    for dummy in self.getDummies() {
+      if dummy.hasAssociatedDisplay() {
+        if DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
+          if !dummy.isConnected {
+            os_log("Connecting associated dummy %{public}@ for display %{public}@", type: .info, dummy.getName(), dummy.associatedDisplayPrefsId)
+            _ = dummy.connect()
+          }
+        } else {
+          if dummy.isConnected {
+            os_log("Disconnecting associated dummy %{public}@ for lack of display %{public}@", type: .info, dummy.getName(), dummy.associatedDisplayPrefsId)
+            dummy.disconnect()
+          }
+        }
+      }
+    }
   }
 
   static func updateDummyDefinitions() {

@@ -100,11 +100,35 @@ class AppMenu {
 
   func addStandardManageMenuOptions() {
     if DummyManager.dummyCounter > 1 {
+      var isThereDisconnected = false
+      var isThereConnected = false
+      var isThereAssociated = false
+      var isThereAny = false
+      for dummy in DummyManager.getDummies() {
+        isThereAny = true
+        if dummy.isConnected {
+          isThereConnected = true
+        }
+        if !dummy.isConnected {
+          isThereDisconnected = true
+        }
+        if dummy.hasAssociatedDisplay() {
+          isThereAssociated = true
+        }
+      }
       self.manageMenu.addItem(NSMenuItem.separator())
-      self.manageMenu.addItem(NSMenuItem(title: "Connect all dummies", action: #selector(app.handleConnectAllDummies(_:)), keyEquivalent: ""))
-      self.manageMenu.addItem(NSMenuItem(title: "Disconnect all dummies", action: #selector(app.handleDisconnectAllDummies(_:)), keyEquivalent: ""))
-      self.manageMenu.addItem(NSMenuItem(title: "Disassociate all dummies", action: #selector(app.handleDisassociateAllDummies(_:)), keyEquivalent: ""))
-      self.manageMenu.addItem(NSMenuItem(title: "Discard all dummies", action: #selector(app.handleDiscardAllDummies(_:)), keyEquivalent: ""))
+      if isThereDisconnected {
+        self.manageMenu.addItem(NSMenuItem(title: "Connect all dummies", action: #selector(app.handleConnectAllDummies(_:)), keyEquivalent: ""))
+      }
+      if isThereConnected {
+        self.manageMenu.addItem(NSMenuItem(title: "Disconnect all dummies", action: #selector(app.handleDisconnectAllDummies(_:)), keyEquivalent: ""))
+      }
+      if isThereAssociated {
+        self.manageMenu.addItem(NSMenuItem(title: "Disassociate all dummies", action: #selector(app.handleDisassociateAllDummies(_:)), keyEquivalent: ""))
+      }
+      if isThereAny {
+        self.manageMenu.addItem(NSMenuItem(title: "Discard all dummies", action: #selector(app.handleDiscardAllDummies(_:)), keyEquivalent: ""))
+      }
     }
   }
 
@@ -115,7 +139,7 @@ class AppMenu {
 
     _ = dummy.getResolutionList() // MARK: These are just placeholders only
 
-    resolutionMenu.addItem(NSMenuItem(title: "Under construction", action: nil, keyEquivalent: ""))
+    resolutionMenu.addItem(NSMenuItem(title: "Unavailable", action: nil, keyEquivalent: ""))
     let resolutionSubmenu = NSMenuItem(title: "Set Resolution", action: nil, keyEquivalent: "")
     resolutionSubmenu.submenu = resolutionMenu
     return resolutionSubmenu
@@ -127,7 +151,7 @@ class AppMenu {
     for displayNumber in DisplayManager.displays.keys {
       if let display = DisplayManager.displays[displayNumber], !display.isDummy {
         let displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
-        displayItem.tag = 0xFF * displayNumber + number // This is a composite tag identifying both the display and the dummy number
+        displayItem.tag = 0x100 * displayNumber + number // This is a composite tag identifying both the display and the dummy number
         if display.prefsId == dummy.associatedDisplayPrefsId, dummy.hasAssociatedDisplay() {
           displayItem.state = .on
           foundAssociatedDisplay = true

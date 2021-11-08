@@ -92,28 +92,44 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleAssociateDummy(_ sender: NSMenuItem) {
+    os_log("Received association request from tag %{public}@", type: .info, "\(sender.tag)")
     guard sender.tag != 0 else {
       return
     }
-    let displayNumber = (sender.tag >> 8) & 0xff
-    let dummyNumber = sender.tag & 0xff
-    if let dummy = DummyManager.getDummyByNumber(dummyNumber) {
-      // TODO: Implement this one. :)
+    let displayNumber = (sender.tag >> 8) & 0xFF
+    let dummyNumber = sender.tag & 0xFF
+    if let dummy = DummyManager.getDummyByNumber(dummyNumber), let display = DisplayManager.getDisplayByNumber(displayNumber) {
+      dummy.associateDisplay(display: display)
+      // TODO: Check if display is associated with other dummies and deassociate from them + pop up a warning about the fact.
+      // TODO: Check if dummy is disconnected and ask if it should be connected
+      if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = "Do you want to connect the dummy?"
+        alert.informativeText = "The dummy is now associated with a display that is online but the dummy is still disconnected."
+        alert.addButton(withTitle: "Connect")
+        alert.addButton(withTitle: "No")
+        if alert.runModal() == .alertFirstButtonReturn {
+          _ = dummy.connect()
+        }
+      }
+      self.menu.repopulateManageMenu()
+      Util.saveSettings()
     }
     _ = sender.tag
-    
   }
 
   @objc func handleDisassociateDummy(_ sender: NSMenuItem) {
     if let dummy = DummyManager.getDummyByNumber(sender.tag), dummy.hasAssociatedDisplay() {
+      let associatedDisplayPrefsId = dummy.associatedDisplayPrefsId
       dummy.disassociateDisplay()
-      if dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
+      if dummy.isConnected, DisplayManager.getDisplayByPrefsId(associatedDisplayPrefsId) != nil {
         let alert = NSAlert()
         alert.alertStyle = .warning
-        alert.messageText = "Do you want to disconnect dummy as well?"
-        alert.informativeText = "The dummy has ben disassociated but is still connected!"
+        alert.messageText = "Do you want to disconnect the dummy?"
+        alert.informativeText = "The dummy is now disassociated from a display but the dummy is still connected."
         alert.addButton(withTitle: "Disconnect")
-        alert.addButton(withTitle: "Leave connected")
+        alert.addButton(withTitle: "No")
         if alert.runModal() == .alertFirstButtonReturn {
           dummy.disconnect()
         }
@@ -157,7 +173,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleDisassociateAllDummies(_: AnyObject?) {
-    // TODO: Implement handle display disassociation
+    let alert = NSAlert()
+    alert.alertStyle = .critical
+    alert.messageText = "Do you want to disassociate all dummies from all displays?"
+    alert.informativeText = "Dummies will remain connected."
+    alert.addButton(withTitle: "Cancel")
+    alert.addButton(withTitle: "Disassociate")
+    if alert.runModal() == .alertSecondButtonReturn {
+      os_log("Disassociating dummies.", type: .info)
+      for dummy in DummyManager.getDummies() {
+        dummy.disassociateDisplay()
+        self.menu.repopulateManageMenu()
+        Util.saveSettings()
+      }
+    }
   }
 
   @objc func handleDummyResolution(_: AnyObject?) {
@@ -177,7 +206,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if !self.isSleep {
         let dispatchedReconfigureID = self.reconfigureID
         os_log("Displays to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
           self.handleDisplayReconfiguration(dispatchedReconfigureID: dispatchedReconfigureID)
         }
       }
@@ -187,7 +216,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       DisplayManager.configureDisplays()
       DisplayManager.addDisplayCounterSuffixes()
       // TODO: Insert auto-connect/disconnect logic for associated displays here. :)
+      DummyManager.connectDisconnectAssociatedDummies()
       self.menu.repopulateManageMenu()
+      Util.saveSettings()
     }
   }
 
@@ -287,7 +318,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     os_log("Wake intercepted, removed temporary display if present.", type: .info)
     self.isSleep = false
     if prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
         if !self.isSleep {
           os_log("Delayed reconnecting dummies after wake.", type: .info)
           for dummy in DummyManager.getDummies() where !dummy.isConnected {
