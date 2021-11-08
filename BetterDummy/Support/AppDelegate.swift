@@ -92,13 +92,35 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleAssociateDummy(_ sender: NSMenuItem) {
-    // TODO: Implement handle display association
+    guard sender.tag != 0 else {
+      return
+    }
+    let displayNumber = (sender.tag >> 8) & 0xff
+    let dummyNumber = sender.tag & 0xff
+    if let dummy = DummyManager.getDummyByNumber(dummyNumber) {
+      
+    }
     _ = sender.tag
+    
   }
 
   @objc func handleDisassociateDummy(_ sender: NSMenuItem) {
-    // TODO: Implement handle display disassociation
-    _ = sender.tag
+    if let dummy = DummyManager.getDummyByNumber(sender.tag), dummy.hasAssociatedDisplay() {
+      dummy.disassociateDisplay()
+      if dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = "Do you want to disconnect dummy as well?"
+        alert.informativeText = "The dummy has ben disassociated but is still connected!"
+        alert.addButton(withTitle: "Disconnect")
+        alert.addButton(withTitle: "Leave connected")
+        if alert.runModal() == .alertFirstButtonReturn {
+          dummy.disconnect()
+        }
+      }
+      self.menu.repopulateManageMenu()
+      Util.saveSettings()
+    }
   }
 
   @objc func handleConnectAllDummies(_: AnyObject?) {

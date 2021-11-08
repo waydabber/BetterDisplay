@@ -47,7 +47,7 @@ class Util {
       prefs.set(definedDummy.definitionId, forKey: "\(PrefKey.display.rawValue)\(i)")
       prefs.set(definedDummy.dummy.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
       prefs.set(definedDummy.dummy.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
-      prefs.set(definedDummy.dummy.associatedDisplayPrefId, forKey: "\(PrefKey.associatedDisplayPrefId.rawValue)\(i)")
+      prefs.set(definedDummy.dummy.associatedDisplayPrefsId, forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)")
       prefs.set(definedDummy.dummy.associatedDisplayName, forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)")
       i += 1
     }
@@ -68,7 +68,7 @@ class Util {
     }
     for i in 1 ... prefs.integer(forKey: PrefKey.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKey.display.rawValue)\(i)") != nil {
       if let number = DummyManager.createDummyByDefinitionId(prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)")) {
-        DummyManager.getDummyByNumber(number)?.associatedDisplayPrefId = prefs.string(forKey: "\(PrefKey.associatedDisplayPrefId.rawValue)\(i)") ?? ""
+        DummyManager.getDummyByNumber(number)?.associatedDisplayPrefsId = prefs.string(forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)") ?? ""
         DummyManager.getDummyByNumber(number)?.associatedDisplayName = prefs.string(forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)") ?? ""
       }
     }

@@ -52,6 +52,10 @@ class DisplayManager {
     return displays
   }
 
+  static func getDisplayByPrefsId(_ DisplayPrefsId: String) -> Display? {
+    self.displays.values.first { $0.prefsId == DisplayPrefsId }
+  }
+
   static func getBuiltInDisplay() -> Display? {
     self.displays.values.first { CGDisplayIsBuiltin($0.identifier) != 0 }
   }

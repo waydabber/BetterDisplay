@@ -122,22 +122,32 @@ class AppMenu {
   }
 
   func getAssociateSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
-    // TODO: Unfinished
     let associateMenu = NSMenu()
+    var foundAssociatedDisplay = false
     for displayNumber in DisplayManager.displays.keys {
       if let display = DisplayManager.displays[displayNumber], !display.isDummy {
         let displayItem = NSMenuItem(title: display.name, action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
-        displayItem.tag = 256 * displayNumber + number // This is a composite tag identifying both the display and the dummy number
+        displayItem.tag = 0xFF * displayNumber + number // This is a composite tag identifying both the display and the dummy number
+        if display.prefsId == dummy.associatedDisplayPrefsId, dummy.hasAssociatedDisplay() {
+          displayItem.state = .on
+          foundAssociatedDisplay = true
+        }
         associateMenu.addItem(displayItem)
       }
     }
     if dummy.hasAssociatedDisplay() {
+      if !foundAssociatedDisplay {
+        let displayItem = NSMenuItem(title: "\(dummy.associatedDisplayName) (disconnected)", action: #selector(app.handleAssociateDummy(_:)), keyEquivalent: "")
+        displayItem.state = .on
+        associateMenu.addItem(displayItem)
+        displayItem.tag = 0 // This signifies that this is a disconnected, already associated display
+      }
       associateMenu.addItem(NSMenuItem.separator())
       let disassociateItem = NSMenuItem(title: "Disassociate", action: #selector(app.handleDisassociateDummy(_:)), keyEquivalent: "")
       disassociateItem.tag = number
       associateMenu.addItem(disassociateItem)
     }
-    let associateSubmenu = NSMenuItem(title: "Associate with display", action: nil, keyEquivalent: "")
+    let associateSubmenu = NSMenuItem(title: dummy.hasAssociatedDisplay() ? "Modify display associaton" : "Associate with display", action: nil, keyEquivalent: "")
     associateSubmenu.submenu = associateMenu
     return associateSubmenu
   }

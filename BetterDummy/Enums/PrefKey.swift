@@ -9,7 +9,7 @@ enum PrefKey: String {
   case display
   case serial
   case isConnected
-  case associatedDisplayPrefId
+  case associatedDisplayPrefsId
   case associatedDisplayName
 
   // General
