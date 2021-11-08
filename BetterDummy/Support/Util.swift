@@ -43,13 +43,15 @@ class Util {
     prefs.set(app.menu.useTempSleepMenuItem.state == .off, forKey: PrefKey.disableTempSleep.rawValue)
     prefs.set(DummyManager.getNumOfDummies(), forKey: PrefKey.numOfDummyDisplays.rawValue)
     var i = 1
-    for definedDummy in DummyManager.definedDummies.values {
-      prefs.set(definedDummy.definitionId, forKey: "\(PrefKey.display.rawValue)\(i)")
-      prefs.set(definedDummy.dummy.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
-      prefs.set(definedDummy.dummy.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
-      prefs.set(definedDummy.dummy.associatedDisplayPrefsId, forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)")
-      prefs.set(definedDummy.dummy.associatedDisplayName, forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)")
-      i += 1
+    for key in DummyManager.definedDummies.keys.sorted(by: <) {
+      if let definedDummy = DummyManager.definedDummies[key] {
+        prefs.set(definedDummy.definitionId, forKey: "\(PrefKey.display.rawValue)\(i)")
+        prefs.set(definedDummy.dummy.serialNum, forKey: "\(PrefKey.serial.rawValue)\(i)")
+        prefs.set(definedDummy.dummy.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
+        prefs.set(definedDummy.dummy.associatedDisplayPrefsId, forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)")
+        prefs.set(definedDummy.dummy.associatedDisplayName, forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)")
+        i += 1
+      }
     }
     os_log("Preferences stored.", type: .info)
   }

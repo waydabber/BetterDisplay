@@ -171,7 +171,7 @@ class AppMenu {
       disassociateItem.tag = number
       associateMenu.addItem(disassociateItem)
     }
-    let associateSubmenu = NSMenuItem(title: dummy.hasAssociatedDisplay() ? "Modify display associaton" : "Associate with display", action: nil, keyEquivalent: "")
+    let associateSubmenu = NSMenuItem(title: dummy.hasAssociatedDisplay() ? "Change association" : "Associate with display", action: nil, keyEquivalent: "")
     associateSubmenu.submenu = associateMenu
     return associateSubmenu
   }

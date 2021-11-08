@@ -100,8 +100,28 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     let dummyNumber = sender.tag & 0xFF
     if let dummy = DummyManager.getDummyByNumber(dummyNumber), let display = DisplayManager.getDisplayByNumber(displayNumber) {
       dummy.associateDisplay(display: display)
-      // TODO: Check if display is associated with other dummies and deassociate from them + pop up a warning about the fact.
-      // TODO: Check if dummy is disconnected and ask if it should be connected
+      var askedForPermission = false
+      for otherDummy in DummyManager.getDummies() where otherDummy != dummy {
+        if otherDummy.hasAssociatedDisplay(), otherDummy.associatedDisplayPrefsId == dummy.associatedDisplayPrefsId {
+          if askedForPermission {
+            otherDummy.disassociateDisplay()
+          } else {
+            let alert = NSAlert()
+            alert.alertStyle = .warning
+            alert.messageText = "Disassociate and disconnect other associated dummies?"
+            alert.informativeText = "At least one other dummy is associated with this display."
+            alert.addButton(withTitle: "Disassociate")
+            alert.addButton(withTitle: "No")
+            if alert.runModal() == .alertFirstButtonReturn {
+              otherDummy.disassociateDisplay()
+              otherDummy.disconnect()
+              askedForPermission = true
+            } else {
+              break
+            }
+          }
+        }
+      }
       if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
         let alert = NSAlert()
         alert.alertStyle = .warning
@@ -215,7 +235,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       self.reconfigureID = 0
       DisplayManager.configureDisplays()
       DisplayManager.addDisplayCounterSuffixes()
-      // TODO: Insert auto-connect/disconnect logic for associated displays here. :)
       DummyManager.connectDisconnectAssociatedDummies()
       self.menu.repopulateManageMenu()
       Util.saveSettings()

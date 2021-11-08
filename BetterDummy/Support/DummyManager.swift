@@ -60,7 +60,7 @@ class DummyManager {
   static func getNumOfDummies() -> Int {
     self.definedDummies.count
   }
-  
+
   static func connectDisconnectAssociatedDummies() {
     for dummy in self.getDummies() {
       if dummy.hasAssociatedDisplay() {

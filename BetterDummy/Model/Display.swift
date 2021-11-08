@@ -9,11 +9,11 @@ import Foundation
 import os.log
 
 class Display: Equatable {
-  internal let identifier: CGDirectDisplayID
-  internal let prefsId: String
-  internal var name: String
-  internal var vendorNumber: UInt32?
-  internal var modelNumber: UInt32?
+  let identifier: CGDirectDisplayID
+  let prefsId: String
+  var name: String
+  var vendorNumber: UInt32?
+  var modelNumber: UInt32?
 
   static func == (lhs: Display, rhs: Display) -> Bool {
     lhs.identifier == rhs.identifier
@@ -22,7 +22,7 @@ class Display: Equatable {
   var isVirtual: Bool = false
   var isDummy: Bool = false
 
-  internal init(_ identifier: CGDirectDisplayID, name: String, vendorNumber: UInt32?, modelNumber: UInt32?, isVirtual: Bool = false, isDummy: Bool = false) {
+  init(_ identifier: CGDirectDisplayID, name: String, vendorNumber: UInt32?, modelNumber: UInt32?, isVirtual: Bool = false, isDummy: Bool = false) {
     self.identifier = identifier
     self.name = name
     self.vendorNumber = vendorNumber

@@ -8,7 +8,7 @@ import Cocoa
 import Foundation
 import os.log
 
-class Dummy {
+class Dummy: Equatable {
   var virtualDisplay: CGVirtualDisplay?
   let dummyDefinition: DummyDefinition
   let serialNum: UInt32
@@ -16,6 +16,10 @@ class Dummy {
   var isSleepDisconnected: Bool = false
   var associatedDisplayPrefsId: String = ""
   var associatedDisplayName: String = ""
+
+  static func == (lhs: Dummy, rhs: Dummy) -> Bool {
+    lhs.serialNum == rhs.serialNum
+  }
 
   init(dummyDefinition: DummyDefinition, serialNum: UInt32 = 0, doConnect: Bool = true) {
     var storedSerialNum: UInt32 = serialNum
