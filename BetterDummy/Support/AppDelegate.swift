@@ -98,7 +98,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     let displayNumber = (sender.tag >> 8) & 0xff
     let dummyNumber = sender.tag & 0xff
     if let dummy = DummyManager.getDummyByNumber(dummyNumber) {
-      
+      // TODO: Implement this one. :)
     }
     _ = sender.tag
     
@@ -186,6 +186,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       self.reconfigureID = 0
       DisplayManager.configureDisplays()
       DisplayManager.addDisplayCounterSuffixes()
+      // TODO: Insert auto-connect/disconnect logic for associated displays here. :)
       self.menu.repopulateManageMenu()
     }
   }
