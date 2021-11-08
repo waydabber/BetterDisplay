@@ -6,8 +6,34 @@
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
-<hr>
+<br />
 
+<div align="center">
+<!-- shields -->
+<!-- downloads -->
+<a href="https://github.com/waydabber/BetterDummy/releases">
+<img src="https://img.shields.io/github/downloads/waydabber/BetterDummy/total.svg?style=flat" alt="downloads"/>
+</a>
+<!-- version -->
+<a href="https://github.com/waydabber/BetterDummy/releases">
+<img src="https://img.shields.io/github/release-pre/waydabber/BetterDummy.svg?style=flat" alt="latest version"/>
+</a>
+<!-- license -->
+<a href="https://github.com/waydabber/BetterDummy/blob/main/LICENSE">
+<img src="https://img.shields.io/github/license/waydabber/BetterDummy.svg?style=flat" alt="license"/>
+</a>
+<!-- platform -->
+<a href="https://github.com/waydabber/BetterDummy">
+<img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
+</a>
+<!-- backers -->
+<a href="https://opencollective.com/betterdummy">
+<img src="https://opencollective.com/betterdummy/tiers/badge.svg" alt="backers"/>
+</a>
+</div>
+  
+<hr>
+  
 ## About
 
 M1 macs tend to have issues with custom resolutions. Notoriously they don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though (for example) a 24" QHD 1440p display would greatly benefit from having an 1920x1080 HiDPI "Retina" mode.
