@@ -134,12 +134,20 @@ class AppMenu {
 
   func getResolutionSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
     let resolutionMenu = NSMenu()
+    if let resolutions = DisplayManager.getDisplayById(dummy.displayIdentifier)?.resolutions {
+      _ = number // MARK: This is just a placeholder
 
-    _ = number // MARK: These are just placeholders only
-
-    _ = dummy.getResolutionList() // MARK: These are just placeholders only
-
-    resolutionMenu.addItem(NSMenuItem(title: "Unavailable", action: nil, keyEquivalent: ""))
+      for resolution in resolutions {
+        let resolutionMenuItem = NSMenuItem(title: "\(resolution.width)x\(resolution.height)" + (resolution.hiDPI ? "" : " (low res)"), action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
+        resolutionMenuItem.tag = number * 256 * 256 + Int(resolution.itemNumber)
+        resolutionMenuItem.state = resolution.isActive ? .on : .off
+        resolutionMenu.addItem(resolutionMenuItem)
+      }
+    } else {
+      let unavailableItem = NSMenuItem(title: "Unavailable", action: nil, keyEquivalent: "")
+      unavailableItem.isEnabled = false
+      resolutionMenu.addItem(unavailableItem)
+    }
     let resolutionSubmenu = NSMenuItem(title: "Set Resolution", action: nil, keyEquivalent: "")
     resolutionSubmenu.submenu = resolutionMenu
     return resolutionSubmenu
@@ -186,7 +194,7 @@ class AppMenu {
       connectItem = NSMenuItem(title: "Disconnect dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
       self.manageMenu.addItem(connectItem)
       connectItem.tag = number
-      // self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy, number))
+      self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy, number))
     } else {
       var disconnectItem: NSMenuItem
       disconnectItem = NSMenuItem(title: "Connect dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")

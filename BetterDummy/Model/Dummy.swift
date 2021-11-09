@@ -68,20 +68,6 @@ class Dummy: Equatable {
     }
   }
 
-  func getResolutionList() -> [Any] {
-    // MARK: Placeholder
-
-    []
-  }
-
-  func changeResolution(resolution _: Any) {
-    // MARK: Placeholder
-  }
-
-  func getCurrentResolution(resolution _: Any) {
-    // MARK: Placeholder
-  }
-
   func associateDisplay(display: Display) {
     self.associatedDisplayPrefsId = display.prefsId
     self.associatedDisplayName = display.name

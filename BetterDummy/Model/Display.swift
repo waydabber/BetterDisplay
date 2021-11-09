@@ -9,7 +9,6 @@ import Foundation
 import os.log
 
 class Display: Equatable {
-
   struct Resolution {
     var itemNumber: Int32
     var modeNumber: UInt32
@@ -46,7 +45,7 @@ class Display: Equatable {
     os_log("Display init with prefsIdentifier %{public}@", type: .info, self.prefsId)
     self.isVirtual = isVirtual
     self.isDummy = isDummy
-    self.resolutions = getResolutions()
+    self.resolutions = self.getResolutions()
   }
 
   func isBuiltIn() -> Bool {
@@ -79,7 +78,7 @@ class Display: Equatable {
         height: displayModeDescription.pointee.height,
         bitDepth: displayModeDescription.pointee.depth,
         refreshRate: displayModeDescription.pointee.freq,
-        hiDPI: false, // TODO: Figure this one out
+        hiDPI: Int(displayModeDescription.pointee.density) > 1 ? true : false,
         isActive: currentDisplayMode.pointee == i ? true : false
       )
       resolutionList.append(resolution)
@@ -97,5 +96,4 @@ class Display: Equatable {
     CGSConfigureDisplayMode(displayConfiguration.pointee, self.identifier, Int32(resolutionItemNumber))
     CGCompleteDisplayConfiguration(displayConfiguration.pointee, CGConfigureOption.permanently)
   }
-
 }

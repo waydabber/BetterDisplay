@@ -138,7 +138,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
     _ = sender.tag
   }
-
+  
   @objc func handleDisassociateDummy(_ sender: NSMenuItem) {
     if let dummy = DummyManager.getDummyByNumber(sender.tag), dummy.hasAssociatedDisplay() {
       let associatedDisplayPrefsId = dummy.associatedDisplayPrefsId
@@ -159,6 +159,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
+  @objc func handleDummyResolution(_ sender: NSMenuItem) {
+    os_log("Received resolution change from tag %{public}@", type: .info, "\(sender.tag)")
+    guard sender.tag != 0 else {
+      return
+    }
+    let dummyNumber = (sender.tag >> 16) & 0xFFFF
+    let resolutionItemNumber = sender.tag & 0xFFFF
+    os_log("- Resolution change dummy %{public}@", type: .info, "\(dummyNumber)")
+    os_log("- Resolution change item %{public}@", type: .info, "\(resolutionItemNumber)")
+    if let dummy = DummyManager.getDummyByNumber(dummyNumber), let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
+      display.changeResolution(resolutionItemNumber: Int32(resolutionItemNumber))
+    }
+  }
+  
   @objc func handleConnectAllDummies(_: AnyObject?) {
     os_log("Connecting all dummies.", type: .info)
     for dummy in DummyManager.getDummies() {
@@ -207,14 +221,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         Util.saveSettings()
       }
     }
-  }
-
-  @objc func handleDummyResolution(_: AnyObject?) {
-    // MARK: Placeholder
-  }
-
-  @objc func handleDisplayResolution(_: AnyObject?) {
-    // MARK: Placeholder
   }
 
   // MARK: *** Handlers - Display reconfiguration
