@@ -138,7 +138,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
     _ = sender.tag
   }
-  
+
   @objc func handleDisassociateDummy(_ sender: NSMenuItem) {
     if let dummy = DummyManager.getDummyByNumber(sender.tag), dummy.hasAssociatedDisplay() {
       let associatedDisplayPrefsId = dummy.associatedDisplayPrefsId
@@ -172,7 +172,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       display.changeResolution(resolutionItemNumber: Int32(resolutionItemNumber))
     }
   }
-  
+
   @objc func handleConnectAllDummies(_: AnyObject?) {
     os_log("Connecting all dummies.", type: .info)
     for dummy in DummyManager.getDummies() {
@@ -232,7 +232,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if !self.isSleep {
         let dispatchedReconfigureID = self.reconfigureID
         os_log("Displays to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
           self.handleDisplayReconfiguration(dispatchedReconfigureID: dispatchedReconfigureID)
         }
       }

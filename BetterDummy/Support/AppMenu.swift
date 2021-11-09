@@ -137,7 +137,7 @@ class AppMenu {
     if let resolutions = DisplayManager.getDisplayById(dummy.displayIdentifier)?.resolutions {
       _ = number // MARK: This is just a placeholder
 
-      for resolution in resolutions {
+      for resolution in resolutions where resolution.height >= 720 && resolution.hiDPI == true {
         let resolutionMenuItem = NSMenuItem(title: "\(resolution.width)x\(resolution.height)" + (resolution.hiDPI ? "" : " (low res)"), action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
         resolutionMenuItem.tag = number * 256 * 256 + Int(resolution.itemNumber)
         resolutionMenuItem.state = resolution.isActive ? .on : .off
