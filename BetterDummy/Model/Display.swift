@@ -9,12 +9,6 @@ import Foundation
 import os.log
 
 class Display: Equatable {
-  let identifier: CGDirectDisplayID
-  let prefsId: String
-  var name: String
-  var vendorNumber: UInt32?
-  var modelNumber: UInt32?
-  var serialNumber: UInt32?
 
   struct Resolution {
     var itemNumber: Int32
@@ -26,6 +20,14 @@ class Display: Equatable {
     var hiDPI: Bool
     var isActive: Bool
   }
+
+  let identifier: CGDirectDisplayID
+  let prefsId: String
+  var name: String
+  var vendorNumber: UInt32?
+  var modelNumber: UInt32?
+  var serialNumber: UInt32?
+  var resolutions: [Resolution] = []
 
   static func == (lhs: Display, rhs: Display) -> Bool {
     lhs.identifier == rhs.identifier
@@ -44,6 +46,7 @@ class Display: Equatable {
     os_log("Display init with prefsIdentifier %{public}@", type: .info, self.prefsId)
     self.isVirtual = isVirtual
     self.isDummy = isDummy
+    self.resolutions = getResolutions()
   }
 
   func isBuiltIn() -> Bool {
@@ -54,7 +57,7 @@ class Display: Equatable {
     }
   }
 
-  func getResolutionList() -> [Resolution] {
+  func getResolutions() -> [Resolution] {
     var resolutionList: [Resolution] = []
     let numberOfDisplayModes = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
     let currentDisplayMode = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
@@ -84,11 +87,15 @@ class Display: Equatable {
     return resolutionList
   }
 
-  func changeResolution(resolution _: Any) {
-    // MARK: Placeholder
+  // TODO: This will trigger a display reconfiguration in the app which results in the destruction of the display object... This should be streamlined of course.
+  func changeResolution(resolutionItemNumber: Int32) {
+    let displayConfiguration = UnsafeMutablePointer<CGDisplayConfigRef?>.allocate(capacity: 1)
+    defer {
+      displayConfiguration.deallocate()
+    }
+    CGBeginDisplayConfiguration(displayConfiguration)
+    CGSConfigureDisplayMode(displayConfiguration.pointee, self.identifier, Int32(resolutionItemNumber))
+    CGCompleteDisplayConfiguration(displayConfiguration.pointee, CGConfigureOption.permanently)
   }
 
-  func getCurrentResolution(resolution _: Any) {
-    // MARK: Placeholder
-  }
 }
