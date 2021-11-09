@@ -20,6 +20,10 @@ class DisplayManager {
     return displays
   }
 
+  static func getDisplayById(_ displayID: CGDirectDisplayID) -> Display? {
+    self.displays.values.first { $0.identifier == displayID }
+  }
+
   static func getDisplayByPrefsId(_ DisplayPrefsId: String) -> Display? {
     self.displays.values.first { $0.prefsId == DisplayPrefsId }
   }
@@ -55,9 +59,10 @@ class DisplayManager {
       let id = onlineDisplayID
       let vendorNumber = CGDisplayVendorNumber(onlineDisplayID)
       let modelNumber = CGDisplayModelNumber(onlineDisplayID)
+      let serialNumber = CGDisplaySerialNumber(onlineDisplayID)
       let isDummy: Bool = DisplayManager.isDummy(displayID: onlineDisplayID)
       let isVirtual: Bool = DisplayManager.isVirtual(displayID: onlineDisplayID)
-      let display = Display(id, name: name, vendorNumber: vendorNumber, modelNumber: modelNumber, isVirtual: isVirtual, isDummy: isDummy)
+      let display = Display(id, name: name, vendorNumber: vendorNumber, modelNumber: modelNumber, serialNumber: serialNumber, isVirtual: isVirtual, isDummy: isDummy)
       os_log("Display found - %{public}@", type: .info, "ID: \(display.identifier), Name: \(display.name) (Vendor: \(display.vendorNumber ?? 0), Model: \(display.modelNumber ?? 0))")
       self.addDisplay(display: display)
     }

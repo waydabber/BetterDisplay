@@ -16,6 +16,7 @@ class Dummy: Equatable {
   var isSleepDisconnected: Bool = false
   var associatedDisplayPrefsId: String = ""
   var associatedDisplayName: String = ""
+  var displayIdentifier: CGDirectDisplayID = 0 // This contains valid info only if the display is connected
 
   static func == (lhs: Dummy, rhs: Dummy) -> Bool {
     lhs.serialNum == rhs.serialNum
@@ -57,6 +58,7 @@ class Dummy: Equatable {
     let name: String = self.getName()
     if let virtualDisplay = Dummy.createVirtualDisplay(self.dummyDefinition, name: name, serialNum: self.serialNum) {
       self.virtualDisplay = virtualDisplay
+      self.displayIdentifier = virtualDisplay.displayID
       self.isConnected = true
       os_log("Display %{public}@ successfully connected", type: .info, "\(name)")
       return true
@@ -132,7 +134,7 @@ class Dummy: Equatable {
           settings.hiDPI = 1
           settings.modes = modes as [Any]
           if display.applySettings(settings) {
-            os_log("- Settings are successfully applied.", type: .info)
+            os_log("- Settings are successfully applied. Dummy Display ID is %{public}@", type: .info, String(display.displayID))
             return display
           }
         }

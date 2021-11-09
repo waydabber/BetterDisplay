@@ -79,6 +79,14 @@ class DummyManager {
     }
   }
 
+  static func getDefinedDummyByDisplayId(_ displayID: CGDirectDisplayID) -> DefinedDummy? {
+    self.definedDummies.values.first { $0.dummy.displayIdentifier == displayID }
+  }
+
+  static func getDummyByDisplayId(_ displayID: CGDirectDisplayID) -> Dummy? {
+    self.getDefinedDummyByDisplayId(displayID)?.dummy
+  }
+
   static func updateDummyDefinitions() {
     let refreshRates: [Double] = [60] // [24, 25, 30, 48, 50, 60, 90, 120] -- only 60Hz seems to be useful in practice
     self.dummyDefinitions = [

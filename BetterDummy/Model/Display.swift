@@ -14,6 +14,7 @@ class Display: Equatable {
   var name: String
   var vendorNumber: UInt32?
   var modelNumber: UInt32?
+  var serialNumber: UInt32?
 
   static func == (lhs: Display, rhs: Display) -> Bool {
     lhs.identifier == rhs.identifier
@@ -22,11 +23,12 @@ class Display: Equatable {
   var isVirtual: Bool = false
   var isDummy: Bool = false
 
-  init(_ identifier: CGDirectDisplayID, name: String, vendorNumber: UInt32?, modelNumber: UInt32?, isVirtual: Bool = false, isDummy: Bool = false) {
+  init(_ identifier: CGDirectDisplayID, name: String, vendorNumber: UInt32?, modelNumber: UInt32?, serialNumber: UInt32?, isVirtual: Bool = false, isDummy: Bool = false) {
     self.identifier = identifier
     self.name = name
     self.vendorNumber = vendorNumber
     self.modelNumber = modelNumber
+    self.serialNumber = serialNumber
     self.prefsId = "(" + String(name.filter { !$0.isWhitespace }) + String(vendorNumber ?? 0) + String(modelNumber ?? 0) + "@" + String(identifier) + ")"
     os_log("Display init with prefsIdentifier %{public}@", type: .info, self.prefsId)
     self.isVirtual = isVirtual
