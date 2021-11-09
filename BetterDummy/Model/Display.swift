@@ -16,6 +16,17 @@ class Display: Equatable {
   var modelNumber: UInt32?
   var serialNumber: UInt32?
 
+  struct Resolution {
+    var itemNumber: Int32
+    var modeNumber: UInt32
+    var width: UInt32
+    var height: UInt32
+    var bitDepth: UInt32
+    var refreshRate: UInt16
+    var hiDPI: Bool
+    var isActive: Bool
+  }
+
   static func == (lhs: Display, rhs: Display) -> Bool {
     lhs.identifier == rhs.identifier
   }
@@ -43,10 +54,34 @@ class Display: Equatable {
     }
   }
 
-  func getResolutionList() -> [Any] {
-    // MARK: Placeholder
-
-    []
+  func getResolutionList() -> [Resolution] {
+    var resolutionList: [Resolution] = []
+    let numberOfDisplayModes = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
+    let currentDisplayMode = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
+    let displayModeDescription = UnsafeMutablePointer<CGSDisplayMode>.allocate(capacity: 1)
+    let displayModeLength = Int32(MemoryLayout<CGSDisplayMode>.size)
+    defer {
+      numberOfDisplayModes.deallocate()
+      currentDisplayMode.deallocate()
+      displayModeDescription.deallocate()
+    }
+    CGSGetNumberOfDisplayModes(self.identifier, numberOfDisplayModes)
+    CGSGetCurrentDisplayMode(self.identifier, currentDisplayMode)
+    for i in 0 ... numberOfDisplayModes.pointee - 1 {
+      CGSGetDisplayModeDescriptionOfLength(self.identifier, i, displayModeDescription, displayModeLength)
+      let resolution = Resolution(
+        itemNumber: i,
+        modeNumber: displayModeDescription.pointee.modeNumber,
+        width: displayModeDescription.pointee.width,
+        height: displayModeDescription.pointee.height,
+        bitDepth: displayModeDescription.pointee.depth,
+        refreshRate: displayModeDescription.pointee.freq,
+        hiDPI: false, // TODO: Figure this one out
+        isActive: currentDisplayMode.pointee == i ? true : false
+      )
+      resolutionList.append(resolution)
+    }
+    return resolutionList
   }
 
   func changeResolution(resolution _: Any) {
