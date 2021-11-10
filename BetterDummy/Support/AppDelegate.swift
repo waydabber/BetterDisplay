@@ -24,9 +24,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.menu.setupMenu()
     Util.setDefaultPrefs()
     Util.restoreSettings()
-    Util.setupNotifications()
     self.updaterController.startUpdater()
     self.handleDisplayReconfiguration(force: true)
+
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleSleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleSleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
+    CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.handleDisplayReconfiguration() }, nil)
   }
 
   // MARK: *** Handlers - Dummy management

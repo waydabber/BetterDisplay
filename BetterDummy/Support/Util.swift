@@ -10,16 +10,6 @@ import os.log
 import ServiceManagement
 
 class Util {
-  // Notifications
-
-  static func setupNotifications() {
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(app.handleSleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(app.handleSleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(app.handleWakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(app.handleWakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
-    CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.handleDisplayReconfiguration() }, nil)
-  }
-
   // MARK: Save and restore settings
 
   static func setDefaultPrefs() {
