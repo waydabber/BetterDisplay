@@ -15,6 +15,7 @@ class AppMenu {
   let startAtLoginMenuItem = NSMenuItem(title: "Start at login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
   let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let enable16KMenuItem = NSMenuItem(title: "Enable up to 16K resolutions", action: #selector(app.handleEnable16K(_:)), keyEquivalent: "")
+  let showLowResolutionModesMenuItem = NSMenuItem(title: "Show low resolution  modes in menus", action: #selector(app.handleShowLowResolutionModes(_:)), keyEquivalent: "")
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and reconnect on sleep", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let useTempSleepMenuItem = NSMenuItem(title: "Use mirrored dummy sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
 
@@ -30,6 +31,7 @@ class AppMenu {
     settingsMenu.addItem(self.automaticallyCheckForUpdatesMenuItem)
     settingsMenu.addItem(NSMenuItem.separator())
     settingsMenu.addItem(self.enable16KMenuItem)
+    settingsMenu.addItem(self.showLowResolutionModesMenuItem)
     settingsMenu.addItem(NSMenuItem.separator())
     settingsMenu.addItem(self.useTempSleepMenuItem)
     settingsMenu.addItem(self.reconnectAfterSleepMenuItem)
@@ -135,13 +137,20 @@ class AppMenu {
   func getResolutionSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
     let resolutionMenu = NSMenu()
     if let resolutions = DisplayManager.getDisplayById(dummy.displayIdentifier)?.resolutions {
-      _ = number // MARK: This is just a placeholder
-
       for resolution in resolutions where resolution.height >= 720 && resolution.hiDPI == true {
-        let resolutionMenuItem = NSMenuItem(title: "\(resolution.width)x\(resolution.height)" + (resolution.hiDPI ? "" : " (low res)"), action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
+        let resolutionMenuItem = NSMenuItem(title: "\(resolution.width)x\(resolution.height)", action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
         resolutionMenuItem.tag = number * 256 * 256 + Int(resolution.itemNumber)
         resolutionMenuItem.state = resolution.isActive ? .on : .off
         resolutionMenu.addItem(resolutionMenuItem)
+      }
+      resolutionMenu.addItem(NSMenuItem.separator())
+      if prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue) {
+        for resolution in resolutions where resolution.height >= 720 && resolution.hiDPI == false {
+          let resolutionMenuItem = NSMenuItem(title: "\(resolution.width)x\(resolution.height)" + " (low resolution)", action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
+          resolutionMenuItem.tag = number * 256 * 256 + Int(resolution.itemNumber)
+          resolutionMenuItem.state = resolution.isActive ? .on : .off
+          resolutionMenu.addItem(resolutionMenuItem)
+        }
       }
     } else {
       let unavailableItem = NSMenuItem(title: "Unavailable", action: nil, keyEquivalent: "")

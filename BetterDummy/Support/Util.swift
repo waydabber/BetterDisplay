@@ -39,6 +39,7 @@ class Util {
     prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKey.buildNumber.rawValue)
     prefs.set(app.menu.startAtLoginMenuItem.state == .on, forKey: PrefKey.startAtLogin.rawValue)
     prefs.set(app.menu.enable16KMenuItem.state == .on, forKey: PrefKey.enable16K.rawValue)
+    prefs.set(app.menu.showLowResolutionModesMenuItem.state == .on, forKey: PrefKey.showLowResolutionModes.rawValue)
     prefs.set(app.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKey.reconnectAfterSleep.rawValue)
     prefs.set(app.menu.useTempSleepMenuItem.state == .off, forKey: PrefKey.disableTempSleep.rawValue)
     prefs.set(DummyManager.getNumOfDummies(), forKey: PrefKey.numOfDummyDisplays.rawValue)
@@ -63,6 +64,7 @@ class Util {
     app.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
     app.menu.automaticallyCheckForUpdatesMenuItem.state = prefs.bool(forKey: PrefKey.SUEnableAutomaticChecks.rawValue) ? .on : .off
     app.menu.enable16KMenuItem.state = prefs.bool(forKey: PrefKey.enable16K.rawValue) ? .on : .off
+    app.menu.showLowResolutionModesMenuItem.state = prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue) ? .on : .off
     app.menu.reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) ? .on : .off
     app.menu.useTempSleepMenuItem.state = !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) ? .on : .off
     guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {

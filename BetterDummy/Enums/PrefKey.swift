@@ -22,4 +22,5 @@ enum PrefKey: String {
   case SUEnableAutomaticChecks
   case isBetaChannel
   case enable16K
+  case showLowResolutionModes
 }

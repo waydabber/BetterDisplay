@@ -49,6 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleDisconnectDummy(_ sender: AnyObject?) {
+    // TODO: Solve the problem of the dummy immediately reconnecting after disconnected when associated to an active display
     if let menuItem = sender as? NSMenuItem {
       os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
       DummyManager.getDummyByNumber(menuItem.tag)?.disconnect()
@@ -183,6 +184,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleDisconnectAllDummies(_: AnyObject?) {
+    // TODO: Solve the problem of the dummy immediately reconnecting after disconnected when associated to an active display
     os_log("Disconnecting all dummies.", type: .info)
     for dummy in DummyManager.getDummies() {
       dummy.disconnect()
@@ -297,10 +299,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     sender.state = sender.state == .on ? .off : .on
     Util.saveSettings()
     DummyManager.updateDummyDefinitions()
-    for dummy in DummyManager.getDummies() where dummy.isConnected {
-      dummy.disconnect()
-      _ = dummy.connect()
-    }
+  }
+
+  @objc func handleShowLowResolutionModes(_ sender: NSMenuItem) {
+    sender.state = sender.state == .on ? .off : .on
+    Util.saveSettings()
+    self.menu.repopulateManageMenu()
   }
 
   @objc func handleAbout(_: AnyObject?) {

@@ -10,7 +10,7 @@ import os.log
 
 class Dummy: Equatable {
   var virtualDisplay: CGVirtualDisplay?
-  let dummyDefinition: DummyDefinition
+  var dummyDefinition: DummyDefinition
   let serialNum: UInt32
   var isConnected: Bool = false
   var isSleepDisconnected: Bool = false

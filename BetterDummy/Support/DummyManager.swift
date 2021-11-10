@@ -110,5 +110,14 @@ class DummyManager {
       360: DummyDefinition(66, 41, 2, refreshRates, "23:16 (iPad Air 2020)", false),
       370: DummyDefinition(199, 139, 2, refreshRates, "14.3:10 (iPad Pro 11\")", false),
     ]
+    for definedDummy in self.definedDummies.values {
+      if let definitionId = definedDummy.definitionId, let dummyDefinition = self.dummyDefinitions[definitionId] {
+        definedDummy.dummy.dummyDefinition = dummyDefinition
+      }
+      if definedDummy.dummy.isConnected {
+        definedDummy.dummy.disconnect()
+        _ = definedDummy.dummy.connect()
+      }
+    }
   }
 }
