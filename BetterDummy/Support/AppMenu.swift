@@ -15,7 +15,7 @@ class AppMenu {
   let startAtLoginMenuItem = NSMenuItem(title: "Start at login", action: #selector(app.handleStartAtLogin(_:)), keyEquivalent: "")
   let automaticallyCheckForUpdatesMenuItem = NSMenuItem(title: "Automatically check for updates", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let enable16KMenuItem = NSMenuItem(title: "Enable up to 16K resolutions", action: #selector(app.handleEnable16K(_:)), keyEquivalent: "")
-  let showLowResolutionModesMenuItem = NSMenuItem(title: "Show low resolution  modes in menus", action: #selector(app.handleShowLowResolutionModes(_:)), keyEquivalent: "")
+  let showLowResolutionModesMenuItem = NSMenuItem(title: "Show low resolution modes in menu", action: #selector(app.handleShowLowResolutionModes(_:)), keyEquivalent: "")
   let reconnectAfterSleepMenuItem = NSMenuItem(title: "Disconnect and reconnect on sleep", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
   let useTempSleepMenuItem = NSMenuItem(title: "Use mirrored dummy sleep workaround", action: #selector(app.handleSimpleCheckMenu(_:)), keyEquivalent: "")
 
