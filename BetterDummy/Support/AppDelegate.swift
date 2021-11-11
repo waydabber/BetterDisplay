@@ -11,7 +11,7 @@ import Sparkle
 
 class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   var isSleep: Bool = false
-  var reconfigureID: Int = 0 // dispatched reconfigure command ID
+  var reconfigureID: Int = 0
   let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
   let menu = AppMenu()
 
@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           let alert = NSAlert()
           alert.alertStyle = .warning
           alert.messageText = "A dummy associated with a display cannot be connected!"
-          alert.informativeText = "A dummy which is associated to a display cannot be connected unless the display is connected."
+          alert.informativeText = "A dummy which is associated with a display will connect automatically when the display is connected."
           alert.runModal()
         } else {
           if !dummy.connect() {
@@ -91,13 +91,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func handleDisconnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-      DummyManager.getDummyByNumber(menuItem.tag)?.disconnect()
       if let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
           alert.messageText = "A dummy associated with a display cannot be disconnected!"
-          alert.informativeText = "A dummy which is associated to a display cannot be disconnected unless the display is disconnected."
+          alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the display is disconnected."
           alert.runModal()
         } else {
           dummy.disconnect()
@@ -159,14 +158,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       }
       if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
         let alert = NSAlert()
-        alert.alertStyle = .warning
-        alert.messageText = "Do you want to connect the dummy?"
-        alert.informativeText = "The dummy is now associated with a display that is online but the dummy is still disconnected."
-        alert.addButton(withTitle: "Connect")
-        alert.addButton(withTitle: "No")
-        if alert.runModal() == .alertFirstButtonReturn {
-          _ = dummy.connect()
-        }
+        alert.alertStyle = .informational
+        alert.messageText = "The dummy will now be connected."
+        alert.informativeText = "The dummy is now associated with a display that is connected therefore it will automtically connect."
+        alert.runModal()
+        _ = dummy.connect()
       }
       self.menu.repopulateManageMenu()
       Util.saveSettings()
@@ -222,7 +218,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       let alert = NSAlert()
       alert.alertStyle = .warning
       alert.messageText = "Dummies associated with displays cannot be connected!"
-      alert.informativeText = "A dummy which is associated to a display cannot connect unless the display is present."
+      alert.informativeText = "A dummy which is associated with a display will automatically connect when the display is connected."
       alert.runModal()
     }
     self.menu.repopulateManageMenu()
@@ -243,7 +239,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       let alert = NSAlert()
       alert.alertStyle = .warning
       alert.messageText = "Dummies associated with displays cannot be disconnected!"
-      alert.informativeText = "A dummy which is associated to a display cannot disconnect unless the display is disconnected."
+      alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the display is disconnected."
       alert.runModal()
     }
     self.menu.repopulateManageMenu()
@@ -348,7 +344,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.addButton(withTitle: "Hide")
       alert.addButton(withTitle: "No")
       if alert.runModal() == .alertFirstButtonReturn {
-        sender.state = .off
+        sender.state = .on
         self.menu.statusBarItem.isVisible = false
       }
     }
