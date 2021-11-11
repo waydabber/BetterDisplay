@@ -34,6 +34,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.handleDisplayReconfiguration() }, nil)
   }
 
+  func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
+    self.menu.statusBarItem.isVisible = true
+    let alert = NSAlert()
+    alert.alertStyle = .informational
+    alert.messageText = "BetterDummy was already running!"
+    alert.informativeText = "If the menu icon was hidden, it is visible now until restart."
+    alert.runModal()
+    return true
+  }
+
   // MARK: *** Handlers - Dummy management
 
   @objc func handleCreateDummy(_ sender: AnyObject?) {
@@ -53,28 +63,47 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func handleDisconnectDummy(_ sender: AnyObject?) {
-    // TODO: Solve the problem of the dummy immediately reconnecting after disconnected when associated to an active display
+  @objc func handleConnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
-      os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-      DummyManager.getDummyByNumber(menuItem.tag)?.disconnect()
+      os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+      if let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
+        if dummy.hasAssociatedDisplay() {
+          let alert = NSAlert()
+          alert.alertStyle = .warning
+          alert.messageText = "A dummy associated with a display cannot be connected!"
+          alert.informativeText = "A dummy which is associated to a display cannot be connected unless the display is connected."
+          alert.runModal()
+        } else {
+          if !dummy.connect() {
+            let alert = NSAlert()
+            alert.alertStyle = .warning
+            alert.messageText = "Unable to connect dummy"
+            alert.informativeText = "An error occured during connecting the dummy."
+            alert.runModal()
+          }
+        }
+      }
       self.menu.repopulateManageMenu()
       Util.saveSettings()
     }
   }
 
-  @objc func handleConnectDummy(_ sender: AnyObject?) {
+  @objc func handleDisconnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
-      os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+      os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+      DummyManager.getDummyByNumber(menuItem.tag)?.disconnect()
       if let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
-        if !dummy.connect() {
+        if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
-          alert.messageText = "Unable to connect dummy"
-          alert.informativeText = "An error occured during connecting the dummy."
+          alert.messageText = "A dummy associated with a display cannot be disconnected!"
+          alert.informativeText = "A dummy which is associated to a display cannot be disconnected unless the display is disconnected."
           alert.runModal()
+        } else {
+          dummy.disconnect()
         }
       }
+
       self.menu.repopulateManageMenu()
       Util.saveSettings()
     }
@@ -181,18 +210,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func handleConnectAllDummies(_: AnyObject?) {
     os_log("Connecting all dummies.", type: .info)
-    for dummy in DummyManager.getDummies() {
-      _ = dummy.connect()
+    var hasAssociated = false
+    for dummy in DummyManager.getDummies() where !dummy.isConnected {
+      if !dummy.hasAssociatedDisplay() {
+        _ = dummy.connect()
+      } else {
+        hasAssociated = true
+      }
+    }
+    if hasAssociated {
+      let alert = NSAlert()
+      alert.alertStyle = .warning
+      alert.messageText = "Dummies associated with displays cannot be connected!"
+      alert.informativeText = "A dummy which is associated to a display cannot connect unless the display is present."
+      alert.runModal()
     }
     self.menu.repopulateManageMenu()
     Util.saveSettings()
   }
 
   @objc func handleDisconnectAllDummies(_: AnyObject?) {
-    // TODO: Solve the problem of the dummy immediately reconnecting after disconnected when associated to an active display
     os_log("Disconnecting all dummies.", type: .info)
-    for dummy in DummyManager.getDummies() {
-      dummy.disconnect()
+    var hasAssociated = false
+    for dummy in DummyManager.getDummies() where dummy.isConnected {
+      if !dummy.hasAssociatedDisplay() {
+        dummy.disconnect()
+      } else {
+        hasAssociated = true
+      }
+    }
+    if hasAssociated {
+      let alert = NSAlert()
+      alert.alertStyle = .warning
+      alert.messageText = "Dummies associated with displays cannot be disconnected!"
+      alert.informativeText = "A dummy which is associated to a display cannot disconnect unless the display is disconnected."
+      alert.runModal()
     }
     self.menu.repopulateManageMenu()
     Util.saveSettings()
@@ -217,7 +269,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     let alert = NSAlert()
     alert.alertStyle = .critical
     alert.messageText = "Do you want to disassociate all dummies from all displays?"
-    alert.informativeText = "Dummies will remain connected."
+    alert.informativeText = "Connected dummies will remain connected."
     alert.addButton(withTitle: "Cancel")
     alert.addButton(withTitle: "Disassociate")
     if alert.runModal() == .alertSecondButtonReturn {
@@ -282,6 +334,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       Util.setDefaultPrefs()
       Util.restoreSettings()
     }
+  }
+
+  @objc func handleHideMenuIcon(_ sender: NSMenuItem) {
+    if sender.state == .on {
+      sender.state = .off
+      self.menu.statusBarItem.isVisible = true
+    } else {
+      let alert = NSAlert()
+      alert.alertStyle = .warning
+      alert.messageText = "Do you want to hide the menu icon?"
+      alert.informativeText = "You can reveal the menu icon by launching the app again while it is already running."
+      alert.addButton(withTitle: "Hide")
+      alert.addButton(withTitle: "No")
+      if alert.runModal() == .alertFirstButtonReturn {
+        sender.state = .off
+        self.menu.statusBarItem.isVisible = false
+      }
+    }
+    Util.saveSettings()
   }
 
   @objc func handleSimpleCheckMenu(_ sender: NSMenuItem) {

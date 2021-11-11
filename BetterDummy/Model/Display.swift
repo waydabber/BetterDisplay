@@ -86,7 +86,6 @@ class Display: Equatable {
     return resolutionList
   }
 
-  // TODO: This will trigger a display reconfiguration in the app which results in the destruction of the display object... This should be streamlined of course.
   func changeResolution(resolutionItemNumber: Int32) {
     let displayConfiguration = UnsafeMutablePointer<CGDisplayConfigRef?>.allocate(capacity: 1)
     defer {

@@ -28,6 +28,7 @@ class Util {
     prefs.set(app.menu.automaticallyCheckForUpdatesMenuItem.state == .on, forKey: PrefKey.SUEnableAutomaticChecks.rawValue)
     prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKey.buildNumber.rawValue)
     prefs.set(app.menu.startAtLoginMenuItem.state == .on, forKey: PrefKey.startAtLogin.rawValue)
+    prefs.set(app.menu.hideMenuIconMenuItem.state == .on, forKey: PrefKey.hideMenuIcon.rawValue)
     prefs.set(app.menu.enable16KMenuItem.state == .on, forKey: PrefKey.enable16K.rawValue)
     prefs.set(app.menu.showLowResolutionModesMenuItem.state == .on, forKey: PrefKey.showLowResolutionModes.rawValue)
     prefs.set(app.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKey.reconnectAfterSleep.rawValue)
@@ -53,6 +54,7 @@ class Util {
     let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
     app.menu.startAtLoginMenuItem.state = startAtLogin ? .on : .off
     app.menu.automaticallyCheckForUpdatesMenuItem.state = prefs.bool(forKey: PrefKey.SUEnableAutomaticChecks.rawValue) ? .on : .off
+    app.menu.hideMenuIconMenuItem.state = prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue) ? .on : .off
     app.menu.enable16KMenuItem.state = prefs.bool(forKey: PrefKey.enable16K.rawValue) ? .on : .off
     app.menu.showLowResolutionModesMenuItem.state = prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue) ? .on : .off
     app.menu.reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) ? .on : .off
