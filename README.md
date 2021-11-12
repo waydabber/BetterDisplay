@@ -51,7 +51,6 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 - Does not utilize graphics hardware in vain so it is somewhat faster.
 - Available instantly.
-- It is free ([but donations are super welcome](https://opencollective.com/betterdummy))! :)
 
 Some other possible uses:
 
@@ -85,7 +84,7 @@ Some other possible uses:
 
 The app saves the dummy display configuration and automatically restores it upon next restart.
 
-For more information on usage, see the [the additional info section](#some-additional-info-about-functionality).
+For more information on usage, see the [the additional help section](#additional-help).
 
 Notes:
 
@@ -94,7 +93,7 @@ Notes:
 - For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
 - You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
 - You may want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
-- Please note that the app cannot "magically" increase the number of pixels on your display and is unable to make a 1080p display look like a 4K display (the only benefit for a 1080p display is better clarity in zooming or the ability to make high resolution screenshots).
+- Please note that the app cannot increase the number of pixels on your display and is unable to make a 1080p display look like a 4K display (the only benefit for a 1080p display is better clarity in zooming or the ability to make high resolution screenshots).
 
 ## Installation
 
@@ -103,9 +102,11 @@ Notes:
 - Start the app
 - Use the app menu bar item to interact.
 
-## Donations/contributions
+## Supporting the project
 
-I really welcome [donations](https://opencollective.com/betterdummy/donate) and very thankful for each of you who contributed to the project. My goal is to upgrade my dev machine (I am using the base level MBA with 8gigs of RAM) to something more decent (I hope for a properly specced 14" MacBook Pro). It seems totally unrealistic at this moment to achieve this by doing open source stuff, but maybe I'll get there someday. :) Thank you all again for the support, every little bit counts.
+I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps. If you find use in the app and did not contribute so far, please consider a donation. Thank you!
+
+Please don't forget to star the GitHub page and spread the word about the app. :)
 
 ## Compatibility
 
@@ -113,39 +114,9 @@ I really welcome [donations](https://opencollective.com/betterdummy/donate) and 
 - The app is also compatible with Intel and macOS Big Sur (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
 - The app is compatible with headless mode as well (this was tested on Intel).
 
-## Known issues
+## Additional help
 
-There are some issues which are related to limitations/issues in macOS itself:
-
-- High refresh displays (refresh rates above 60Hz) are not supported.
-- Only SDR content is supported.
-- Mirroring any content to the internal display of the 2021 MacBook Pros will force the mirror under the notch.
-- Due to a bug present in the current macOS versions, mirroring virtual displays (Sidecar, BetterDummy, etc) might cause sleep issues on some configurations. The app has some workarounds for this issue but these might not work on all configurations.
-- Due to a bug present in the current macOS versions, swiping or keyboard shortcuts to switch spaces do not work on extended (secondary) mirror sets that involve virtual displays.
-
-Some of these issues affect physical dummy mirrors as well.
-
-## How can I help?
-
-Some of the options:
-
-- If you like the app, [please support the developer](https://opencollective.com/betterdummy/donate). :)
-- Don't forget to star the GitHub page!
-- Spread the word.
-
-Thank you for your help, it is really appreciated! :)
-
-## Don't forget to check out
-
-**If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) as well!** Control the brightness, volume of your external display like it would be a native Apple display!
-
-## Discord channel
-
-You can join the (mostly self help) discussion on the new [BetterDummy discord channel](https://discord.gg/aKe5yCWXSp).
-
-## Some additional info about functionality
-
-Most of this is self explanatory but here is a brief overview of some of the additional functions in the app.
+For most of the time, the app is self explanatory but here is a brief overview of some of the additional functions in the app.
 
 ### Manage your dummies
 
@@ -153,11 +124,11 @@ Most of this is self explanatory but here is a brief overview of some of the add
 <img src=".github/manage.png" width="469"/>
 </div>
 
-- The `Manage dummies` submenu header contains some basic info about the dummy - its aspect ratio and unique serial number
-- `Connect dummy` / `Disconnect dummy` - You can easily connect or disconnect a dummy. Only dummes that are not associated to a display can be connected or disconnected manually
+- The `Manage dummies` submenu header contains some basic info about the dummy - its aspect ratio and unique serial number.
+- `Connect dummy` / `Disconnect dummy` - You can easily connect or disconnect a dummy. Only dummes that are not associated to a display can be connected or disconnected manually.
 - `Set resolution` - This allows for a quick resolution change. The list conatains all supported resolutions. If `Show low resolution modes` is enabled under `Settings`, then additional non-HiDPI resolutions are shown at the bottom of the list.
 - `Associate with display` or `Change association` - You can associate a dummy to a real display. This will make the dummy automatically connect or disconnect whenever the display is connected or disconnected. It is useful when docking/undocking your macbook so you don't have to manage your dummy manually every time.
-- `Discard dummy` - Destroys the dummy. Use it only if you don't need a dummy anymore - otherwise it is better to just disconnect or disassociate the dummy so macOS can remember the dummy for later use (by its unique serial number)
+- `Discard dummy` - Destroys the dummy. Use it only if you don't need a dummy anymore - otherwise it is better to just disconnect or disassociate the dummy so macOS can remember the dummy for later use (by its unique serial number).
 
 ### App settings
 
@@ -172,6 +143,26 @@ Most of this is self explanatory but here is a brief overview of some of the add
 - `Use mirrored dummy sleep workaround` - macOS has a bug that makes virtual displays (like Sidecar, AirPlay, DisplayLink, BetterDummy) freeze when they act as a mirror main on some configurations. This workaround intends to solve that issue (more or less successfully).
 - `Disconnect and reconnect on sleep` - This disconnects dummies upon sleeps and reconnects them after wake.
 - `Reset BetterdDummy` - discard all dummies and reset all application settings to default.
+
+### Known issues
+
+There are some issues which are related to limitations/issues in macOS itself:
+
+- High refresh displays (refresh rates above 60Hz) are not supported.
+- Only SDR content is supported.
+- Mirroring any content to the internal display of the 2021 MacBook Pros will force the mirror under the notch.
+- Due to a bug present in the current macOS versions, mirroring virtual displays (Sidecar, BetterDummy, etc) might cause sleep issues on some configurations. The app has some workarounds for this issue but these might not work on all configurations.
+- Due to a bug present in the current macOS versions, swiping or keyboard shortcuts to switch spaces do not work on extended (secondary) mirror sets that involve virtual displays.
+
+Some of these issues affect physical dummy mirrors as well.
+
+## Don't forget to check out
+
+**If you like this app, you'll like [MonitorControl](https://monitorcontrol.app) as well!** Control the brightness, volume of your external display like a native Apple display!
+
+## Discord channel
+
+You can join the (mostly self help) discussion on the new [BetterDummy discord channel](https://discord.gg/aKe5yCWXSp).
 
 ## Thanks
 
