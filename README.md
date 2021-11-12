@@ -61,7 +61,7 @@ Some other possible uses:
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on Full HD displays.
 - You can use it instead of or alongside other apps that create custom native resolutions.
 
-## Usage
+## Installation and usage
 
 1. Download the app and install it by moving the unarchived BetterDummy app into the `Applications` folder of your Mac
 2. Start the app
@@ -85,6 +85,8 @@ Some other possible uses:
 9. Select the desired mode.
 
 The app saves the dummy display configuration and automatically restores it upon next restart.
+
+For more information on usage, see the [the additional info section](#some-additional-info-about-functionality).
 
 Notes:
 
