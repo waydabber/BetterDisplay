@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     alert.messageText = "BetterDummy is already running!"
     if prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue) || self.menu.statusBarItem.isVisible == false {
       self.menu.statusBarItem.isVisible = true
-      self.menu.hideMenuIconMenuItem.state = .off
+      Util.saveSettings()
       self.handleHideMenuIcon(self.menu.hideMenuIconMenuItem)
       alert.informativeText = "The menu icon was hidden but it is now set to visible. You can hide it again in Settings."
     } else {
