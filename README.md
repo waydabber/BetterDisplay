@@ -123,6 +123,7 @@ For most of the time, the app is self explanatory but here is a brief overview o
 <div align="center">
 <img src=".github/manage.png" width="469"/>
 </div>
+<br/>
 
 - The `Manage dummies` submenu header contains some basic info about the dummy - its aspect ratio and unique serial number.
 - `Connect dummy` / `Disconnect dummy` - You can easily connect or disconnect a dummy. Only dummes that are not associated to a display can be connected or disconnected manually.
@@ -135,6 +136,7 @@ For most of the time, the app is self explanatory but here is a brief overview o
 <div align="center">
 <img src=".github/settings.png" width="469"/>
 </div>
+<br/>
 
 - `Start at login`, `Automatically check for updates` - general options
 - `Hide menu icon` - when the menu icon is hidden, you can still change settings - simply launch the app again while it is already running and the menu icon will reappear.
