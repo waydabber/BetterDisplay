@@ -63,8 +63,9 @@ Some other possible uses:
 
 ## Usage
 
-1. Start the app
-1. In the app menu choose `Create New Dummy` and select your desired aspect ratio
+1. Download the app and install it by moving the unarchived BetterDummy app into the `Applications` folder of your Mac
+2. Start the app
+3. In the app menu choose `Create New Dummy` and select your desired aspect ratio
 <br/>
 <div align="center">
 <img src=".github/menu.png" width="469"/>
@@ -87,6 +88,7 @@ The app saves the dummy display configuration and automatically restores it upon
 
 Notes:
 
+- Instead of using the `System Preferences` -> `Displays` to change the resolution, you can use the in-app menu for this as well (`Manage Dummies` -> `Set resolution`) as of v1.0.10
 - The tutorial was compiled on an Apple Silicon Mac running macOS Monterey (the app works on Intel and Big Sur as well - steps are slightly differnt, see [this article](https://macfinder.co.uk/blog/how-to-mirror-specific-displays-in-os-x-mirror-some-but-not-all-of-your-monitors-on-an-apple-system/) on how to customize mirroring on Big Sur).
 - For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
 - You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
@@ -140,6 +142,36 @@ I really welcome [donations](https://opencollective.com/betterdummy/donate) and 
 ## Discord channel
 
 You can join the (mostly self help) discussion on the new [BetterDummy discord channel](https://discord.gg/aKe5yCWXSp).
+
+## Some additional info about functionality
+
+Most of this is self explanatory but here is a brief overview of some of the additional functions in the app.
+
+### Manage your dummies
+
+<div align="center">
+<img src=".github/manage.png" width="469"/>
+</div>
+
+- The `Manage dummies` submenu header contains some basic info about the dummy - its aspect ratio and unique serial number
+- `Connect dummy` / `Disconnect dummy` - You can easily connect or disconnect a dummy. Only dummes that are not associated to a display can be connected or disconnected manually
+- `Set resolution` - This allows for a quick resolution change. The list conatains all supported resolutions. If `Show low resolution modes` is enabled under `Settings`, then additional non-HiDPI resolutions are shown at the bottom of the list.
+- `Associate with display` or `Change association` - You can associate a dummy to a real display. This will make the dummy automatically connect or disconnect whenever the display is connected or disconnected. It is useful when docking/undocking your macbook so you don't have to manage your dummy manually every time.
+- `Discard dummy` - Destroys the dummy. Use it only if you don't need a dummy anymore - otherwise it is better to just disconnect or disassociate the dummy so macOS can remember the dummy for later use (by its unique serial number)
+
+### App settings
+
+<div align="center">
+<img src=".github/settings.png" width="469"/>
+</div>
+
+- `Start at login`, `Automatically check for updates` - general options
+- `Hide menu icon` - when the menu icon is hidden, you can still change settings - simply launch the app again while it is already running and the menu icon will reappear.
+- `Enable up to 16K resolutions` - you can enable up to 16384x16384 resolution (this translates to 8192x8192 HiDPI). This is mostly useful for ultrawide and double-wide displays, where the stanrad 8192px max resolution might still be constraining. Use with caution as very high resolutions tax the system heavily.
+- `Show low resolution modes in menu` will allow you to set low (non-HiDPI) resolutions in the app menu under `Manage dummies`
+- `Use mirrored dummy sleep workaround` - macOS has a bug that makes virtual displays (like Sidecar, AirPlay, DisplayLink, BetterDummy) freeze when they act as a mirror main on some configurations. This workaround intends to solve that issue (more or less successfully).
+- `Disconnect and reconnect on sleep` - This disconnects dummies upon sleeps and reconnects them after wake.
+- `Reset BetterdDummy` - discard all dummies and reset all application settings to default.
 
 ## Thanks
 
