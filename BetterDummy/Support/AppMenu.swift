@@ -49,7 +49,7 @@ class AppMenu {
     updateItem.target = app.updaterController
     self.appMenu.addItem(updateItem)
     self.appMenu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(app.handleAbout(_:)), keyEquivalent: ""))
-    self.appMenu.addItem(NSMenuItem(title: "Support the project...", action: #selector(app.handleDonate(_:)), keyEquivalent: ""))
+    self.appMenu.addItem(NSMenuItem(title: "Donate", action: #selector(app.handleDonate(_:)), keyEquivalent: ""))
     self.appMenu.addItem(NSMenuItem.separator())
     self.appMenu.addItem(NSMenuItem(title: "Quit BetterDummy", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
     self.populateNewMenu(newMenu)

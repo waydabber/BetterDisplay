@@ -51,7 +51,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 - Does not utilize graphics hardware in vain so it is somewhat faster.
 - Available instantly.
-- It is free ([donations humbly accepted](https://opencollective.com/betterdummy)). :)
+- It is free ([but donations are super welcome](https://opencollective.com/betterdummy))! :)
 
 Some other possible uses:
 
@@ -123,11 +123,15 @@ Some of these issues affect physical dummy mirrors as well.
 Some of the options:
 
 - You can contribute to the code (via Pull Requests)
-- If you like the app, [you can support the developer](https://opencollective.com/betterdummy/donate). :)
+- If you like the app, [please support the developer](https://opencollective.com/betterdummy/donate). :)
 - Don't forget to star the GitHub page!
 - Spread the word.
 
 Thank you for your help, it is really appreciated! :)
+
+## Donations/contributions
+
+I really welcome [donations](https://opencollective.com/betterdummy/donate) and very thankful for each of you who contributed to the project. My goal is to upgrade my dev machine (I am using the base level MBA with 8gigs of RAM) to something more decent (I hope for a properly specced 14" MacBook Pro). It seems totally unrealistic at this moment to achieve this by doing open source stuff, but maybe I'll get there someday. :) Thank you all again for the support, every little bit counts.
 
 ## Don't forget to check out
 

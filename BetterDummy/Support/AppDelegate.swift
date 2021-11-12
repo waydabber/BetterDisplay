@@ -35,11 +35,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
-    self.menu.statusBarItem.isVisible = true
     let alert = NSAlert()
     alert.alertStyle = .informational
-    alert.messageText = "BetterDummy was already running!"
-    alert.informativeText = "If the menu icon was hidden, it is visible now until restart."
+    alert.messageText = "BetterDummy is already running!"
+    if prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue) || self.menu.statusBarItem.isVisible == false {
+      self.menu.statusBarItem.isVisible = true
+      self.menu.hideMenuIconMenuItem.state = .off
+      self.handleHideMenuIcon(self.menu.hideMenuIconMenuItem)
+      alert.informativeText = "The menu icon was hidden but it is now set to visible. You can hide it again in Settings."
+    } else {
+      alert.informativeText = "To configure the app, use the BetterDummy menu icon in the macOS menu bar!"
+    }
     alert.runModal()
     return true
   }
@@ -57,6 +63,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         } else {
           os_log("There seems to be a problem with the created dummy.", type: .info)
         }
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = "Your new dummy was created and connected."
+        alert.informativeText = "Use Displays under System Preferences to configure your new dummy display! You can use the Manage dummies menu item to manage your dummy."
+        alert.runModal()
       } else {
         os_log("Could not create dummy using menu item tag number.", type: .info)
       }
@@ -70,8 +81,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
-          alert.messageText = "A dummy associated with a display cannot be connected!"
-          alert.informativeText = "A dummy which is associated with a display will connect automatically when the display is connected."
+          alert.messageText = "A dummy associated with a display cannot be manually connected!"
+          alert.informativeText = "A dummy which is associated with a display will connect automatically when the associated display is connected."
           alert.runModal()
         } else {
           if !dummy.connect() {
@@ -95,8 +106,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
-          alert.messageText = "A dummy associated with a display cannot be disconnected!"
-          alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the display is disconnected."
+          alert.messageText = "A dummy associated with a display cannot be manually disconnected!"
+          alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the associated display is disconnected."
           alert.runModal()
         } else {
           dummy.disconnect()
@@ -112,8 +123,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if let menuItem = sender as? NSMenuItem {
       let alert = NSAlert()
       alert.alertStyle = .critical
-      alert.messageText = "Do you want to discard dummy?"
-      alert.informativeText = "If you would like to use a dummy later, use disconnect so macOS display configuration data is preserved."
+      alert.messageText = "Do you want to discard the dummy?"
+      alert.informativeText = "If you would like to use a dummy later, use disconnect instead so macOS display configuration data is preserved."
       alert.addButton(withTitle: "Cancel")
       alert.addButton(withTitle: "Discard")
       if alert.runModal() == .alertSecondButtonReturn {
@@ -143,7 +154,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
             let alert = NSAlert()
             alert.alertStyle = .warning
             alert.messageText = "Disassociate and disconnect other associated dummies?"
-            alert.informativeText = "At least one other dummy is associated with this display."
+            alert.informativeText = "At least one other dummy is associated with this display. To avoid confusion, it is best to avoid this situation."
             alert.addButton(withTitle: "Disassociate")
             alert.addButton(withTitle: "No")
             if alert.runModal() == .alertFirstButtonReturn {
@@ -159,8 +170,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
         let alert = NSAlert()
         alert.alertStyle = .informational
-        alert.messageText = "The dummy will now be connected."
-        alert.informativeText = "The dummy is now associated with a display that is connected therefore it will automtically connect."
+        alert.messageText = "This dummy will now be connected."
+        alert.informativeText = "The dummy is now associated with a display that is connected therefore the dummy will automtically connect."
         alert.runModal()
         _ = dummy.connect()
       }
@@ -177,7 +188,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if dummy.isConnected, DisplayManager.getDisplayByPrefsId(associatedDisplayPrefsId) != nil {
         let alert = NSAlert()
         alert.alertStyle = .warning
-        alert.messageText = "Do you want to disconnect the dummy?"
+        alert.messageText = "Do you want to disconnect the dummy as well?"
         alert.informativeText = "The dummy is now disassociated from a display but the dummy is still connected."
         alert.addButton(withTitle: "Disconnect")
         alert.addButton(withTitle: "No")
@@ -217,8 +228,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if hasAssociated {
       let alert = NSAlert()
       alert.alertStyle = .warning
-      alert.messageText = "Dummies associated with displays cannot be connected!"
-      alert.informativeText = "A dummy which is associated with a display will automatically connect when the display is connected."
+      alert.messageText = "Dummies associated with displays cannot be manually connected!"
+      alert.informativeText = "A dummy which is associated with a display will automatically connect when the associated display is connected. All other dummies were connected."
       alert.runModal()
     }
     self.menu.repopulateManageMenu()
@@ -238,8 +249,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if hasAssociated {
       let alert = NSAlert()
       alert.alertStyle = .warning
-      alert.messageText = "Dummies associated with displays cannot be disconnected!"
-      alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the display is disconnected."
+      alert.messageText = "Dummies associated with displays cannot be manually disconnected!"
+      alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the associated display is disconnected. All other dummies were disconnected."
       alert.runModal()
     }
     self.menu.repopulateManageMenu()
@@ -250,7 +261,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     let alert = NSAlert()
     alert.alertStyle = .critical
     alert.messageText = "Do you want to discard all dummies?"
-    alert.informativeText = "If you would like to use the dummies later, use disconnect so macOS display configuration data is preserved."
+    alert.informativeText = "If you would like to use the dummies later, it is better to use disconnect so macOS display configuration data is preserved."
     alert.addButton(withTitle: "Cancel")
     alert.addButton(withTitle: "Discard")
     if alert.runModal() == .alertSecondButtonReturn {
@@ -265,7 +276,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     let alert = NSAlert()
     alert.alertStyle = .critical
     alert.messageText = "Do you want to disassociate all dummies from all displays?"
-    alert.informativeText = "Connected dummies will remain connected."
+    alert.informativeText = "Connected dummies will remain connected after this operation."
     alert.addButton(withTitle: "Cancel")
     alert.addButton(withTitle: "Disassociate")
     if alert.runModal() == .alertSecondButtonReturn {
@@ -315,7 +326,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     let alert = NSAlert()
     alert.alertStyle = .critical
     alert.messageText = "Are sure you want to reset BetterDummy?"
-    alert.informativeText = "This restores the default settings and discards all dummies."
+    alert.informativeText = "This restores the default settings and discards all dummies in the process."
     alert.addButton(withTitle: "Cancel")
     alert.addButton(withTitle: "Reset")
     if alert.runModal() == .alertSecondButtonReturn {
@@ -340,7 +351,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       let alert = NSAlert()
       alert.alertStyle = .warning
       alert.messageText = "Do you want to hide the menu icon?"
-      alert.informativeText = "You can reveal the menu icon by launching the app again while it is already running."
+      alert.informativeText = "You can reveal the menu icon by launching the app again while the app is already running."
       alert.addButton(withTitle: "Hide")
       alert.addButton(withTitle: "No")
       if alert.runModal() == .alertFirstButtonReturn {
@@ -361,7 +372,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       let alert = NSAlert()
       alert.alertStyle = .critical
       alert.messageText = "Are you sure to enable 16K?"
-      alert.informativeText = "Using dummies over 8K can greatly reduce performance."
+      alert.informativeText = "Using dummies over 8K can severely reduce performance on some setups."
       alert.addButton(withTitle: "Cancel")
       alert.addButton(withTitle: "Enable")
       if alert.runModal() == .alertFirstButtonReturn {
@@ -385,7 +396,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     let year = Calendar.current.component(.year, from: Date())
     let alert = NSAlert()
     alert.messageText = "About BetterDummy"
-    alert.informativeText = "Version \(version) Build \(build)\n\nCopyright Ⓒ \(year) @waydabber. \nMIT Licensed, feel free to improve.\n\nCheck out the GitHub page for instructions or to report issues!"
+    alert.informativeText = "Version \(version) Build \(build)\n\nCopyright Ⓒ \(year) @waydabber.\n\nCheck out the GitHub page for instructions or to report issues!"
     alert.addButton(withTitle: "Visit GitHub page")
     alert.addButton(withTitle: "OK")
     alert.alertStyle = NSAlert.Style.informational
@@ -397,16 +408,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleDonate(_: NSMenuItem) {
-    let alert = NSAlert()
-    alert.messageText = "Would you like to help out?"
-    alert.informativeText = "If you find this app useful, please consider supporting the project with a financial contribution. :)"
-    alert.addButton(withTitle: "Yes!")
-    alert.addButton(withTitle: "Nope")
-    if alert.runModal() == .alertFirstButtonReturn {
-      if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
-        NSWorkspace.shared.open(url)
-      }
+    if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
+      NSWorkspace.shared.open(url)
     }
+    let alert = NSAlert()
+    alert.messageText = "Thank you for your generousity!"
+    alert.informativeText = "If you find this app useful, please support the developer with your donation:\n\nopencollective.com/betterdummy\n\nWe opened the page for you in your browser. :)"
+    alert.runModal()
   }
 
   // MARK: *** Handlers - Sleep and wake
