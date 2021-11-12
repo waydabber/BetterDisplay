@@ -61,11 +61,10 @@ Some other possible uses:
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on Full HD displays.
 - You can use it instead of or alongside other apps that create custom native resolutions.
 
-## Installation and usage
+## Usage
 
-1. Download the app and install it by moving the unarchived BetterDummy app into the `Applications` folder of your Mac
-2. Start the app
-3. In the app menu choose `Create New Dummy` and select your desired aspect ratio
+1. Start the app
+2. In the app menu choose `Create New Dummy` and select your desired aspect ratio
 <br/>
 <div align="center">
 <img src=".github/menu.png" width="469"/>
@@ -82,7 +81,7 @@ Some other possible uses:
 <img src=".github/displayprefs.png" width="550"/>
 </div>
 
-9. Select the desired mode.
+8. Select the desired mode.
 
 The app saves the dummy display configuration and automatically restores it upon next restart.
 
@@ -103,6 +102,10 @@ Notes:
 - Move the app to Applications
 - Start the app
 - Use the app menu bar item to interact.
+
+## Donations/contributions
+
+I really welcome [donations](https://opencollective.com/betterdummy/donate) and very thankful for each of you who contributed to the project. My goal is to upgrade my dev machine (I am using the base level MBA with 8gigs of RAM) to something more decent (I hope for a properly specced 14" MacBook Pro). It seems totally unrealistic at this moment to achieve this by doing open source stuff, but maybe I'll get there someday. :) Thank you all again for the support, every little bit counts.
 
 ## Compatibility
 
@@ -126,16 +129,11 @@ Some of these issues affect physical dummy mirrors as well.
 
 Some of the options:
 
-- You can contribute to the code (via Pull Requests)
 - If you like the app, [please support the developer](https://opencollective.com/betterdummy/donate). :)
 - Don't forget to star the GitHub page!
 - Spread the word.
 
 Thank you for your help, it is really appreciated! :)
-
-## Donations/contributions
-
-I really welcome [donations](https://opencollective.com/betterdummy/donate) and very thankful for each of you who contributed to the project. My goal is to upgrade my dev machine (I am using the base level MBA with 8gigs of RAM) to something more decent (I hope for a properly specced 14" MacBook Pro). It seems totally unrealistic at this moment to achieve this by doing open source stuff, but maybe I'll get there someday. :) Thank you all again for the support, every little bit counts.
 
 ## Don't forget to check out
 
