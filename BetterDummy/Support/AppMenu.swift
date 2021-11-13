@@ -160,7 +160,7 @@ class AppMenu {
       unavailableItem.isEnabled = false
       resolutionMenu.addItem(unavailableItem)
     }
-    let resolutionSubmenu = NSMenuItem(title: "Set Resolution", action: nil, keyEquivalent: "")
+    let resolutionSubmenu = NSMenuItem(title: "Set resolution", action: nil, keyEquivalent: "")
     resolutionSubmenu.submenu = resolutionMenu
     return resolutionSubmenu
   }
