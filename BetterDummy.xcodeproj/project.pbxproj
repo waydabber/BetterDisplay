@@ -269,11 +269,11 @@
 			buildPhases = (
 				AA162C0E272C3072003CFC89 /* SwiftFormat */,
 				AA162C0F272C309C003CFC89 /* SwiftLint */,
+				AA162C33272C7B0E003CFC89 /* Increase Build Number */,
 				BEB26A3B2530B2F600744C86 /* Sources */,
 				BEB26A3C2530B2F600744C86 /* Frameworks */,
 				BEB26A3D2530B2F600744C86 /* Resources */,
 				AAA2D689272BFC6A00F71CF0 /* Copy Helper to start at Login */,
-				AA162C33272C7B0E003CFC89 /* Increase Build Number */,
 			);
 			buildRules = (
 			);
