@@ -444,8 +444,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
     self.isSleep = true
     if DummyManager.getNumOfDummies() > 0, !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) {
-      DummyManager.sleepTempVirtualDisplay = Dummy.createVirtualDisplay(DummyDefinition(1920, 1080, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
-      os_log("Sleep intercepted, created temporary display.", type: .info)
+//      let maxWidth = min(8192, Int(DisplayManager.getDisplays().max(by: { $0.width < $1.width })?.pixelWidth ?? 0))
+//      let maxHeight = min(8192, Int(DisplayManager.getDisplays().max(by: { $0.height < $1.height })?.pixelHeight ?? 0))
+      let maxWidth = 1920
+      let maxHeight = 1080
+      DummyManager.sleepTempVirtualDisplay = Dummy.createVirtualDisplay(DummyDefinition(maxWidth, maxHeight, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
+      os_log("Sleep intercepted, created temporary display with the size of %{public}@x%{public}@", type: .info, String(maxWidth), String(maxHeight))
     }
     if self.menu.reconnectAfterSleepMenuItem.state == .on {
       os_log("Disconnecting dummies on sleep.", type: .info)

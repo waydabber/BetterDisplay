@@ -10,7 +10,6 @@ import os.log
 
 class Display: Equatable {
   struct Resolution {
-    var itemNumber: Int32
     var modeNumber: UInt32
     var width: UInt32
     var height: UInt32
@@ -26,7 +25,13 @@ class Display: Equatable {
   var vendorNumber: UInt32?
   var modelNumber: UInt32?
   var serialNumber: UInt32?
-  var resolutions: [Resolution] = []
+  var resolutions: [Int: Resolution] = [:]
+  var currentResolution: Int = 0
+  var width: UInt32 = 0
+  var height: UInt32 = 0
+  var pixelWidth: UInt32 = 0
+  var pixelHeight: UInt32 = 0
+  var hiDPI: Bool = false
 
   static func == (lhs: Display, rhs: Display) -> Bool {
     lhs.identifier == rhs.identifier
@@ -45,7 +50,7 @@ class Display: Equatable {
     os_log("Display init with prefsIdentifier %{public}@", type: .info, self.prefsId)
     self.isVirtual = isVirtual
     self.isDummy = isDummy
-    self.resolutions = self.getResolutions()
+    self.updateResolutions()
   }
 
   func isBuiltIn() -> Bool {
@@ -56,8 +61,9 @@ class Display: Equatable {
     }
   }
 
-  func getResolutions() -> [Resolution] {
-    var resolutionList: [Resolution] = []
+  func updateResolutions() {
+    self.resolutions = [:]
+    self.currentResolution = 0
     let numberOfDisplayModes = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
     let currentDisplayMode = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
     let displayModeDescription = UnsafeMutablePointer<CGSDisplayMode>.allocate(capacity: 1)
@@ -72,7 +78,6 @@ class Display: Equatable {
     for i in 0 ... numberOfDisplayModes.pointee - 1 {
       CGSGetDisplayModeDescriptionOfLength(self.identifier, i, displayModeDescription, displayModeLength)
       let resolution = Resolution(
-        itemNumber: i,
         modeNumber: displayModeDescription.pointee.modeNumber,
         width: displayModeDescription.pointee.width,
         height: displayModeDescription.pointee.height,
@@ -81,9 +86,16 @@ class Display: Equatable {
         hiDPI: Int(displayModeDescription.pointee.density) > 1 ? true : false,
         isActive: currentDisplayMode.pointee == i ? true : false
       )
-      resolutionList.append(resolution)
+      if resolution.isActive {
+        self.currentResolution = Int(i)
+        self.width = resolution.width
+        self.height = resolution.height
+        self.hiDPI = resolution.hiDPI
+        self.pixelWidth = self.width * (self.hiDPI ? 2 : 1)
+        self.pixelHeight = self.height * (self.hiDPI ? 2 : 1)
+      }
+      self.resolutions[Int(i)] = resolution
     }
-    return resolutionList
   }
 
   func changeResolution(resolutionItemNumber: Int32) {

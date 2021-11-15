@@ -89,7 +89,7 @@ class Dummy: Equatable {
     os_log("Disconnected virtual display: %{public}@", type: .info, "\(self.getName())")
   }
 
-  static func createVirtualDisplay(_ definition: DummyDefinition, name: String, serialNum: UInt32) -> CGVirtualDisplay? {
+  static func createVirtualDisplay(_ definition: DummyDefinition, name: String, serialNum: UInt32, hiDPI: Bool = true) -> CGVirtualDisplay? {
     os_log("Creating virtual display: %{public}@", type: .info, "\(name)")
     if let descriptor = CGVirtualDisplayDescriptor() {
       os_log("- Preparing descriptor...", type: .info)
@@ -117,7 +117,7 @@ class Dummy: Equatable {
         }
         if let settings = CGVirtualDisplaySettings() {
           os_log("- Preparing settings for display...", type: .info)
-          settings.hiDPI = 1
+          settings.hiDPI = hiDPI ? 1 : 0
           settings.modes = modes as [Any]
           if display.applySettings(settings) {
             os_log("- Settings are successfully applied. Dummy Display ID is %{public}@", type: .info, String(display.displayID))

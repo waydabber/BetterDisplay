@@ -140,18 +140,18 @@ class AppMenu {
   func getResolutionSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
     let resolutionMenu = NSMenu()
     if let resolutions = DisplayManager.getDisplayById(dummy.displayIdentifier)?.resolutions {
-      for resolution in resolutions where resolution.height >= 720 && resolution.hiDPI == true {
-        let resolutionMenuItem = NSMenuItem(title: "\(resolution.width)x\(resolution.height)", action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
-        resolutionMenuItem.tag = number * 256 * 256 + Int(resolution.itemNumber)
-        resolutionMenuItem.state = resolution.isActive ? .on : .off
+      for resolution in resolutions.sorted(by: { $0.0 < $1.0 }) where resolution.value.height >= 720 && resolution.value.hiDPI == true {
+        let resolutionMenuItem = NSMenuItem(title: "\(resolution.value.width)x\(resolution.value.height)", action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
+        resolutionMenuItem.tag = number * 256 * 256 + resolution.key
+        resolutionMenuItem.state = resolution.value.isActive ? .on : .off
         resolutionMenu.addItem(resolutionMenuItem)
       }
       resolutionMenu.addItem(NSMenuItem.separator())
       if prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue) {
-        for resolution in resolutions where resolution.height >= 720 && resolution.hiDPI == false {
-          let resolutionMenuItem = NSMenuItem(title: "\(resolution.width)x\(resolution.height)" + " (low resolution)", action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
-          resolutionMenuItem.tag = number * 256 * 256 + Int(resolution.itemNumber)
-          resolutionMenuItem.state = resolution.isActive ? .on : .off
+        for resolution in resolutions.sorted(by: { $0.0 < $1.0 }) where resolution.value.height >= 720 && resolution.value.hiDPI == false {
+          let resolutionMenuItem = NSMenuItem(title: "\(resolution.value.width)x\(resolution.value.height)" + " (low resolution)", action: #selector(app.handleDummyResolution(_:)), keyEquivalent: "")
+          resolutionMenuItem.tag = number * 256 * 256 + resolution.key
+          resolutionMenuItem.state = resolution.value.isActive ? .on : .off
           resolutionMenu.addItem(resolutionMenuItem)
         }
       }
