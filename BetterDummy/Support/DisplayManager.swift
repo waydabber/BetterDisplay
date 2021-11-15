@@ -63,7 +63,7 @@ class DisplayManager {
       let isDummy: Bool = DisplayManager.isDummy(displayID: onlineDisplayID)
       let isVirtual: Bool = DisplayManager.isVirtual(displayID: onlineDisplayID)
       let display = Display(id, name: name, vendorNumber: vendorNumber, modelNumber: modelNumber, serialNumber: serialNumber, isVirtual: isVirtual, isDummy: isDummy)
-      os_log("Display found - %{public}@", type: .info, "ID: \(display.identifier), Name: \(display.name) (Vendor: \(display.vendorNumber ?? 0), Model: \(display.modelNumber ?? 0))")
+      os_log("Display found -%{public}@", type: .info, "\(display.isVirtual ? " VIRTUAL" : "")\(display.isDummy ? " DUMMY" : "") id: \(display.identifier), name: \(display.name), vendor: \(display.vendorNumber ?? 0), model: \(display.modelNumber ?? 0), s/n: \(display.serialNumber ?? 0)")
       self.addDisplay(display: display)
     }
     self.addDisplayCounterSuffixes()

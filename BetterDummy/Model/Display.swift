@@ -46,10 +46,10 @@ class Display: Equatable {
     self.vendorNumber = vendorNumber
     self.modelNumber = modelNumber
     self.serialNumber = serialNumber
-    self.prefsId = "(" + String(name.filter { !$0.isWhitespace }) + String(vendorNumber ?? 0) + String(modelNumber ?? 0) + "@" + String(identifier) + ")"
-    os_log("Display init with prefsIdentifier %{public}@", type: .info, self.prefsId)
     self.isVirtual = isVirtual
     self.isDummy = isDummy
+    self.prefsId = "(" + String(name.filter { !$0.isWhitespace }) + String(vendorNumber ?? 0) + String(modelNumber ?? 0) + "@" + (self.isVirtual ? String(self.serialNumber ?? 9999) : String(identifier)) + ")"
+    os_log("Display init with prefsIdentifier %{public}@", type: .info, self.prefsId)
     self.updateResolutions()
   }
 
