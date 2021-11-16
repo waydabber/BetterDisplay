@@ -155,6 +155,7 @@ There are some issues which are related to limitations/issues in macOS itself:
 - Mirroring any content to the internal display of the 2021 MacBook Pros will force the mirror under the notch.
 - Due to a bug present in the current macOS versions, mirroring virtual displays (Sidecar, BetterDummy, etc) might cause sleep issues on some configurations. The app has some workarounds for this issue but these might not work on all configurations.
 - Due to a bug present in the current macOS versions, swiping or keyboard shortcuts to switch spaces do not work on extended (secondary) mirror sets that involve virtual displays.
+- Apple's TV app will not show any protected content on non-native hardware accellerated displays (this applies to Sidecar, DisplayLink and any other tech that relies on virtual displays as well).
 
 Some of these issues affect physical dummy mirrors as well.
 
