@@ -99,6 +99,7 @@ class Display: Equatable {
   }
 
   func changeResolution(resolutionItemNumber: Int32) {
+    app.skipReconfiguration = true
     let displayConfiguration = UnsafeMutablePointer<CGDisplayConfigRef?>.allocate(capacity: 1)
     defer {
       displayConfiguration.deallocate()
@@ -106,5 +107,6 @@ class Display: Equatable {
     CGBeginDisplayConfiguration(displayConfiguration)
     CGSConfigureDisplayMode(displayConfiguration.pointee, self.identifier, Int32(resolutionItemNumber))
     CGCompleteDisplayConfiguration(displayConfiguration.pointee, CGConfigureOption.permanently)
+    app.skipReconfiguration = false
   }
 }

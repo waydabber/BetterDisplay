@@ -11,7 +11,9 @@ enum PrefKey: String {
   case isConnected
   case associatedDisplayPrefsId
   case associatedDisplayName
-  case enableSliderResolution
+  case useMenuForResolution
+
+  case showSliderResolutionBox
   case enableSliderSnap
   case showTickMarks
 

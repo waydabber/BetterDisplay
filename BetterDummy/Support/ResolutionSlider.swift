@@ -4,12 +4,10 @@
 //  Created by @waydabber
 //
 
-// TODO: This is a work in progress...
-
 import Cocoa
 import os.log
 
-class SliderHandler {
+class ResolutionSlider {
   var slider: BDSlider?
   var view: NSView?
   var resolutionBox: NSTextField?
@@ -161,8 +159,8 @@ class SliderHandler {
   public init(display: Display?, title: String = "", position _: Int = 0) {
     self.title = title
     self.display = display
-    let slider = SliderHandler.BDSlider(value: 0, minValue: 0, maxValue: 1, target: self, action: #selector(SliderHandler.valueChanged))
-    let showResolution = prefs.bool(forKey: PrefKey.enableSliderResolution.rawValue)
+    let slider = ResolutionSlider.BDSlider(value: 0, minValue: 0, maxValue: 1, target: self, action: #selector(ResolutionSlider.valueChanged))
+    let showResolution = prefs.bool(forKey: PrefKey.showSliderResolutionBox.rawValue)
     slider.isEnabled = true
     slider.setNumOfCustomTickmarks(prefs.bool(forKey: PrefKey.showTickMarks.rawValue) ? 5 : 0)
     self.slider = slider
@@ -170,11 +168,11 @@ class SliderHandler {
     slider.frame.origin = NSPoint(x: 15, y: 5)
     let view = NSView(frame: NSRect(x: 0, y: 0, width: slider.frame.width + 30 + (showResolution ? 38 : 0), height: slider.frame.height + 14))
     view.frame.origin = NSPoint(x: 12, y: 0)
-    let iconName: String = "circle.dashed" // TODO: Find proper icon
-    let icon = SliderHandler.ClickThroughImageView()
+    let iconName: String = "rectangle.split.3x3.fill"
+    let icon = ResolutionSlider.ClickThroughImageView()
     icon.image = NSImage(systemSymbolName: iconName, accessibilityDescription: title)
     icon.contentTintColor = NSColor.black.withAlphaComponent(0.6)
-    icon.frame = NSRect(x: view.frame.origin.x + 6.5, y: view.frame.origin.y + 13, width: 15, height: 15)
+    icon.frame = NSRect(x: view.frame.origin.x + 6, y: view.frame.origin.y + 12.5, width: 15, height: 15)
     icon.imageAlignment = .alignCenter
     view.addSubview(slider)
     view.addSubview(icon)

@@ -31,6 +31,7 @@ class Util {
     prefs.set(app.menu.hideMenuIconMenuItem.state == .on, forKey: PrefKey.hideMenuIcon.rawValue)
     prefs.set(app.menu.enable16KMenuItem.state == .on, forKey: PrefKey.enable16K.rawValue)
     prefs.set(app.menu.showLowResolutionModesMenuItem.state == .on, forKey: PrefKey.showLowResolutionModes.rawValue)
+    prefs.set(app.menu.useMenuForResolutionMenuItem.state == .on, forKey: PrefKey.useMenuForResolution.rawValue)
     prefs.set(app.menu.reconnectAfterSleepMenuItem.state == .on, forKey: PrefKey.reconnectAfterSleep.rawValue)
     prefs.set(app.menu.useTempSleepMenuItem.state == .off, forKey: PrefKey.disableTempSleep.rawValue)
     prefs.set(DummyManager.getNumOfDummies(), forKey: PrefKey.numOfDummyDisplays.rawValue)
@@ -57,6 +58,7 @@ class Util {
     app.menu.hideMenuIconMenuItem.state = prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue) ? .on : .off
     app.menu.enable16KMenuItem.state = prefs.bool(forKey: PrefKey.enable16K.rawValue) ? .on : .off
     app.menu.showLowResolutionModesMenuItem.state = prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue) ? .on : .off
+    app.menu.useMenuForResolutionMenuItem.state = prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue) ? .on : .off
     app.menu.reconnectAfterSleepMenuItem.state = prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) ? .on : .off
     app.menu.useTempSleepMenuItem.state = !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue) ? .on : .off
     guard prefs.integer(forKey: "numOfDummyDisplays") > 0 else {

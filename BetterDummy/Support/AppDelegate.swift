@@ -12,6 +12,7 @@ import Sparkle
 class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   var isSleep: Bool = false
   var reconfigureID: Int = 0
+  var skipReconfiguration = false
   let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
   let menu = AppMenu()
 
@@ -292,6 +293,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   // MARK: *** Handlers - Display reconfiguration
 
   @objc func handleDisplayReconfiguration(dispatchedReconfigureID: Int = 0, force: Bool = false) {
+    guard !self.skipReconfiguration else {
+      os_log("Display reconfiguration is forcefully skipped", type: .info)
+      return
+    }
     if !force, dispatchedReconfigureID == 0 || self.isSleep {
       self.reconfigureID += 1
       os_log("Bumping reconfigureID to %{public}@", type: .info, String(self.reconfigureID))
@@ -382,6 +387,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     sender.state = sender.state == .on ? .off : .on
     Util.saveSettings()
     DummyManager.updateDummyDefinitions()
+  }
+
+  @objc func handleUseMenuForResolution(_ sender: NSMenuItem) {
+    sender.state = sender.state == .on ? .off : .on
+    Util.saveSettings()
+    self.menu.repopulateManageMenu()
   }
 
   @objc func handleShowLowResolutionModes(_ sender: NSMenuItem) {
