@@ -139,7 +139,7 @@ class AppMenu {
     }
   }
 
-  func getResolutionSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
+  func getResolutionSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem? {
     if prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue) {
       let resolutionMenu = NSMenu()
       if let resolutions = DisplayManager.getDisplayById(dummy.displayIdentifier)?.resolutions {
@@ -167,13 +167,15 @@ class AppMenu {
       resolutionSubmenu.submenu = resolutionMenu
       return resolutionSubmenu
     } else {
-      // TODO: Finish this stuff so it actually does something useful
-      let display = DisplayManager.getDisplayById(dummy.displayIdentifier)
-      let sliderHandler = ResolutionSlider(display: display, title: "Resolution")
-      let sliderItem = NSMenuItem()
-      sliderItem.view = sliderHandler.view
-      return sliderItem
+      if let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
+        let sliderHandler = display.resolutionSliderHandler ?? ResolutionSliderHandler(display: display)
+        display.resolutionSliderHandler = sliderHandler
+        let sliderItem = NSMenuItem()
+        sliderItem.view = sliderHandler.view
+        return sliderItem
+      }
     }
+    return nil
   }
 
   func getAssociateSubmenuItem(_ dummy: Dummy, _ number: Int) -> NSMenuItem {
@@ -213,7 +215,9 @@ class AppMenu {
     dummyHeaderItem.attributedTitle = NSAttributedString(string: "\(dummy.getMenuItemTitle())", attributes: attrsHeader)
     self.manageMenu.addItem(dummyHeaderItem)
     if dummy.isConnected {
-      self.manageMenu.addItem(self.getResolutionSubmenuItem(dummy, number))
+      if let resolutionSubmenuItem = self.getResolutionSubmenuItem(dummy, number) {
+        self.manageMenu.addItem(resolutionSubmenuItem)
+      }
       self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
       var connectItem: NSMenuItem
       connectItem = NSMenuItem(title: "Disconnect dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")

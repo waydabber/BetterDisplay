@@ -13,7 +13,6 @@ enum PrefKey: String {
   case associatedDisplayName
   case useMenuForResolution
 
-  case showSliderResolutionBox
   case enableSliderSnap
   case showTickMarks
 
