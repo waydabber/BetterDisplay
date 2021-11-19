@@ -96,6 +96,7 @@ class ResolutionSliderHandler {
       self.resolutionBox?.stringValue = "Resolution: \(resolution.width)x\(resolution.height)"
       let event = NSApplication.shared.currentEvent
       if event?.type == NSEvent.EventType.leftMouseUp || event?.type == NSEvent.EventType.rightMouseUp {
+        app.menu.appMenu.cancelTrackingWithoutAnimation()
         self.display.changeResolution(resolutionItemNumber: Int32(resolutionKey))
       }
     }
