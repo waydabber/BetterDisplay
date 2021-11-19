@@ -77,7 +77,6 @@ class ResolutionSliderHandler {
   }
 
   @objc func valueChanged(slider: BetterSlider) {
-    os_log("Value change detected", type: .info)
     guard !app.isSleep, app.reconfigureID == 0 else {
       return
     }
@@ -95,7 +94,10 @@ class ResolutionSliderHandler {
     self.value = Int(value)
     if let (resolutionKey, resolution) = self.acceptedResolutions[self.value] {
       self.resolutionBox?.stringValue = "Resolution: \(resolution.width)x\(resolution.height)"
-      // self.display.changeResolution(resolutionItemNumber: key)
+      let event = NSApplication.shared.currentEvent
+      if event?.type == NSEvent.EventType.leftMouseUp || event?.type == NSEvent.EventType.rightMouseUp {
+        self.display.changeResolution(resolutionItemNumber: Int32(resolutionKey))
+      }
     }
   }
 
