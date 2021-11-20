@@ -50,11 +50,12 @@ class ResolutionSliderHandler {
     slider.frame.origin = NSPoint(x: 14, y: 20)
     let view = NSView(frame: NSRect(x: 0, y: 0, width: slider.frame.width + 24, height: slider.frame.height + 14 + 12 /* ResolutionBox */ ))
     view.frame.origin = NSPoint(x: 12, y: 13)
-    let iconName: String = "eyeglasses"
+    let iconName: String = "rectangle.stack"
     let icon = ResolutionSliderHandler.ClickThroughImageView()
+    icon.rotate(byDegrees: 180)
     icon.image = NSImage(systemSymbolName: iconName, accessibilityDescription: self.title)
     icon.contentTintColor = NSColor.black.withAlphaComponent(0.6)
-    icon.frame = NSRect(x: view.frame.origin.x + 6, y: view.frame.origin.y + 15, width: 15, height: 15)
+    icon.frame = NSRect(x: view.frame.origin.x + 5, y: view.frame.origin.y + 14, width: 15, height: 15)
     icon.imageAlignment = .alignCenter
     view.addSubview(slider)
     view.addSubview(icon)
