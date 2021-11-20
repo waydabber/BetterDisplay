@@ -23,6 +23,8 @@ class AppMenu {
     }
     self.statusBarItem.menu = self.appMenu
     self.statusBarItem.isVisible = !prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue)
+    self.populateNewMenu()
+    self.populateSettingsMenu()
     self.populateAppMenu()
   }
 
@@ -38,25 +40,28 @@ class AppMenu {
 
   func populateAppMenu() {
     self.emptyMenu(self.appMenu)
-    let newSubmenu = NSMenuItem(title: "Create new dummy", action: nil, keyEquivalent: "")
-    newSubmenu.submenu = self.newMenu
+    var first = true
+    for key in DummyManager.definedDummies.keys.sorted(by: <) {
+      if let dummy = DummyManager.getDummyByNumber(key) {
+        if !first {
+          self.appMenu.addItem(NSMenuItem.separator())
+        }
+        self.addDummyToMenu(dummy, key)
+        first = false
+      }
+    }
+    if DummyManager.dummyCounter > 1 {
+      self.appMenu.addItem(NSMenuItem.separator())
+    }
     let manageSubmenu = NSMenuItem(title: "Manage dummies", action: nil, keyEquivalent: "")
     manageSubmenu.submenu = self.manageMenu
-    let settingsSubmenu = NSMenuItem(title: "Settings", action: nil, keyEquivalent: "")
-    settingsSubmenu.submenu = self.settingsMenu
-    self.appMenu.addItem(newSubmenu)
     self.appMenu.addItem(manageSubmenu)
-    self.appMenu.addItem(NSMenuItem.separator())
+    let settingsSubmenu = NSMenuItem(title: "Preferences", action: nil, keyEquivalent: "")
+    settingsSubmenu.submenu = self.settingsMenu
     self.appMenu.addItem(settingsSubmenu)
-    let updateItem = NSMenuItem(title: "Check for updates...", action: #selector(app.updaterController.checkForUpdates(_:)), keyEquivalent: "")
-    updateItem.target = app.updaterController
-    self.appMenu.addItem(updateItem)
-    self.appMenu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(app.about(_:)), keyEquivalent: ""))
-    self.appMenu.addItem(NSMenuItem(title: "Donate", action: #selector(app.donate(_:)), keyEquivalent: ""))
+    self.appMenu.addItem(NSMenuItem(title: "Please donate!", action: #selector(app.donate(_:)), keyEquivalent: ""))
     self.appMenu.addItem(NSMenuItem.separator())
     self.appMenu.addItem(NSMenuItem(title: "Quit BetterDummy", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-    self.populateNewMenu()
-    self.populateSettingsMenu()
   }
 
   func populateSettingsMenu() {
@@ -101,6 +106,14 @@ class AppMenu {
     self.settingsMenu.addItem(reconnectAfterSleepMenuItem)
 
     // ---
+
+    self.settingsMenu.addItem(NSMenuItem.separator())
+    let updateItem = NSMenuItem(title: "Check for updates...", action: #selector(app.updaterController.checkForUpdates(_:)), keyEquivalent: "")
+    updateItem.target = app.updaterController
+    self.appMenu.addItem(updateItem)
+    self.appMenu.addItem(NSMenuItem(title: "About BetterDummy", action: #selector(app.about(_:)), keyEquivalent: ""))
+
+    // ---
     self.settingsMenu.addItem(NSMenuItem.separator())
 
     self.settingsMenu.addItem(NSMenuItem(title: "Reset BetterDummy", action: #selector(app.reset(_:)), keyEquivalent: ""))
@@ -123,20 +136,11 @@ class AppMenu {
 
   func populateManageMenu() {
     self.emptyMenu(self.manageMenu)
-    var first = true
-    for key in DummyManager.definedDummies.keys.sorted(by: <) {
-      if let dummy = DummyManager.getDummyByNumber(key) {
-        if !first {
-          self.manageMenu.addItem(NSMenuItem.separator())
-        }
-        self.addDummyToManageMenu(dummy, key)
-        first = false
-      }
-    }
-    self.addStandardManageMenuOptions()
-  }
 
-  func addStandardManageMenuOptions() {
+    let newSubmenu = NSMenuItem(title: "Create new dummy", action: nil, keyEquivalent: "")
+    newSubmenu.submenu = self.newMenu
+    self.manageMenu.addItem(newSubmenu)
+
     if DummyManager.dummyCounter > 1 {
       var isThereDisconnected = false
       var isThereConnected = false
@@ -154,6 +158,7 @@ class AppMenu {
           isThereAssociated = true
         }
       }
+
       self.manageMenu.addItem(NSMenuItem.separator())
       if isThereDisconnected {
         self.manageMenu.addItem(NSMenuItem(title: "Connect all dummies", action: #selector(app.connectAllDummies(_:)), keyEquivalent: ""))
@@ -164,8 +169,19 @@ class AppMenu {
       if isThereAssociated {
         self.manageMenu.addItem(NSMenuItem(title: "Disassociate all dummies", action: #selector(app.disassociateAllDummies(_:)), keyEquivalent: ""))
       }
+
       if isThereAny {
-        self.manageMenu.addItem(NSMenuItem(title: "Discard all dummies", action: #selector(app.discardAllDummies(_:)), keyEquivalent: ""))
+        self.manageMenu.addItem(NSMenuItem.separator())
+
+        for key in DummyManager.definedDummies.keys.sorted(by: <) {
+          if let dummy = DummyManager.getDummyByNumber(key) {
+            let deleteItem = NSMenuItem(title: "Discard `\(dummy.getName()) (\(dummy.getSerialNumber()))`", action: #selector(app.discardDummy(_:)), keyEquivalent: "")
+            deleteItem.tag = key
+            self.manageMenu.addItem(deleteItem)
+          }
+        }
+
+        self.manageMenu.addItem(NSMenuItem(title: "Discard all dummy", action: #selector(app.discardAllDummies(_:)), keyEquivalent: ""))
       }
     }
   }
@@ -268,7 +284,7 @@ class AppMenu {
     return item
   }
 
-  func addDummyToManageMenu(_ dummy: Dummy, _ number: Int) {
+  func addDummyToMenu(_ dummy: Dummy, _ number: Int) {
     let dummyHeaderItem = NSMenuItem()
     let attributedHeader = NSMutableAttributedString()
     var attrs: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
@@ -276,16 +292,13 @@ class AppMenu {
     attrs = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 13)]
     attributedHeader.append(NSAttributedString(string: " (\(dummy.getSerialNumber()))", attributes: attrs))
     dummyHeaderItem.attributedTitle = attributedHeader
-    self.manageMenu.addItem(dummyHeaderItem)
+    self.appMenu.addItem(dummyHeaderItem)
     if dummy.isConnected, let resolutionSubmenuItem = self.getResolutionSubmenuItem(dummy, number) {
-      self.manageMenu.addItem(resolutionSubmenuItem)
+      self.appMenu.addItem(resolutionSubmenuItem)
     }
-    self.manageMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isConnected, label: "Connected", tag: number, selector: #selector(app.connectDummy)))
-    self.manageMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isLowResolution, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution)))
-    self.manageMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isPortrait, label: "Portrait orientation", tag: number, selector: #selector(app.portrait)))
-    self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
-    let deleteItem = NSMenuItem(title: "Discard dummy", action: #selector(app.discardDummy(_:)), keyEquivalent: "")
-    deleteItem.tag = number
-    self.manageMenu.addItem(deleteItem)
+    self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isConnected, label: "Connected", tag: number, selector: #selector(app.connectDummy)))
+    self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isLowResolution, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution)))
+    self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isPortrait, label: "Portrait orientation", tag: number, selector: #selector(app.portrait)))
+    self.appMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
   }
 }

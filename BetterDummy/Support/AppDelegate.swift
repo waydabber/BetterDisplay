@@ -70,7 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if let menuItem = sender as? NSMenuItem {
       os_log("Connecting dummy tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
       if let number = DummyManager.createDummyByDefinitionId(menuItem.tag) {
-        self.menu.populateManageMenu()
+        self.menu.populateAppMenu()
         DummyManager.storeDummesToPrefs()
         if let dummy = DummyManager.getDummyByNumber(number), dummy.isConnected {
           os_log("Dummy successfully created and connected.", type: .info)
@@ -119,7 +119,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           dummy.disconnect()
         }
       }
-      self.menu.populateManageMenu()
+      self.menu.populateAppMenu()
       DummyManager.storeDummesToPrefs()
     }
   }
@@ -135,7 +135,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if alert.runModal() == .alertSecondButtonReturn {
         os_log("Removing dummy tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
         DummyManager.discardDummyByNumber(menuItem.tag)
-        self.menu.populateManageMenu()
+        self.menu.populateAppMenu()
         DummyManager.storeDummesToPrefs()
       }
     }
@@ -188,7 +188,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         alert.runModal()
         _ = dummy.connect()
       }
-      self.menu.populateManageMenu()
+      self.menu.populateAppMenu()
       DummyManager.storeDummesToPrefs()
     }
     _ = sender.tag
@@ -209,7 +209,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           dummy.disconnect()
         }
       }
-      self.menu.populateManageMenu()
+      self.menu.populateAppMenu()
       DummyManager.storeDummesToPrefs()
     }
   }
@@ -247,7 +247,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.informativeText = "A dummy which is associated with a display will automatically connect when the associated display is connected. All other dummies were connected."
       alert.runModal()
     }
-    self.menu.populateManageMenu()
+    self.menu.populateAppMenu()
     DummyManager.storeDummesToPrefs()
   }
 
@@ -268,7 +268,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the associated display is disconnected. All other dummies were disconnected."
       alert.runModal()
     }
-    self.menu.populateManageMenu()
+    self.menu.populateAppMenu()
     DummyManager.storeDummesToPrefs()
   }
 
@@ -282,7 +282,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if alert.runModal() == .alertSecondButtonReturn {
       os_log("Removing dummies.", type: .info)
       DummyManager.discardAllDummies()
-      self.menu.populateManageMenu()
+      self.menu.populateAppMenu()
       DummyManager.storeDummesToPrefs()
     }
   }
@@ -298,7 +298,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       os_log("Disassociating dummies.", type: .info)
       for dummy in DummyManager.getDummies() {
         dummy.disassociateDisplay()
-        self.menu.populateManageMenu()
+        self.menu.populateAppMenu()
         DummyManager.storeDummesToPrefs()
       }
     }
@@ -327,7 +327,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       DisplayManager.configureDisplays()
       DisplayManager.addDisplayCounterSuffixes()
       DummyManager.connectDisconnectAssociatedDummies()
-      self.menu.populateManageMenu()
+      self.menu.populateAppMenu()
       DummyManager.storeDummesToPrefs()
     }
   }
@@ -358,7 +358,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       os_log("Preferences reset complete.", type: .info)
       self.setDefaultPrefs()
       DummyManager.restoreDummiesFromPrefs()
-      self.menu.populateManageMenu()
+      self.menu.populateAppMenu()
       self.menu.populateSettingsMenu()
     }
   }
@@ -417,13 +417,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func useMenuForResolution(_: AnyObject?) {
     prefs.set(!prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue), forKey: PrefKey.useMenuForResolution.rawValue)
     self.menu.populateSettingsMenu()
-    self.menu.populateManageMenu()
+    self.menu.populateAppMenu()
   }
 
   @objc func showLowResolutionModes(_: AnyObject?) {
     prefs.set(!prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue), forKey: PrefKey.showLowResolutionModes.rawValue)
     self.menu.populateSettingsMenu()
-    self.menu.populateManageMenu()
+    self.menu.populateAppMenu()
   }
 
   // MARK: *** Handlers - Others
