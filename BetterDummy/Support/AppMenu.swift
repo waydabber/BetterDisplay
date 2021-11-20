@@ -211,8 +211,12 @@ class AppMenu {
 
   func addDummyToManageMenu(_ dummy: Dummy, _ number: Int) {
     let dummyHeaderItem = NSMenuItem()
-    let attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
-    dummyHeaderItem.attributedTitle = NSAttributedString(string: "\(dummy.getMenuItemTitle())", attributes: attrsHeader)
+    let attributedHeader = NSMutableAttributedString()
+    var attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
+    attributedHeader.append(NSAttributedString(string: "\(dummy.getName())", attributes: attrsHeader))
+    attrsHeader = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 13)]
+    attributedHeader.append(NSAttributedString(string: " (\(dummy.getSerialNumber()))", attributes: attrsHeader))
+    dummyHeaderItem.attributedTitle = attributedHeader
     self.manageMenu.addItem(dummyHeaderItem)
     if dummy.isConnected {
       if let resolutionSubmenuItem = self.getResolutionSubmenuItem(dummy, number) {

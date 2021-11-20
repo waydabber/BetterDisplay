@@ -46,7 +46,7 @@ class ResolutionSliderHandler {
     slider.isEnabled = true
     slider.setNumOfCustomTickmarks(prefs.bool(forKey: PrefKey.showTickMarks.rawValue) ? 5 : 0)
     self.slider = slider
-    slider.frame.size.width = 186
+    slider.frame.size.width = 220
     slider.frame.origin = NSPoint(x: 14, y: 20)
     let view = NSView(frame: NSRect(x: 0, y: 0, width: slider.frame.width + 24, height: slider.frame.height + 14 + 12 /* ResolutionBox */ ))
     view.frame.origin = NSPoint(x: 12, y: 13)

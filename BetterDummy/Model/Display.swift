@@ -100,6 +100,7 @@ class Display: Equatable {
   }
 
   func changeResolution(resolutionItemNumber: Int32) {
+    os_log("Changing resolution for display %{public}@ to %{public}@", type: .info, self.prefsId, "\(resolutionItemNumber)")
     app.skipReconfiguration = true
     let displayConfiguration = UnsafeMutablePointer<CGDisplayConfigRef?>.allocate(capacity: 1)
     defer {
