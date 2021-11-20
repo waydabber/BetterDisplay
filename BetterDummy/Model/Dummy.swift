@@ -13,7 +13,6 @@ class Dummy: Equatable {
   var dummyDefinition: DummyDefinition
   let serialNum: UInt32
   var isConnected: Bool = false
-  var isLowResolution: Bool = false
   var isPortrait: Bool = false
   var isSleepDisconnected: Bool = false
   var associatedDisplayPrefsId: String = ""
@@ -24,13 +23,14 @@ class Dummy: Equatable {
     lhs.serialNum == rhs.serialNum
   }
 
-  init(dummyDefinition: DummyDefinition, serialNum: UInt32 = 0, doConnect: Bool = true) {
+  init(dummyDefinition: DummyDefinition, isPortrait: Bool = false, serialNum: UInt32 = 0, doConnect: Bool = true) {
     var storedSerialNum: UInt32 = serialNum
     if storedSerialNum == 0 {
       storedSerialNum = UInt32.random(in: 0 ... UInt32.max)
     }
     self.dummyDefinition = dummyDefinition
     self.serialNum = storedSerialNum
+    self.isPortrait = isPortrait
     if doConnect {
       _ = self.connect()
     }

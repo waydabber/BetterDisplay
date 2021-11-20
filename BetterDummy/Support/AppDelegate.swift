@@ -426,6 +426,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.menu.populateAppMenu()
   }
 
+  @objc func showPortrait(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.showPortrait.rawValue), forKey: PrefKey.showPortrait.rawValue)
+    self.menu.populateSettingsMenu()
+    self.menu.populateAppMenu()
+  }
+
   // MARK: *** Handlers - Others
 
   @objc func about(_: AnyObject?) {

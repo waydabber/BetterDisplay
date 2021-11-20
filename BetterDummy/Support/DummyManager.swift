@@ -18,15 +18,15 @@ class DummyManager {
   static var sleepTempVirtualDisplay: CGVirtualDisplay?
   static var dummyDefinitions: [Int: DummyDefinition] = [:]
 
-  static func createDummyByDefinitionId(_ dummyDefinitionId: Int, serialNum: UInt32 = 0, doConnect: Bool = true) -> Int? {
+  static func createDummyByDefinitionId(_ dummyDefinitionId: Int, isPortrait: Bool = false, serialNum: UInt32 = 0, doConnect: Bool = true) -> Int? {
     if let dummyDefinition = self.dummyDefinitions[dummyDefinitionId] {
-      return self.createDummy(dummyDefinition, dummyDefinitionId: dummyDefinitionId, serialNum: serialNum, doConnect: doConnect)
+      return self.createDummy(dummyDefinition, dummyDefinitionId: dummyDefinitionId, isPortrait: isPortrait, serialNum: serialNum, doConnect: doConnect)
     }
     return nil
   }
 
-  static func createDummy(_ dummyDefinition: DummyDefinition, dummyDefinitionId: Int? = nil, serialNum: UInt32 = 0, doConnect: Bool = true) -> Int {
-    let dummy = Dummy(dummyDefinition: dummyDefinition, serialNum: serialNum, doConnect: doConnect)
+  static func createDummy(_ dummyDefinition: DummyDefinition, dummyDefinitionId: Int? = nil, isPortrait: Bool = false, serialNum: UInt32 = 0, doConnect: Bool = true) -> Int {
+    let dummy = Dummy(dummyDefinition: dummyDefinition, isPortrait: isPortrait, serialNum: serialNum, doConnect: doConnect)
     self.dummyCounter += 1
     self.definedDummies[self.dummyCounter] = DefinedDummy(dummy: dummy, definitionId: dummyDefinitionId)
     return self.dummyCounter
@@ -129,12 +129,17 @@ class DummyManager {
       return
     }
     for i in 1 ... prefs.integer(forKey: PrefKey.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKey.display.rawValue)\(i)") != nil {
-      if let number = DummyManager.createDummyByDefinitionId(prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)")) {
-        DummyManager.getDummyByNumber(number)?.associatedDisplayPrefsId = prefs.string(forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)") ?? ""
-        DummyManager.getDummyByNumber(number)?.associatedDisplayName = prefs.string(forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)") ?? ""
+      if let number = DummyManager.createDummyByDefinitionId(prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), isPortrait: prefs.bool(forKey: "\(PrefKey.isPortrait.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: false) {
+        if let dummy = DummyManager.getDummyByNumber(number) {
+          dummy.associatedDisplayPrefsId = prefs.string(forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)") ?? ""
+          dummy.associatedDisplayName = prefs.string(forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)") ?? ""
+          if prefs.bool(forKey: "\(PrefKey.isConnected.rawValue)\(i)") {
+            _ = dummy.connect()
+          }
+        }
       }
     }
-    app.menu.populateManageMenu()
+    app.menu.populateAppMenu()
   }
 
   static func storeDummesToPrefs() {
@@ -150,6 +155,7 @@ class DummyManager {
         prefs.set(definedDummy.dummy.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
         prefs.set(definedDummy.dummy.associatedDisplayPrefsId, forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)")
         prefs.set(definedDummy.dummy.associatedDisplayName, forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)")
+        prefs.set(definedDummy.dummy.isPortrait, forKey: "\(PrefKey.isPortrait.rawValue)\(i)")
         i += 1
       }
     }
