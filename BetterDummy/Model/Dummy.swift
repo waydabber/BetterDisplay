@@ -13,6 +13,8 @@ class Dummy: Equatable {
   var dummyDefinition: DummyDefinition
   let serialNum: UInt32
   var isConnected: Bool = false
+  var isLowResolution: Bool = false
+  var isPortrait: Bool = false
   var isSleepDisconnected: Bool = false
   var associatedDisplayPrefsId: String = ""
   var associatedDisplayName: String = ""

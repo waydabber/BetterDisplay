@@ -18,21 +18,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   // MARK: *** Setup app
 
-  @available(macOS, deprecated: 10.10)
   func applicationDidFinishLaunching(_: Notification) {
     app = self
     DummyManager.updateDummyDefinitions()
     self.menu.setupMenu()
-    Util.setDefaultPrefs()
-    Util.restoreSettings()
+    self.setDefaultPrefs()
+    DummyManager.restoreDummiesFromPrefs()
     self.updaterController.startUpdater()
-    self.handleDisplayReconfiguration(force: true)
+    self.displayReconfiguration(force: true)
 
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleSleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleSleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
-    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.handleWakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
-    CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.handleDisplayReconfiguration() }, nil)
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil)
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
+    NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
+    CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.displayReconfiguration() }, nil)
   }
 
   func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
@@ -41,8 +40,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     alert.messageText = "BetterDummy is already running!"
     if prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue) || self.menu.statusBarItem.isVisible == false {
       self.menu.statusBarItem.isVisible = true
-      Util.saveSettings()
-      self.handleHideMenuIcon(self.menu.hideMenuIconMenuItem)
+      prefs.set(true, forKey: PrefKey.hideMenuIcon.rawValue)
+      DummyManager.storeDummesToPrefs()
+      self.menu.populateSettingsMenu()
       alert.informativeText = "The menu icon was hidden but it is now set to visible. You can hide it again in Settings."
     } else {
       alert.informativeText = "To configure the app, use the BetterDummy menu icon in the macOS menu bar!"
@@ -51,14 +51,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     return true
   }
 
-  // MARK: *** Handlers - Dummy management
+  func setDefaultPrefs() {
+    if !prefs.bool(forKey: PrefKey.appAlreadyLaunched.rawValue) {
+      prefs.set(true, forKey: PrefKey.appAlreadyLaunched.rawValue)
+      prefs.set(true, forKey: PrefKey.SUEnableAutomaticChecks.rawValue)
+      os_log("Setting default preferences.", type: .info)
+    }
+    prefs.set(Int(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1") ?? 1, forKey: PrefKey.buildNumber.rawValue)
+  }
 
-  @objc func handleCreateDummy(_ sender: AnyObject?) {
+  func getStartAtLogin() -> Bool {
+    (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
+  }
+
+  // MARK: *** Handlers - Specific dummy management
+
+  @objc func createDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       os_log("Connecting dummy tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
       if let number = DummyManager.createDummyByDefinitionId(menuItem.tag) {
-        self.menu.repopulateManageMenu()
-        Util.saveSettings()
+        self.menu.populateManageMenu()
+        DummyManager.storeDummesToPrefs()
         if let dummy = DummyManager.getDummyByNumber(number), dummy.isConnected {
           os_log("Dummy successfully created and connected.", type: .info)
         } else {
@@ -75,10 +88,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func handleConnectDummy(_ sender: AnyObject?) {
-    if let controlItem = sender as? NSControl {
-      os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
-      if let dummy = DummyManager.getDummyByNumber(controlItem.tag) {
+  @objc func connectDummy(_ sender: AnyObject?) {
+    if let controlItem = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(controlItem.tag) {
+      if !dummy.isConnected {
+        os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
@@ -94,16 +107,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
             alert.runModal()
           }
         }
-      }
-      self.menu.repopulateManageMenu()
-      Util.saveSettings()
-    }
-  }
-
-  @objc func handleDisconnectDummy(_ sender: AnyObject?) {
-    if let controlItem = sender as? NSControl {
-      os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
-      if let dummy = DummyManager.getDummyByNumber(controlItem.tag) {
+      } else {
+        os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
@@ -114,13 +119,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           dummy.disconnect()
         }
       }
-
-      self.menu.repopulateManageMenu()
-      Util.saveSettings()
+      self.menu.populateManageMenu()
+      DummyManager.storeDummesToPrefs()
     }
   }
 
-  @objc func handleDiscardDummy(_ sender: AnyObject?) {
+  @objc func discardDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem {
       let alert = NSAlert()
       alert.alertStyle = .critical
@@ -131,13 +135,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       if alert.runModal() == .alertSecondButtonReturn {
         os_log("Removing dummy tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
         DummyManager.discardDummyByNumber(menuItem.tag)
-        self.menu.repopulateManageMenu()
-        Util.saveSettings()
+        self.menu.populateManageMenu()
+        DummyManager.storeDummesToPrefs()
       }
     }
   }
 
-  @objc func handleAssociateDummy(_ sender: NSMenuItem) {
+  @objc func lowResolution(_: AnyObject?) {
+    // TODO:
+  }
+
+  @objc func portrait(_: AnyObject?) {
+    // TODO:
+  }
+
+  @objc func associateDummy(_ sender: NSMenuItem) {
     os_log("Received association request from tag %{public}@", type: .info, "\(sender.tag)")
     guard sender.tag != 0 else {
       return
@@ -176,13 +188,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         alert.runModal()
         _ = dummy.connect()
       }
-      self.menu.repopulateManageMenu()
-      Util.saveSettings()
+      self.menu.populateManageMenu()
+      DummyManager.storeDummesToPrefs()
     }
     _ = sender.tag
   }
 
-  @objc func handleDisassociateDummy(_ sender: NSMenuItem) {
+  @objc func disassociateDummy(_ sender: NSMenuItem) {
     if let dummy = DummyManager.getDummyByNumber(sender.tag), dummy.hasAssociatedDisplay() {
       let associatedDisplayPrefsId = dummy.associatedDisplayPrefsId
       dummy.disassociateDisplay()
@@ -197,12 +209,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           dummy.disconnect()
         }
       }
-      self.menu.repopulateManageMenu()
-      Util.saveSettings()
+      self.menu.populateManageMenu()
+      DummyManager.storeDummesToPrefs()
     }
   }
 
-  @objc func handleDummyResolution(_ sender: NSMenuItem) {
+  @objc func dummyResolution(_ sender: NSMenuItem) {
     os_log("Received resolution change from tag %{public}@", type: .info, "\(sender.tag)")
     guard sender.tag != 0 else {
       return
@@ -216,7 +228,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func handleConnectAllDummies(_: AnyObject?) {
+  // MARK: *** Handlers - General dummy management
+
+  @objc func connectAllDummies(_: AnyObject?) {
     os_log("Connecting all dummies.", type: .info)
     var hasAssociated = false
     for dummy in DummyManager.getDummies() where !dummy.isConnected {
@@ -233,11 +247,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.informativeText = "A dummy which is associated with a display will automatically connect when the associated display is connected. All other dummies were connected."
       alert.runModal()
     }
-    self.menu.repopulateManageMenu()
-    Util.saveSettings()
+    self.menu.populateManageMenu()
+    DummyManager.storeDummesToPrefs()
   }
 
-  @objc func handleDisconnectAllDummies(_: AnyObject?) {
+  @objc func disconnectAllDummies(_: AnyObject?) {
     os_log("Disconnecting all dummies.", type: .info)
     var hasAssociated = false
     for dummy in DummyManager.getDummies() where dummy.isConnected {
@@ -254,11 +268,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the associated display is disconnected. All other dummies were disconnected."
       alert.runModal()
     }
-    self.menu.repopulateManageMenu()
-    Util.saveSettings()
+    self.menu.populateManageMenu()
+    DummyManager.storeDummesToPrefs()
   }
 
-  @objc func handleDiscardAllDummies(_: AnyObject?) {
+  @objc func discardAllDummies(_: AnyObject?) {
     let alert = NSAlert()
     alert.alertStyle = .critical
     alert.messageText = "Do you want to discard all dummies?"
@@ -268,12 +282,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if alert.runModal() == .alertSecondButtonReturn {
       os_log("Removing dummies.", type: .info)
       DummyManager.discardAllDummies()
-      self.menu.repopulateManageMenu()
-      Util.saveSettings()
+      self.menu.populateManageMenu()
+      DummyManager.storeDummesToPrefs()
     }
   }
 
-  @objc func handleDisassociateAllDummies(_: AnyObject?) {
+  @objc func disassociateAllDummies(_: AnyObject?) {
     let alert = NSAlert()
     alert.alertStyle = .critical
     alert.messageText = "Do you want to disassociate all dummies from all displays?"
@@ -284,15 +298,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       os_log("Disassociating dummies.", type: .info)
       for dummy in DummyManager.getDummies() {
         dummy.disassociateDisplay()
-        self.menu.repopulateManageMenu()
-        Util.saveSettings()
+        self.menu.populateManageMenu()
+        DummyManager.storeDummesToPrefs()
       }
     }
   }
 
   // MARK: *** Handlers - Display reconfiguration
 
-  @objc func handleDisplayReconfiguration(dispatchedReconfigureID: Int = 0, force: Bool = false) {
+  @objc func displayReconfiguration(dispatchedReconfigureID: Int = 0, force: Bool = false) {
     guard !self.skipReconfiguration else {
       os_log("Display reconfiguration is forcefully skipped", type: .info)
       return
@@ -304,7 +318,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         let dispatchedReconfigureID = self.reconfigureID
         os_log("Displays to be reconfigured with reconfigureID %{public}@", type: .info, String(dispatchedReconfigureID))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-          self.handleDisplayReconfiguration(dispatchedReconfigureID: dispatchedReconfigureID)
+          self.displayReconfiguration(dispatchedReconfigureID: dispatchedReconfigureID)
         }
       }
     } else if dispatchedReconfigureID == self.reconfigureID || force {
@@ -313,21 +327,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       DisplayManager.configureDisplays()
       DisplayManager.addDisplayCounterSuffixes()
       DummyManager.connectDisconnectAssociatedDummies()
-      self.menu.repopulateManageMenu()
-      Util.saveSettings()
+      self.menu.populateManageMenu()
+      DummyManager.storeDummesToPrefs()
     }
   }
 
-  // MARK: *** Handlers - Settings and others
+  // MARK: *** Handlers - Settings
 
-  @objc func handleStartAtLogin(_ sender: NSMenuItem) {
-    sender.state = sender.state == .on ? .off : .on
+  @objc func startAtLogin(_: AnyObject?) {
+    let startAtLogin = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]])?.first { $0["Label"] as? String == "\(Bundle.main.bundleIdentifier!)Helper" }?["OnDemand"] as? Bool ?? false
     let identifier = "\(Bundle.main.bundleIdentifier!)Helper" as CFString
-    SMLoginItemSetEnabled(identifier, sender.state == .on ? true : false)
+    SMLoginItemSetEnabled(identifier, !startAtLogin)
+    self.menu.populateSettingsMenu()
   }
 
-  @available(macOS, deprecated: 10.10)
-  @objc func handleReset(_: NSMenuItem) {
+  @objc func reset(_: AnyObject?) {
     let alert = NSAlert()
     alert.alertStyle = .critical
     alert.messageText = "Are sure you want to reset BetterDummy?"
@@ -337,20 +351,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if alert.runModal() == .alertSecondButtonReturn {
       DummyManager.discardAllDummies()
       DummyManager.dummyCounter = 0
-      self.menu.emptyManageMenu()
       os_log("Cleared dummies.", type: .info)
       if let bundleID = Bundle.main.bundleIdentifier {
         prefs.removePersistentDomain(forName: bundleID)
       }
       os_log("Preferences reset complete.", type: .info)
-      Util.setDefaultPrefs()
-      Util.restoreSettings()
+      self.setDefaultPrefs()
+      DummyManager.restoreDummiesFromPrefs()
+      self.menu.populateManageMenu()
+      self.menu.populateSettingsMenu()
     }
   }
 
-  @objc func handleHideMenuIcon(_ sender: NSMenuItem) {
-    if sender.state == .on {
-      sender.state = .off
+  @objc func hideMenuIcon(_: AnyObject?) {
+    if prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue) {
+      prefs.set(false, forKey: PrefKey.hideMenuIcon.rawValue)
       self.menu.statusBarItem.isVisible = true
     } else {
       let alert = NSAlert()
@@ -360,20 +375,30 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.addButton(withTitle: "Hide")
       alert.addButton(withTitle: "No")
       if alert.runModal() == .alertFirstButtonReturn {
-        sender.state = .on
+        prefs.set(true, forKey: PrefKey.hideMenuIcon.rawValue)
         self.menu.statusBarItem.isVisible = false
       }
     }
-    Util.saveSettings()
+    self.menu.populateSettingsMenu()
   }
 
-  @objc func handleSimpleCheckMenu(_ sender: NSMenuItem) {
-    sender.state = sender.state == .on ? .off : .on
-    Util.saveSettings()
+  @objc func SUEnableAutomaticChecks(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.SUEnableAutomaticChecks.rawValue), forKey: PrefKey.SUEnableAutomaticChecks.rawValue)
+    self.menu.populateSettingsMenu()
   }
 
-  @objc func handleEnable16K(_ sender: NSMenuItem) {
-    if sender.state == .off {
+  @objc func disableTempSleep(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.disableTempSleep.rawValue), forKey: PrefKey.disableTempSleep.rawValue)
+    self.menu.populateSettingsMenu()
+  }
+
+  @objc func reconnectAfterSleep(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue), forKey: PrefKey.reconnectAfterSleep.rawValue)
+    self.menu.populateSettingsMenu()
+  }
+
+  @objc func enable16K(_: AnyObject?) {
+    if !prefs.bool(forKey: PrefKey.enable16K.rawValue) {
       let alert = NSAlert()
       alert.alertStyle = .critical
       alert.messageText = "Are you sure to enable 16K?"
@@ -384,24 +409,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         return
       }
     }
-    sender.state = sender.state == .on ? .off : .on
-    Util.saveSettings()
+    prefs.set(!prefs.bool(forKey: PrefKey.enable16K.rawValue), forKey: PrefKey.enable16K.rawValue)
+    self.menu.populateSettingsMenu()
     DummyManager.updateDummyDefinitions()
   }
 
-  @objc func handleUseMenuForResolution(_ sender: NSMenuItem) {
-    sender.state = sender.state == .on ? .off : .on
-    Util.saveSettings()
-    self.menu.repopulateManageMenu()
+  @objc func useMenuForResolution(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue), forKey: PrefKey.useMenuForResolution.rawValue)
+    self.menu.populateSettingsMenu()
+    self.menu.populateManageMenu()
   }
 
-  @objc func handleShowLowResolutionModes(_ sender: NSMenuItem) {
-    sender.state = sender.state == .on ? .off : .on
-    Util.saveSettings()
-    self.menu.repopulateManageMenu()
+  @objc func showLowResolutionModes(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue), forKey: PrefKey.showLowResolutionModes.rawValue)
+    self.menu.populateSettingsMenu()
+    self.menu.populateManageMenu()
   }
 
-  @objc func handleAbout(_: AnyObject?) {
+  // MARK: *** Handlers - Others
+
+  @objc func about(_: AnyObject?) {
     let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "UNKNOWN"
     let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") ?? "UNKNOWN"
     let year = Calendar.current.component(.year, from: Date())
@@ -418,7 +445,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func handleDonate(_: NSMenuItem) {
+  @objc func donate(_: AnyObject?) {
     if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
       NSWorkspace.shared.open(url)
     }
@@ -430,7 +457,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   // MARK: *** Handlers - Sleep and wake
 
-  @objc func handleWakeNotification() {
+  @objc func wakeNotification() {
     guard self.isSleep else {
       return
     }
@@ -449,7 +476,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func handleSleepNotification() {
+  @objc func sleepNotification() {
     guard !self.isSleep else {
       return
     }
@@ -460,7 +487,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       DummyManager.sleepTempVirtualDisplay = Dummy.createVirtualDisplay(DummyDefinition(maxWidth, maxHeight, 1, 1, 1, [60], "Dummy Temp", false), name: "Dummy Temp", serialNum: 0)
       os_log("Sleep intercepted, created temporary display with the size of %{public}@x%{public}@", type: .info, String(maxWidth), String(maxHeight))
     }
-    if self.menu.reconnectAfterSleepMenuItem.state == .on {
+    if prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue) {
       os_log("Disconnecting dummies on sleep.", type: .info)
       for dummy in DummyManager.getDummies() where dummy.isConnected {
         dummy.disconnect(sleepDisconnect: true)
