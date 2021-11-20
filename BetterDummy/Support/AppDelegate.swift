@@ -76,9 +76,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleConnectDummy(_ sender: AnyObject?) {
-    if let menuItem = sender as? NSMenuItem {
-      os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-      if let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
+    if let controlItem = sender as? NSControl {
+      os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
+      if let dummy = DummyManager.getDummyByNumber(controlItem.tag) {
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
@@ -101,9 +101,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func handleDisconnectDummy(_ sender: AnyObject?) {
-    if let menuItem = sender as? NSMenuItem {
-      os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-      if let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
+    if let controlItem = sender as? NSControl {
+      os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
+      if let dummy = DummyManager.getDummyByNumber(controlItem.tag) {
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning

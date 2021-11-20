@@ -209,30 +209,52 @@ class AppMenu {
     return associateSubmenu
   }
 
+  func checkmarkedMenuItem(checked: Bool, label: String, tag: Int, selector: Selector) -> NSMenuItem {
+    let menuItemView = NSView(frame: NSRect(x: 0, y: 0, width: 200, height: 26))
+    let icon = NSButton()
+    icon.bezelStyle = .regularSquare
+    icon.isBordered = false
+    icon.setButtonType(.momentaryChange)
+    icon.image = NSImage(systemSymbolName: checked ? "checkmark.square" : "square", accessibilityDescription: "Checkmark")
+    icon.alternateImage = NSImage(systemSymbolName: checked ? "checkmark.square.fill" : "square.fill", accessibilityDescription: "Checkmark")
+    icon.frame = NSRect(x: 12, y: 3, width: 19, height: 18)
+    icon.imageScaling = .scaleProportionallyUpOrDown
+    icon.action = selector
+    icon.tag = tag
+    let text = NSButton()
+    let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.systemFont(ofSize: 13)]
+    text.attributedTitle = NSAttributedString(string: label, attributes: attrs)
+    text.frame = NSRect(x: 35, y: 4, width: 180, height: 18)
+    text.bezelStyle = .regularSquare
+    text.isBordered = false
+    text.alignment = .left
+    text.action = selector
+    text.tag = tag
+    menuItemView.addSubview(icon)
+    menuItemView.addSubview(text)
+    let item = NSMenuItem()
+    item.view = menuItemView
+    return item
+  }
+
   func addDummyToManageMenu(_ dummy: Dummy, _ number: Int) {
     let dummyHeaderItem = NSMenuItem()
     let attributedHeader = NSMutableAttributedString()
-    var attrsHeader: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
-    attributedHeader.append(NSAttributedString(string: "\(dummy.getName())", attributes: attrsHeader))
-    attrsHeader = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 13)]
-    attributedHeader.append(NSAttributedString(string: " (\(dummy.getSerialNumber()))", attributes: attrsHeader))
+    var attrs: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
+    attributedHeader.append(NSAttributedString(string: "\(dummy.getName())", attributes: attrs))
+    attrs = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 13)]
+    attributedHeader.append(NSAttributedString(string: " (\(dummy.getSerialNumber()))", attributes: attrs))
     dummyHeaderItem.attributedTitle = attributedHeader
     self.manageMenu.addItem(dummyHeaderItem)
     if dummy.isConnected {
       if let resolutionSubmenuItem = self.getResolutionSubmenuItem(dummy, number) {
         self.manageMenu.addItem(resolutionSubmenuItem)
       }
+      self.manageMenu.addItem(self.checkmarkedMenuItem(checked: true, label: "Connected", tag: number, selector: #selector(app.handleDisconnectDummy)))
       self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
-      var connectItem: NSMenuItem
-      connectItem = NSMenuItem(title: "Disconnect dummy", action: #selector(app.handleDisconnectDummy(_:)), keyEquivalent: "")
-      self.manageMenu.addItem(connectItem)
-      connectItem.tag = number
     } else {
+      self.manageMenu.addItem(self.checkmarkedMenuItem(checked: false, label: "Connected", tag: number, selector: #selector(app.handleConnectDummy)))
       self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
-      var disconnectItem: NSMenuItem
-      disconnectItem = NSMenuItem(title: "Connect dummy", action: #selector(app.handleConnectDummy(_:)), keyEquivalent: "")
-      self.manageMenu.addItem(disconnectItem)
-      disconnectItem.tag = number
     }
     let deleteItem = NSMenuItem(title: "Discard dummy", action: #selector(app.handleDiscardDummy(_:)), keyEquivalent: "")
     deleteItem.tag = number
