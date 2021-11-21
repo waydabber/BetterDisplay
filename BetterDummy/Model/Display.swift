@@ -31,7 +31,7 @@ class Display: Equatable {
   var height: UInt32 = 0
   var pixelWidth: UInt32 = 0
   var pixelHeight: UInt32 = 0
-  var hiDPI: Bool = false
+  var isHiDPI: Bool = false
   var resolutionSliderHandler: ResolutionSliderHandler?
 
   static func == (lhs: Display, rhs: Display) -> Bool {
@@ -91,9 +91,9 @@ class Display: Equatable {
         self.currentResolution = Int(i)
         self.width = resolution.width
         self.height = resolution.height
-        self.hiDPI = resolution.hiDPI
-        self.pixelWidth = self.width * (self.hiDPI ? 2 : 1)
-        self.pixelHeight = self.height * (self.hiDPI ? 2 : 1)
+        self.isHiDPI = resolution.hiDPI
+        self.pixelWidth = self.width * (self.isHiDPI ? 2 : 1)
+        self.pixelHeight = self.height * (self.isHiDPI ? 2 : 1)
       }
       self.resolutions[Int(i)] = resolution
     }
@@ -109,6 +109,7 @@ class Display: Equatable {
     CGBeginDisplayConfiguration(displayConfiguration)
     CGSConfigureDisplayMode(displayConfiguration.pointee, self.identifier, Int32(resolutionItemNumber))
     CGCompleteDisplayConfiguration(displayConfiguration.pointee, CGConfigureOption.permanently)
+    self.updateResolutions()
     app.skipReconfiguration = false
   }
 }

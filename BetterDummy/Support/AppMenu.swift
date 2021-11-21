@@ -91,11 +91,11 @@ class AppMenu {
     useMenuForResolutionMenuItem.state = prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue) ? .on : .off
     self.settingsMenu.addItem(useMenuForResolutionMenuItem)
 
-    let showLowResolutionModesMenuItem = NSMenuItem(title: "Show low resolution (non-HiDPI) option", action: #selector(app.showLowResolutionModes(_:)), keyEquivalent: "")
+    let showLowResolutionModesMenuItem = NSMenuItem(title: "Show low resolution (non-HiDPI) option", action: #selector(app.hideLowResolutionOption(_:)), keyEquivalent: "")
     showLowResolutionModesMenuItem.state = prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue) ? .off : .on
     self.settingsMenu.addItem(showLowResolutionModesMenuItem)
 
-    let showPortaitMenuItem = NSMenuItem(title: "Show portrait mode setting", action: #selector(app.showPortrait(_:)), keyEquivalent: "")
+    let showPortaitMenuItem = NSMenuItem(title: "Show portrait mode setting", action: #selector(app.hidePortraitOption(_:)), keyEquivalent: "")
     showPortaitMenuItem.state = prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue) ? .off : .on
     self.settingsMenu.addItem(showPortaitMenuItem)
 
@@ -315,8 +315,8 @@ class AppMenu {
     self.appMenu.addItem(dummyHeaderItem)
     if dummy.isConnected, let resolutionSubmenuItem = self.getResolutionSubmenuItem(dummy, number) {
       self.appMenu.addItem(resolutionSubmenuItem)
-      if !prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), !prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue) {
-        self.appMenu.addItem(self.checkmarkedMenuItem(checked: false, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution))) // TODO: This should come from somewhere
+      if !prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), !prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue), let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
+        self.appMenu.addItem(self.checkmarkedMenuItem(checked: !display.isHiDPI, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution)))
       }
       if !prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue) {
         self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isPortrait, label: "Portrait orientation", tag: number, selector: #selector(app.portrait)))

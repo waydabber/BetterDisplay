@@ -141,12 +141,30 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func lowResolution(_: AnyObject?) {
-    // TODO:
+  @objc func lowResolution(_ sender: AnyObject?) {
+    if let control = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(control.tag), let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
+      let resolutions = display.resolutions
+      var previousWidth: UInt32 = 0
+      var matchingResolutionKey: Int32 = -1
+      for resolution in resolutions.sorted(by: { $0.0 < $1.0 }) where resolution.value.height >= 720 && resolution.value.hiDPI == !display.isHiDPI && resolution.value.width > previousWidth {
+        previousWidth = resolution.value.width
+        if resolution.value.width > display.width {
+          break
+        }
+        matchingResolutionKey = Int32(resolution.key)
+      }
+      if matchingResolutionKey != -1 {
+        display.changeResolution(resolutionItemNumber: matchingResolutionKey)
+        // TODO: Sometimes display mirror is messed up after this resolution change (mirror roles are reversed). Might need to reconfigure the mirror set if this happens.
+        self.displayReconfiguration(force: true)
+      }
+    }
   }
 
-  @objc func portrait(_: AnyObject?) {
-    // TODO:
+  @objc func portrait(_ sender: AnyObject?) {
+    if let control = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(control.tag) {
+      // TODO: Finish switch to portrait + logic
+    }
   }
 
   @objc func associateDummy(_ sender: NSMenuItem) {
@@ -420,13 +438,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.menu.populateAppMenu()
   }
 
-  @objc func showLowResolutionModes(_: AnyObject?) {
+  @objc func hideLowResolutionOption(_: AnyObject?) {
     prefs.set(!prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), forKey: PrefKey.hideLowResolutionOption.rawValue)
     self.menu.populateSettingsMenu()
     self.menu.populateAppMenu()
   }
 
-  @objc func showPortrait(_: AnyObject?) {
+  @objc func hidePortraitOption(_: AnyObject?) {
     prefs.set(!prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue), forKey: PrefKey.hidePortraitOption.rawValue)
     self.menu.populateSettingsMenu()
     self.menu.populateAppMenu()

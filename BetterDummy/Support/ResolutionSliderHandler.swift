@@ -16,7 +16,8 @@ class ResolutionSliderHandler {
   var icon: ClickThroughImageView?
   var display: Display
   var acceptedResolutions: [Int: (Int, Display.Resolution)] = [:]
-  var minValue, maxValue: Int
+  var minValue: Int = 0
+  var maxValue: Int = 0
 
   class ClickThroughImageView: NSImageView {
     override func hitTest(_ point: NSPoint) -> NSView? {
@@ -25,24 +26,11 @@ class ResolutionSliderHandler {
     }
   }
 
-  public init(display: Display) {
+  init(display: Display) {
     self.title = "Resolution"
     self.display = display
-    let resolutions = display.resolutions
-    var index = 0
-    var currentResolutionIndex = 0
-    var previousWidth: UInt32 = 0
-    for resolution in resolutions.sorted(by: { $0.0 < $1.0 }) where resolution.value.height >= 720 && resolution.value.hiDPI == true && resolution.value.width > previousWidth {
-      self.acceptedResolutions[index] = (resolution.key, resolution.value)
-      previousWidth = resolution.value.width
-      if resolution.value.isActive {
-        currentResolutionIndex = index
-      }
-      index += 1
-    }
-    self.minValue = 0
-    self.maxValue = index
-    let slider = BetterSlider(value: 0, minValue: 0, maxValue: Double(index), target: self, action: #selector(ResolutionSliderHandler.valueChanged))
+    self.setupAcceptedResolutions()
+    let slider = BetterSlider(value: Double(self.value), minValue: Double(self.minValue), maxValue: Double(self.maxValue), target: self, action: #selector(ResolutionSliderHandler.valueChanged))
     slider.isEnabled = true
     slider.setNumOfCustomTickmarks(prefs.bool(forKey: PrefKey.showTickMarks.rawValue) ? 5 : 0)
     self.slider = slider
@@ -65,7 +53,25 @@ class ResolutionSliderHandler {
     self.resolutionBox = resolutionBox
     view.addSubview(resolutionBox)
     self.view = view
-    self.setValue(currentResolutionIndex)
+    self.setValue(self.value)
+  }
+
+  func setupAcceptedResolutions() {
+    let resolutions = self.display.resolutions
+    var index = 0
+    var currentResolutionIndex = 0
+    var previousWidth: UInt32 = 0
+    for resolution in resolutions.sorted(by: { $0.0 < $1.0 }) where resolution.value.height >= 720 && resolution.value.hiDPI == self.display.isHiDPI && resolution.value.width > previousWidth {
+      self.acceptedResolutions[index] = (resolution.key, resolution.value)
+      previousWidth = resolution.value.width
+      if resolution.value.isActive {
+        currentResolutionIndex = index
+      }
+      index += 1
+    }
+    self.minValue = 0
+    self.maxValue = index
+    self.value = currentResolutionIndex
   }
 
   func setupResolutionBox(_ resolutionBox: NSTextField) {
@@ -104,8 +110,8 @@ class ResolutionSliderHandler {
   }
 
   func setValue(_ value: Int) {
+    self.value = value
     if let slider = self.slider {
-      self.value = value
       slider.integerValue = value
       if let (_, resolution) = self.acceptedResolutions[Int(value)] {
         self.resolutionBox?.stringValue = "Resolution: \(resolution.width)x\(resolution.height)"
