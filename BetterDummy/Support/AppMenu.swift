@@ -50,7 +50,7 @@ class AppMenu {
         first = false
       }
     }
-    if DummyManager.dummyCounter > 1 {
+    if DummyManager.dummyCounter >= 1 {
       self.appMenu.addItem(NSMenuItem.separator())
     }
     let manageSubmenu = NSMenuItem(title: "Manage dummies", action: nil, keyEquivalent: "")

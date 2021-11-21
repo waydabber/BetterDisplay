@@ -121,6 +121,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       }
       self.menu.populateAppMenu()
       DummyManager.storeDummiesToPrefs()
+      app.menu.appMenu.cancelTrackingWithoutAnimation()
     }
   }
 
@@ -170,6 +171,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       }
       DummyManager.storeDummiesToPrefs()
       self.menu.populateAppMenu()
+      app.menu.appMenu.cancelTrackingWithoutAnimation()
       // TODO: If aspect ratio changes, mirroring breaks - we might need to fix this.
     }
   }
