@@ -421,13 +421,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func showLowResolutionModes(_: AnyObject?) {
-    prefs.set(!prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue), forKey: PrefKey.showLowResolutionModes.rawValue)
+    prefs.set(!prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), forKey: PrefKey.hideLowResolutionOption.rawValue)
     self.menu.populateSettingsMenu()
     self.menu.populateAppMenu()
   }
 
   @objc func showPortrait(_: AnyObject?) {
-    prefs.set(!prefs.bool(forKey: PrefKey.showPortrait.rawValue), forKey: PrefKey.showPortrait.rawValue)
+    prefs.set(!prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue), forKey: PrefKey.hidePortraitOption.rawValue)
     self.menu.populateSettingsMenu()
     self.menu.populateAppMenu()
   }

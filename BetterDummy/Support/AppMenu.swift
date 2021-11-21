@@ -91,12 +91,12 @@ class AppMenu {
     useMenuForResolutionMenuItem.state = prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue) ? .on : .off
     self.settingsMenu.addItem(useMenuForResolutionMenuItem)
 
-    let showLowResolutionModesMenuItem = NSMenuItem(title: "Show low resolution (non-HiDPI) options", action: #selector(app.showLowResolutionModes(_:)), keyEquivalent: "")
-    showLowResolutionModesMenuItem.state = prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue) ? .on : .off
+    let showLowResolutionModesMenuItem = NSMenuItem(title: "Show low resolution (non-HiDPI) option", action: #selector(app.showLowResolutionModes(_:)), keyEquivalent: "")
+    showLowResolutionModesMenuItem.state = prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue) ? .off : .on
     self.settingsMenu.addItem(showLowResolutionModesMenuItem)
 
     let showPortaitMenuItem = NSMenuItem(title: "Show portrait mode setting", action: #selector(app.showPortrait(_:)), keyEquivalent: "")
-    showPortaitMenuItem.state = prefs.bool(forKey: PrefKey.showPortrait.rawValue) ? .on : .off
+    showPortaitMenuItem.state = prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue) ? .off : .on
     self.settingsMenu.addItem(showPortaitMenuItem)
 
     // ---
@@ -139,10 +139,20 @@ class AppMenu {
     os_log("New dummy menu populated.", type: .info)
   }
 
-  func addDiscardDummyItemsToManageMenu() {
+  func addManageMenuDummies() {
     for key in DummyManager.definedDummies.keys.sorted(by: <) {
       if let dummy = DummyManager.getDummyByNumber(key) {
-        let deleteItem = NSMenuItem(title: "Discard `\(dummy.getName()) (\(dummy.getSerialNumber()))`", action: #selector(app.discardDummy(_:)), keyEquivalent: "")
+        self.manageMenu.addItem(NSMenuItem.separator())
+        let dummyHeaderItem = NSMenuItem()
+        let attributedHeader = NSMutableAttributedString()
+        var attrs: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
+        attributedHeader.append(NSAttributedString(string: "\(dummy.getName())", attributes: attrs))
+        attrs = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 13)]
+        attributedHeader.append(NSAttributedString(string: " (\(dummy.getSerialNumber()))", attributes: attrs))
+        dummyHeaderItem.attributedTitle = attributedHeader
+        self.manageMenu.addItem(dummyHeaderItem)
+        self.manageMenu.addItem(self.getAssociateSubmenuItem(dummy, key))
+        let deleteItem = NSMenuItem(title: "Discard dummy", action: #selector(app.discardDummy(_:)), keyEquivalent: "")
         deleteItem.tag = key
         self.manageMenu.addItem(deleteItem)
       }
@@ -155,6 +165,8 @@ class AppMenu {
     let newSubmenu = NSMenuItem(title: "Create new dummy", action: nil, keyEquivalent: "")
     newSubmenu.submenu = self.newMenu
     self.manageMenu.addItem(newSubmenu)
+
+    self.addManageMenuDummies()
 
     if DummyManager.dummyCounter > 1 {
       var isThereDisconnected = false
@@ -174,6 +186,10 @@ class AppMenu {
         }
       }
 
+      if isThereAny {
+        self.manageMenu.addItem(NSMenuItem.separator())
+      }
+
       self.manageMenu.addItem(NSMenuItem.separator())
       if isThereDisconnected {
         self.manageMenu.addItem(NSMenuItem(title: "Connect all dummies", action: #selector(app.connectAllDummies(_:)), keyEquivalent: ""))
@@ -184,10 +200,7 @@ class AppMenu {
       if isThereAssociated {
         self.manageMenu.addItem(NSMenuItem(title: "Disassociate all dummies", action: #selector(app.disassociateAllDummies(_:)), keyEquivalent: ""))
       }
-
       if isThereAny {
-        self.manageMenu.addItem(NSMenuItem.separator())
-        self.addDiscardDummyItemsToManageMenu()
         self.manageMenu.addItem(NSMenuItem(title: "Discard all dummies", action: #selector(app.discardAllDummies(_:)), keyEquivalent: ""))
       }
     }
@@ -204,7 +217,7 @@ class AppMenu {
           resolutionMenu.addItem(resolutionMenuItem)
         }
         resolutionMenu.addItem(NSMenuItem.separator())
-        if prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue) {
+        if !prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue) {
           for resolution in resolutions.sorted(by: { $0.0 < $1.0 }) where resolution.value.height >= 720 && resolution.value.hiDPI == false {
             let resolutionMenuItem = NSMenuItem(title: "\(resolution.value.width)x\(resolution.value.height)" + " (low resolution)", action: #selector(app.dummyResolution(_:)), keyEquivalent: "")
             resolutionMenuItem.tag = number * 256 * 256 + resolution.key
@@ -302,14 +315,13 @@ class AppMenu {
     self.appMenu.addItem(dummyHeaderItem)
     if dummy.isConnected, let resolutionSubmenuItem = self.getResolutionSubmenuItem(dummy, number) {
       self.appMenu.addItem(resolutionSubmenuItem)
+      if !prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), !prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue) {
+        self.appMenu.addItem(self.checkmarkedMenuItem(checked: false, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution))) // TODO: This should come from somewhere
+      }
+      if !prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue) {
+        self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isPortrait, label: "Portrait orientation", tag: number, selector: #selector(app.portrait)))
+      }
     }
-    self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isConnected, label: "Connected", tag: number, selector: #selector(app.connectDummy)))
-    if dummy.isConnected, prefs.bool(forKey: PrefKey.showLowResolutionModes.rawValue), !prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue) {
-      self.appMenu.addItem(self.checkmarkedMenuItem(checked: false, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution))) // TODO: This should come from somewhere
-    }
-    if prefs.bool(forKey: PrefKey.showPortrait.rawValue) {
-      self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isPortrait, label: "Portrait orientation", tag: number, selector: #selector(app.portrait)))
-    }
-    self.appMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
+    self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isConnected, label: "Connected\(dummy.hasAssociatedDisplay() ? " (automatic)" : "")", tag: number, selector: #selector(app.connectDummy)))
   }
 }
