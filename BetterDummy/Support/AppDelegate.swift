@@ -164,8 +164,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func portrait(_ sender: AnyObject?) {
     if let control = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(control.tag) {
       dummy.isPortrait = !dummy.isPortrait
-      dummy.disconnect()
-      _ = dummy.connect()
+      if dummy.isConnected {
+        dummy.disconnect()
+        _ = dummy.connect()
+      }
       DummyManager.storeDummiesToPrefs()
       self.menu.populateAppMenu()
       // TODO: If aspect ratio changes, mirroring breaks - we might need to fix this.
