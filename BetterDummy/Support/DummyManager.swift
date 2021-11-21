@@ -142,7 +142,7 @@ class DummyManager {
     app.menu.populateAppMenu()
   }
 
-  static func storeDummesToPrefs() {
+  static func storeDummiesToPrefs() {
     guard DummyManager.getNumOfDummies() > 0 else {
       return
     }

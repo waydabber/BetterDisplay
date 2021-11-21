@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue) || self.menu.statusBarItem.isVisible == false {
       self.menu.statusBarItem.isVisible = true
       prefs.set(true, forKey: PrefKey.hideMenuIcon.rawValue)
-      DummyManager.storeDummesToPrefs()
+      DummyManager.storeDummiesToPrefs()
       self.menu.populateSettingsMenu()
       alert.informativeText = "The menu icon was hidden but it is now set to visible. You can hide it again in Settings."
     } else {
@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       os_log("Connecting dummy tagged in new menu as %{public}@", type: .info, "\(menuItem.tag)")
       if let number = DummyManager.createDummyByDefinitionId(menuItem.tag) {
         self.menu.populateAppMenu()
-        DummyManager.storeDummesToPrefs()
+        DummyManager.storeDummiesToPrefs()
         if let dummy = DummyManager.getDummyByNumber(number), dummy.isConnected {
           os_log("Dummy successfully created and connected.", type: .info)
         } else {
@@ -120,7 +120,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         }
       }
       self.menu.populateAppMenu()
-      DummyManager.storeDummesToPrefs()
+      DummyManager.storeDummiesToPrefs()
     }
   }
 
@@ -136,7 +136,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         os_log("Removing dummy tagged in manage menu as %{public}@", type: .info, "\(menuItem.tag)")
         DummyManager.discardDummyByNumber(menuItem.tag)
         self.menu.populateAppMenu()
-        DummyManager.storeDummesToPrefs()
+        DummyManager.storeDummiesToPrefs()
       }
     }
   }
@@ -163,7 +163,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func portrait(_ sender: AnyObject?) {
     if let control = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(control.tag) {
-      // TODO: Finish switch to portrait + logic
+      dummy.isPortrait = !dummy.isPortrait
+      dummy.disconnect()
+      _ = dummy.connect()
+      DummyManager.storeDummiesToPrefs()
+      self.menu.populateAppMenu()
+      // TODO: If aspect ratio changes, mirroring breaks - we might need to fix this.
     }
   }
 
@@ -207,7 +212,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         _ = dummy.connect()
       }
       self.menu.populateAppMenu()
-      DummyManager.storeDummesToPrefs()
+      DummyManager.storeDummiesToPrefs()
     }
     _ = sender.tag
   }
@@ -228,7 +233,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         }
       }
       self.menu.populateAppMenu()
-      DummyManager.storeDummesToPrefs()
+      DummyManager.storeDummiesToPrefs()
     }
   }
 
@@ -266,7 +271,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.runModal()
     }
     self.menu.populateAppMenu()
-    DummyManager.storeDummesToPrefs()
+    DummyManager.storeDummiesToPrefs()
   }
 
   @objc func disconnectAllDummies(_: AnyObject?) {
@@ -287,7 +292,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       alert.runModal()
     }
     self.menu.populateAppMenu()
-    DummyManager.storeDummesToPrefs()
+    DummyManager.storeDummiesToPrefs()
   }
 
   @objc func discardAllDummies(_: AnyObject?) {
@@ -301,7 +306,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       os_log("Removing dummies.", type: .info)
       DummyManager.discardAllDummies()
       self.menu.populateAppMenu()
-      DummyManager.storeDummesToPrefs()
+      DummyManager.storeDummiesToPrefs()
     }
   }
 
@@ -317,7 +322,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       for dummy in DummyManager.getDummies() {
         dummy.disassociateDisplay()
         self.menu.populateAppMenu()
-        DummyManager.storeDummesToPrefs()
+        DummyManager.storeDummiesToPrefs()
       }
     }
   }
@@ -346,7 +351,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       DisplayManager.addDisplayCounterSuffixes()
       DummyManager.connectDisconnectAssociatedDummies()
       self.menu.populateAppMenu()
-      DummyManager.storeDummesToPrefs()
+      DummyManager.storeDummiesToPrefs()
     }
   }
 
