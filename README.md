@@ -100,7 +100,7 @@ Notes:
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
 
-Financial contributors (as of 20/11/2021, list is updated periodically):
+Financial contributors (as of 20/11/2021, list is updated from time to time):
 
 <table align="center">
 <tr>
