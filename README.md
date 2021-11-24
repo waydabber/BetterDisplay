@@ -2,7 +2,7 @@
 
 <div>
 <h2>BetterDummy</h2>
-<p>Dummy Display for Apple Silicon/Intel Macs to Have Custom HiDPI Resolutions - an app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
+<p>Dummy Display for Apple Silicon Macs to Have Custom HiDPI Resolutions - an app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
@@ -155,7 +155,7 @@ Please don't forget to star the GitHub page and spread the word about the app. :
 ## Compatibility
 
 - The app should be compatible with all M1 class machines running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
-- The app is also compatible with more recent Intel Macs and macOS Big Sur (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
+- The app is also compatible with more recent Intel Macs and macOS Big Sur but mirroring might not work as expected (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
 - The app is compatible with headless mode as well (this was tested on Intel).
 
 ## Additional help
@@ -200,6 +200,7 @@ There are some issues which are related to limitations/issues in macOS itself:
 - Due to a bug present in the current macOS versions, mirroring virtual displays (Sidecar, BetterDummy, etc) might cause sleep issues on some configurations. The app has some workarounds for this issue but these might not work on all configurations.
 - Due to a bug present in the current macOS versions, swiping or keyboard shortcuts to switch spaces do not work on extended (secondary) mirror sets.
 - Apple's TV app will not show any protected content on non-native hardware accellerated displays (this applies to Sidecar, DisplayLink and any other tech that relies on virtual displays as well).
+- Mirroring a dummy on some Intel Macs might result in lack of HiDPI resolutions or black bar/border around the screen in some configurations. For Intel Macs other tools are available to create custom resolutions which might be more practical to use. The app still should be suitable to create virtual display on headless Intel Macs.
 
 ## Don't forget to check out
 
