@@ -192,15 +192,7 @@ For most of the time, the app is self explanatory but here is a brief overview o
 
 ### Known issues
 
-There are some issues which are related to limitations/issues in macOS itself:
-
-- High refresh displays (refresh rates above 60Hz) are not supported.
-- Only SDR content is supported.
-- Mirroring any content to the internal display of the 2021 MacBook Pros will force the mirror under the notch.
-- Due to a bug present in the current macOS versions, mirroring virtual displays (Sidecar, BetterDummy, etc) might cause sleep issues on some configurations. The app has some workarounds for this issue but these might not work on all configurations.
-- Due to a bug present in the current macOS versions, swiping or keyboard shortcuts to switch spaces do not work on extended (secondary) mirror sets.
-- Apple's TV app will not show any protected content on non-native hardware accellerated displays (this applies to Sidecar, DisplayLink and any other tech that relies on virtual displays as well).
-- Mirroring a dummy on some Intel Macs might result in lack of HiDPI resolutions or black bar/border around the screen in some configurations. For Intel Macs other tools are available to create custom resolutions which might be more practical to use. The app still should be suitable to create virtual display on headless Intel Macs.
+Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
 ## Don't forget to check out
 
