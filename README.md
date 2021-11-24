@@ -158,6 +158,10 @@ Please don't forget to star the GitHub page and spread the word about the app. :
 - The app is also compatible with more recent Intel Macs and macOS Big Sur but mirroring might not work as expected (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
 - The app is compatible with headless mode as well (this was tested on Intel).
 
+### Known issues
+
+Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
+
 ## Additional help
 
 For most of the time, the app is self explanatory but here is a brief overview of some of the additional functions in the app.
@@ -189,10 +193,6 @@ For most of the time, the app is self explanatory but here is a brief overview o
 - `Use mirrored dummy sleep workaround` - macOS has a bug that makes virtual displays (like Sidecar, AirPlay, DisplayLink, BetterDummy) freeze when they act as a mirror main on some configurations. This workaround intends to solve that issue (more or less successfully).
 - `Disconnect and reconnect on sleep` - This disconnects dummies upon sleeps and reconnects them after wake.
 - `Reset BetterdDummy` - discard all dummies and reset all application settings to default.
-
-### Known issues
-
-Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
 ## Don't forget to check out
 
