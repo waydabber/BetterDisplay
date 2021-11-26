@@ -116,23 +116,25 @@ class BetterSlider: NSSlider {
     }
   }
 
-  override func scrollWheel(with event: NSEvent) {
-    guard self.isEnabled else { return }
-    let range = Float(self.maxValue - self.minValue)
-    var delta = Float(0)
-    if self.isVertical, self.sliderType == .linear {
-      delta = Float(event.deltaY)
-    } else if self.userInterfaceLayoutDirection == .rightToLeft {
-      delta = Float(event.deltaY + event.deltaX)
-    } else {
-      delta = Float(event.deltaY - event.deltaX)
-    }
-    if event.isDirectionInvertedFromDevice {
-      delta *= -1
-    }
-    let increment = range * delta / 100
-    let value = self.floatValue + increment
-    self.floatValue = value
-    self.sendAction(self.action, to: self.target)
-  }
+  /*
+   override func scrollWheel(with event: NSEvent) {
+     guard self.isEnabled else { return }
+     let range = Float(self.maxValue - self.minValue)
+     var delta = Float(0)
+     if self.isVertical, self.sliderType == .linear {
+       delta = Float(event.deltaY)
+     } else if self.userInterfaceLayoutDirection == .rightToLeft {
+       delta = Float(event.deltaY + event.deltaX)
+     } else {
+       delta = Float(event.deltaY - event.deltaX)
+     }
+     if event.isDirectionInvertedFromDevice {
+       delta *= -1
+     }
+     let increment = range * delta / 100
+     let value = self.floatValue + increment
+     self.floatValue = value
+     self.sendAction(self.action, to: self.target)
+   }
+   */
 }
