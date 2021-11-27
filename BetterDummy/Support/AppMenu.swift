@@ -75,22 +75,47 @@ class AppMenu {
   func populateSettingsMenu() {
     self.emptyMenu(self.settingsMenu)
 
+    let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.headerTextColor, .font: NSFont.boldSystemFont(ofSize: 13)]
+
+    let generalHeaderItem = NSMenuItem()
+    generalHeaderItem.attributedTitle = NSAttributedString(string: "General settings", attributes: attrs)
+    self.settingsMenu.addItem(generalHeaderItem)
+
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: app.getStartAtLogin(), label: "Start at login", selector: #selector(app.startAtLogin)))
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.SUEnableAutomaticChecks.rawValue), label: "Automatically check for updates", selector: #selector(app.SUEnableAutomaticChecks)))
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.hideMenuIcon.rawValue), label: "Hide menu icon", selector: #selector(app.hideMenuIcon)))
 
     // ---
     self.settingsMenu.addItem(NSMenuItem.separator())
+    /*
+     let associatedHeaderItem = NSMenuItem()
+     associatedHeaderItem.attributedTitle = NSAttributedString(string: "Associated dummies", attributes: attrs)
+     self.settingsMenu.addItem(associatedHeaderItem)
+
+     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue), label: "Auto-connect/disconnect dummy", selector: #selector(app.disableEnforceAssociatedConnect)))
+     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedMirror.rawValue), label: "Enforce dummy as mirror main", selector: #selector(app.disableEnforceAssociatedMirror)))
+     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue), label: "Dummy follows display orientation", selector: #selector(app.disableEnforceAssociatedOrientation)))
+     */
+    // ---
+    self.settingsMenu.addItem(NSMenuItem.separator())
+
+    let resolutionsHeaderItem = NSMenuItem()
+    resolutionsHeaderItem.attributedTitle = NSAttributedString(string: "Resolutions", attributes: attrs)
+    self.settingsMenu.addItem(resolutionsHeaderItem)
 
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.enable16K.rawValue), label: "Enable up to 16K resolutions", selector: #selector(app.enable16K)))
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue), label: "Use resolution submenu instad of slider", selector: #selector(app.useMenuForResolution)))
-    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), label: "Show low resolution (non-HiDPI) option", selector: #selector(app.hideLowResolutionOption)))
-    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue), label: "Show portrait mode setting", selector: #selector(app.hidePortraitOption)))
+    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), label: "Show low resolution (non-HiDPI) option", selector: #selector(app.hideLowResolutionOption)))
+    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue), label: "Show portrait mode setting", selector: #selector(app.hidePortraitOption)))
 
     // ---
     self.settingsMenu.addItem(NSMenuItem.separator())
 
-    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.disableTempSleep.rawValue), label: "Use mirrored dummy sleep workaround", selector: #selector(app.disableTempSleep)))
+    let sleepHeaderItem = NSMenuItem()
+    sleepHeaderItem.attributedTitle = NSAttributedString(string: "Sleep settings", attributes: attrs)
+    self.settingsMenu.addItem(sleepHeaderItem)
+
+    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableTempSleep.rawValue), label: "Use mirrored dummy sleep workaround", selector: #selector(app.disableTempSleep)))
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.reconnectAfterSleep.rawValue), label: "Disconnect and reconnect on sleep", selector: #selector(app.reconnectAfterSleep)))
 
     // ---

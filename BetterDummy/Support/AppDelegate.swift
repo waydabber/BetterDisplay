@@ -459,6 +459,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     self.menu.populateAppMenu()
   }
 
+  @objc func disableEnforceAssociatedConnect(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue), forKey: PrefKey.disableEnforceAssociatedConnect.rawValue)
+    self.menu.populateSettingsMenu()
+    self.displayReconfiguration(force: true)
+  }
+
+  @objc func disableEnforceAssociatedMirror(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.disableEnforceAssociatedMirror.rawValue), forKey: PrefKey.disableEnforceAssociatedMirror.rawValue)
+    self.menu.populateSettingsMenu()
+    self.displayReconfiguration(force: true)
+  }
+
+  @objc func disableEnforceAssociatedOrientation(_: AnyObject?) {
+    prefs.set(!prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue), forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue)
+    self.menu.populateSettingsMenu()
+    self.displayReconfiguration(force: true)
+  }
+
   // MARK: *** Handlers - Others
 
   @objc func about(_: AnyObject?) {

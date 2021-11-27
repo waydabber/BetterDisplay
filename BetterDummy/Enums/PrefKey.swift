@@ -27,6 +27,9 @@ enum PrefKey: String {
   case hideLowResolutionOption
   case hidePortraitOption
   case useMenuForResolution
+  case disableEnforceAssociatedConnect
+  case disableEnforceAssociatedMirror
+  case disableEnforceAssociatedOrientation
 
   // Not used
   case enableSliderSnap
