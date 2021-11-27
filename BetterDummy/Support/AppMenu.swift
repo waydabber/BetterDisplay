@@ -279,7 +279,7 @@ class AppMenu {
       self.appMenu.addItem(self.checkmarkedMenuItem(checked: !display.isHiDPI, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution)))
     }
     if !prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue), dummy.dummyDefinition.aspectWidth != dummy.dummyDefinition.aspectHeight {
-      self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isPortrait, label: "Portrait orientation", tag: number, selector: #selector(app.portrait)))
+      self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isPortrait, label: "Portrait\(dummy.hasAssociatedDisplay() && !prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue) ? " (automatic)" : "")", tag: number, selector: #selector(app.portrait)))
     }
     self.appMenu.addItem(self.getAssociateSubmenuItem(dummy, number))
     let deleteItem = NSMenuItem(title: "Discard dummy", action: #selector(app.discardDummy(_:)), keyEquivalent: "")

@@ -91,11 +91,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   @objc func connectDisconnectDummy(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
       if !dummy.isConnected {
-        os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+        os_log("Connecting dummy tagged in menu as %{public}@", type: .info, "\(menuItem.tag)")
         if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
           let alert = NSAlert()
           alert.alertStyle = .warning
-          alert.messageText = "A dummy associated with a display cannot be manually connected!"
+          alert.messageText = "This dummy cannot be manually connected!"
           alert.informativeText = "A dummy which is associated with a display will connect automatically when the associated display is connected. You can disable this in Settings."
           alert.runModal()
         } else {
@@ -108,11 +108,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           }
         }
       } else {
-        os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
+        os_log("Disconnecting dummy tagged in menu as %{public}@", type: .info, "\(menuItem.tag)")
         if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
           let alert = NSAlert()
           alert.alertStyle = .warning
-          alert.messageText = "A dummy associated with a display cannot be manually disconnected!"
+          alert.messageText = "This dummy cannot be manually disconnected!"
           alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the associated display is disconnected. You can disable this in Settings"
           alert.runModal()
         } else {
@@ -156,7 +156,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       }
       if matchingResolutionKey != -1 {
         display.changeResolution(resolutionItemNumber: matchingResolutionKey)
-        // TODO: Sometimes display mirror is messed up after this resolution change (mirror roles are reversed). Might need to reconfigure the mirror set if this happens.
         self.displayReconfiguration(force: true)
       }
     }
@@ -164,6 +163,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @objc func portrait(_ sender: AnyObject?) {
     if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
+      if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue) {
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = "The orientation of this dummy cannot be manually changed!"
+        alert.informativeText = "A dummy which is associated with a display will match its orientation automatically when the associated display is connected. You can disable this in Settings."
+        alert.runModal()
+      }
       dummy.isPortrait = !dummy.isPortrait
       if dummy.isConnected {
         dummy.disconnect()
@@ -172,7 +178,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
       DummyManager.storeDummiesToPrefs()
       self.menu.populateAppMenu()
       app.menu.appMenu.cancelTrackingWithoutAnimation()
-      // TODO: If aspect ratio changes, mirroring breaks - we might need to fix this.
     }
   }
 
