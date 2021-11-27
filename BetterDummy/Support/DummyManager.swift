@@ -63,7 +63,7 @@ class DummyManager {
 
   static func connectDisconnectAssociatedDummies() {
     for dummy in self.getDummies() {
-      if dummy.hasAssociatedDisplay() {
+      if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
         if DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
           if !dummy.isConnected {
             os_log("Connecting associated dummy %{public}@ for display %{public}@", type: .info, dummy.getName(), dummy.associatedDisplayPrefsId)

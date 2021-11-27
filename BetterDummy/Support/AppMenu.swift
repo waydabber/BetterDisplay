@@ -87,15 +87,15 @@ class AppMenu {
 
     // ---
     self.settingsMenu.addItem(NSMenuItem.separator())
-    /*
-     let associatedHeaderItem = NSMenuItem()
-     associatedHeaderItem.attributedTitle = NSAttributedString(string: "Associated dummies", attributes: attrs)
-     self.settingsMenu.addItem(associatedHeaderItem)
 
-     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue), label: "Auto-connect/disconnect dummy", selector: #selector(app.disableEnforceAssociatedConnect)))
-     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedMirror.rawValue), label: "Enforce dummy as mirror main", selector: #selector(app.disableEnforceAssociatedMirror)))
-     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue), label: "Dummy follows display orientation", selector: #selector(app.disableEnforceAssociatedOrientation)))
-     */
+    let associatedHeaderItem = NSMenuItem()
+    associatedHeaderItem.attributedTitle = NSAttributedString(string: "Associated dummies", attributes: attrs)
+    self.settingsMenu.addItem(associatedHeaderItem)
+
+    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue), label: "Auto-connect/disconnect dummy", selector: #selector(app.disableEnforceAssociatedConnect)))
+    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedMirror.rawValue), label: "Enforce dummy as mirror main", selector: #selector(app.disableEnforceAssociatedMirror)))
+    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue), label: "Dummy follows display orientation", selector: #selector(app.disableEnforceAssociatedOrientation)))
+
     // ---
     self.settingsMenu.addItem(NSMenuItem.separator())
 
@@ -161,11 +161,6 @@ class AppMenu {
         }
       }
 
-      if isThereAny {
-        manageMenu.addItem(NSMenuItem.separator())
-      }
-
-      manageMenu.addItem(NSMenuItem.separator())
       if isThereDisconnected {
         manageMenu.addItem(NSMenuItem(title: "Connect all dummies", action: #selector(app.connectAllDummies(_:)), keyEquivalent: ""))
       }
@@ -279,7 +274,7 @@ class AppMenu {
     if dummy.isConnected, let resolutionSubmenuItem = self.getResolutionSubmenuItem(dummy, number) {
       self.appMenu.addItem(resolutionSubmenuItem)
     }
-    self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isConnected, label: "Connected\(dummy.hasAssociatedDisplay() ? " (automatic)" : "")", tag: number, selector: #selector(app.connectDisconnectDummy)))
+    self.appMenu.addItem(self.checkmarkedMenuItem(checked: dummy.isConnected, label: "Connected\(dummy.hasAssociatedDisplay() && !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) ? " (automatic)" : "")", tag: number, selector: #selector(app.connectDisconnectDummy)))
     if dummy.isConnected, !prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), !prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue), let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
       self.appMenu.addItem(self.checkmarkedMenuItem(checked: !display.isHiDPI, label: "Low resolution mode", tag: number, selector: #selector(app.lowResolution)))
     }

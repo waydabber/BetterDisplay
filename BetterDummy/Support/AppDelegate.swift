@@ -92,11 +92,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
       if !dummy.isConnected {
         os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-        if dummy.hasAssociatedDisplay() {
+        if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
           let alert = NSAlert()
           alert.alertStyle = .warning
           alert.messageText = "A dummy associated with a display cannot be manually connected!"
-          alert.informativeText = "A dummy which is associated with a display will connect automatically when the associated display is connected."
+          alert.informativeText = "A dummy which is associated with a display will connect automatically when the associated display is connected. You can disable this in Settings."
           alert.runModal()
         } else {
           if !dummy.connect() {
@@ -109,11 +109,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         }
       } else {
         os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
-        if dummy.hasAssociatedDisplay() {
+        if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
           let alert = NSAlert()
           alert.alertStyle = .warning
           alert.messageText = "A dummy associated with a display cannot be manually disconnected!"
-          alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the associated display is disconnected."
+          alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the associated display is disconnected. You can disable this in Settings"
           alert.runModal()
         } else {
           dummy.disconnect()
@@ -207,11 +207,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           }
         }
       }
-      if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
+      if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil, !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
         let alert = NSAlert()
         alert.alertStyle = .informational
         alert.messageText = "This dummy will now be connected."
-        alert.informativeText = "The dummy is now associated with a display that is connected therefore the dummy will automtically connect."
+        alert.informativeText = "The dummy is now associated with a display that is connected therefore the dummy will automtically connect. You can disable auto-connect for associated displays in Settings."
         alert.runModal()
         _ = dummy.connect()
       }
@@ -267,11 +267,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         hasAssociated = true
       }
     }
-    if hasAssociated {
+    if hasAssociated, !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
       let alert = NSAlert()
       alert.alertStyle = .warning
       alert.messageText = "Dummies associated with displays cannot be manually connected!"
-      alert.informativeText = "A dummy which is associated with a display will automatically connect when the associated display is connected. All other dummies were connected."
+      alert.informativeText = "A dummy which is associated with a display will automatically connect when the associated display is connected. All other dummies were connected. You can disable auto-connect for associated dummies in Settings."
       alert.runModal()
     }
     self.menu.populateAppMenu()
@@ -288,11 +288,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         hasAssociated = true
       }
     }
-    if hasAssociated {
+    if hasAssociated, !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
       let alert = NSAlert()
       alert.alertStyle = .warning
       alert.messageText = "Dummies associated with displays cannot be manually disconnected!"
-      alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the associated display is disconnected. All other dummies were disconnected."
+      alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the associated display is disconnected. All other dummies were disconnected. You can disable auto-disconnect for associated dummies in Settings."
       alert.runModal()
     }
     self.menu.populateAppMenu()
