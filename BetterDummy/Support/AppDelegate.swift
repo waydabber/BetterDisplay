@@ -88,10 +88,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func connectDummy(_ sender: AnyObject?) {
-    if let controlItem = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(controlItem.tag) {
+  @objc func connectDisconnectDummy(_ sender: AnyObject?) {
+    if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
       if !dummy.isConnected {
-        os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
+        os_log("Connecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
@@ -108,7 +108,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           }
         }
       } else {
-        os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(controlItem.tag)")
+        os_log("Disconnecting dummy tagged in delete menu as %{public}@", type: .info, "\(menuItem.tag)")
         if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
@@ -143,7 +143,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func lowResolution(_ sender: AnyObject?) {
-    if let control = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(control.tag), let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
+    if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag), let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
       let resolutions = display.resolutions
       var previousWidth: UInt32 = 0
       var matchingResolutionKey: Int32 = -1
@@ -163,7 +163,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   }
 
   @objc func portrait(_ sender: AnyObject?) {
-    if let control = sender as? NSControl, let dummy = DummyManager.getDummyByNumber(control.tag) {
+    if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
       dummy.isPortrait = !dummy.isPortrait
       if dummy.isConnected {
         dummy.disconnect()
