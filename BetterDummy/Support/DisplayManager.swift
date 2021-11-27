@@ -90,7 +90,7 @@ class DisplayManager {
   static func isDummy(displayID: CGDirectDisplayID) -> Bool {
     let rawName = DisplayManager.getDisplayNameByID(displayID: displayID)
     var isDummy: Bool = false
-    if rawName.lowercased().contains("dummy"), self.isVirtual(displayID: displayID) {
+    if rawName.lowercased().contains("dummy") {
       os_log("Display seems to be a BetterDummy created dummy.", type: .info)
       isDummy = true
     }

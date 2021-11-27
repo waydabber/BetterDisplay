@@ -184,6 +184,7 @@ class AppMenu {
         resolutionMenu.addItem(unavailableItem)
       }
       let resolutionSubmenu = NSMenuItem(title: "Set resolution", action: nil, keyEquivalent: "")
+      resolutionSubmenu.image = NSImage(systemSymbolName: "arrow.up.backward.and.arrow.down.forward", accessibilityDescription: "icon")
       resolutionSubmenu.submenu = resolutionMenu
       return resolutionSubmenu
     } else {
