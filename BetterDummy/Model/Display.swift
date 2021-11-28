@@ -32,7 +32,6 @@ class Display: Equatable {
   var pixelWidth: UInt32 = 0
   var pixelHeight: UInt32 = 0
   var isHiDPI: Bool = false
-  var resolutionSliderHandler: ResolutionSliderHandler?
 
   static func == (lhs: Display, rhs: Display) -> Bool {
     lhs.identifier == rhs.identifier

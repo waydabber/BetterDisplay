@@ -92,11 +92,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
       if !dummy.isConnected {
         os_log("Connecting dummy tagged in menu as %{public}@", type: .info, "\(menuItem.tag)")
-        if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
+        if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
           alert.messageText = "This dummy cannot be manually connected!"
-          alert.informativeText = "A dummy which is associated with a display will connect automatically when the associated display is connected. You can disable this in Settings."
+          alert.informativeText = "A dummy which is associated with a display will connect automatically when the associated display is connected."
           alert.runModal()
         } else {
           if !dummy.connect() {
@@ -109,11 +109,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         }
       } else {
         os_log("Disconnecting dummy tagged in menu as %{public}@", type: .info, "\(menuItem.tag)")
-        if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
+        if dummy.hasAssociatedDisplay() {
           let alert = NSAlert()
           alert.alertStyle = .warning
           alert.messageText = "This dummy cannot be manually disconnected!"
-          alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the associated display is disconnected. You can disable this in Settings"
+          alert.informativeText = "A dummy which is associated with a display will disconnect automatically when the associated display is disconnected."
           alert.runModal()
         } else {
           dummy.disconnect()
@@ -161,26 +161,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
-  @objc func portrait(_ sender: AnyObject?) {
-    if let menuItem = sender as? NSMenuItem, let dummy = DummyManager.getDummyByNumber(menuItem.tag) {
-      if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue) {
-        let alert = NSAlert()
-        alert.alertStyle = .warning
-        alert.messageText = "The orientation of this dummy cannot be manually changed!"
-        alert.informativeText = "A dummy which is associated with a display will match its orientation automatically when the associated display is connected. You can disable this in Settings."
-        alert.runModal()
-      }
-      dummy.isPortrait = !dummy.isPortrait
-      if dummy.isConnected {
-        dummy.disconnect()
-        _ = dummy.connect()
-      }
-      DummyManager.storeDummiesToPrefs()
-      self.menu.populateAppMenu()
-      app.menu.appMenu.cancelTrackingWithoutAnimation()
-    }
-  }
-
   @objc func associateDummy(_ sender: NSMenuItem) {
     os_log("Received association request from tag %{public}@", type: .info, "\(sender.tag)")
     guard sender.tag != 0 else {
@@ -212,11 +192,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
           }
         }
       }
-      if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil, !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
+      if !dummy.isConnected, DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
         let alert = NSAlert()
         alert.alertStyle = .informational
         alert.messageText = "This dummy will now be connected."
-        alert.informativeText = "The dummy is now associated with a display that is connected therefore the dummy will automtically connect. You can disable auto-connect for associated displays in Settings."
+        alert.informativeText = "The dummy is now associated with a display that is connected therefore the dummy will automtically connect."
         alert.runModal()
         _ = dummy.connect()
       }
@@ -272,11 +252,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         hasAssociated = true
       }
     }
-    if hasAssociated, !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
+    if hasAssociated {
       let alert = NSAlert()
       alert.alertStyle = .warning
       alert.messageText = "Dummies associated with displays cannot be manually connected!"
-      alert.informativeText = "A dummy which is associated with a display will automatically connect when the associated display is connected. All other dummies were connected. You can disable auto-connect for associated dummies in Settings."
+      alert.informativeText = "A dummy which is associated with a display will automatically connect when the associated display is connected. All other dummies were connected."
       alert.runModal()
     }
     self.menu.populateAppMenu()
@@ -293,11 +273,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         hasAssociated = true
       }
     }
-    if hasAssociated, !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
+    if hasAssociated {
       let alert = NSAlert()
       alert.alertStyle = .warning
       alert.messageText = "Dummies associated with displays cannot be manually disconnected!"
-      alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the associated display is disconnected. All other dummies were disconnected. You can disable auto-disconnect for associated dummies in Settings."
+      alert.informativeText = "A dummy which is associated with a display will automatically disconnect when the associated display is disconnected."
       alert.runModal()
     }
     self.menu.populateAppMenu()
@@ -446,40 +426,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     DummyManager.updateDummyDefinitions()
   }
 
-  @objc func useMenuForResolution(_: AnyObject?) {
-    prefs.set(!prefs.bool(forKey: PrefKey.useMenuForResolution.rawValue), forKey: PrefKey.useMenuForResolution.rawValue)
-    self.menu.populateSettingsMenu()
-    self.menu.populateAppMenu()
-  }
-
   @objc func hideLowResolutionOption(_: AnyObject?) {
     prefs.set(!prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), forKey: PrefKey.hideLowResolutionOption.rawValue)
     self.menu.populateSettingsMenu()
     self.menu.populateAppMenu()
-  }
-
-  @objc func hidePortraitOption(_: AnyObject?) {
-    prefs.set(!prefs.bool(forKey: PrefKey.hidePortraitOption.rawValue), forKey: PrefKey.hidePortraitOption.rawValue)
-    self.menu.populateSettingsMenu()
-    self.menu.populateAppMenu()
-  }
-
-  @objc func disableEnforceAssociatedConnect(_: AnyObject?) {
-    prefs.set(!prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue), forKey: PrefKey.disableEnforceAssociatedConnect.rawValue)
-    self.menu.populateSettingsMenu()
-    self.displayReconfiguration(force: true)
-  }
-
-  @objc func disableEnforceAssociatedMirror(_: AnyObject?) {
-    prefs.set(!prefs.bool(forKey: PrefKey.disableEnforceAssociatedMirror.rawValue), forKey: PrefKey.disableEnforceAssociatedMirror.rawValue)
-    self.menu.populateSettingsMenu()
-    self.displayReconfiguration(force: true)
-  }
-
-  @objc func disableEnforceAssociatedOrientation(_: AnyObject?) {
-    prefs.set(!prefs.bool(forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue), forKey: PrefKey.disableEnforceAssociatedOrientation.rawValue)
-    self.menu.populateSettingsMenu()
-    self.displayReconfiguration(force: true)
   }
 
   // MARK: *** Handlers - Others

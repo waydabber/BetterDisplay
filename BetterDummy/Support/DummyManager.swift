@@ -25,8 +25,8 @@ class DummyManager {
     return nil
   }
 
-  static func createDummy(_ dummyDefinition: DummyDefinition, dummyDefinitionId: Int? = nil, isPortrait: Bool = false, serialNum: UInt32 = 0, doConnect: Bool = true) -> Int {
-    let dummy = Dummy(dummyDefinition: dummyDefinition, isPortrait: isPortrait, serialNum: serialNum, doConnect: doConnect)
+  static func createDummy(_ dummyDefinition: DummyDefinition, dummyDefinitionId: Int? = nil, isPortrait _: Bool = false, serialNum: UInt32 = 0, doConnect: Bool = true) -> Int {
+    let dummy = Dummy(dummyDefinition: dummyDefinition, serialNum: serialNum, doConnect: doConnect)
     self.dummyCounter += 1
     self.definedDummies[self.dummyCounter] = DefinedDummy(dummy: dummy, definitionId: dummyDefinitionId)
     return self.dummyCounter
@@ -63,7 +63,7 @@ class DummyManager {
 
   static func connectDisconnectAssociatedDummies() {
     for dummy in self.getDummies() {
-      if dummy.hasAssociatedDisplay(), !prefs.bool(forKey: PrefKey.disableEnforceAssociatedConnect.rawValue) {
+      if dummy.hasAssociatedDisplay() {
         if DisplayManager.getDisplayByPrefsId(dummy.associatedDisplayPrefsId) != nil {
           if !dummy.isConnected {
             os_log("Connecting associated dummy %{public}@ for display %{public}@", type: .info, dummy.getName(), dummy.associatedDisplayPrefsId)
@@ -99,13 +99,11 @@ class DummyManager {
       70: DummyDefinition(24, 10, 1, refreshRates, "24:10 (UW-QHD+)", false),
       80: DummyDefinition(32, 10, 1, refreshRates, "32:10 (D-W*XGA)", false),
       90: DummyDefinition(32, 9, 2, refreshRates, "32:9 (D-HD/QHD)", true),
-      100: DummyDefinition(20, 20, 2, refreshRates, "1:1 (Square)", false),
-      /* Portrait modes are handled differently now
-        110: DummyDefinition(9, 16, 2, refreshRates, "9:16 (HD/4K/5K/6K - Portrait)", false),
-        120: DummyDefinition(10, 16, 2, refreshRates, "10:16 (W*XGA - Portrait)", false),
-        130: DummyDefinition(12, 16, 2, refreshRates, "12:16 (VGA - Portrait)", false),
-        140: DummyDefinition(135, 256, 2, refreshRates, "9:17 (4K-DCI - Portrait)", true),
-         */
+      100: DummyDefinition(20, 20, 2, refreshRates, "1:1 (Square)", true),
+      110: DummyDefinition(9, 16, 2, refreshRates, "9:16 (HD/4K/5K/6K - Portrait)", false),
+      120: DummyDefinition(10, 16, 2, refreshRates, "10:16 (W*XGA - Portrait)", false),
+      130: DummyDefinition(12, 16, 2, refreshRates, "12:16 (VGA - Portrait)", false),
+      140: DummyDefinition(135, 256, 2, refreshRates, "9:17 (4K-DCI - Portrait)", true),
       210: DummyDefinition(15, 10, 2, refreshRates, "3:2 (Photography)", false),
       220: DummyDefinition(15, 12, 2, refreshRates, "5:4 (Photography)", true),
       350: DummyDefinition(152, 100, 1, refreshRates, "15.2:10 (iPad Mini 2021)", false),
@@ -129,7 +127,7 @@ class DummyManager {
       return
     }
     for i in 1 ... prefs.integer(forKey: PrefKey.numOfDummyDisplays.rawValue) where prefs.object(forKey: "\(PrefKey.display.rawValue)\(i)") != nil {
-      if let number = DummyManager.createDummyByDefinitionId(prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), isPortrait: prefs.bool(forKey: "\(PrefKey.isPortrait.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: false) {
+      if let number = DummyManager.createDummyByDefinitionId(prefs.integer(forKey: "\(PrefKey.display.rawValue)\(i)"), serialNum: UInt32(prefs.integer(forKey: "\(PrefKey.serial.rawValue)\(i)")), doConnect: false) {
         if let dummy = DummyManager.getDummyByNumber(number) {
           dummy.associatedDisplayPrefsId = prefs.string(forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)") ?? ""
           dummy.associatedDisplayName = prefs.string(forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)") ?? ""
@@ -155,7 +153,6 @@ class DummyManager {
         prefs.set(definedDummy.dummy.isConnected, forKey: "\(PrefKey.isConnected.rawValue)\(i)")
         prefs.set(definedDummy.dummy.associatedDisplayPrefsId, forKey: "\(PrefKey.associatedDisplayPrefsId.rawValue)\(i)")
         prefs.set(definedDummy.dummy.associatedDisplayName, forKey: "\(PrefKey.associatedDisplayName.rawValue)\(i)")
-        prefs.set(definedDummy.dummy.isPortrait, forKey: "\(PrefKey.isPortrait.rawValue)\(i)")
         i += 1
       }
     }

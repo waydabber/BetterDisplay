@@ -13,7 +13,6 @@ class Dummy: Equatable {
   var dummyDefinition: DummyDefinition
   let serialNum: UInt32
   var isConnected: Bool = false
-  var isPortrait: Bool = false
   var isSleepDisconnected: Bool = false
   var associatedDisplayPrefsId: String = ""
   var associatedDisplayName: String = ""
@@ -23,14 +22,13 @@ class Dummy: Equatable {
     lhs.serialNum == rhs.serialNum
   }
 
-  init(dummyDefinition: DummyDefinition, isPortrait: Bool = false, serialNum: UInt32 = 0, doConnect: Bool = true) {
+  init(dummyDefinition: DummyDefinition, serialNum: UInt32 = 0, doConnect: Bool = true) {
     var storedSerialNum: UInt32 = serialNum
     if storedSerialNum == 0 {
       storedSerialNum = UInt32.random(in: 0 ... UInt32.max)
     }
     self.dummyDefinition = dummyDefinition
     self.serialNum = storedSerialNum
-    self.isPortrait = isPortrait
     if doConnect {
       _ = self.connect()
     }
@@ -58,7 +56,7 @@ class Dummy: Equatable {
       self.disconnect()
     }
     let name: String = self.getName()
-    if let virtualDisplay = Dummy.createVirtualDisplay(self.dummyDefinition, isPortrait: self.isPortrait, name: name, serialNum: self.serialNum) {
+    if let virtualDisplay = Dummy.createVirtualDisplay(self.dummyDefinition, name: name, serialNum: self.serialNum) {
       self.virtualDisplay = virtualDisplay
       self.displayIdentifier = virtualDisplay.displayID
       self.isConnected = true
@@ -91,7 +89,7 @@ class Dummy: Equatable {
     os_log("Disconnected virtual display: %{public}@", type: .info, "\(self.getName())")
   }
 
-  static func createVirtualDisplay(_ definition: DummyDefinition, isPortrait: Bool = false, name: String, serialNum: UInt32, hiDPI: Bool = true) -> CGVirtualDisplay? {
+  static func createVirtualDisplay(_ definition: DummyDefinition, name: String, serialNum: UInt32, hiDPI: Bool = true) -> CGVirtualDisplay? {
     os_log("Creating virtual display: %{public}@", type: .info, "\(name)")
     if let descriptor = CGVirtualDisplayDescriptor() {
       os_log("- Preparing descriptor...", type: .info)
@@ -114,8 +112,8 @@ class Dummy: Equatable {
         var modes = [CGVirtualDisplayMode?](repeating: nil, count: definition.maxMultiplier - definition.minMultiplier + 1)
         for multiplier in definition.minMultiplier ... definition.maxMultiplier {
           for refreshRate in definition.refreshRates {
-            let width = UInt32((isPortrait ? definition.aspectHeight : definition.aspectWidth) * multiplier * definition.multiplierStep)
-            let height = UInt32((isPortrait ? definition.aspectWidth : definition.aspectHeight) * multiplier * definition.multiplierStep)
+            let width = UInt32(definition.aspectWidth * multiplier * definition.multiplierStep)
+            let height = UInt32(definition.aspectHeight * multiplier * definition.multiplierStep)
             modes[multiplier - definition.minMultiplier] = CGVirtualDisplayMode(width: width, height: height, refreshRate: refreshRate)!
           }
         }

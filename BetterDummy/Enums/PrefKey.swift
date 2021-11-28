@@ -11,7 +11,6 @@ enum PrefKey: String {
   case isConnected
   case associatedDisplayPrefsId
   case associatedDisplayName
-  case isPortrait
 
   // General
   case appAlreadyLaunched
@@ -25,11 +24,6 @@ enum PrefKey: String {
   case isBetaChannel
   case enable16K
   case hideLowResolutionOption
-  case hidePortraitOption
-  case useMenuForResolution
-  case disableEnforceAssociatedConnect
-  case disableEnforceAssociatedMirror
-  case disableEnforceAssociatedOrientation
 
   // Not used
   case enableSliderSnap
