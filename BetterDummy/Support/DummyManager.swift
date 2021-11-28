@@ -141,10 +141,11 @@ class DummyManager {
   }
 
   static func storeDummiesToPrefs() {
+    os_log("Storing preferences.", type: .info)
+    prefs.set(DummyManager.getNumOfDummies(), forKey: PrefKey.numOfDummyDisplays.rawValue)
     guard DummyManager.getNumOfDummies() > 0 else {
       return
     }
-    prefs.set(DummyManager.getNumOfDummies(), forKey: PrefKey.numOfDummyDisplays.rawValue)
     var i = 1
     for key in DummyManager.definedDummies.keys.sorted(by: <) {
       if let definedDummy = DummyManager.definedDummies[key] {
@@ -156,6 +157,5 @@ class DummyManager {
         i += 1
       }
     }
-    os_log("Preferences stored.", type: .info)
   }
 }
