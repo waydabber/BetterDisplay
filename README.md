@@ -164,6 +164,8 @@ Please take a look at the [list of known issues](https://github.com/waydabber/Be
 
 ## Additional help
 
+**The following section and the screenshots are somewhat outdated as they represent app version 1.0.10.**
+
 For most of the time, the app is self explanatory but here is a brief overview of some of the additional functions in the app.
 
 ### Manage your dummies
