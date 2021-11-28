@@ -80,7 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
         let alert = NSAlert()
         alert.alertStyle = .warning
         alert.messageText = "Your new dummy was created and connected."
-        alert.informativeText = "Use Displays under System Preferences to configure your new dummy display! You can use the Manage dummies menu item to manage your dummy."
+        alert.informativeText = "Use Displays under System Preferences to configure your new dummy display! You can use the app menu to change the settings of your dummy."
         alert.runModal()
       } else {
         os_log("Could not create dummy using menu item tag number.", type: .info)
