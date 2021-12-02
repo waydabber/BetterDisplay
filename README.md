@@ -190,7 +190,7 @@ For most of the time, the app is self explanatory but here is a brief overview o
 
 - `Start at login`, `Automatically check for updates` - general options
 - `Hide menu icon` - when the menu icon is hidden, you can still change settings - simply launch the app again while it is already running and the menu icon will reappear.
-- `Enable up to 16K resolutions` - you can enable up to 16384x16384 resolution (this translates to 8192x8192 HiDPI). This is mostly useful for ultrawide and double-wide displays, where the stanrad 8192px max resolution might still be constraining. Use with caution as very high resolutions tax the system heavily.
+- `Enable up to 16K resolutions` - you can enable up to 16384x16384 resolution (this translates to 8192x8192 HiDPI). This is mostly useful for ultrawide and double-wide displays, where the standard 8192px max resolution might still be constraining. Use with caution as very high resolutions tax the system heavily.
 - `Show low resolution modes in menu` will allow you to set low (non-HiDPI) resolutions in the app menu under `Manage dummies`
 - `Use mirrored dummy sleep workaround` - macOS has a bug that makes virtual displays (like Sidecar, AirPlay, DisplayLink, BetterDummy) freeze when they act as a mirror main on some configurations. This workaround intends to solve that issue (more or less successfully).
 - `Disconnect and reconnect on sleep` - This disconnects dummies upon sleeps and reconnects them after wake.
