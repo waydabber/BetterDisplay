@@ -100,51 +100,82 @@ Notes:
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
 
-Financial contributors (as of 20/11/2021, list is updated from time to time):
+Financial contributors (as of 4/12/2021, list is updated from time to time):
 
 <table align="center">
 <tr>
 <td valign="top" width="200">
 Alessio N.<br/>
+Alex N.<br/>
+André Heie Vik<br/>
+Andre Khromov<br/>
+Andrew Braithwaite<br/>
 Angus<br/>
-Arthur Müller<br/>
+Arthur Muller<br/>
 Chetan Kunte<br/>
 Clark Jacobsohn<br/>
+Danilo
 David Richardson<br/>
+David Verdonck<br/>
 David W<br/>
 Dinko Belchevski<br/>
 Florian Gross<br/>
 Gavin Liu<br/>
-Igor Yugay<br/>
-Incognito<br/>
-Jari Hanhela<br/>
+Guest<br/>
+Guest<br/>
+Guest<br/>
+Guest<br/>
+Guest<br/>
+Guest<br/>
+Guest<br/>
 </td>
 <td valign="top" width="200">
-Jeff Lopes<br/>
+Guest<br/>
+Guest<br/>
+Guest<br/>
+guest-e3416f1d<br/>
+Igor Yugay<br/>
+Incognito<br/>
+Incognito<br/>
 Jérôme Seydoux<br/>
+Jan Behrmann<br/>
+Jari Hanhela<br/>
+Jeff Lopes<br/>
 JIANG Y<br/>
 Julian Pawlowski<br/>
 Justin Vanderhooft<br/>
 kim<br/>
+Knut Holm<br/>
 Lorne Rutherford<br/>
+m wang<br/>
+Marco<br/>
 Marco<br/>
 Martin Clayton<br/>
-Maurice Schleußinger<br/>
+Maurice Schleu√üinger<br/>
 Michael Charo<br/>
-Nick Lappas<br/>
-Nikola Milojević<br/>
 </td>
 <td valign="top" width="200">
+Michael Charo<br/>
+namor<br/>
+Nick Lappas<br/>
+Nikola Milojeviƒá<br/>
+nilsonsfj<br/>
+NP<br/>
 Reactual<br/>
 Rick<br/>
+Splay Display<br/>
+Stephen Richardson<br/>
 Stephen Richardson<br/>
 Sven Blum<br/>
+tanerd<br/>
 Tom Dai<br/>
+Tomas Jelinej<br/>
 vividfog<br/>
+<b>Will_from_CA - $100</b><br/>
 William Edney<br/>
 Wolf1701<br/>
-Yurong You<br/>
-<i>+ 3 anonymous</i><br/><br/>
+Yurong You!<br/>
+<br/>
 <a href="https://opencollective.com/betterdummy/donate">Join the list</a>
 </td>
 </tr>
@@ -190,7 +221,7 @@ For most of the time, the app is self explanatory but here is a brief overview o
 
 - `Start at login`, `Automatically check for updates` - general options
 - `Hide menu icon` - when the menu icon is hidden, you can still change settings - simply launch the app again while it is already running and the menu icon will reappear.
-- `Enable up to 16K resolutions` - you can enable up to 16384x16384 resolution (this translates to 8192x8192 HiDPI). This is mostly useful for ultrawide and double-wide displays, where the stanrad 8192px max resolution might still be constraining. Use with caution as very high resolutions tax the system heavily.
+- `Enable up to 16K resolutions` - you can enable up to 16384x16384 resolution (this translates to 8192x8192 HiDPI). This is mostly useful for ultrawide and double-wide displays, where the standard 8192px max resolution might still be constraining. Use with caution as very high resolutions tax the system heavily.
 - `Show low resolution modes in menu` will allow you to set low (non-HiDPI) resolutions in the app menu under `Manage dummies`
 - `Use mirrored dummy sleep workaround` - macOS has a bug that makes virtual displays (like Sidecar, AirPlay, DisplayLink, BetterDummy) freeze when they act as a mirror main on some configurations. This workaround intends to solve that issue (more or less successfully).
 - `Disconnect and reconnect on sleep` - This disconnects dummies upon sleeps and reconnects them after wake.
