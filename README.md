@@ -193,6 +193,14 @@ Please don't forget to star the GitHub page and spread the word about the app. :
 
 Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
+## Some notable articles on the net about BetterDummy
+
+BetterDummy is famous! :)
+
+- https://www.theregister.com/2021/12/03/apple_m1_drivers
+- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
+- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
+
 ## Additional help
 
 **The following section and the screenshots are somewhat outdated as they represent app version 1.0.10.**
