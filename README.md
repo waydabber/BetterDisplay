@@ -100,86 +100,41 @@ Notes:
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
 
-Financial contributors (as of 4/12/2021, list is updated from time to time):
+Super generous contributors, who donated $100 or more:
 
-<table align="center">
-<tr>
-<td valign="top" width="200">
-Alessio N.<br/>
-Alex N.<br/>
-André Heie Vik<br/>
-Andre Khromov<br/>
-Andrew Braithwaite<br/>
-Angus<br/>
-Arthur Muller<br/>
-Chetan Kunte<br/>
-Clark Jacobsohn<br/>
-Danilo
-David Richardson<br/>
-David Verdonck<br/>
-David W<br/>
-Dinko Belchevski<br/>
-Florian Gross<br/>
-Gavin Liu<br/>
-Guest<br/>
-Guest<br/>
-Guest<br/>
-Guest<br/>
-Guest<br/>
-Guest<br/>
-Guest<br/>
-</td>
-<td valign="top" width="200">
-Guest<br/>
-Guest<br/>
-Guest<br/>
-guest-e3416f1d<br/>
-Igor Yugay<br/>
-Incognito<br/>
-Incognito<br/>
-Jérôme Seydoux<br/>
-Jan Behrmann<br/>
-Jari Hanhela<br/>
-Jeff Lopes<br/>
-JIANG Y<br/>
-Julian Pawlowski<br/>
-Justin Vanderhooft<br/>
-kim<br/>
-Knut Holm<br/>
-Lorne Rutherford<br/>
-m wang<br/>
-Marco<br/>
-Marco<br/>
-Martin Clayton<br/>
-Maurice Schleu√üinger<br/>
-Michael Charo<br/>
-</td>
-<td valign="top" width="200">
-Michael Charo<br/>
-namor<br/>
-Nick Lappas<br/>
-Nikola Milojeviƒá<br/>
-nilsonsfj<br/>
-NP<br/>
-Reactual<br/>
-Rick<br/>
-Splay Display<br/>
-Stephen Richardson<br/>
-Stephen Richardson<br/>
-Sven Blum<br/>
-tanerd<br/>
-Tom Dai<br/>
-Tomas Jelinej<br/>
-vividfog<br/>
-<b>Will_from_CA - $100</b><br/>
-William Edney<br/>
-Wolf1701<br/>
-Yurong You!<br/>
-<br/>
-<a href="https://opencollective.com/betterdummy/donate">Join the list</a>
-</td>
-</tr>
-</table>
+- Riten Jaiswal - $200
+- Will_from_CA - $100
+
+Notable contributors, who donated $20 or more:
+
+- Reactual
+- Stephen Richardson
+- Peter Szombati
+- NP
+- David Verdonck
+- Knut Holm
+- Jan Behrmann
+- Danilo
+- Andrew Braithwaite
+- Splay Display
+- Guest
+- Incognito
+- Florian Gross
+- David Richardson
+- Jari Hanhela
+- William Edney
+- David W
+- Chetan Kunte
+- Martin Clayton
+- Nikola Milojević
+- Wolf1701
+- Arthur Müller
+- Tom Dai
+- Jeff Lopes
+
+Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
+
+(list updated as of 08/12/2021)
 
 Please don't forget to star the GitHub page and spread the word about the app. :)
 
@@ -193,13 +148,22 @@ Please don't forget to star the GitHub page and spread the word about the app. :
 
 Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
-## Some notable articles on the net about BetterDummy
+### Enhancements
 
-BetterDummy is famous! :)
+I am continuously working on improving the app. You can check out the [planned features and their status here](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement).
+
+## Some notable articles about BetterDummy
+
+BetterDummy is now famous! :)
 
 - https://www.theregister.com/2021/12/03/apple_m1_drivers
 - https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
 - https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
+
+Also the app made it to the featured news (once took the first spot) in Hacker News.
+
+- https://news.ycombinator.com/item?id=29064234
+- https://news.ycombinator.com/item?id=29469837
 
 ## Additional help
 
