@@ -135,7 +135,7 @@ Notable contributors, who donated $20 or more:
 
 Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
 
-(list updated as of 08/12/2021)
+(list updated as of 10/12/2021)
 
 Please don't forget to star the GitHub page and spread the word about the app. :)
 
