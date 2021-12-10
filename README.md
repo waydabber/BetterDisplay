@@ -107,6 +107,7 @@ Super generous contributors, who donated $100 or more:
 
 Notable contributors, who donated $20 or more:
 
+- Emilio P Egido
 - Thomas Varghese
 - Reactual
 - Stephen Richardson
