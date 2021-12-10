@@ -107,6 +107,7 @@ Super generous contributors, who donated $100 or more:
 
 Notable contributors, who donated $20 or more:
 
+- Thomas Varghese
 - Reactual
 - Stephen Richardson
 - Peter Szombati
