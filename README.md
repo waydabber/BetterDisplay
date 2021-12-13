@@ -108,6 +108,7 @@ Super generous contributors, who donated $50 or more:
 
 Notable contributors, who donated $20 or more:
 
+- wanyeki
 - Felix
 - Emilio P Egido
 - Thomas Varghese
