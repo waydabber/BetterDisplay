@@ -100,10 +100,11 @@ Notes:
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
 
-Super generous contributors, who donated $100 or more:
+Super generous contributors, who donated $50 or more:
 
 - Riten Jaiswal - $200
 - Will_from_CA - $100
+- Victor - $50
 
 Notable contributors, who donated $20 or more:
 
