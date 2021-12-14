@@ -108,6 +108,7 @@ Super generous contributors, who donated $50 or more:
 
 Notable contributors, who donated $20 or more:
 
+- Nikola
 - wanyeki
 - Felix
 - Emilio P Egido
@@ -137,7 +138,7 @@ Notable contributors, who donated $20 or more:
 - Tom Dai
 - Jeff Lopes
 
-(list updated as of 13/12/2021)
+(list updated as of 14/12/2021)
 
 Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
 
