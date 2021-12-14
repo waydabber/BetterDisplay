@@ -18,10 +18,6 @@
 <a href="https://github.com/waydabber/BetterDummy/releases">
 <img src="https://img.shields.io/github/release/waydabber/BetterDummy.svg?style=flat" alt="latest version"/>
 </a>
-<!-- license -->
-<a href="https://github.com/waydabber/BetterDummy/blob/main/LICENSE">
-<img src="https://img.shields.io/github/license/waydabber/BetterDummy.svg?style=flat" alt="license"/>
-</a>
 <!-- platform -->
 <a href="https://github.com/waydabber/BetterDummy">
 <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
@@ -49,7 +45,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 - Available instantly.
 
-Some other  uses:
+Some other uses:
 
 - The app is  useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS.
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
@@ -145,20 +141,6 @@ Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/d
 
 Please don't forget to star the GitHub page and spread the word about the app. :)
 
-## Compatibility
-
-- The app should be compatible with all M1 class machines running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
-- The app is also compatible with more recent Intel Macs and macOS Big Sur but mirroring might not work as expected (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
-- The app is compatible with headless mode as well (this was tested on Intel).
-
-### Known issues
-
-Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
-
-### Enhancements
-
-I am continuously working on improving the app. You can check out the [planned features and their status here](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement).
-
 ## Some notable articles about BetterDummy
 
 BetterDummy is now famous! :)
@@ -171,6 +153,24 @@ Also the app made it to the featured news (once took the first spot) in Hacker N
 
 - https://news.ycombinator.com/item?id=29064234
 - https://news.ycombinator.com/item?id=29469837
+
+## Compatibility
+
+- The app should be compatible with all M1 class machines running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
+- The app is also compatible with more recent Intel Macs and macOS Big Sur but mirroring might not work as expected (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
+- The app is compatible with headless mode as well (this was tested on Intel).
+
+### Known issues
+
+Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
+
+### Enhancements and roadmap
+
+I am continuously working on improving the app. You can check out the [planned features and their status here](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement).
+
+## Source code and freemium transition
+
+The source code for v1.0.x is available in the [opensource branch](https://github.com/waydabber/BetterDummy/tree/opensource). For the planned transition of BetterDummy to a freemium product, [check out this discussion](https://github.com/waydabber/BetterDummy/discussions/233).
 
 ## Additional help
 
