@@ -133,7 +133,7 @@ Notable contributors, who donated $20 or more:
 - Arthur Müller
 - Tom Dai
 - Jeff Lopes
-- + anonymous donors
+- _additional anonymous donors_
 
 (list updated as of 14/12/2021)
 
