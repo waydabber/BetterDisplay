@@ -4,6 +4,17 @@
         <title>BetterDummy</title>
         <link>https://waydabber.github.io/BetterDummy</link>
         <item>
+          <title>1.0.13</title>
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.0.13
+            </sparkle:releaseNotesLink>
+            <pubDate>Wed, 15 Dec 2021 20:17:27 +0100</pubDate>
+            <sparkle:version>1205</sparkle:version>
+            <sparkle:shortVersionString>1.0.13</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.0.13/BetterDummy-v1.0.13.zip" length="2283316" type="application/octet-stream" sparkle:edSignature="/yTSwYKyykuctCNS1lCZUHq2mGAJi+ivi1lcsBJnUo5UcFkzcKcpXSMKSJaS1QprGeoIvIeXMtg3O+TdNIHaCg=="/>
+        </item>
+        <item>
           <title>1.0.12</title>
             <sparkle:releaseNotesLink>
               https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.0.12
