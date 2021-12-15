@@ -120,7 +120,6 @@ Notable contributors, who donated $20 or more:
 - Danilo
 - Andrew Braithwaite
 - Splay Display
-- Guest
 - Incognito
 - Florian Gross
 - David Richardson
@@ -134,6 +133,7 @@ Notable contributors, who donated $20 or more:
 - Arthur Müller
 - Tom Dai
 - Jeff Lopes
+- + anonymous donors
 
 (list updated as of 14/12/2021)
 
