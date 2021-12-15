@@ -20,9 +20,9 @@
 		AA162C2D272C63DC003CFC89 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = AA162C2C272C63DC003CFC89 /* Sparkle */; };
 		AA162C2F272C69F5003CFC89 /* UpdaterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA162C2E272C69F5003CFC89 /* UpdaterDelegate.swift */; };
 		AA162C31272C73D8003CFC89 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = AA162C30272C73D8003CFC89 /* appcast.xml */; };
+		AA1DBA88276A5C6F009834B1 /* CoreDisplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1DBA87276A5C6F009834B1 /* CoreDisplay.framework */; };
 		AA457C622736DC8A002018C1 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA457C612736DC8A002018C1 /* Display.swift */; };
 		AA457C642736E1B2002018C1 /* NSScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA457C632736E1B2002018C1 /* NSScreen+Extension.swift */; };
-		AA457C672736E2CB002018C1 /* CoreDisplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA457C662736E2CB002018C1 /* CoreDisplay.framework */; };
 		AA457C6D2736FBDA002018C1 /* DummyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA457C6C2736FBDA002018C1 /* DummyManager.swift */; };
 		AA59EAB127288E4E00B7C833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB027288E4E00B7C833 /* AppDelegate.swift */; };
 		AA59EAB327288EF700B7C833 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EAB227288EF700B7C833 /* Dummy.swift */; };
@@ -63,9 +63,9 @@
 		AA162C29272C5306003CFC89 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		AA162C2E272C69F5003CFC89 /* UpdaterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterDelegate.swift; sourceTree = "<group>"; };
 		AA162C30272C73D8003CFC89 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		AA1DBA87276A5C6F009834B1 /* CoreDisplay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDisplay.framework; path = ../../../../../System/Library/Frameworks/CoreDisplay.framework; sourceTree = "<group>"; };
 		AA457C612736DC8A002018C1 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		AA457C632736E1B2002018C1 /* NSScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen+Extension.swift"; sourceTree = "<group>"; };
-		AA457C662736E2CB002018C1 /* CoreDisplay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDisplay.framework; path = ../../../../../../System/Library/Frameworks/CoreDisplay.framework; sourceTree = "<group>"; };
 		AA457C6C2736FBDA002018C1 /* DummyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyManager.swift; sourceTree = "<group>"; };
 		AA59EAB027288E4E00B7C833 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA59EAB227288EF700B7C833 /* Dummy.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA457C672736E2CB002018C1 /* CoreDisplay.framework in Frameworks */,
+				AA1DBA88276A5C6F009834B1 /* CoreDisplay.framework in Frameworks */,
 				AA162C2D272C63DC003CFC89 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +108,6 @@
 		AA162C18272C344C003CFC89 /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				AAA10D87272F054C008B342D /* images */,
 				AA162C22272C3A0C003CFC89 /* styles */,
 				AA162C1D272C38FA003CFC89 /* scripts */,
 				AA162C19272C34A8003CFC89 /* index.html */,
@@ -151,12 +150,12 @@
 			path = BetterDummy;
 			sourceTree = "<group>";
 		};
-		AA457C652736E2AD002018C1 /* Frameworks */ = {
+		AA1DBA86276A5BB2009834B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA457C662736E2CB002018C1 /* CoreDisplay.framework */,
+				AA1DBA87276A5C6F009834B1 /* CoreDisplay.framework */,
 			);
-			path = Frameworks;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AA457C682736E2E5002018C1 /* Model */ = {
@@ -197,13 +196,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		AAA10D87272F054C008B342D /* images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		AAA2D674272BF77200F71CF0 /* BetterDummyHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +209,7 @@
 		BEB26A362530B2F600744C86 = {
 			isa = PBXGroup;
 			children = (
-				AA457C652736E2AD002018C1 /* Frameworks */,
+				AA1DBA86276A5BB2009834B1 /* Frameworks */,
 				AA162C18272C344C003CFC89 /* docs */,
 				AA8AA0AD272552E600F66F8A /* README.md */,
 				AA162C25272C3B5B003CFC89 /* LICENSE */,
@@ -638,7 +630,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.11;
+				MARKETING_VERSION = 1.0.13;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -670,7 +662,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.11;
+				MARKETING_VERSION = 1.0.13;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = me.waydabber.BetterDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

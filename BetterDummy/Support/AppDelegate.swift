@@ -237,6 +237,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     os_log("- Resolution change item %{public}@", type: .info, "\(resolutionItemNumber)")
     if let dummy = DummyManager.getDummyByNumber(dummyNumber), let display = DisplayManager.getDisplayById(dummy.displayIdentifier) {
       display.changeResolution(resolutionItemNumber: Int32(resolutionItemNumber))
+      self.menu.populateAppMenu()
     }
   }
 
