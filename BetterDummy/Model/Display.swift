@@ -48,7 +48,7 @@ class Display: Equatable {
     self.serialNumber = serialNumber
     self.isVirtual = isVirtual
     self.isDummy = isDummy
-    self.prefsId = "(" + String(name.filter { !$0.isWhitespace }) + String(vendorNumber ?? 0) + String(modelNumber ?? 0) + "@" + (self.isVirtual ? String(self.serialNumber ?? 9999) : String(identifier)) + ")"
+    self.prefsId = "(" + String(name.filter { !$0.isWhitespace }) + String(vendorNumber ?? 0) + String(modelNumber ?? 0) + "@" + (self.isVirtual || prefs.bool(forKey: PrefKey.alwaysUseSerialForDisplayPrefsId.rawValue) ? String(self.serialNumber ?? 9999) : String(identifier)) + ")"
     os_log("Display init with prefsIdentifier %{public}@", type: .info, self.prefsId)
     self.updateResolutions()
   }

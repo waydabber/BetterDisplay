@@ -24,6 +24,7 @@ enum PrefKey: String {
   case isBetaChannel
   case enable16K
   case hideLowResolutionOption
+  case alwaysUseSerialForDisplayPrefsId
 
   // Not used
   case enableSliderSnap

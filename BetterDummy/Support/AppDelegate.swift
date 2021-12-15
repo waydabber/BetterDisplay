@@ -452,6 +452,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
     }
   }
 
+  @objc func alwaysUseSerialForDisplayPrefsId(_: AnyObject?) {
+    let alert = NSAlert()
+    alert.alertStyle = .critical
+    alert.messageText = "Using display serial numberfor association"
+    alert.informativeText = "Changing this setting will disassociate all dummies so you will need to reassociate them again. Do you want to continue?"
+    alert.addButton(withTitle: "Cancel")
+    alert.addButton(withTitle: "Continue")
+    if alert.runModal() == .alertFirstButtonReturn {
+      return
+    }
+    prefs.set(!prefs.bool(forKey: PrefKey.alwaysUseSerialForDisplayPrefsId.rawValue), forKey: PrefKey.alwaysUseSerialForDisplayPrefsId.rawValue)
+    for dummy in DummyManager.getDummies() {
+      dummy.disassociateDisplay()
+    }
+    self.menu.populateAppMenu()
+    DummyManager.storeDummiesToPrefs()
+    self.menu.populateSettingsMenu()
+    self.menu.populateAppMenu()
+  }
+
   @objc func donate(_: AnyObject?) {
     if let url = URL(string: "https://opencollective.com/betterdummy/donate") {
       NSWorkspace.shared.open(url)

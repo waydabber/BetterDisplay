@@ -89,11 +89,12 @@ class AppMenu {
     self.settingsMenu.addItem(NSMenuItem.separator())
 
     let resolutionsHeaderItem = NSMenuItem()
-    resolutionsHeaderItem.attributedTitle = NSAttributedString(string: "Resolutions", attributes: attrs)
+    resolutionsHeaderItem.attributedTitle = NSAttributedString(string: "Dummy management", attributes: attrs)
     self.settingsMenu.addItem(resolutionsHeaderItem)
 
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.enable16K.rawValue), title: "Enable up to 16K resolutions", action: #selector(app.enable16K)))
     self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: !prefs.bool(forKey: PrefKey.hideLowResolutionOption.rawValue), title: "Show low resolution (non-HiDPI) options", action: #selector(app.hideLowResolutionOption)))
+    self.settingsMenu.addItem(self.checkmarkedMenuItem(checked: prefs.bool(forKey: PrefKey.alwaysUseSerialForDisplayPrefsId.rawValue), title: "Use display serial number for association", action: #selector(app.alwaysUseSerialForDisplayPrefsId(_:))))
 
     // ---
     self.settingsMenu.addItem(NSMenuItem.separator())
