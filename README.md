@@ -136,8 +136,6 @@ Notable contributors, who donated $20 or more:
 - Jeff Lopes
 - _additional anonymous donors_
 
-(list updated as of 14/12/2021)
-
 Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
 
 Please don't forget to star the GitHub page and spread the word about the app. :)
