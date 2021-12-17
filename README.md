@@ -92,6 +92,19 @@ Notes:
 - Start the app
 - Use the app menu bar item to interact.
 
+## Some notable articles about BetterDummy
+
+BetterDummy is now famous! :)
+
+- https://www.theregister.com/2021/12/03/apple_m1_drivers
+- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
+- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
+
+Also the app made it to the featured news (once took the first spot) in Hacker News.
+
+- https://news.ycombinator.com/item?id=29064234
+- https://news.ycombinator.com/item?id=29469837
+
 ## Supporting the project
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
@@ -104,6 +117,7 @@ Super generous contributors, who donated $50 or more:
 
 Notable contributors, who donated $20 or more:
 
+- Jung Yeop (Steve) Kim
 - Jason
 - Kaz
 - Nikola
@@ -140,80 +154,30 @@ Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/d
 
 Please don't forget to star the GitHub page and spread the word about the app. :)
 
-## Some notable articles about BetterDummy
-
-BetterDummy is now famous! :)
-
-- https://www.theregister.com/2021/12/03/apple_m1_drivers
-- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
-- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
-
-Also the app made it to the featured news (once took the first spot) in Hacker News.
-
-- https://news.ycombinator.com/item?id=29064234
-- https://news.ycombinator.com/item?id=29469837
-
 ## Compatibility
 
 - The app should be compatible with all M1 class machines running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
 - The app is also compatible with more recent Intel Macs and macOS Big Sur but mirroring might not work as expected (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
 - The app is compatible with headless mode as well (this was tested on Intel).
 
-### Known issues
+### Known issues + Apple Feedback Campaign
 
 Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
-### Enhancements and roadmap
+**About the Apple Feedback Campaign:**
 
-I am continuously working on improving the app. You can check out the [planned features and their status here](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement).
+- Are you tired up of having display sleep issues while using BetterDummy or having problems with switching spaces on your external dummy mirror sets using mouse/trackpad swipes?
+- Let's report these pesky bugs to Apple together - for more info and instructions, [check out this post](https://github.com/waydabber/BetterDummy/discussions/254)!
 
-## Source code and freemium transition
+### Enhancements, roadmap, source code, freemium transition
 
-The source code for v1.0.x is available in the [opensource branch](https://github.com/waydabber/BetterDummy/tree/opensource). For the planned transition of BetterDummy to a freemium product, [check out this discussion](https://github.com/waydabber/BetterDummy/discussions/233).
-
-## Additional help
-
-**The following section and the screenshots are somewhat outdated as they represent app version 1.0.10.**
-
-For most of the time, the app is self explanatory but here is a brief overview of some of the additional functions in the app.
-
-### Manage your dummies
-
-<div align="center">
-<img src=".github/manage.png" width="469"/>
-</div>
-<br/>
-
-- The `Manage dummies` submenu header contains some basic info about the dummy - its aspect ratio and unique serial number.
-- `Connect dummy` / `Disconnect dummy` - You can easily connect or disconnect a dummy. Only dummes that are not associated to a display can be connected or disconnected manually.
-- `Set resolution` - This allows for a quick resolution change. The list conatains all supported resolutions. If `Show low resolution modes` is enabled under `Settings`, then additional non-HiDPI resolutions are shown at the bottom of the list.
-- `Associate with display` or `Change association` - You can associate a dummy to a real display. This will make the dummy automatically connect or disconnect whenever the display is connected or disconnected. It is useful when docking/undocking your macbook so you don't have to manage your dummy manually every time.
-- `Discard dummy` - Destroys the dummy. Use it only if you don't need a dummy anymore - otherwise it is better to just disconnect or disassociate the dummy so macOS can remember the dummy for later use (by its unique serial number).
-
-### App settings
-
-<div align="center">
-<img src=".github/settings.png" width="469"/>
-</div>
-<br/>
-
-- `Start at login`, `Automatically check for updates` - general options
-- `Hide menu icon` - when the menu icon is hidden, you can still change settings - simply launch the app again while it is already running and the menu icon will reappear.
-- `Enable up to 16K resolutions` - you can enable up to 16384x16384 resolution (this translates to 8192x8192 HiDPI). This is mostly useful for ultrawide and double-wide displays, where the standard 8192px max resolution might still be constraining. Use with caution as very high resolutions tax the system heavily.
-- `Show low resolution modes in menu` will allow you to set low (non-HiDPI) resolutions in the app menu under `Manage dummies`
-- `Use mirrored dummy sleep workaround` - macOS has a bug that makes virtual displays (like Sidecar, AirPlay, DisplayLink, BetterDummy) freeze when they act as a mirror main on some configurations. This workaround intends to solve that issue (more or less successfully).
-- `Disconnect and reconnect on sleep` - This disconnects dummies upon sleeps and reconnects them after wake.
-- `Reset BetterdDummy` - discard all dummies and reset all application settings to default.
+- I am continuously working on improving the app. You can check out the [planned features and their status here](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement).
+- The source code for v1.0.x is available in the [opensource branch](https://github.com/waydabber/BetterDummy/tree/opensource).
+- For the planned transition of BetterDummy to a freemium product, [check out this discussion](https://github.com/waydabber/BetterDummy/discussions/233).
 
 ## Don't forget to check out
 
 **If you like BetterDummy, you'll like [MonitorControl](https://monitorcontrol.app) as well!** Control the brightness, volume of your external display like a native Apple display! The two apps are fully optimized to work togeteher.
-
-## Thanks
-
-- [@tml1024](https://github.com/tml1024)! - for FluffyDisplay as a starting point for this project
-- [@w0lfschild](https://github.com/w0lfschild) - for maintaining reverse engineered macOS headers
-- [@JoniVR](https://github.com/JoniVR) and [@the0neyouseek](https://github.com/the0neyouseek) - from MonitorControl
 
 ## Discord channel
 
