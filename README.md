@@ -117,39 +117,44 @@ Super generous contributors, who donated $50 or more:
 
 Notable contributors, who donated $20 or more:
 
-- Jerry C
-- Jung Yeop (Steve) Kim
-- Jason
-- Kaz
-- Nikola
-- wanyeki
-- Felix
-- Emilio P Egido
-- Thomas Varghese
-- Reactual
-- Stephen Richardson
-- Peter Szombati
-- NP
-- David Verdonck
-- Knut Holm
-- Jan Behrmann
-- Danilo
-- Andrew Braithwaite
-- Splay Display
-- Incognito
-- Florian Gross
-- David Richardson
-- Jari Hanhela
-- William Edney
-- David W
-- Chetan Kunte
-- Martin Clayton
-- Nikola Milojević
-- Wolf1701
-- Arthur Müller
-- Tom Dai
-- Jeff Lopes
-- _additional anonymous donors_
+<table><tr><td valign="top" width="250">
+Jerry C<br/>
+Jung Yeop (Steve) Kim<br/>
+Jason<br/>
+Kaz<br/>
+Nikola<br/>
+wanyeki<br/>
+Felix<br/>
+Emilio P Egido<br/>
+Thomas Varghese<br/>
+Reactual<br/>
+Stephen Richardson<br/>
+Peter Szombati<br/>
+NP<br/>
+</td><td valign="top" width="250">
+David Verdonck<br/>
+Knut Holm<br/>
+Jan Behrmann<br/>
+Danilo<br/>
+Andrew Braithwaite<br/>
+Splay Display<br/>
+Incognito<br/>
+Florian Gross<br/>
+David Richardson<br/>
+Jari Hanhela<br/>
+William Edney<br/>
+David W<br/>
+Chetan Kunte<br/>
+</td><td valign="top" width="250">
+Martin Clayton<br/>
+Nikola Milojević<br/>
+Wolf1701<br/>
+Arthur Müller<br/>
+Tom Dai<br/>
+Jeff Lopes<br/>
+<br/><br/>
+<i>+ guest donors</i>
+</td></tr></table>
 
 Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
 
