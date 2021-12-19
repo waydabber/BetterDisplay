@@ -117,6 +117,7 @@ Super generous contributors, who donated $50 or more:
 
 Notable contributors, who donated $20 or more:
 
+- Jerry C
 - Jung Yeop (Steve) Kim
 - Jason
 - Kaz
