@@ -111,9 +111,10 @@ I am thankful for each of you who [contributed to the project](https://opencolle
 
 Super generous contributors, who donated $50 or more:
 
-- Riten Jaiswal - $200
-- Will_from_CA - $100
-- Victor - $50
+- **Riten Jaiswal** - $200
+- **Bill Southworth** - $100
+- **Will_from_CA** - $100
+- **Victor** - $50
 
 Notable contributors, who donated $20 or more:
 
