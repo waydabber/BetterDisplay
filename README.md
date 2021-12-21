@@ -152,6 +152,7 @@ Wolf1701<br/>
 Arthur Müller<br/>
 Tom Dai<br/>
 Jeff Lopes<br/>
+Jormsen<br/>
 <br/><br/>
 <i>+ guest donors</i>
 </td></tr></table>
@@ -172,8 +173,9 @@ Please take a look at the [list of known issues](https://github.com/waydabber/Be
 
 **About the Apple Feedback Campaign:**
 
-- Are you tired up of having display sleep issues while using BetterDummy or having problems with switching spaces on your external dummy mirror sets using mouse/trackpad swipes?
-- Let's report these pesky bugs to Apple together - for more info and instructions, [check out this post](https://github.com/waydabber/BetterDummy/discussions/254)!
+BetterDummy is an app built upon the amazing  screen virtualization and some other related technologies of macOS, giving users a convenient way to access and utilize these cool features. Most of the known issues are due to the inherent limitations of these techologies (some of them are by design and are unlikely to change and some of them are actual macOS bugs) which affect all  solutions built upon these foundations (including Apple's own Sidecar, AirPlay and third parties like DisplayLink and others). We can report most of these issues to Apple (appealing to Sidecar and AirPlay) and hope for a fix!
+
+For more info and instructions about reporting some of these issues, [check out this post](https://github.com/waydabber/BetterDummy/discussions/254)!
 
 ### Enhancements, roadmap, source code, freemium transition
 
