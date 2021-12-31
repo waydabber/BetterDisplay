@@ -120,6 +120,7 @@ Super generous contributors, who donated $50 or more:
 Notable contributors, who donated $20 or more:
 
 <table><tr><td valign="top" width="250">
+Derek Johnson<br/>
 Jerry C<br/>
 Jung Yeop (Steve) Kim<br/>
 Jason<br/>
@@ -147,8 +148,8 @@ Jari Hanhela<br/>
 William Edney<br/>
 David W<br/>
 Chetan Kunte<br/>
-</td><td valign="top" width="250">
 Martin Clayton<br/>
+</td><td valign="top" width="250">
 Nikola Milojević<br/>
 Wolf1701<br/>
 Arthur Müller<br/>
