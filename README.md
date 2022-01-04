@@ -134,8 +134,8 @@ Reactual<br/>
 Stephen Richardson<br/>
 Peter Szombati<br/>
 NP<br/>
-</td><td valign="top" width="250">
 David Verdonck<br/>
+</td><td valign="top" width="250">
 Knut Holm<br/>
 Jan Behrmann<br/>
 Danilo<br/>
@@ -149,9 +149,9 @@ William Edney<br/>
 David W<br/>
 Chetan Kunte<br/>
 Martin Clayton<br/>
-</td><td valign="top" width="250">
 Nikola Milojević<br/>
 Wolf1701<br/>
+</td><td valign="top" width="250">
 Arthur Müller<br/>
 Tom Dai<br/>
 Jeff Lopes<br/>
@@ -162,6 +162,7 @@ Udome<br/>
 Bart Krijnen<br/>
 jviide<br/>
 Keezy<br/>
+SenPng<br/>
 <br/>
 <i>+ guest donors</i>
 </td></tr></table>
