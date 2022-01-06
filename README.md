@@ -163,6 +163,7 @@ Bart Krijnen<br/>
 jviide<br/>
 Keezy<br/>
 SenPng<br/>
+Jakub Koňas<br/>
 <br/>
 <i>+ guest donors</i>
 </td></tr></table>
