@@ -135,8 +135,8 @@ Stephen Richardson<br/>
 Peter Szombati<br/>
 NP<br/>
 David Verdonck<br/>
-</td><td valign="top" width="250">
 Knut Holm<br/>
+</td><td valign="top" width="250">
 Jan Behrmann<br/>
 Danilo<br/>
 Andrew Braithwaite<br/>
@@ -151,9 +151,9 @@ Chetan Kunte<br/>
 Martin Clayton<br/>
 Nikola Milojević<br/>
 Wolf1701<br/>
-</td><td valign="top" width="250">
 Arthur Müller<br/>
 Tom Dai<br/>
+</td><td valign="top" width="250">
 Jeff Lopes<br/>
 Jormsen<br/>
 Yeo Chang Long<br/>
@@ -165,6 +165,7 @@ Keezy<br/>
 SenPng<br/>
 Jakub Koňas<br/>
 docljn<br/>
+Adam Lounds<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
