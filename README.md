@@ -164,9 +164,10 @@ jviide<br/>
 Keezy<br/>
 SenPng<br/>
 Jakub Koňas<br/>
+docljn<br/>
 <br/>
 <i>+ guest donors</i>
-</td></tr></table>
+</tr></table>
 
 Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
 
