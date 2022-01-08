@@ -18,6 +18,12 @@
 <a href="https://github.com/waydabber/BetterDummy/releases">
 <img src="https://img.shields.io/github/release/waydabber/BetterDummy.svg?style=flat" alt="latest version"/>
 </a>
+
+<!-- pre-release version -->
+<a href="https://github.com/waydabber/BetterDummy/releases?q=beta">
+<img src="https://img.shields.io/github/release-pre/waydabber/BetterDummy.svg?style=flat" alt="latest version"/>
+</a>
+  
 <!-- platform -->
 <a href="https://github.com/waydabber/BetterDummy">
 <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
