@@ -174,6 +174,7 @@ Jakub Koňas<br/>
 docljn<br/>
 Adam Lounds<br/>
 Pablo Sichert<br/>
+Ville Rinne<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
