@@ -115,12 +115,15 @@ Also the app made it to the featured news (once took the first spot) in Hacker N
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
 
-Super generous contributors, who donated $50 or more:
+Super generous contributors, who donated $100 or more:
 
 - **Riten Jaiswal** - $200
 - **Jose Tejera** - $100
 - **Bill Southworth** - $100
 - **Will_from_CA** - $100
+
+Generous contributors, who donated $50 or more:
+
 - **Victor** - $50
 - **Nicholas Eidler** - $50
 
