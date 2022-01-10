@@ -122,6 +122,7 @@ Super generous contributors, who donated $50 or more:
 - **Bill Southworth** - $100
 - **Will_from_CA** - $100
 - **Victor** - $50
+- **Nicholas Eidler** - $50
 
 Notable contributors, who donated $20 or more:
 
