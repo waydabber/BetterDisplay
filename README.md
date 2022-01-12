@@ -146,9 +146,9 @@ Peter Szombati<br/>
 NP<br/>
 David Verdonck<br/>
 Knut Holm<br/>
-</td><td valign="top" width="250">
 Jan Behrmann<br/>
 Danilo<br/>
+</td><td valign="top" width="250">
 Andrew Braithwaite<br/>
 Splay Display<br/>
 Incognito<br/>
@@ -163,11 +163,11 @@ Nikola Milojević<br/>
 Wolf1701<br/>
 Arthur Müller<br/>
 Tom Dai<br/>
-</td><td valign="top" width="250">
 Jeff Lopes<br/>
 Jormsen<br/>
 Yeo Chang Long<br/>
 Wayne G<br/>
+</td><td valign="top" width="250">
 Udome<br/>
 Bart Krijnen<br/>
 jviide<br/>
@@ -178,6 +178,7 @@ docljn<br/>
 Adam Lounds<br/>
 Pablo Sichert<br/>
 Ville Rinne<br/>
+Gheorghe Aurel Pacurar<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
