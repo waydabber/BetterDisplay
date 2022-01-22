@@ -118,6 +118,7 @@ I am thankful for each of you who [contributed to the project](https://opencolle
 Super generous contributors, who donated $100 or more:
 
 - **Riten Jaiswal** - $200
+- **Dean Herbert** - $150
 - **Jose Tejera** - $100
 - **Bill Southworth** - $100
 - **Will_from_CA** - $100
@@ -182,6 +183,8 @@ Gheorghe Aurel Pacurar<br/>
 Peter F.<br/>
 Thomas Brian<br/>
 Jedrzej Gontarczyk<br/>
+Chris Brooks<br/>
+Wang Yang<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
