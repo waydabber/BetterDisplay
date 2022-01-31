@@ -125,6 +125,7 @@ Super generous contributors, who donated $100 or more:
 
 Generous contributors, who donated $50 or more:
 
+- **Brian Conway** - $60
 - **Victor** - $50
 - **Nicholas Eidler** - $50
 
@@ -149,8 +150,8 @@ David Verdonck<br/>
 Knut Holm<br/>
 Jan Behrmann<br/>
 Danilo<br/>
-</td><td valign="top" width="250">
 Andrew Braithwaite<br/>
+</td><td valign="top" width="250">
 Splay Display<br/>
 Incognito<br/>
 Florian Gross<br/>
@@ -168,9 +169,9 @@ Jeff Lopes<br/>
 Jormsen<br/>
 Yeo Chang Long<br/>
 Wayne G<br/>
-</td><td valign="top" width="250">
 Udome<br/>
 Bart Krijnen<br/>
+</td><td valign="top" width="250">
 jviide<br/>
 Keezy<br/>
 SenPng<br/>
@@ -185,6 +186,7 @@ Thomas Brian<br/>
 Jedrzej Gontarczyk<br/>
 Chris Brooks<br/>
 Wang Yang<br/>
+Arjen<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
