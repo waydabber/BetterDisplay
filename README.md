@@ -119,6 +119,7 @@ Super generous contributors, who donated $100 or more:
 
 - **Riten Jaiswal** - $200
 - **Dean Herbert** - $150
+- **Myles Dear** - $100
 - **Jose Tejera** - $100
 - **Bill Southworth** - $100
 - **Will_from_CA** - $100
@@ -151,8 +152,8 @@ Knut Holm<br/>
 Jan Behrmann<br/>
 Danilo<br/>
 Andrew Braithwaite<br/>
-</td><td valign="top" width="250">
 Splay Display<br/>
+</td><td valign="top" width="250">
 Incognito<br/>
 Florian Gross<br/>
 David Richardson<br/>
@@ -171,9 +172,9 @@ Yeo Chang Long<br/>
 Wayne G<br/>
 Udome<br/>
 Bart Krijnen<br/>
-</td><td valign="top" width="250">
 jviide<br/>
 Keezy<br/>
+</td><td valign="top" width="250">
 SenPng<br/>
 Jakub Koňas<br/>
 docljn<br/>
@@ -189,6 +190,7 @@ Wang Yang<br/>
 Arjen<br/>
 Peter Cole<br/>
 Simon Jarvis<br/>
+mgiiklel<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
