@@ -196,6 +196,8 @@ Arjen<br/>
 Peter Cole<br/>
 Simon Jarvis<br/>
 mgiiklel<br/>
+Eric<br/>
+Alasdair<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
