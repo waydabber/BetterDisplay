@@ -232,7 +232,7 @@ For more info and instructions about reporting some of these issues, [check out 
 
 ## Don't forget to check out
 
-**If you like BetterDummy, you'll like [MonitorControl](https://monitorcontrol.app) as well!** Control the brightness, volume of your external display like a native Apple display! The two apps are fully optimized to work togeteher.
+**If you like BetterDummy, you'll like [MonitorControl](https://monitorcontrol.app) as well!** Control the brightness, volume of your external display like a native Apple display! The two apps are fully optimized to work together.
 
 ## Discord channel
 
