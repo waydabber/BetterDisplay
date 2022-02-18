@@ -158,9 +158,9 @@ Jan Behrmann<br/>
 Danilo<br/>
 Andrew Braithwaite<br/>
 Splay Display<br/>
-</td><td valign="top" width="250">
 Incognito<br/>
 Florian Gross<br/>
+</td><td valign="top" width="250">
 David Richardson<br/>
 Jari Hanhela<br/>
 William Edney<br/>
@@ -179,11 +179,11 @@ Udome<br/>
 Bart Krijnen<br/>
 jviide<br/>
 Keezy<br/>
-</td><td valign="top" width="250">
 SenPng<br/>
 Jakub Koňas<br/>
 docljn<br/>
 Adam Lounds<br/>
+</td><td valign="top" width="250">
 Pablo Sichert<br/>
 Ville Rinne<br/>
 Gheorghe Aurel Pacurar<br/>
@@ -198,6 +198,8 @@ Simon Jarvis<br/>
 mgiiklel<br/>
 Eric<br/>
 Alasdair<br/>
+Friedemann Wachsmuth<br/>
+Pranav Raj S<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
