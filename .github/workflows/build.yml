@@ -1,0 +1,23 @@
+name: Build
+on:
+  push:
+    branches: [opensource]
+  pull_request:
+    branches: [opensource]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile and bundle dmg
+        run: |
+          xcodebuild -target BetterDummyHelper -project BetterDummy.xcodeproj CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          xcodebuild -target BetterDummy -project BetterDummy.xcodeproj CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          hdiutil create BetterDummy-uncompressed.dmg -volname "BetterDummy" -srcfolder ./build/Release/BetterDummy.app
+          hdiutil convert BetterDummy-uncompressed.dmg -format UDZO -o BetterDummy.dmg
+      - uses: actions/upload-artifact@v2
+        with:
+          name: BetterDummy.dmg
+          path: BetterDummy.dmg
