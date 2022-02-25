@@ -5,11 +5,11 @@
         <link>https://waydabber.github.io/BetterDummy</link>
         <item>
             <title>1.1.0-beta4</title>
+            <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
               https://waydabber.github.io/BetterDummy/changelog.html?tag=1.1.0-beta4
             </sparkle:releaseNotesLink>
             <pubDate>Fri, 25 Feb 2022 18:44:53 +0100</pubDate>
-            <sparkle:channel>beta</sparkle:channel>            
             <sparkle:version>2122</sparkle:version>
             <sparkle:shortVersionString>1.1.0-beta4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
@@ -17,11 +17,11 @@
         </item>
         <item>
             <title>1.1.0-beta3</title>
+            <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
               https://waydabber.github.io/BetterDummy/changelog.html?tag=1.1.0-beta3
             </sparkle:releaseNotesLink>
-            <pubDate>Fri, 25 Feb 2022 18:50:24 +0100</pubDate>
-            <sparkle:channel>beta</sparkle:channel>            
+            <pubDate>Fri, 25 Feb 2022 18:43:53 +0100</pubDate>
             <sparkle:version>2107</sparkle:version>
             <sparkle:shortVersionString>1.1.0-beta3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
@@ -29,11 +29,11 @@
         </item>
         <item>
             <title>1.1.0-beta2</title>
+            <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
               https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.1.0-beta2
             </sparkle:releaseNotesLink>
-            <pubDate>Fri, 25 Feb 2022 18:50:30 +0100</pubDate>
-            <sparkle:channel>beta</sparkle:channel>            
+            <pubDate>Fri, 25 Feb 2022 18:42:53 +0100</pubDate>
             <sparkle:version>1931</sparkle:version>
             <sparkle:shortVersionString>1.1.0-beta2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
