@@ -7,7 +7,7 @@
             <title>1.1.0-beta4</title>
             <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
-              https://waydabber.github.io/BetterDummy/changelog.html?tag=1.1.0-beta4
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.1.0-beta4
             </sparkle:releaseNotesLink>
             <pubDate>Fri, 25 Feb 2022 18:44:53 +0100</pubDate>
             <sparkle:version>2122</sparkle:version>
@@ -19,7 +19,7 @@
             <title>1.1.0-beta3</title>
             <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
-              https://waydabber.github.io/BetterDummy/changelog.html?tag=1.1.0-beta3
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.1.0-beta3
             </sparkle:releaseNotesLink>
             <pubDate>Fri, 25 Feb 2022 18:43:53 +0100</pubDate>
             <sparkle:version>2107</sparkle:version>
