@@ -128,6 +128,7 @@ Generous contributors, who donated $50 or more:
 - **Jens Kielhorn** - $50
 - **Victor** - $50
 - **Nicholas Eidler** - $50
+- **Jeff Nash** - $50
 
 Notable contributors, who donated $20 or more:
 
