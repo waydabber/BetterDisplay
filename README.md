@@ -53,6 +53,15 @@ Some other uses:
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays.
 - You can use it instead of or alongside other apps that create custom native resolutions.
 
+## Installation
+
+1. Download the [latest release](https://github.com/waydabber/BetterDummy/releases).
+1. Move the app to Applications folder on your Mac.
+1. Start the app.
+1. Use the app menu bar item to interact.
+
+**New! Test drive the latest [pre-release version](https://github.com/waydabber/BetterDummy/releases?q=beta&expanded=true) of BetterDummy Pro with lots of new features!**
+
 ## Usage
 
 1. Start the app
@@ -84,13 +93,6 @@ Notes:
 - For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
 - You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
 - You may want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
-
-## Installation
-
-- Download the [latest release](https://github.com/waydabber/BetterDummy/releases)
-- Move the app to Applications
-- Start the app
-- Use the app menu bar item to interact.
 
 ## Some notable articles about BetterDummy
 
@@ -195,7 +197,8 @@ Eric<br/>
 Alasdair<br/>
 Friedemann Wachsmuth<br/>
 Pranav Raj S<br/>
-Eddy
+Eddy<br/>
+George Billios<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
