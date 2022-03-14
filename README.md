@@ -157,9 +157,9 @@ Andrew Braithwaite<br/>
 Splay Display<br/>
 Incognito<br/>
 Florian Gross<br/>
-</td><td valign="top" width="250">
 David Richardson<br/>
 Jari Hanhela<br/>
+</td><td valign="top" width="250">
 William Edney<br/>
 David W<br/>
 Chetan Kunte<br/>
@@ -180,11 +180,11 @@ SenPng<br/>
 Jakub Koňas<br/>
 docljn<br/>
 Adam Lounds<br/>
-</td><td valign="top" width="250">
 Pablo Sichert<br/>
 Ville Rinne<br/>
 Gheorghe Aurel Pacurar<br/>
 Peter F.<br/>
+</td><td valign="top" width="250">
 Thomas Brian<br/>
 Jedrzej Gontarczyk<br/>
 Chris Brooks<br/>
@@ -201,6 +201,7 @@ Eddy<br/>
 George Billios<br/>
 Alfred Visnevsky<br/>
 Martin Cohen<br/>
+HWM<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
