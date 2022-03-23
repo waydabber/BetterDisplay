@@ -205,6 +205,7 @@ HWM<br/>
 Oliver Eilhard<br/>
 Alastair Thomson<br/>
 Örn Arnarson<br/>
+Chris Spiegl<br/>
 <br/>
 <i>+ guest donors</i>
 </tr></table>
