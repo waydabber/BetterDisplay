@@ -206,8 +206,9 @@ Oliver Eilhard<br/>
 Alastair Thomson<br/>
 Örn Arnarson<br/>
 Chris Spiegl<br/>
+Radim Balner<br/>
 <br/>
-<i>+ guest donors</i>
+<i>+ guest supporters</i>
 </tr></table>
 
 Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
