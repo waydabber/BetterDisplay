@@ -16,18 +16,6 @@
             <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.1.0-beta9/BetterDummy-v1.1.0-beta9.zip" length="2651670" type="application/octet-stream" sparkle:edSignature="MCX4zSzztsTCMlbiy5nxkqjjB8e/w5tSp8Htlqk1SBtLcmLtx6PWrgSKLhHRkLVGThZxtIbbH18uFUgXKGmlBg=="/>
         </item>
         <item>
-            <title>1.1.0-beta8</title>
-            <sparkle:channel>beta</sparkle:channel>            
-            <sparkle:releaseNotesLink>
-              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.1.0-beta8
-            </sparkle:releaseNotesLink>
-            <pubDate>Mon, 21 Mar 2022 23:02:33 +0100</pubDate>
-            <sparkle:version>2811</sparkle:version>
-            <sparkle:shortVersionString>1.1.0-beta8</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.1.0-beta8/BetterDummy-v1.1.0-beta8.zip" length="2628704" type="application/octet-stream" sparkle:edSignature="2PHdD8rpKhSzQx7ymTN6OR/y+l4bLIzhePuL3wzRcp3W4LO4QfqvBt6Gv+tqw/vejEvlmDaLYZEYam9lDkBWCQ=="/>
-        </item>
-        <item>
           <title>1.0.13</title>
             <sparkle:releaseNotesLink>
               https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.0.13
