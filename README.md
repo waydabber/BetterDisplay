@@ -55,7 +55,7 @@ Some other uses:
 
 ## Installation
 
-1. Download the [latest release](https://github.com/waydabber/BetterDummy/releases).
+1. Download the [latest release](https://github.com/waydabber/BetterDummy/releases) or [pre-release](https://github.com/waydabber/BetterDummy/releases?q=beta)
 1. Move the app to Applications folder on your Mac.
 1. Start the app.
 1. Use the app menu bar item to interact.
