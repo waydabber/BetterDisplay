@@ -129,6 +129,8 @@ Super-generous contributors, who donated $100 or more:
 Generous contributors, who donated $50 or more:
 
 - **Brian Conway** - $60
+- **Ron W** - $61
+- **Michael Charo** - $50
 - **Jens Kielhorn** - $50
 - **Victor** - $50
 - **Nicholas Eidler** - $50
