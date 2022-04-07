@@ -96,9 +96,16 @@ Notes:
 
 ## Supporting the project / purchasing BetterDummy Pro
 
-I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
-
 **UPDATE**: you can now support development by purchasing a BetterDummy Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDummy Pro`. Please note that even if you don't buy the app, you can still use the core features for free and the open-source version is also available for free!
+
+### To the backers of the open-source project
+
+- I'd like to thank you for backing the open source project in the past by providing you with a Pro licence code. Unfortunately I cannot contact you directly as Open Collective does not share contact data for obvious privacy reasons.
+- If you'd like to have a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by opening a separate discussion and posting a screenshot confirmation you received from Open Collective. I'll respond eventually with a code (some patience might be needed). Thank you!
+
+### Notabe contributors of the open-source project
+
+I am thankful for each of you who [contributed to the BetterDummy project](https://opencollective.com/betterdummy).
 
 Hyper-generous contributors, who donated $200 or more:
 
