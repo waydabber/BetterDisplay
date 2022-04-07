@@ -100,8 +100,8 @@ Notes:
 
 ### To the backers of the open-source project
 
-- I'd like to thank you for backing the open source project in the past by providing you with a Pro licence code. Unfortunately I cannot contact you directly as Open Collective does not share contact data for obvious privacy reasons.
-- If you'd like to have a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by opening a separate discussion and posting a screenshot confirmation you received from Open Collective. I'll respond eventually with a code (some patience might be needed). Thank you!
+- I'd like to thank you for backing the open source project in the past by providing you with a Pro licence code.
+- If you don't receive your code by the end of the trial period, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a code (some patience might be needed). Thank you!
 
 ### Notabe contributors of the open-source project
 
