@@ -55,14 +55,14 @@ Some other uses:
 
 ## Installation
 
-1. Download the [latest release](https://github.com/waydabber/BetterDummy/releases) or [pre-release](https://github.com/waydabber/BetterDummy/releases?q=beta)
+1. Download the [latest release](https://github.com/waydabber/BetterDummy/releases)
 1. Move the app to Applications folder on your Mac.
 1. Start the app.
 1. Use the app menu bar item to interact.
 
-**New! Test drive the latest [pre-release version](https://github.com/waydabber/BetterDummy/releases?q=beta&expanded=true) of BetterDummy Pro with lots of new features!**
-
 ## Usage
+
+_Please note that this guide is for the old v1.0.13 version and is about how to configure the app for mirroring. An updated guide for the newer v1.1.x version will be available soon!_
 
 1. Start the app
 2. In the app menu choose `Create New Dummy` and select your desired aspect ratio
@@ -94,22 +94,11 @@ Notes:
 - You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
 - You may want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
 
-## Some notable articles about BetterDummy
-
-BetterDummy is now famous! :)
-
-- https://www.theregister.com/2021/12/03/apple_m1_drivers
-- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
-- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
-
-Also the app made it to the featured news (once took the first spot) in Hacker News.
-
-- https://news.ycombinator.com/item?id=29064234
-- https://news.ycombinator.com/item?id=29469837
-
-## Supporting the project
+## Supporting the project / purchasing BetterDummy Pro
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdummy). Every little bit helps! If you find use in the app and did not contribute so far, please consider a donation so I can continue working on this app. :) Thank you!
+
+**UPDATE**: you can now support development by purchasing a BetterDummy Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDummy Pro`. Please note that even if you don't buy the app, you can still use the core features for free and the open-source version is also available for free!
 
 Hyper-generous contributors, who donated $200 or more:
 
@@ -227,23 +216,24 @@ Please don't forget to star the GitHub page and spread the word about the app. :
 - The app is also compatible with more recent Intel Macs and macOS Big Sur but mirroring might not work as expected (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
 - The app is compatible with headless mode as well (this was tested on Intel).
 
-### Known issues + Apple Feedback Campaign
+## Some notable articles about BetterDummy
+
+BetterDummy is now famous! :)
+
+- https://www.theregister.com/2021/12/03/apple_m1_drivers
+- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
+- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
+
+Also the app made it to the featured news (once took the first spot) in Hacker News.
+
+- https://news.ycombinator.com/item?id=29064234
+- https://news.ycombinator.com/item?id=29469837
+
+### Known issues
 
 Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
-**About the Apple Feedback Campaign:**
-
-BetterDummy is an app built upon the amazing  screen virtualization and some other related technologies of macOS, giving users a convenient way to access and utilize these cool features. Most of the known issues are due to the inherent limitations of these technologies (some of them are by design and are unlikely to change and some of them are actual macOS bugs) which affect all  solutions built upon these foundations (including Apple's own Sidecar, AirPlay and third parties like DisplayLink and others). We can report most of these issues to Apple (appealing to Sidecar and AirPlay) and hope for a fix!
-
-For more info and instructions about reporting some of these issues, [check out this post](https://github.com/waydabber/BetterDummy/discussions/254)!
-
-### Enhancements, roadmap, source code, freemium transition
-
-- I am continuously working on improving the app. You can check out the [planned features and their status here](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement).
-- The source code for v1.0.x is available in the [opensource branch](https://github.com/waydabber/BetterDummy/tree/opensource).
-- For the planned transition of BetterDummy to a freemium product, [check out this discussion](https://github.com/waydabber/BetterDummy/discussions/233).
-
-## Don't forget to check out
+## Don't forget to check out MonitorControl!
 
 **If you like BetterDummy, you'll like [MonitorControl](https://monitorcontrol.app) as well!** Control the brightness, volume of your external display like a native Apple display! The two apps are fully optimized to work together.
 
