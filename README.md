@@ -62,37 +62,16 @@ Some other uses:
 
 ## Usage
 
-_Please note that this guide is for the old v1.0.13 version and is about how to configure the app for mirroring. An updated guide for the newer v1.1.x version will be available soon!_
+BetterDummy has many uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions on Apple Silicon machines. Follow these steps to do this:
 
-1. Start the app
-2. In the app menu choose `Create New Dummy` and select your desired aspect ratio
-<br/>
-<div align="center">
-<img src=".github/menu.png" width="469"/>
-</div>
-<br/>
-  
-3. In `System Preferences` -> `Displays` you'll see the new Dummy display (for example `Dummy 16:9`)
-4. Activate mirroring. The `Main` display should be the Dummy display
-5. Set the Dummy display as `Optimize for`
-6. Set the `Resolution` as `Scaled` (you should hold the `Option` key while clicking on the `Scaled` option for a full list of resolutions!) or use the app's own resolution selector located in the app menu.
+1. Start the app and locate the app menu (you'll see a BetterDummy icon in the menu bar).
+2. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
+4. Click on the `Create Dummy for This Display` option.
+5. In the ensuring pop-up select `Connect and Set up Mirroring`.
 
-<div align="center">
-<img src=".github/displayprefs.png" width="550"/>
-</div>
+It's that simple.
 
-8. Select the desired mode.
-
-The app saves the dummy display configuration and automatically restores it upon next restart.
-
-For more information on usage, see the [the additional help section](#additional-help).
-
-Notes:
-
-- The tutorial was compiled on macOS Monterey (for Big Sur as well - steps are slightly different, see [this article](https://macfinder.co.uk/blog/how-to-mirror-specific-displays-in-os-x-mirror-some-but-not-all-of-your-monitors-on-an-apple-system/) on how to customize mirroring on Big Sur).
-- For most configurations, you'll see HiDPI 'Retina' resolutions in the list by default and see and additional non-HiDPI resolutions marked with a `(low resolution)` tag in the resolution list if `Show all resolutions` is toggled. On some configurations however, you might see HiDPI (high resolution) display modes marked with a `(HiDPI)` tag and standard resolutions _without a tag_.
-- You might have to fight a bit with macOS Monterey's new `Displays` tab in Preferences as the `Optimize for` setting tends to reset at random times to the physical display for unknown reasons during changing settings. If this happens, you can set it back to the Dummy.
-- You may want to enable the `System Preferences`»`Notifications & Focus`»`Allow Notifications`»`When mirroring or sharing the display` option to allow notifications when mirroring is turned on.
+If you are running the old v1.0.13 open source version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring.
 
 ## Supporting the project / purchasing BetterDummy Pro
 
