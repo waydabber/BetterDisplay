@@ -127,6 +127,8 @@ Generous contributors, who donated $50 or more:
 
 Notable contributors, who donated $20 or more:
 
+<details>
+
 <table><tr><td valign="top" width="250">
 Derek Johnson<br/>
 Jerry C<br/>
@@ -205,9 +207,11 @@ petertriho<br/>
 <br/>
 <i>+ guest supporters</i>
 </tr></table>
-
+  
 Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
 
+</details>
+  
 Please don't forget to star the GitHub page and spread the word about the app. :)
 
 ## Compatibility
