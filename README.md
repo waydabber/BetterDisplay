@@ -98,12 +98,14 @@ Notes:
 
 **UPDATE**: you can now support development by purchasing a BetterDummy Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDummy Pro`. Please note that even if you don't buy the app, you can still use the core features for free and the open-source version is also available for free!
 
-### To the backers of the open-source project
+For more info check out [this discussion](https://github.com/waydabber/BetterDummy/discussions/233)
+
+### To those who backed the open-source project in the past (Open Collective)
 
 - I'd like to thank you for backing the open source project in the past by providing you with a coupon code so you can get a Pro license for no additional cost.
-- If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a code (some patience might be needed). Thank you!
+- Open Collective does not let me contact you directly. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a code (some patience might be needed). Thank you!
 
-### Notabe contributors of the open-source project
+### Notabe contributors to the open-source project
 
 I am thankful for each of you who [contributed to the BetterDummy project](https://opencollective.com/betterdummy).
 
