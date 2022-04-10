@@ -22,10 +22,6 @@
 <a href="https://github.com/waydabber/BetterDummy">
 <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
 </a>
-<!-- backers -->
-<a href="https://opencollective.com/betterdummy">
-<img src="https://opencollective.com/betterdummy/tiers/badge.svg" alt="backers"/>
-</a>
 </div>
   
 <hr>
@@ -87,7 +83,7 @@ If you are running the old v1.0.13 open source version, please [refer to this gu
 
 ## Supporting the project / purchasing BetterDummy Pro
 
-**UPDATE**: you can now support development by purchasing a BetterDummy Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDummy Pro`. Please note that even if you don't buy the app, you can still use the core features for free and the open-source version is also available for free!
+You can now support development by purchasing a BetterDummy Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDummy Pro`. Please note that even if you don't buy the app, you can still use the core features for free and the open-source version is also available for free!
 
 For more info check out [this discussion](https://github.com/waydabber/BetterDummy/discussions/233)
 
@@ -100,23 +96,17 @@ For more info check out [this discussion](https://github.com/waydabber/BetterDum
 
 I am thankful for each of you who [contributed to the BetterDummy project](https://opencollective.com/betterdummy).
 
-Hyper-generous contributors, who donated $200 or more:
+Generous contributors, who donated $50 or more for the open-source project:
 
 - **Patrick Mast** - $222
 - **Riten Jaiswal** - $200
 - **Wesley** - $200
-
-Super-generous contributors, who donated $100 or more:
-
 - **Dean Herbert** - $150
 - **Myles Dear** - $100
 - **Jose Tejera** - $100
 - **Bill Southworth** - $100
 - **Will_from_CA** - $100
 - **MFB Technologies** - $100
-
-Generous contributors, who donated $50 or more:
-
 - **Brian Conway** - $60
 - **Ron W** - $61
 - **Michael Charo** - $50
@@ -125,7 +115,7 @@ Generous contributors, who donated $50 or more:
 - **Nicholas Eidler** - $50
 - **Jeff Nash** - $50
 
-Notable contributors, who donated $20 or more:
+Additional notable contributors, who donated $20 or more:
 
 <details>
 
@@ -208,17 +198,15 @@ petertriho<br/>
 <i>+ guest supporters</i>
 </tr></table>
   
-Do you miss your name? [Join the list!](https://opencollective.com/betterdummy/donate)
-
 </details>
   
 Please don't forget to star the GitHub page and spread the word about the app. :)
 
 ## Compatibility
 
-- The app should be compatible with all M1 class machines running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
-- The app is also compatible with more recent Intel Macs and macOS Big Sur but mirroring might not work as expected (testing was limited to a single Intel Mac with Intel UHD 630 running Big Sur).
-- The app is compatible with headless mode as well (this was tested on Intel).
+- The app is compatible with all Apple Silicon macs running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
+- The app is also compatible with Intel Macs capable of officially running macOS Big Sur but mirroring might not work as expected especially on Macs with AMD GPUs.
+- The app is compatible with headless mode as well (both Apple Silicon and Intel).
 
 ## Some notable articles about BetterDummy
 
