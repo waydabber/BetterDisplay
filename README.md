@@ -49,7 +49,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 - Available instantly.
 
-### Other uses / features:
+### Other uses / features
 
 - The app is  useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS.
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
