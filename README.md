@@ -32,6 +32,10 @@
   
 ## About
 
+BetterDummy helps you create and manage virtual displays for your Mac, create Picture in Picture windows of your displays and helps you to manage your display's preferences easily from the menu bar.
+
+### Custom resolutions with BetterDummy for your display
+
 Some Macs tend to have issues with custom resolutions. The new Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though most 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained. To fix these issues, some resort to buying a 4K HDMI dummy dongle to fool macOS into thinking that a 4K display is connected and then mirror the contents of this dummy display to their actual monitor in order to have HiDPI resolutions available. Others use the built in screens of their MacBooks as a mirror source. These approaches have obvious drawbacks and limits.
 
 BetterDummy solves the problem by creating a flexible virtual "dummy" display that supports an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution.
@@ -45,13 +49,21 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 - Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
 - Available instantly.
 
-Some other uses:
+### Other uses / features:
 
 - The app is  useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS.
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
+- Create Picture in Picture window for any real or dummy displays.
+- Redirect your display's contents (real or dummy) to an other screen via streaming.
+- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming).
 - Scale Sidecar resolutions.
+- Create portrait SideCar.
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays.
-- You can use it instead of or alongside other apps that create custom native resolutions.
+- Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
+- Simplify creating mirrored sets.
+- Easily move around displays relative to each other using the app menu.
+- Easily designate a display to be main display.
+- Assicoiate dummies with displays for auto connect/disconnect.
 
 ## Installation
 
@@ -62,7 +74,7 @@ Some other uses:
 
 ## Usage
 
-BetterDummy has many uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions on Apple Silicon machines. Follow these steps to do this:
+BetterDummy has several uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions on Apple Silicon machines. Follow these steps to do this:
 
 1. Start the app and locate the app menu (you'll see a BetterDummy icon in the menu bar).
 2. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
