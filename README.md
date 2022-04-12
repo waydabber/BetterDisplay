@@ -70,8 +70,6 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 
 ## Usage
 
-_Note: this tutorial is for the v1.1.x version of the app, currently available as beta but preferred over the old v1.0.x stable version._
-
 BetterDummy has several uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions on Apple Silicon machines. Follow these steps to do this:
 
 1. Start the app and locate the app menu (you'll see a BetterDummy icon in the menu bar).
@@ -94,6 +92,8 @@ It's that simple. Afterwards you should see your dummy mirrored to your display 
 <img width="400" alt="Screen Shot 2022-04-10 at 12 27 02" src="https://user-images.githubusercontent.com/37590873/162613933-93534edf-dc3b-47df-96db-b90a83b15567.png">
 </div>
   
+**_Important: this tutorial is for the v1.1.x version of the app, currently available as beta but preferred over the old v1.0.x stable version. If you are running the old v1.0.13 (open source) version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring._**
+  
 Notes:
 
 - Due to the finnicky nature of macOS display and mirror management, sometimes setting up the mirror fails or the mirror reverts to work 'the other way around' (namely instead of the dummy being mirrored to the display, the display is being mirrored to the dummy). In this case you should stop the mirroring (select `Mirror Target` > `Stop Mirroring`) and reconfigure the mirror under the dummy in the display list `Mirror Target` > `Display Name`.
@@ -101,8 +101,6 @@ Notes:
 - If you find that your new dummy or dummy mirror is not located where you actually want it to be relative to your other displays, you can easily move around a display using `Settings` > `Move Next to ...` from the app menu.
 - You can configure both mirroring, main status, resolution and everything else in System Preferences the old fashioned way as well. If you are not using Pro, you actually need to do this. Follow the [this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to do this.
 - If you really can't set up what you want, just hop over to the [BetterDummy discord channel](https://discord.gg/aKe5yCWXSp) where you can lay out your problem and eventually somebody should help you out! :)
-
-If you are running the old v1.0.13 open source version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring.
 
 ## Supporting the project / purchasing BetterDummy Pro
 
