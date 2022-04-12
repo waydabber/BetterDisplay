@@ -70,17 +70,19 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 
 ## Usage
 
+**_Important: this tutorial is for the v1.1.x version of the app, currently available as beta (but preferred over the old v1.0.x stable version). If you are running the old v1.0.13 (open source) version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring!_**
+
 BetterDummy has several uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions on Apple Silicon machines. Follow these steps to do this:
 
 1. Start the app and locate the app menu (you'll see a BetterDummy icon in the menu bar).
-1. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
-1. Click on the `Create Dummy for This Display` option.
+2. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
+3. Click on the `Create Dummy for This Display` option.
 
 <div align="center">
 <img width="400" src="https://user-images.githubusercontent.com/37590873/162613905-6e1ec5e3-3c5d-4ac4-bea2-684152221f64.png">
 </div>
   
-1. In the ensuring pop-up select `Connect and Set up Mirroring`.
+4. In the ensuring pop-up select `Connect and Set up Mirroring`.
 
 <div align="center">
 <img width="400" alt="Screen Shot 2022-04-10 at 12 24 38" src="https://user-images.githubusercontent.com/37590873/162613913-9cb662db-d543-4351-90b2-9d8b9ba3d09b.png">
@@ -91,8 +93,6 @@ It's that simple. Afterwards you should see your dummy mirrored to your display 
 <div align="center">
 <img width="400" alt="Screen Shot 2022-04-10 at 12 27 02" src="https://user-images.githubusercontent.com/37590873/162613933-93534edf-dc3b-47df-96db-b90a83b15567.png">
 </div>
-  
-**_Important: this tutorial is for the v1.1.x version of the app, currently available as beta but preferred over the old v1.0.x stable version. If you are running the old v1.0.13 (open source) version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring._**
   
 Notes:
 
