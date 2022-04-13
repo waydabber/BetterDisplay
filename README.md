@@ -70,7 +70,7 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 
 ## Usage
 
-**_Important: this tutorial is for the v1.1.x version of the app, currently available as beta (but preferred over the old v1.0.x stable version). If you are running the old v1.0.13 (open source) version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring!_**
+**This tutorial is for the v1.1.x version of the app, currently available as beta. If you are running the v1.0.13 version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring!**
 
 BetterDummy has several uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions on Apple Silicon machines. Follow these steps to do this:
 
