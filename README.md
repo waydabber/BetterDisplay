@@ -2,7 +2,7 @@
 
 <div>
 <h2>BetterDummy</h2>
-<p>Dummy Display for Apple Silicon Macs to Have Custom HiDPI Resolutions - an app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
+<p>Dummy Displays and Better Display Management for Macs - an app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
