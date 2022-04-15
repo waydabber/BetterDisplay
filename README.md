@@ -102,6 +102,25 @@ Notes:
 - You can configure both mirroring, main status, resolution and everything else in System Preferences the old fashioned way as well. If you are not using Pro, you actually need to do this. Follow the [this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to do this.
 - If you really can't set up what you want, just hop over to the [BetterDummy discord channel](https://discord.gg/aKe5yCWXSp) where you can lay out your problem and eventually somebody should help you out! :)
 
+## Compatibility
+
+- The app is compatible with all Apple Silicon macs running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
+- The app is also compatible with Intel Macs capable of officially running macOS Big Sur but mirroring might not work as expected especially on Macs with AMD GPUs.
+- The app is compatible with headless mode as well (both Apple Silicon and Intel).
+
+## Some notable articles about BetterDummy
+
+BetterDummy is now famous! :)
+
+- https://www.theregister.com/2021/12/03/apple_m1_drivers
+- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
+- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
+
+Also the app made it to the featured news (once took the first spot) in Hacker News.
+
+- https://news.ycombinator.com/item?id=29064234
+- https://news.ycombinator.com/item?id=29469837
+
 ## Supporting the project / purchasing BetterDummy Pro
 
 You can now support development by purchasing a BetterDummy Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDummy Pro`. Please note that even if you don't buy the app, you can still use the core features for free and the open-source version is also available for free!
@@ -223,26 +242,7 @@ petertriho<br/>
   
 Please don't forget to star the GitHub page and spread the word about the app. :)
 
-## Compatibility
-
-- The app is compatible with all Apple Silicon macs running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
-- The app is also compatible with Intel Macs capable of officially running macOS Big Sur but mirroring might not work as expected especially on Macs with AMD GPUs.
-- The app is compatible with headless mode as well (both Apple Silicon and Intel).
-
-## Some notable articles about BetterDummy
-
-BetterDummy is now famous! :)
-
-- https://www.theregister.com/2021/12/03/apple_m1_drivers
-- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
-- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
-
-Also the app made it to the featured news (once took the first spot) in Hacker News.
-
-- https://news.ycombinator.com/item?id=29064234
-- https://news.ycombinator.com/item?id=29469837
-
-### Privacy
+## Privacy
 
 - Licensing uses a [Paddle](https://www.paddle.com) as backend. This also means that the app communicates over the network with Paddle's servers to verify licensing, trial status and facilitate check-out using Paddle's SDK. Besides data required for licensing purposes by Paddle's services, no other info is transferred over the network.
 - I decided not to have a marketing list (marketing opt-in) of any kind. I also do not build any usage database or collect unique (and not unique) IDs either - besides what Paddle collects and presents on its dashboard for me (to keep track of valid software licenses).
