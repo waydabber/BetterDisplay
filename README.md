@@ -82,7 +82,7 @@ BetterDummy has several uses and lots of features but most users tend to use it 
 <img width="400" src="https://user-images.githubusercontent.com/37590873/162613905-6e1ec5e3-3c5d-4ac4-bea2-684152221f64.png">
 </div>
   
-4. In the ensuring pop-up select `Connect and Set up Mirroring`.
+4. In the ensuing pop-up select `Connect and Set up Mirroring`.
 
 <div align="center">
 <img width="400" alt="Screen Shot 2022-04-10 at 12 24 38" src="https://user-images.githubusercontent.com/37590873/162613913-9cb662db-d543-4351-90b2-9d8b9ba3d09b.png">
