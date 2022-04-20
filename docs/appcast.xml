@@ -4,16 +4,15 @@
         <title>BetterDummy</title>
         <link>https://waydabber.github.io/BetterDummy</link>
         <item>
-            <title>1.1.12-rc</title>
-            <sparkle:channel>beta</sparkle:channel>            
+            <title>1.1.12</title>
             <sparkle:releaseNotesLink>
-              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.1.12-rc
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.1.12
             </sparkle:releaseNotesLink>
-            <pubDate>Tue, 19 Apr 2022 09:18:52 +0200</pubDate>
-            <sparkle:version>3973</sparkle:version>
+            <pubDate>Wed, 20 Apr 2022 22:06:51 +0200</pubDate>
+            <sparkle:version>3976</sparkle:version>
             <sparkle:shortVersionString>1.1.12</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.1.12-rc/BetterDummy-v1.1.12.dmg" length="3986818" type="application/octet-stream" sparkle:edSignature="ka4oHsOeIgtyyjwWtCA4CKlhIWHh1OmvbqIjVJwIr9Vzdt69tvq4PzeFKuZ4YyS5RPheCe00QyE/nAhszUhFDA=="/>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.1.12/BetterDummy-v1.1.12.dmg" length="3987013" type="application/octet-stream" sparkle:edSignature="T+dVzfZVE5A6wxXA2sdVTGsKyngo5sd0k12UiSrUQxlX1SmUdaBEvS1QPZjt3y2kDb64ODBWdtMvYO5VSFShDg=="/>
         </item>
         <item>
           <title>1.0.13</title>
