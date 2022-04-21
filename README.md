@@ -49,17 +49,22 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 
 - The app is  useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS.
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
-- Create Picture in Picture window for any real or dummy displays.
-- Redirect your display's contents (real or dummy) to an other screen via streaming.
-- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming).
+- Create Picture in Picture window for any real or dummy displays. *
+- Redirect your display's contents (real or dummy) to an other screen via streaming. *
+- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
 - Scale Sidecar resolutions.
-- Create portrait SideCar.
+- Portrait SideCar support. *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays.
 - Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
-- Simplify creating mirrored sets.
-- Easily move around displays relative to each other using the app menu.
+- Simplify creating mirrored sets. *
+- Easily move around displays relative to each other using the app menu. *
 - Easily designate a display to be main display.
-- Assicoiate dummies with displays for auto connect/disconnect.
+- Associate dummies with displays for auto connect/disconnect.
+- Keyboard shortcuts support *
+- Custom dummies (resolution, orientation, naming) *
+- Create a dummy optimized for a real display *
+
+_Features marked with an asterisk (*) are available in BetterDummy Pro_
 
 ## Installation
 
