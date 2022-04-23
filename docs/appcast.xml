@@ -2,6 +2,18 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>BetterDummy</title>
+        <item>
+            <title>1.2.0-beta</title>
+            <sparkle:channel>beta</sparkle:channel>            
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.2.0-beta
+            </sparkle:releaseNotesLink>
+            <pubDate>Sat, 23 Apr 2022 14:53:37 +0200</pubDate>
+            <sparkle:version>4251</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.0-beta/BetterDummy-v1.2.0-beta.dmg" length="4021533" type="application/octet-stream" sparkle:edSignature="hZm+6WtEnMTKumcf8uo79yHbv4bXY1O8FgOvZnymmWcvyJQioDOjo6kTdoNUu7bFPtSuB9HLu1oMKC25m3h5Bw=="/>
+        </item>
         <link>https://waydabber.github.io/BetterDummy</link>
         <item>
             <title>1.1.12</title>
