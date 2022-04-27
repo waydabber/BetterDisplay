@@ -256,7 +256,9 @@ Please don't forget to star the GitHub page and spread the word about the app. :
 
 ### Known issues
 
-Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
+- No high refresh rates (only 60hz or lower, not 120hz, 144hz or higher) ([issue](https://github.com/waydabber/BetterDummy/issues/140))
+- No HDR ([issue](https://github.com/waydabber/BetterDummy/issues/141))
+- Please take a look at the [full list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
 ## Don't forget to check out MonitorControl!
 
