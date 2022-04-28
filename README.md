@@ -111,10 +111,8 @@ Notes:
 ## Compatibility
 
 - The app is compatible with all Apple Silicon macs running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros).
-- The app is also compatible with Intel Macs capable of officially running macOS Big Sur but mirroring might not work as expected especially on Macs with AMD GPUs.
+- The app is also compatible with Intel Macs capable of officially running macOS Big Sur but dummy mirroring might not work as expected especially on Macs with AMD GPUs.
 - The app is compatible with headless mode as well (both Apple Silicon and Intel).
-
-### Dummy limitations you should consider
 
 Virtual Displays have some intrinsic limitations in current macOS versions which might affect some use-cases:
 
