@@ -114,6 +114,16 @@ Notes:
 - The app is also compatible with Intel Macs capable of officially running macOS Big Sur but mirroring might not work as expected especially on Macs with AMD GPUs.
 - The app is compatible with headless mode as well (both Apple Silicon and Intel).
 
+### Dummy limitations you should consider
+
+Virtual Displays have some intrinsic limitations in current macOS versions which might affect some use-cases:
+
+- Dummies are optimized for SDR content and they cannot render HDR content.
+- Dummies work at 60Hz (or lower), high refresh rates (120Hz, 144Hz etc.) are not supported.
+- Dummies do not support HDCP (this is required for the playback of some copy-protected video content, like Apple TV shows).
+
+Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
+
 ## Some notable articles about BetterDummy
 
 BetterDummy is now famous! :)
@@ -253,10 +263,6 @@ Please don't forget to star the GitHub page and spread the word about the app. :
 - Licensing uses a [Paddle](https://www.paddle.com) as backend. This also means that the app communicates over the network with Paddle's servers to verify licensing, trial status and facilitate check-out using Paddle's SDK. Besides data required for licensing purposes by Paddle's services, no other info is transferred over the network.
 - I decided not to have a marketing list (marketing opt-in) of any kind. I also do not build any usage database or collect unique (and not unique) IDs either - besides what Paddle collects and presents on its dashboard for me (to keep track of valid software licenses).
 - Aside from Paddle the only other form of network communication by the app is what is required for the built-in updater to work. This  communicates directly with github.com [to download the update metadata](https://github.com/waydabber/BetterDummy/blob/github-pages/docs/appcast.xml) and download the update binary.
-
-### Known issues
-
-Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
 
 ## Don't forget to check out MonitorControl!
 
