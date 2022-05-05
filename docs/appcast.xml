@@ -3,6 +3,18 @@
     <channel>
         <title>BetterDummy</title>
         <item>
+            <title>1.2.1-beta</title>
+            <sparkle:channel>beta</sparkle:channel>            
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.2.1-beta
+            </sparkle:releaseNotesLink>
+            <pubDate>Thu, 05 May 2022 15:45:51 +0200</pubDate>
+            <sparkle:version>5479</sparkle:version>
+            <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.1-beta/BetterDummy-v1.2.1-beta.dmg" length="4066527" type="application/octet-stream" sparkle:edSignature="jlnZtdhysRMQNv1i+jj+Rzm+zEbgcDbBNyl3Bvr7kafNiuCvd9M8XXdmbpni931QMv18Z93pXPrz7TTTieIaAA=="/>
+        </item>
+        <item>
             <title>1.2.0-beta</title>
             <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
