@@ -76,9 +76,7 @@ _Features marked with an asterisk (*) are available in BetterDummy Pro_
 
 ## Usage
 
-**This tutorial is for the v1.1.x version of the app, currently available as beta. If you are running the v1.0.13 version, please [refer to this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to setup dummy mirroring!**
-
-BetterDummy has several uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions on Apple Silicon machines. Follow these steps to do this:
+BetterDummy has several uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions. Follow these steps to do this:
 
 1. Start the app and locate the app menu (you'll see a BetterDummy icon in the menu bar).
 2. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
