@@ -1,7 +1,29 @@
 <?xml version="1.0" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
-        <title>BetterDummy</title>
+        <item>
+            <title>1.2.4-beta</title>
+            <sparkle:channel>beta</sparkle:channel>            
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.2.4-beta
+            </sparkle:releaseNotesLink>
+            <pubDate>Thu, 02 Jun 2022 13:06:58 +0200</pubDate>
+            <sparkle:version>6915</sparkle:version>
+            <sparkle:shortVersionString>1.2.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.4-beta/BetterDummy-v1.2.4-beta.dmg" length="4406691" type="application/octet-stream" sparkle:edSignature="E7cptan3XORO5dvU1a28n0n/tn/j3bV73JXkFoYrcXjzYc5BA/cU6cqYfKcjsNKVdqxUV8fIWILCZe2zU6qNCw=="/>
+        </item>
+        <item>
+            <title>1.1.24</title>
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.1.24
+            </sparkle:releaseNotesLink>
+            <pubDate>Thu, 02 Jun 2022 12:29:16 +0200</pubDate>
+            <sparkle:version>6909</sparkle:version>
+            <sparkle:shortVersionString>1.1.24</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.1.24/BetterDummy-v1.1.24.dmg" length="4345273" type="application/octet-stream" sparkle:edSignature="Xew1nXHNTEct3Be6G5t/ZhAulHT0afmIhaQc5aZttXwT4oEwVqMj0zcAAN9abNvUrON8+3WnA/TNjujXWBSXDQ=="/>
+        </item>
         <item>
             <title>1.2.3-beta</title>
             <sparkle:channel>beta</sparkle:channel>            
@@ -14,7 +36,6 @@
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.3-beta/BetterDummy-v1.2.3-beta.dmg" length="4389076" type="application/octet-stream" sparkle:edSignature="+Zh6EAxuzAtTnk6jSRKNoyvoNNVjle2PcXtZ2VLeoljEhPkmF7oNpc9vje8GyYaMueQJDJyqWPbRuI8YRC1QBQ=="/>
         </item>
-        <title>BetterDummy</title>
         <item>
             <title>1.2.2-beta</title>
             <sparkle:channel>beta</sparkle:channel>            
@@ -27,7 +48,6 @@
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.2-beta/BetterDummy-v1.2.2-beta.dmg" length="4105766" type="application/octet-stream" sparkle:edSignature="OwdNYLIL9dwbix/Lq4kYE4Mcs7Sfp0eXLXSRNAwv8QFXYrr1wikA9Z9YJtrB2LEfAD/sZA0G8ROJbiLBPcw7DQ=="/>
         </item>
-        <link>https://waydabber.github.io/BetterDummy</link>
         <item>
             <title>1.1.12</title>
             <sparkle:releaseNotesLink>
