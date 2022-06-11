@@ -122,7 +122,7 @@ Virtual Displays have some intrinsic limitations in current macOS versions which
 - Dummies work at 60Hz (or lower), high refresh rates (120Hz, 144Hz etc.) are not supported.
 - Dummies do not support HDCP (this is required for the playback of some copy-protected video content, like Apple TV shows).
 
-Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22known+issue%22) before using the app or submitting an Issue.
+Please take a look at the [list of known issues](https://github.com/waydabber/BetterDummy/issues?q=is%3Aissue+sort%3Aupdated-desc+label%3A%22known+issue%22+) before using the app or submitting an Issue.
 
 ## Some notable articles about BetterDummy
 
