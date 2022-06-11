@@ -1,8 +1,8 @@
 <img src=".github/Icon-1024.png" width="230" alt="App icon" align="left"/>
 
 <div>
-<h2>BetterDummy</h2>
-<p>Dummy Displays and Better Display Management for Macs - a menubar app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
+<h2>BetterDummy / BetterDisplay (beta)</h2>
+<p>Better Display Management and Dummy Displays for Macs - a menubar app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
 <a href="https://github.com/waydabber/BetterDummy/releases"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
