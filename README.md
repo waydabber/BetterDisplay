@@ -49,9 +49,9 @@ Advantages of BetterDummy over a physical 4K HDMI dummy plug or mirroring your i
 
 ### Other uses / features
 
-- Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon even without mirroring a dummy (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases))!
-- Reach the full brightness potential of your XDR or HDR display (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).
-- Change the display's brightness, volume and colors via software and hardware (DDC) control (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).
+- **Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon even without mirroring a dummy (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases))!**
+- **Reach the full brightness potential of your XDR or HDR display (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).**
+- **Change the display's brightness, volume and colors via software and hardware (DDC) control (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).**
 - The app is  useful for anybody who is not satisfied with the offered default HiDPI resolutions offered by macOS.
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real or dummy displays. *
