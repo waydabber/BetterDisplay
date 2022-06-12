@@ -10,7 +10,7 @@
             <sparkle:version>7554</sparkle:version>
             <sparkle:shortVersionString>1.2.5b</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.5-beta/BetterDisplay-v1.2.5b-beta.dmg" length="5122543" type="application/octet-stream" sparkle:edSignature="JvBZ7XobqyBz1U4AG+CBIz9rY3H6UHIAKayZlyWfXBeekkiGPE3d64hjIObmZV5P6a4QQ64g1LG5lTCJwIt/CA=="/>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.5-beta/BetterDisplay-v1.2.5b-beta.dmg" length="5134506" type="application/octet-stream" sparkle:edSignature="WKx4c1pTC7g0NAvZZ5jnUtdy4p9OHXSebHoGrdcG6n1Ivs9zkfylwzvJhP2ehjZas/EczBOeLhhjiOAB1cEDDQ=="/>
         </item>
         <item>
             <title>1.1.24</title>
