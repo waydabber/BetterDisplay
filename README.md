@@ -90,23 +90,10 @@ BetterDisplay has several uses and lots of features but most users tend to use i
 1. Start the app and locate the app menu (you'll see a BetterDisplay icon in the menu bar).
 2. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
 3. Click on the `Create Dummy for This Display` option.
-
-<div align="center">
-<img width="400" src="https://user-images.githubusercontent.com/37590873/162613905-6e1ec5e3-3c5d-4ac4-bea2-684152221f64.png">
-</div>
-  
 4. In the ensuing pop-up select `Connect and Set up Mirroring`.
-
-<div align="center">
-<img width="400" alt="Screen Shot 2022-04-10 at 12 24 38" src="https://user-images.githubusercontent.com/37590873/162613913-9cb662db-d543-4351-90b2-9d8b9ba3d09b.png">
-</div>
 
 It's that simple. Afterwards you should see your dummy mirrored to your display where you can use the slider to change the resolution quickly:
 
-<div align="center">
-<img width="400" alt="Screen Shot 2022-04-10 at 12 27 02" src="https://user-images.githubusercontent.com/37590873/162613933-93534edf-dc3b-47df-96db-b90a83b15567.png">
-</div>
-  
 <details>
 <summary><b>Notes and troubleshooting</b></summary>
 <br/>
