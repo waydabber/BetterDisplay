@@ -90,11 +90,13 @@ To enable the feature,
 1. Start the app and opten the app menu (locate the BetterDisplay icon in the menu bar).
 2. Open `Preferences` (the gear icon at the bottom of the menu).
 3. Navigate to the `Displays` section in `Preferences`,
-4. enable the `Edit and manage the system configuration of this display` feature first under a suitable display, 
+4. enable the `Edit and manage the system configuration of this display` feature first under the display you want to make smoothly scalable (the list can contain more than one display in a multi-monitor setup!), 
 5. and then enable the `Allow smooth resolution scale` option just below it as it appears.
-6. If you did this for all the relevant displays, click on the `Apply System Display Configuration` button at the bottom of the screen,
-7. enter your admin password and then reboot.
+6. If you did this for all the relevant displays, click on the `Apply System Display Configuration` button at the bottom of the screen.
+7. Enter your admin password and then reboot.
 8. After reboot, use the resolution sliders in the app menu to scale the desktop.
+
+_Note: the smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)_
 
 <div align="center">
 <img width="500" alt="Screen Shot 2022-06-11 at 17 33 46" src="https://user-images.githubusercontent.com/37590873/173194564-6edc15d2-a06b-42f9-9f14-f21fce3b4d95.png">
