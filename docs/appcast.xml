@@ -2,15 +2,15 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <item>
-            <title>1.2.5b-beta</title>
+            <title>1.2.5c-beta</title>
             <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
               https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.2.5-beta
             </sparkle:releaseNotesLink>
-            <sparkle:version>7554</sparkle:version>
-            <sparkle:shortVersionString>1.2.5b</sparkle:shortVersionString>
+            <sparkle:version>7617</sparkle:version>
+            <sparkle:shortVersionString>1.2.5c</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.5-beta/BetterDisplay-v1.2.5b-beta.dmg" length="5134506" type="application/octet-stream" sparkle:edSignature="WKx4c1pTC7g0NAvZZ5jnUtdy4p9OHXSebHoGrdcG6n1Ivs9zkfylwzvJhP2ehjZas/EczBOeLhhjiOAB1cEDDQ=="/>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.5-beta/BetterDisplay-v1.2.5c-beta.dmg" length="5143964" type="application/octet-stream" sparkle:edSignature="GPTqAZTpW/nnHAuFaYdEB0PRy8D9u5wzWBSQJYKP9XBnt4Jkrrskp3Dm9gbrQpQSDWpxfrHNSFeTdp6aB6ytAA=="/>
         </item>
         <item>
             <title>1.1.24</title>
