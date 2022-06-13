@@ -157,7 +157,7 @@ Also the app made it to the featured news (once took the first spot) in Hacker N
 
 ## Supporting the project / purchasing BetterDisplay Pro
 
-You can now support development by purchasing a BetterDisplay Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDummy Pro`. Please note that even if you don't buy the app, you can still use many of the features for free and the open-source version is also available for free!
+You can now support development by purchasing a BetterDisplay Pro license directly in the app. You need to [download the latest version](https://github.com/waydabber/BetterDummy/releases) (v1.1.10 or newer), navigate to `Preferences...` > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free and the open-source version is also available for free!
 
 For more info check out [this discussion](https://github.com/waydabber/BetterDummy/discussions/233)
 
