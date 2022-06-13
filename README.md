@@ -96,13 +96,14 @@ To enable the feature,
 7. Enter your admin password and then reboot.
 8. After reboot, use the resolution sliders in the app menu to scale the desktop.
 
-_Note: the smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)_
-
 <div align="center">
 <img width="500" alt="Screen Shot 2022-06-11 at 17 33 46" src="https://user-images.githubusercontent.com/37590873/173194564-6edc15d2-a06b-42f9-9f14-f21fce3b4d95.png">
 </div align="center">
 
-_The feature is compatible with macOS Monterey 12.4+, macOS Ventura and Apple Silicon macs and natively connected (DisplayPort) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest **BetterDisplay beta (version 1.2.5 and newer) - [download it here](https://github.com/waydabber/BetterDummy/releases)!**_
+### Notes:
+- the smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)
+- The feature is compatible with macOS Monterey 12.4+, macOS Ventura and Apple Silicon macs and requires natively connected (DisplayPort, HDMI) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest **BetterDisplay beta (version 1.2.5 and newer) - [download it here](https://github.com/waydabber/BetterDummy/releases)!**
+- The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Preferences` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
 
 An alternative (for some scenarios the only valid) approach is to create a mirrored dummy in order to use custom resolutions. This works for Sidecar and other non-native devices (like DisplayLink) and also enables scaling beyond the native resolution of the display panel on Apple Silicon (for added screen real estate). Follow these steps to do this:
 
