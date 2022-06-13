@@ -100,10 +100,13 @@ To enable the feature,
 <img width="500" alt="Screen Shot 2022-06-11 at 17 33 46" src="https://user-images.githubusercontent.com/37590873/173194564-6edc15d2-a06b-42f9-9f14-f21fce3b4d95.png">
 </div align="center">
 
-### Notes:
+### Notes and trouble shooting
+
 - the smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)
 - The feature is compatible with macOS Monterey 12.4+, macOS Ventura and Apple Silicon macs and requires natively connected (DisplayPort, HDMI) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest **BetterDisplay beta (version 1.2.5 and newer) - [download it here](https://github.com/waydabber/BetterDummy/releases)!**
 - The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Preferences` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
+
+### Dummy mirroring method
 
 An alternative (for some scenarios the only valid) approach is to create a mirrored dummy in order to use custom resolutions. This works for Sidecar and other non-native devices (like DisplayLink) and also enables scaling beyond the native resolution of the display panel on Apple Silicon (for added screen real estate). Follow these steps to do this:
 
@@ -115,7 +118,7 @@ An alternative (for some scenarios the only valid) approach is to create a mirro
 It's that simple. Afterwards you should see your dummy mirrored to your display where you can use the slider to change the resolution quickly.
 
 <details>
-<summary><b>Notes and troubleshooting</b></summary>
+<summary><b>Notes and troubleshooting for the dummy mirroring method</b></summary>
 <br/>
   
 - Due to the finnicky nature of macOS display and mirror management, sometimes setting up the mirror fails or the mirror reverts to work 'the other way around' (namely instead of the dummy being mirrored to the display, the display is being mirrored to the dummy). In this case you should stop the mirroring (select `Mirror Target` > `Stop Mirroring`) and reconfigure the mirror under the dummy in the display list `Mirror Target` > `Display Name`.
