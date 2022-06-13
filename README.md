@@ -81,11 +81,28 @@ _Some features require BetterDisplay Pro._
 1. Start the app.
 1. Use the app menu bar item to interact.
 
-## Usage
+## How to unlock scaling and HiDPI for my display?
 
-** Note: the following tutorial is about the dummy based method - which is great, but the latest beta has an improved way to unlock fully scaled HiDPI resolutions for your natively connected and internal displays on Apple Silicon with the latest macOS versions - [see the details here](https://github.com/waydabber/BetterDummy/releases/tag/v1.2.5-beta)! ** 
+BetterDisplay has several uses and lots of features, but one of the most seeked-after one is unlocking fully scaled desktops and HiDPI resolutions on Apple Silicon macs.
 
-BetterDisplay has several uses and lots of features but most users tend to use it to create a mirrored dummy to use custom resolutions. Follow these steps to do this:
+To enable the feature, 
+
+1. Start the app and opten the app menu (locate the BetterDisplay icon in the menu bar).
+2. Open `Preferences` (the gear icon at the bottom of the menu).
+3. Navigate to the `Displays` section in `Preferences`,
+4. enable the `Edit and manage the system configuration of this display` feature first under a suitable display, 
+5. and then enable the `Allow smooth resolution scale` option just below it as it appears.
+6. If you did this for all the relevant displays, click on the `Apply System Display Configuration` button at the bottom of the screen,
+7. enter your admin password and then reboot.
+8. After reboot, use the resolution sliders in the app menu to scale the desktop.
+
+<div align="center">
+<img width="500" alt="Screen Shot 2022-06-11 at 17 33 46" src="https://user-images.githubusercontent.com/37590873/173194564-6edc15d2-a06b-42f9-9f14-f21fce3b4d95.png">
+</div align="center">
+
+_The feature is compatible with macOS Monterey 12.4+, macOS Ventura and Apple Silicon macs and natively connected (DisplayPort) or built-in screens. You'll also need the latest **BetterDisplay beta (version 1.2.5 and newer) - [download it here](https://github.com/waydabber/BetterDummy/releases)!**_
+
+An alternative approach is to create a mirrored dummy in order to use custom resolutions. This works for Sidecar and other non-native devices (like DisplayLink). Follow these steps to do this:
 
 1. Start the app and locate the app menu (you'll see a BetterDisplay icon in the menu bar).
 2. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
