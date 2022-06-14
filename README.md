@@ -52,23 +52,23 @@ BetterDisplay solves the problem by **unlocking your screens making them fully s
 
 ### Other great features
 
-- **Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon even without mirroring a dummy (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases))!**
-- **Reach the full brightness potential of your XDR or HDR display (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).**
+- **Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon even without mirroring a dummy (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases))!** *
+- **Reach the full brightness potential of your XDR or HDR display (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).** *
 - **Change the display's brightness, volume and colors via software and hardware (DDC) control (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).**
-**- Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).
+- **Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
-- Create Picture in Picture window for any real or dummy displays.
-- Redirect your display's contents (real or dummy) to an other screen via streaming.
-- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming).
-- Scale Sidecar resolutions.
-- Portrait SideCar support.
-- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays.
+- Create Picture in Picture window for any real or dummy displays. *
+- Redirect your display's contents (real or dummy) to an other screen via streaming. *
+- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
+- Scale Sidecar resolutions. *
+- Portrait SideCar support. *
+- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays. *
 - Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
-- Simplify creating mirrored sets.
+- Simplify creating mirrored sets. *
 - Easily move around displays relative to each other using the app menu.
 - Easily designate a display to be main display.
 - Associate dummies with displays for auto connect/disconnect.
-- Keyboard shortcuts support.
+- Keyboard shortcuts support. *
 - Custom dummies (resolution, orientation, naming).
 - Create a dummy optimized for a real display.
 
