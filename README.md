@@ -16,7 +16,7 @@
 </a>
 <!-- version -->
 <a href="https://github.com/waydabber/BetterDummy/releases">
-<img src="https://img.shields.io/github/release/waydabber/BetterDummy.svg?style=flat" alt="latest version"/>
+<img src="https://img.shields.io/github/release/waydabber/BetterDummy.svg?include_prereleases&style=flat" alt="latest version"/>
 </a>
 <!-- platform -->
 <a href="https://github.com/waydabber/BetterDummy">
