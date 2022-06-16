@@ -104,9 +104,11 @@ To enable the feature,
 <summary><b>Notes and troubleshooting...</b></summary>
 <br/>
 
-- the smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)
+- The smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)
 - The feature is compatible with macOS Monterey 12.4+, macOS Ventura and Apple Silicon macs and requires natively connected (DisplayPort, HDMI) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest **BetterDisplay beta (version 1.2.5 and newer) - [download it here](https://github.com/waydabber/BetterDummy/releases)!**
 - The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Preferences` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
+- The smooth scaling slider will appear only if the `Resolution selector` under `Preferences`/`App menu` is set to slider mode.
+- The slider 100% will be the `Default resolution` (on normally LoDPI display this tends to be the native resoltuion - which will mean the slider maxes out at 100%, on HiDPI display half of the native resolution - which will make the resolution slider max out at 200%). If you want to rescale the resolution slider, change the `Default resolution` to an accessible different resolution than it is set.
 - The maximum resolution that can be set corresponds to the `Native panel pixel resolution` which is available only as normal resolution (not HiDPI). Converting the native resolution to HIDPI would not make sense (except for some special use cases like screenshot and accessibility zooming quality improvement) - for this or for achieving higher-than-native-resolution scaling (for extra screen real estate) you can continue to use dummy mirroring.
 - The maximum vertical pixel count seems to be constrained on some (but not all) configurations to 6K which might cause issues with wide-screen screens beyond a certain resolution.
 </details>
