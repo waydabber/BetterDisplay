@@ -30,16 +30,50 @@
 
 BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDummy/discussions/676)) is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's preferences easily from the menu bar.
 
-_(Note: some of these features are available as beta)_
+_(Note: some of these features are available in the latest beta version)_
 
-### Fully scalable HiDPI desktop with BetterDisplay
+### Features
 
-Some Macs tend to have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though most 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained. To fix these issues, some resort to buying a 4K HDMI dummy dongle to fool macOS into thinking that a 4K display is connected and then mirror the contents of this dummy display to their actual monitor in order to have HiDPI resolutions available. Others use the built in screens of their MacBooks as a mirror source. These approaches have obvious drawbacks and limitations
+- **NEW! Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases))!** *
+- **NEW! Reach the full brightness potential of your XDR or HDR display (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).** *
+- **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)). - Pro not required!**
+- **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)). - Pro not required!**
+- Create any number of dummies (virtual screens) with varying aspect ratios. - Pro not required!
+- Use headless Macs (servers) with any resolution and HiDPI mode for remote access. -Pro not required!
+- Create Picture in Picture window for any real or dummy displays. *
+- Redirect your display's contents (real or dummy) to an other screen via streaming. *
+- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
+- Scale Sidecar resolutions. *
+- Portrait SideCar support. *
+- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays. *
+- Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar. - no Pro required!
+- Quickly accessible refresh rate and screen rotation menu. - no Pro required!
+- Simplify creating mirrored sets. *
+- Easily move around displays relative to each other using the app menu. - Pro not required!
+- Quickly designate a display to be main display. - No Pro required!
+- Associate dummies with displays for auto connect/disconnect. - Pro not required!
+- Keyboard shortcuts for basic operations. - Pro not required!
+- Advanced keyboard shortcuts support. *
+- Custom dummies (resolution, orientation, naming). *
+- Create a dummy optimized for a real display. *
+
+... and more is coming! :)
+
+## Installation
+
+1. Download the [latest version](https://github.com/waydabber/BetterDummy/releases)
+1. Open the DMG file and move the app to Applications folder on your Mac as instructed.
+1. Start the app.
+1. Use the app menu bar item to interact with the app.
+
+## Fully scalable HiDPI desktop with BetterDisplay
+
+Some Macs tend to have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though most 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
 
 BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size** (feature currently available [latest beta](https://github.com/waydabber/BetterDummy/releases)). Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
 
 <details>
-<summary>Advantages of BetterDisplay over a physical 4K HDMI dummy plug or mirroring your internal display...</summary>
+<summary>Advantages of BetterDisplay over a physical 4K HDMI dummy plug or mirroring your internal display to have HiDPI...</summary>
 <br/>
 
 - Your HDMI port will remain usable for an other display on the Mac Mini or an ugly dongle won't stick out of your MacBook Pro
@@ -50,38 +84,7 @@ BetterDisplay solves the problem by **unlocking your screens making them fully s
 - Available instantly.
 </details>
 
-### Other great features
-
-- **Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon even without mirroring a dummy (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases))!** *
-- **Reach the full brightness potential of your XDR or HDR display (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).** *
-- **Change the display's brightness, volume and colors via software and hardware (DDC) control (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).**
-- **Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).**
-- Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
-- Create Picture in Picture window for any real or dummy displays. *
-- Redirect your display's contents (real or dummy) to an other screen via streaming. *
-- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
-- Scale Sidecar resolutions. *
-- Portrait SideCar support. *
-- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays. *
-- Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
-- Simplify creating mirrored sets. *
-- Easily move around displays relative to each other using the app menu.
-- Easily designate a display to be main display.
-- Associate dummies with displays for auto connect/disconnect.
-- Keyboard shortcuts support. *
-- Custom dummies (resolution, orientation, naming).
-- Create a dummy optimized for a real display.
-
-_Some features require BetterDisplay Pro._
-
-## Installation
-
-1. Download the [latest version](https://github.com/waydabber/BetterDummy/releases)
-1. Move the app to Applications folder on your Mac.
-1. Start the app.
-1. Use the app menu bar item to interact.
-
-## How to unlock scaling and HiDPI for my display?
+### How to unlock scaling and HiDPI for my display?
 
 BetterDisplay has several uses and lots of features, but one of the most seeked-after one is unlocking fully scaled desktops and HiDPI resolutions on Apple Silicon macs.
 
