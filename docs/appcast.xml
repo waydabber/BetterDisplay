@@ -2,6 +2,17 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <item>
+            <title>1.2.6</title>
+            <sparkle:channel>beta</sparkle:channel>            
+            <sparkle:releaseNotesLink>
+              https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.2.6
+            </sparkle:releaseNotesLink>
+            <sparkle:version>7998</sparkle:version>
+            <sparkle:shortVersionString>1.2.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/waydabber/BetterDummy/releases/download/v1.2.6/BetterDisplay-v1.2.6.dmg" length="5248088" type="application/octet-stream" sparkle:edSignature="lsrU+YwIudK1oB4DQ4L0wz3ImVqP2gdGmLgdlIS3F3vIewjxjM8lXkEfK4ojPyd84vILlxMjh0Ny7qmSk+ccCQ=="/>
+        </item>
+        <item>
             <title>1.2.5c-beta</title>
             <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
