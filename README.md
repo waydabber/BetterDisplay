@@ -152,13 +152,11 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 
 - The app is compatible with all Apple Silicon macs running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros). Development and testing also takes place on Apple Silicon.
 - Most features of the app is also compatible with Intel Macs capable of officially running macOS Big Sur or newer. However, dummy mirroring and unlocking smooth resolution scale might not work as expected especially on Intel Macs, especially those with AMD GPUs.
-- The app is compatible with headless mode as well (both Apple Silicon and Intel).
-
-Please note that dummies (virtual displays) have some intrinsic limitations in current macOS versions which might affect some use-cases (the native smooth scaling unlock feature is not affected by this):
-
-- Dummies are optimized for SDR content and they cannot render HDR content.
-- Dummies work at 60Hz (or lower), high refresh rates (120Hz, 144Hz etc.) are not supported.
-- Dummies do not support HDCP (this is required for the playback of some copy-protected video content, like Apple TV shows).
+- Smooth resolution scaling requires macOS Monterey 12.4 or newer and natively connected displays. Entry level M1 machines have a max. horizontal resolution limitation of 6K (this limitation does not apply on M1 Pro/Max/Ultra) with smooth scaling.
+- Dummy mirroring based resolution unlock works with every Apple Silicon macs. Dummies have some limitations (60Hz refresh rate, lack of HDCP and HDR support).
+- External display hardware backlight control and volume control require DDC capable, natively connected display or a natively supported Apple display. The HDMI ports of 2018+ Macs do not support DDC, so you have to use USB-C/DisplayPort (most USB-C to HDMI dongles work as well). Some docks (especially DisplayLink ones) do not work. Software brightness control is available with all displays.
+- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (Vesa DisplayHDR 600 or higher recommended).
+- The app is compatible with headless macs to create custom dummy resolutions for remote access.
 
 ## Some notable articles about BetterDisplay (BetterDummy):
 
