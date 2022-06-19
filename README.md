@@ -31,7 +31,7 @@
 BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay/discussions/676)) is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's preferences easily from the menu bar.
 
 <div align="center">
-<img width="500" src="https://raw.githubusercontent.com/waydabber/BetterDisplay/landing/.github/screenshot_v1.2.6.png">
+<img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/174477337-745a7bb5-dd07-4c3f-bacf-dee7224cdcdc.png">
 </div>
 
 ### Features
@@ -102,7 +102,9 @@ To enable the feature,
 8. After reboot, use the resolution sliders in the app menu to scale the desktop.
 
 <div align="center">
-<img width="500" alt="Screen Shot 2022-06-11 at 17 33 46" src="https://user-images.githubusercontent.com/37590873/173194564-6edc15d2-a06b-42f9-9f14-f21fce3b4d95.png">
+
+<img width="600" alt="config" src="https://user-images.githubusercontent.com/37590873/174477300-2568d760-03b8-4c59-9ba9-4d8a8a3223de.png">
+  
 </div align="center">
 
 <details>
