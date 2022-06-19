@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Display Management, Custom Resolutions, Brightness Adjustment and Dummy Displays for Macs - a menubar app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
-<a href="https://github.com/waydabber/BetterDummy/releases/download/v1.2.6/BetterDisplay-v1.2.6.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.2.6/BetterDisplay-v1.2.6.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
@@ -11,15 +11,15 @@
 <div align="center">
 <!-- shields -->
 <!-- downloads -->
-<a href="https://github.com/waydabber/BetterDummy/releases">
-<img src="https://img.shields.io/github/downloads/waydabber/BetterDummy/total.svg?style=flat" alt="downloads"/>
+<a href="https://github.com/waydabber/BetterDisplay/releases">
+<img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat" alt="downloads"/>
 </a>
 <!-- version -->
-<a href="https://github.com/waydabber/BetterDummy/releases">
-<img src="https://img.shields.io/github/release/waydabber/BetterDummy.svg?include_prereleases&style=flat" alt="latest version"/>
+<a href="https://github.com/waydabber/BetterDisplay/releases">
+<img src="https://img.shields.io/github/release/waydabber/BetterDisplay.svg?include_prereleases&style=flat" alt="latest version"/>
 </a>
 <!-- platform -->
-<a href="https://github.com/waydabber/BetterDummy">
+<a href="https://github.com/waydabber/BetterDisplay">
 <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
 </a>
 </div>
@@ -28,16 +28,18 @@
   
 ## About
 
-BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDummy/discussions/676)) is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's preferences easily from the menu bar.
+BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay/discussions/676)) is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's preferences easily from the menu bar.
 
-_(Note: some of these features are available in the latest beta version)_
+<div align="center">
+<img width="500" src="https://raw.githubusercontent.com/waydabber/BetterDisplay/landing/.github/screenshot_v1.2.6.png">
+</div>
 
 ### Features
 
-- **NEW! Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases))!** *
-- **NEW! Reach the full brightness potential of your XDR or HDR display (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)).** *
-- **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)). - Pro not required!**
-- **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters (available in the [latest beta](https://github.com/waydabber/BetterDummy/releases)). - Pro not required!**
+- **NEW! Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy!** *
+- **NEW! Reach the full brightness potential of your XDR or HDR display!** *
+- **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts! - Pro not required!**
+- **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters! - Pro not required!**
 - Create any number of dummies (virtual screens) with varying aspect ratios. - Pro not required!
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access. -Pro not required!
 - Create Picture in Picture window for any real or dummy displays. *
@@ -61,7 +63,7 @@ _(Note: some of these features are available in the latest beta version)_
 
 ## Installation
 
-1. Download the [latest version](https://github.com/waydabber/BetterDummy/releases)
+1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
 1. Open the DMG file and move the app to Applications folder on your Mac as instructed.
 1. Start the app.
 1. Use the app menu bar item to interact with the app.
@@ -70,7 +72,7 @@ _(Note: some of these features are available in the latest beta version)_
 
 Some Macs tend to have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though most 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
 
-BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size** (feature currently available [latest beta](https://github.com/waydabber/BetterDummy/releases)). Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
+BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size**. Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
 
 <details>
 <summary>Advantages of BetterDisplay over a physical 4K HDMI dummy plug or mirroring your internal display to have HiDPI...</summary>
@@ -108,7 +110,7 @@ To enable the feature,
 <br/>
 
 - The smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)
-- The feature is **compatible with macOS Monterey 12.4+, macOS Ventura** and Apple Silicon macs and requires natively connected (DisplayPort, HDMI) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest **BetterDisplay beta (version 1.2.5 and newer) - [download it here](https://github.com/waydabber/BetterDummy/releases)!**
+- The feature is **compatible with macOS Monterey 12.4+, macOS Ventura** and Apple Silicon macs and requires natively connected (DisplayPort, HDMI) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest BetterDisplay version.
 - The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Preferences` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
 - The smooth scaling slider will appear only if the `Resolution selector` under `Preferences`/`App menu` is set to slider mode.
 - The slider 100% will be the `Default resolution` (on normally LoDPI display this tends to be the native resoltuion - which will mean the slider maxes out at 100%, on HiDPI display half of the native resolution - which will make the resolution slider max out at 200%). If you want to rescale the resolution slider, change the `Default resolution` to an accessible different resolution than it is set.
@@ -134,7 +136,7 @@ It's that simple. Afterwards you should see your dummy mirrored to your display 
 - Due to the finnicky nature of macOS display and mirror management, sometimes setting up the mirror fails or the mirror reverts to work 'the other way around' (namely instead of the dummy being mirrored to the display, the display is being mirrored to the dummy). In this case you should stop the mirroring (select `Mirror Target` > `Stop Mirroring`) and reconfigure the mirror under the dummy in the display list `Mirror Target` > `Display Name`.
 - Sometimes the created mirror might not be the main display (the display with the menu bar and the one where windows are located by default) or a created but invisible dummy becomes the main display which makes moving forward difficult. You can easily change any display or mirror set to be main by simply choosing `Settings` > `Set as main` under the display in the app menu.
 - If you find that your new dummy or dummy mirror is not located where you actually want it to be relative to your other displays, you can easily move around a display using `Settings` > `Move Next to ...` from the app menu.
-- You can configure both mirroring, main status, resolution and everything else in System Preferences the old fashioned way as well. If you are not using Pro, you actually need to do this. Follow the [this guide](https://github.com/waydabber/BetterDummy/discussions/477) on how to do this.
+- You can configure both mirroring, main status, resolution and everything else in System Preferences the old fashioned way as well. If you are not using Pro, you actually need to do this. Follow the [this guide](https://github.com/waydabber/BetterDisplay/discussions/477) on how to do this.
 - If you really can't set up what you want, just hop over to the [BetterDisplay discord channel](https://discord.gg/aKe5yCWXSp) where you can lay out your problem and eventually we'll help you out! :)
 </details>
 
@@ -154,7 +156,7 @@ Please note that dummies (virtual displays) have some intrinsic limitations in c
 - Dummies work at 60Hz (or lower), high refresh rates (120Hz, 144Hz etc.) are not supported.
 - Dummies do not support HDCP (this is required for the playback of some copy-protected video content, like Apple TV shows).
 
-## Some notable articles about BetterDummy/BetterDisplay:
+## Some notable articles about BetterDisplay (BetterDummy):
 
 - https://www.theregister.com/2021/12/03/apple_m1_drivers
 - https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
@@ -169,11 +171,11 @@ Also the app made it to the featured news (once took the first spot) in Hacker N
 
 You can now support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Preferences...` > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free. The original open-source version is also available for free.
 
-For more info check out [this discussion](https://github.com/waydabber/BetterDummy/discussions/233)
+For more info check out [this discussion](https://github.com/waydabber/BetterDisplay/discussions/233)
 
-### To those who backed the open-source project in the past (Open Collective)
+### To those who backed the BetterDummy open-source project in the past (Open Collective)
 
-- I'd like to thank you for backing the open source project in the past by providing you with a coupon code so you can get a Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message or opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code (some patience might be needed). Thank you!
+- I'd like to thank you for backing the BetterDummy open source project in the past by providing you with a coupon code so you can get a BetterDisplay Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message or opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code (some patience might be needed). Thank you!
 
 I am thankful for each of you who [contributed to the BetterDummy project](https://opencollective.com/betterdummy).
 
