@@ -3,7 +3,6 @@
     <channel>
         <item>
             <title>1.2.6</title>
-            <sparkle:channel>beta</sparkle:channel>            
             <sparkle:releaseNotesLink>
               https://waydabber.github.io/BetterDummy/changelog.html?tag=v1.2.6
             </sparkle:releaseNotesLink>
