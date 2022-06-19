@@ -38,7 +38,7 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 
 - **NEW! Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy!** *
 - **NEW! Reach the full brightness potential of your XDR or HDR display!** *
-- **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts! - Pro not required!**
+- **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!**
 - **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters! - Pro not required!**
 - Create any number of dummies (virtual screens) with varying aspect ratios. - Pro not required!
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access. -Pro not required!
@@ -60,6 +60,8 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 - Create a dummy optimized for a real display. *
 
 ... and more is coming! :)
+
+_Note: featues marked with an asterisk (*) require a Pro license.
 
 ## Installation
 
