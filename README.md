@@ -146,7 +146,7 @@ It's that simple. Afterwards you should see your dummy mirrored to your display 
 
 ## Discord channel
 
-You can join the discussion on the [BetterDisplay discord channel](https://discord.gg/aKe5yCWXSp). If you have any issues or questions, don't hesitate to ask!
+You can join the discussion on the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp). If you have any issues or questions, don't hesitate to ask!
 
 ## Compatibility
 
