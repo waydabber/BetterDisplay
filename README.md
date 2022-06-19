@@ -61,7 +61,7 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 
 ... and more is coming! :)
 
-_Note: featues marked with an asterisk (*) require a Pro license.
+_Note: featues marked with an asterisk (*) require a Pro license._
 
 ## Installation
 
