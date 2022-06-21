@@ -39,22 +39,22 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 - **NEW! Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)!** *
 - **NEW! Reach the full brightness potential of your XDR or HDR display!** *
 - **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!**
-- **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters! - Pro not required!**
-- Create any number of dummies (virtual screens) with varying aspect ratios. - Pro not required!
-- Use headless Macs (servers) with any resolution and HiDPI mode for remote access. -Pro not required!
+- **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!**
+- Create any number of dummies (virtual screens) with varying aspect ratios.
+- Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real or dummy displays. *
 - Redirect your display's contents (real or dummy) to an other screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
 - Scale Sidecar resolutions. *
 - Portrait SideCar support. *
-- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays. *
-- Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar. - no Pro required!
-- Quickly accessible refresh rate and screen rotation menu. - no Pro required!
+- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
+- Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
+- Quickly accessible refresh rate and screen rotation menu.
 - Simplify creating mirrored sets. *
-- Easily move around displays relative to each other using the app menu. - Pro not required!
-- Quickly designate a display to be main display. - No Pro required!
-- Associate dummies with displays for auto connect/disconnect. - Pro not required!
-- Keyboard shortcuts for basic operations. - Pro not required!
+- Easily move around displays relative to each other using the app menu.
+- Quickly designate a display to be main display.
+- Associate dummies with displays for auto connect/disconnect.
+- Keyboard shortcuts for basic operations.
 - Advanced keyboard shortcuts support. *
 - Custom dummies (resolution, orientation, naming). *
 - Create a dummy optimized for a real display. *
