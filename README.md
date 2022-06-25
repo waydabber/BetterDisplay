@@ -28,7 +28,7 @@
   
 ## About
 
-BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay/discussions/676)) is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's preferences easily from the menu bar.
+BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay/discussions/676)) is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's settings easily from the menu bar.
 
 <div align="center">
 <img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/174477337-745a7bb5-dd07-4c3f-bacf-dee7224cdcdc.png">
@@ -95,8 +95,8 @@ BetterDisplay has several uses and lots of features, but one of the most seeked-
 To enable the feature, 
 
 1. Start the app and opten the app menu (locate the BetterDisplay icon in the menu bar).
-2. Open `Preferences` (the gear icon at the bottom of the menu).
-3. Navigate to the `Displays` section in `Preferences`,
+2. Open `Settings` (the gear icon at the bottom of the menu).
+3. Navigate to the `Displays` section in `Settings` (gear icon),
 4. enable the `Edit and manage the system configuration of this display` feature first under the display you want to make smoothly scalable (the list can contain more than one display in a multi-monitor setup!), 
 5. and then enable the `Allow smooth resolution scale` option just below it as it appears.
 6. If you did this for all the relevant displays, click on the `Apply System Display Configuration` button at the bottom of the screen.
@@ -113,10 +113,10 @@ To enable the feature,
 <summary><b>Notes and troubleshooting...</b></summary>
 <br/>
 
-- The smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Preferences` > `Displays` tab and make the setting for each of your displays!** :)
+- The smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Settings` > `Displays` tab and make the setting for each of your displays!** :)
 - The feature is **compatible with macOS Monterey 12.4+, macOS Ventura** and Apple Silicon macs and requires natively connected (DisplayPort, HDMI) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest BetterDisplay version.
-- The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Preferences` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
-- The smooth scaling slider will appear only if the `Resolution selector` under `Preferences`/`App menu` is set to slider mode.
+- The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Settings` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
+- The smooth scaling slider will appear only if the `Resolution selector` under `Settings`/`App menu` is set to slider mode.
 - The slider 100% will be the `Default resolution` (on normally LoDPI display this tends to be the native resoltuion - which will mean the slider maxes out at 100%, on HiDPI display half of the native resolution - which will make the resolution slider max out at 200%). If you want to rescale the resolution slider, change the `Default resolution` to an accessible different resolution than it is set.
 - The maximum resolution that can be set for low PPI displays corresponds to the `Native panel pixel resolution` which is available only as normal resolution (not HiDPI). Converting the native resolution to HIDPI would not make sense (except for some special use cases like screenshot and accessibility zooming quality improvement) - for this or for achieving higher-than-native-resolution scaling (for extra screen real estate) you can continue to use dummy mirroring.
 - The **maximum horizontal pixel count seems to be constrained on the entry-level M1 configurations to 6K** (M1 Pro/Max/Ultra seems to be unaffected) which might pose an issue  to users with ultra-wide screens trying to go beyond a certain horizontal resolution (the limit seems to be 3072px HiDPI which is 6144px actual).
@@ -171,7 +171,7 @@ Also the app made it to the featured news (once took the first spot) in Hacker N
 
 ## Supporting the project / purchasing BetterDisplay Pro
 
-You can now support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Preferences...` > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free. The original open-source version is also available for free.
+You can now support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free. The original open-source version is also available for free.
 
 For more info check out [this discussion](https://github.com/waydabber/BetterDisplay/discussions/233)
 
