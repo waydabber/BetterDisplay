@@ -40,6 +40,7 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 - **NEW! Reach the full brightness potential of your XDR or HDR display!** *
 - **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!**
 - **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!**
+- **NEW! Enable Night Shift for your TV!**
 - Create any number of dummies (virtual screens) with varying aspect ratios.
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real or dummy displays. *
