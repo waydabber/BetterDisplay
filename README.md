@@ -37,7 +37,7 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 ### Features
 
 - **NEW! Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)!** *
-- **NEW! Reach the full brightness potential of your XDR or HDR display!** *
+- **NEW! Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR brightness upscale!** *
 - **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!**
 - **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!**
 - **NEW! Enable Night Shift for your TV!**
@@ -48,6 +48,7 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
 - Scale Sidecar resolutions. *
 - Portrait SideCar support. *
+- 
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
 - Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
 - Quickly accessible refresh rate and screen rotation menu.
