@@ -48,7 +48,6 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
 - Scale Sidecar resolutions. *
 - Portrait SideCar support. *
-- 
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
 - Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
 - Quickly accessible refresh rate and screen rotation menu.
