@@ -104,21 +104,25 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 | XDR extra brightness (overlay) | | | | | :white_check_mark::moneybag: | |
 | Third party HDR extra brightness | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
 | Custom display timings for Intel Macs | | | | :white_check_mark::moneybag: | | |
-| DDC input switching | :hourglass: | | :white_check_mark::free: | | | :white_check_mark::moneybag: |
-| Command Line Integration | :hourglass: | | :white_check_mark::free: | | | |
+| DDC input switching | :hourglass::free: | | :white_check_mark::free: | | | :white_check_mark::moneybag: |
+| Command Line Integration | :hourglass::free: | | :white_check_mark::moneybag: | | | |
 | DIY hardware integration | | | :white_check_mark::moneybag: | | | |
-| Advanced Brightness syncing | :hourglass: | :white_check_mark::free: | :white_check_mark::moneybag: | | | |
-| Presets | :hourglass: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | :white_check_mark::moneybag: |
-| Schedule based settings | :hourglass: | | :white_check_mark::moneybag: | | | |
-| App specific settings | :hourglass: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | |
+| Advanced Brightness syncing | :hourglass::free: | :white_check_mark::free: | :white_check_mark::moneybag: | | | |
+| Presets | :hourglass::moneybag: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | :white_check_mark::moneybag: |
+| Schedule based settings | :hourglass::moneybag: | | :white_check_mark::moneybag: | | | |
+| App specific settings | :hourglass::moneybag: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | |
 | | | | | | | |
 | Price | $15 | \$0 | $23 | $15 | € 14 | $13 |
 | Trial days | 14 | \- | 14 | 10 | \- | \- |
 
 :white_check_mark: - Feature is available
-:free: - Feature is free without limitation even after the trial
-:exclamation: - Feature is free with some limits after the trial (for Lunar: 100 adjustments per day)
-:moneybag: - Feature is a paid/Pro feature and is not available after the trial (if trial is available)
+  
+:free: - Feature is completely free without limitation, even after trial
+
+:exclamation: - Feature is free with limitations imposed after trial (for Lunar: 100 adjustments per day)
+
+:moneybag: - Feature is a paid/pro feature and is not available after a trial (for apps with trial)
+
 :hourglass: - Feature is planned
 
 <i>Please note that this comparison is only meant to give you a big picture, does not contain all secondary and derived functionalities (free or paid) for each software and might not be a fair representation in every respect as I am not an expert on the alternative apps. I am pretty sure the devs of respective alternatives would feel the comparison is skewed in some way or I did miss an important aspect or unique advantage of the competing solution. For an educated decision you might want to try all apps that offer some sort of trial. If you feel the comparison is not fair, drop me a note a the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp)!</i>
