@@ -64,6 +64,67 @@ BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay
 
 _Note: featues marked with an asterisk (*) require a Pro license._
 
+<details>
+<summary><b>For a more detailed list and comparison with some popular alternatives, click here...</b></summary>
+
+## Feature comparison
+
+| | BetterDisplay | MonitorControl | Lunar | SwitchResX | Vivid | DisplayBuddy |
+| --- | :-: | :-: | :-: | :-: | :-: | :-: |
+| Custom scaled resolution editing | :white_check_mark::free: | | | :white_check_mark::moneybag: | | |
+| Native smooth scaling | :white_check_mark::moneybag: | | | | | |
+| Night Shift for TVs | :white_check_mark::free: | | | | | |
+| Display name override | :white_check_mark::free: | | | :white_check_mark::moneybag: | | |
+| Native, default resolution editing | :white_check_mark::free: | | | | | |
+| Dummy display creation | :white_check_mark::free: | | | | | |
+| Dummy-display association | :white_check_mark::free: | | | | | |
+| Display mode selector menu | :white_check_mark::free: | | :white_check_mark::free: | :white_check_mark::moneybag: | | |
+| Resolution slider | :white_check_mark::free: | | | | | |
+| Picture in Picture | :white_check_mark::moneybag: | | | | | |
+| Custom dummies | :white_check_mark::moneybag: | | | | | |
+| Full screen streaming | :white_check_mark::moneybag: | | | | | |
+| Stream/PIP, stretching, off-centering | :white_check_mark::moneybag: | | | | | |
+| Stream/PIP rotation, portrait Sidecar | :white_check_mark::moneybag: | | | | | |
+| Teleprompter mode (stream flipping) | :white_check_mark::moneybag: | | | | | |
+| Mirror configuration | :white_check_mark::moneybag: | | | | | |
+| DDC brightness control | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | :white_check_mark::moneybag: |
+| DDC volume control | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | :white_check_mark::moneybag: |
+| Native brightnesss and volume keys | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::free: | | | |
+| Basic custom keyboard shortcuts | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::moneybag: | :white_check_mark::moneybag: | :white_check_mark::moneybag: |
+| Advanced custom keyboard shortcuts | :white_check_mark::moneybag: | | :white_check_mark::exclamation: | :white_check_mark::moneybag: | | |
+| Basic native OSD support | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::free: | | :white_check_mark::moneybag: | |
+| Combined native OSD support | :white_check_mark::free: | :white_check_mark::free: | | | | |
+| Software dimming (color table) | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | :white_check_mark::moneybag: |
+| Software dimming (overlay) | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | |
+| Combined dimming | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | |
+| Dimming to black | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::moneybag: | | | |
+| Color adjustments | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
+| Color temperature control | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
+| XDR extra brightness (advanced) | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
+| XDR extra brightness (overlay) | | | | | :white_check_mark::moneybag: | |
+| Third party HDR extra brightness | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
+| Custom display timings for Intel Macs | | | | :white_check_mark::moneybag: | | |
+| DDC input switching | :hourglass: | | :white_check_mark::free: | | | :white_check_mark::moneybag: |
+| Command Line Integration | :hourglass: | | :white_check_mark::free: | | | |
+| DIY hardware integration | | | :white_check_mark::moneybag: | | | |
+| Advanced Brightness syncing | :hourglass: | :white_check_mark::free: | :white_check_mark::moneybag: | | | |
+| Presets | :hourglass: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | :white_check_mark::moneybag: |
+| Schedule based settings | :hourglass: | | :white_check_mark::moneybag: | | | |
+| App specific settings | :hourglass: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | |
+| | | | | | | |
+| Price | $15 | \$0 | $23 | $15 | € 14 | $13 |
+| Trial days | 14 | \- | 14 | 10 | \- | \- |
+
+:white_check_mark: - Feature is available
+:free: - Feature is free without limitation even after the trial
+:exclamation: - Feature is free with some limits after the trial (for Lunar: 100 adjustments per day)
+:moneybag: - Feature is a paid/Pro feature and is not available after the trial (if trial is available)
+:hourglass: - Feature is planned
+
+<i>Please note that this comparison is only meant to give you a big picture, does not contain all secondary and derived functionalities (free or paid) for each software and might not be a fair representation in every respect as I am not an expert on the alternative apps. I am pretty sure the devs of respective alternatives would feel the comparison is skewed in some way or I did miss an important aspect or unique advantage of the competing solution. For an educated decision you might want to try all apps that offer some sort of trial. If you feel the comparison is not fair, drop me a note a the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp)!</i>
+
+</details>
+
 ## Installation
 
 1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
