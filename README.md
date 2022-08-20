@@ -28,7 +28,7 @@
   
 ## About
 
-BetterDisplay ([formerly BetterDummy](https://github.com/waydabber/BetterDisplay/discussions/676)) is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's settings easily from the menu bar.
+BetterDisplay is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's settings easily from the menu bar.
 
 <div align="center">
 <img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/174477337-745a7bb5-dd07-4c3f-bacf-dee7224cdcdc.png">
@@ -224,30 +224,19 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (Vesa DisplayHDR 600 or higher recommended).
 - The app is compatible with headless macs to create custom dummy resolutions for remote access.
 
-## Some notable articles about BetterDisplay (BetterDummy):
-
-- https://www.theregister.com/2021/12/03/apple_m1_drivers
-- https://9to5mac.com/2021/11/23/enable-1440p-retina-scaling-m1-mac/
-- https://www.macworld.com/article/549493/how-to-m1-mac-1440p-display-hidpi-retina-scaling.html
-
-Also the app made it to the featured news (once took the first spot) in Hacker News.
-
-- https://news.ycombinator.com/item?id=29064234
-- https://news.ycombinator.com/item?id=29469837
-
 ## Supporting the project / purchasing BetterDisplay Pro
 
 You can support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). 
 
 Check out the [license terms](https://github.com/waydabber/BetterDisplay/discussions/739) for the app.
 
-For more info, see [this discussion](https://github.com/waydabber/BetterDisplay/discussions/233). The original BetterDummy open-source version is available for free for business and home users.
+For more info, see [this discussion](https://github.com/waydabber/BetterDisplay/discussions/233).
 
-### To those who backed the BetterDummy open-source project in the past (Open Collective)
+### To those who backed the project in the past (Open Collective)
 
-- I'd like to thank you for backing the BetterDummy open source project in the past by providing you with a coupon code so you can get a BetterDisplay Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message or opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code (some patience might be needed). Thank you!
+- I'd like to thank you for backing the open source project in the past by providing you with a coupon code so you can get a BetterDisplay Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message or opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code (some patience might be needed). Thank you!
 
-I am thankful for each of you who [contributed to the BetterDummy project](https://opencollective.com/betterdummy).
+I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdisplay).
 
 <details>
 <summary>Notabe contributors of the open-source project</summary>
