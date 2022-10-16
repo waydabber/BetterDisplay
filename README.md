@@ -36,12 +36,13 @@ BetterDisplay is a truly wonderful tool! It let's you convert your displays to f
 
 ### Features
 
-- **NEW! Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)!** *
-- **NEW! Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR brightness upscale!** *
-- **NEW! Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!**
-- **NEW! Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!**
-- **NEW! Enable Night Shift for your TV!**
+- Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
+- Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR brightness upscale! *
+- Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
+- Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
 - Create any number of dummies (virtual screens) with varying aspect ratios.
+- Enable Night Shift for your TV!
+- Protect display configuration, forbid auto-switch to VRR etc. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real or dummy displays. *
 - Redirect your display's contents (real or dummy) to an other screen via streaming. *
