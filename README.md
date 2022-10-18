@@ -139,6 +139,22 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 
 ## Usage
 
+### XDR/HDR extra brightness (XDR/HDR upscaling)
+
+With BetterDisplay **you can fully unlock the maximum brightness** of your Apple XDR display as well as your third party HDR capable display.
+
+You don't have to do anything special to enable the display - once you start the app, you can simply use the slider to increase the brightness beyond 100% to produce up to 1600 nits on your Pro Display XDR. For other HDR displays, the app automatically sets up the maximum brightness upscaling level taking into account the reported maximum panel brightness.
+
+Some other steps that might be neccessary:
+
+- If you want to use your native Apple keyboard brightness control keys, you need to set up the Accessibility Privileges. Follow the instructions under `Settings` (the gear icon at the bottom of the menu) / `Keyboard` / `Set up Accessibility Permissions`
+- For third party HDR displays, you need to enable HDR mode to use HDR brightness upscaling. You can do so in the app menu by clicking `Enable HDR Mode`. This is not required for XDR displays (these automatically switch to EDR/HDR mode).
+- Please note that on-screen HDR content will tone-map properly when the brightness slider is set to 100% (on third party HDR displays, or 50%-100% on XDR displays)
+
+<div align="center">
+<img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/196447617-eb386296-9937-4762-b6b4-513ad0e06b66.png">
+</div>
+  
 ### Fully scalable HiDPI desktop with BetterDisplay with native smooth scaling
 
 Some Macs have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though some 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
@@ -158,10 +174,8 @@ To enable the native smooth scaling feature:
 9. After reboot, use the resolution sliders in the app menu to scale the desktop.
 
 <div align="center">
-  
 <img width="600" alt="config" src="https://user-images.githubusercontent.com/37590873/196440045-cf721f83-3f8b-461b-a123-e50d0ae589fa.png">
-  
-</div align="center">
+</div>
 
 <details>
 <summary><b>Notes and troubleshooting...</b></summary>
