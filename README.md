@@ -182,12 +182,11 @@ To enable the feature,
 <br/>
 
 - The smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Settings` > `Displays` tab and make the setting for each of your displays!** :)
-- The feature is **compatible with macOS Monterey 12.4+, macOS Ventura** and Apple Silicon macs and requires natively connected (DisplayPort, HDMI) or built-in screens. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest BetterDisplay version.
+- The feature is **compatible with macOS Monterey 12.4+, macOS Ventura** and works on natively connected (DisplayPort, HDMI) and built-in displays. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest BetterDisplay version.
 - The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Settings` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
-- The smooth scaling slider will appear only if the `Resolution selector` under `Settings`/`App menu` is set to slider mode.
 - The slider 100% will be the `Default resolution` (on normally LoDPI display this tends to be the native resoltuion - which will mean the slider maxes out at 100%, on HiDPI display half of the native resolution - which will make the resolution slider max out at 200%). If you want to rescale the resolution slider, change the `Default resolution` to an accessible different resolution than it is set.
-- The maximum resolution that can be set for low PPI displays corresponds to the `Native panel pixel resolution` which is available only as normal resolution (not HiDPI). Converting the native resolution to HIDPI would not make sense (except for some special use cases like screenshot and accessibility zooming quality improvement) - for this or for achieving higher-than-native-resolution scaling (for extra screen real estate) you can continue to use dummy mirroring.
-- The **maximum horizontal pixel count seems to be constrained on the entry-level M1 configurations to 6K** (M1 Pro/Max/Ultra seems to be unaffected) which might pose an issue  to users with ultra-wide screens trying to go beyond a certain horizontal resolution (the limit seems to be 3072px HiDPI which is 6144px actual).
+- The maximum resolution that can be set for low PPI displays corresponds to the `Native panel pixel resolution` which is available only as normal resolution (not HiDPI). Converting the native resolution to HIDPI would not make sense (except for some special use cases like screenshot and accessibility zooming quality improvement) - for this or to achieve a higher-than-native-resolution scaling (for extra screen real estate) you can continue to use dummy mirroring.
+- The **maximum horizontal pixel count is constrained on the entry-level M1 configurations to 6K** (on M1 Pro/Max/Ultra to 8K) which might pose an issue to ultra-wide display users trying to go beyond a certain horizontal resolution.
 </details>
 
 ### Dummy mirroring method
@@ -195,8 +194,8 @@ To enable the feature,
 An alternative (for some scenarios the only valid) approach is to create a mirrored dummy in order to use custom resolutions. This works for Sidecar and other non-native devices (like DisplayLink) and also enables scaling beyond the native resolution of the display panel on Apple Silicon (for added screen real estate). Follow these steps to do this:
 
 1. Start the app and locate the app menu (you'll see a BetterDisplay icon in the menu bar).
-2. In the app menu locate your display's name and click on the `Settings` sub-menu under it.
-3. Click on the `Create Dummy for This Display` option.
+2. In the app menu's Tools section locate the `Create New Dummy` option
+3. Click on the `Create and Configure for...` option at the bottom that matches your display.
 4. In the ensuing pop-up select `Connect and Set up Mirroring`.
 
 It's that simple. Afterwards you should see your dummy mirrored to your display where you can use the slider to change the resolution quickly.
