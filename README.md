@@ -172,8 +172,8 @@ To enable the feature,
 9. After reboot, use the resolution sliders in the app menu to scale the desktop.
 
 <div align="center">
-
-<img width="600" alt="config" src="https://user-images.githubusercontent.com/37590873/174477300-2568d760-03b8-4c59-9ba9-4d8a8a3223de.png">
+  
+<img width="600" alt="config" src="https://user-images.githubusercontent.com/37590873/196440045-cf721f83-3f8b-461b-a123-e50d0ae589fa.png">
   
 </div align="center">
 
