@@ -137,29 +137,15 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 1. Start the app.
 1. Use the app menu bar item to interact with the app.
 
-## Fully scalable HiDPI desktop with BetterDisplay
+## Usage
+
+### Fully scalable HiDPI desktop with BetterDisplay with native smooth scaling
 
 Some Macs have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though some 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
 
 BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size**. Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
 
-<details>
-<summary>Advantages of BetterDisplay over a physical 4K HDMI dummy plug or mirroring your internal display to have HiDPI...</summary>
-<br/>
-
-- Your HDMI port will remain usable for an other display on the Mac Mini or an ugly dongle won't stick out of your MacBook Pro
-- Your internal screen will be available as an extended space on a MacBook (or you can use clamshell mode).
-- Does not suffer from issues that prevalent with the physical dummy (like jittery mouse cursor).
-- Offers a much wider range of HiDPI and standard resolutions.
-- Works with all aspect ratios, does not depend on what resoluations are recorded in the dummy's EDID/firmware.
-- Available instantly.
-</details>
-
-### How to unlock scaling and HiDPI for my display?
-
-BetterDisplay has several uses and lots of features, but one of the most seeked-after one is unlocking fully scaled desktops and HiDPI resolutions on Apple Silicon macs.
-
-To enable the feature, 
+To enable the native smooth scaling feature:
 
 1. Start the app and open the app menu (locate the BetterDisplay icon in the menu bar).
 2. Open `Settings` (the gear icon at the bottom of the menu).
@@ -181,7 +167,7 @@ To enable the feature,
 <summary><b>Notes and troubleshooting...</b></summary>
 <br/>
 
-- The smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Settings` > `Displays` tab and make the setting for each of your displays!** :)
+- The native smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Settings` > `Displays` tab and make the setting for each of your displays!** :)
 - The feature is **compatible with macOS Monterey 12.4+, macOS Ventura** and works on natively connected (DisplayPort, HDMI) and built-in displays. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest BetterDisplay version.
 - The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Settings` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
 - The slider 100% will be the `Default resolution` (on normally LoDPI display this tends to be the native resoltuion - which will mean the slider maxes out at 100%, on HiDPI display half of the native resolution - which will make the resolution slider max out at 200%). If you want to rescale the resolution slider, change the `Default resolution` to an accessible different resolution than it is set.
@@ -189,7 +175,7 @@ To enable the feature,
 - The **maximum horizontal pixel count is constrained on the entry-level M1 configurations to 6K** (on M1 Pro/Max/Ultra to 8K) which might pose an issue to ultra-wide display users trying to go beyond a certain horizontal resolution.
 </details>
 
-### Dummy mirroring method
+### Alternate method for HiDPI scaling: dummy mirroring
 
 An alternative (for some scenarios the only valid) approach is to create a mirrored dummy in order to use custom resolutions. This works for Sidecar and other non-native devices (like DisplayLink) and also enables scaling beyond the native resolution of the display panel on Apple Silicon (for added screen real estate). Follow these steps to do this:
 
@@ -199,6 +185,8 @@ An alternative (for some scenarios the only valid) approach is to create a mirro
 4. In the ensuing pop-up select `Connect and Set up Mirroring`.
 
 It's that simple. Afterwards you should see your dummy mirrored to your display where you can use the slider to change the resolution quickly.
+
+Please note that the dummy/virtual screen mirroring method is a workaround and have some drawbacks compared to native smooth scaling - there might be sleep issues, color issues (flickering on some setups), mouse cursor related problems on Monterey 12.5 and beyond. Whenever possible, it is advised to use the native smooth scaling method.
 
 <details>
 <summary><b>Notes and troubleshooting for the dummy mirroring method...</b></summary>
@@ -218,11 +206,11 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 ## Compatibility
 
 - The app is compatible with all Apple Silicon macs running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros). Development and testing also takes place on Apple Silicon.
-- Most features of the app is also compatible with Intel Macs capable of officially running macOS Big Sur or newer. However, dummy mirroring and unlocking smooth resolution scale might not work as expected especially on Intel Macs, especially those with AMD GPUs.
-- Smooth resolution scaling requires macOS Monterey 12.4 or newer and natively connected displays. Entry level M1 machines have a max. horizontal resolution limitation of 6K (this limitation does not apply on M1 Pro/Max/Ultra) with smooth scaling.
-- Dummy mirroring based resolution unlock works with every Apple Silicon macs. Dummies have some limitations (60Hz refresh rate, lack of HDCP and HDR support).
+- Most features of the app is also compatible with Intel Macs capable of officially running macOS Big Sur or newer. However, dummy mirroring and unlocking native smooth resolution scale might not work as expected especially on some Intel Macs, especially those with AMD GPUs.
+- Native Smooth resolution scaling requires macOS Monterey 12.4 or newer and natively connected displays. Entry level M1 machines have a max. horizontal resolution limitation of 6K (8K on M1 Pro/Max/Ultra) with native smooth scaling.
+- Dummy mirroring based resolution unlock works with every Apple Silicon macs. Dummies have some limitations (60Hz refresh rate, lack of HDCP and HDR support). Additionally to this, dummy mirroring might cause other issues on some configurations (sleep issues, color issues, mouse cursor issues).
 - External display hardware backlight control and volume control require DDC capable, natively connected display or a natively supported Apple display. The HDMI ports of 2018+ Macs do not support DDC, so you have to use USB-C/DisplayPort (most USB-C to HDMI dongles work as well). Some docks (especially DisplayLink ones) do not work. Software brightness control is available with all displays.
-- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (Vesa DisplayHDR 600 or higher recommended).
+- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended).
 - The app is compatible with headless macs to create custom dummy resolutions for remote access.
 
 ## Supporting the project / purchasing BetterDisplay Pro
