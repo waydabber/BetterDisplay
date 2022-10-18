@@ -139,7 +139,7 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 
 ## Fully scalable HiDPI desktop with BetterDisplay
 
-Some Macs tend to have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though most 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
+Some Macs have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though some 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
 
 BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size**. Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
 
@@ -161,14 +161,15 @@ BetterDisplay has several uses and lots of features, but one of the most seeked-
 
 To enable the feature, 
 
-1. Start the app and opten the app menu (locate the BetterDisplay icon in the menu bar).
+1. Start the app and open the app menu (locate the BetterDisplay icon in the menu bar).
 2. Open `Settings` (the gear icon at the bottom of the menu).
-3. Navigate to the `Displays` section in `Settings` (gear icon),
-4. enable the `Edit and manage the system configuration of this display` feature first under the display you want to make smoothly scalable (the list can contain more than one display in a multi-monitor setup!), 
-5. and then enable the `Allow smooth resolution scale` option just below it as it appears.
-6. If you did this for all the relevant displays, click on the `Apply System Display Configuration` button at the bottom of the screen.
-7. Enter your admin password and then reboot.
-8. After reboot, use the resolution sliders in the app menu to scale the desktop.
+3. Navigate to the `Displays` section,
+4. Enable the `Edit the default system configuration of this display` feature under the display you want to make scalable, 
+5. Enable the `Set up native smooth resolution scaling` option just below it as it appears.
+6. You can also open `Show advanced settings for native smooth scaling` and enable `Add a near-native HiDPI variant for the native resolution` as well.
+7. If you did this for all the relevant displays, click on the `Apply Changes` button at the bottom of the screen.
+8. Enter your administrator level credentials and then reboot.
+9. After reboot, use the resolution sliders in the app menu to scale the desktop.
 
 <div align="center">
 
