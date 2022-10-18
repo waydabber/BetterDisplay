@@ -2,7 +2,7 @@
 
 <div>
 <h2>BetterDisplay</h2>
-<p>Display Management, Custom Resolutions, Brightness Adjustment and Dummy Displays for Macs - a menubar app from one of the makers of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
+<p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment and Dummy Displays for Macs - a menubar app from a maker of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.3/BetterDisplay-v1.3.3.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
@@ -28,10 +28,10 @@
   
 ## About
 
-BetterDisplay is a truly wonderful tool! It let's you convert your displays to fully scalable screens, allows brightness control, provides XDR/HDR upscaling (extra brightness beyond 100% on compatible displays), full dimming to black, helps you create and manage virtual displays (dummies) for your Mac, create Picture in Picture windows of your displays and gives you a host of other features to manage your display's settings easily from the menu bar.
+**BetterDisplay** is a truly wonderful tool! It let's you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
 
 <div align="center">
-<img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/174477337-745a7bb5-dd07-4c3f-bacf-dee7224cdcdc.png">
+<img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/196436511-fd96e089-aeff-42b0-a2e0-2e17f6c3cf73.png">
 </div>
 
 ### Features
