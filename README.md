@@ -113,7 +113,7 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 | Schedule based settings | :hourglass::moneybag: | | :white_check_mark::moneybag: | | | |
 | App specific settings | :hourglass::moneybag: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | |
 | | | | | | | |
-| Price | $15 | \$0 | $23 | $15 | € 14 | $13 |
+| Price | $15 | \$0 | $23 | $15 | €20 | $13 |
 | Trial days | 14 | \- | 14 | 10 | \- | \- |
 
 :white_check_mark: - Feature is available
