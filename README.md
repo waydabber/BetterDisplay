@@ -72,52 +72,51 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 
 | | BetterDisplay | MonitorControl | Lunar | SwitchResX | Vivid | DisplayBuddy |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: |
-| Custom scaled resolution editing | :white_check_mark::free: | | | :white_check_mark::moneybag: | | |
-| Native smooth scaling | :white_check_mark::moneybag: | | | | | |
-| Night Shift for TVs | :white_check_mark::free: | | | | | |
-| Display name override | :white_check_mark::free: | | | :white_check_mark::moneybag: | | |
-| Native, default resolution editing | :white_check_mark::free: | | | | | |
-| Dummy display creation | :white_check_mark::free: | | | | | |
-| Dummy-display association | :white_check_mark::free: | | | | | |
-| Display mode selector menu | :white_check_mark::free: | | :white_check_mark::free: | :white_check_mark::moneybag: | | |
-| Resolution slider | :white_check_mark::free: | | | | | |
-| Picture in Picture | :white_check_mark::moneybag: | | | | | |
-| Custom dummies | :white_check_mark::moneybag: | | | | | |
-| Full screen streaming | :white_check_mark::moneybag: | | | | | |
-| Stream/PIP, stretching, off-centering | :white_check_mark::moneybag: | | | | | |
-| Stream/PIP rotation, portrait Sidecar | :white_check_mark::moneybag: | | | | | |
-| Teleprompter mode (stream flipping) | :white_check_mark::moneybag: | | | | | |
-| Mirror configuration | :white_check_mark::moneybag: | | | | | |
-| DDC brightness control | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | :white_check_mark::moneybag: |
-| DDC volume control | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | :white_check_mark::moneybag: |
-| Native brightnesss and volume keys | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::free: | | | |
-| Basic custom keyboard shortcuts | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::moneybag: | :white_check_mark::moneybag: | :white_check_mark::moneybag: |
-| Advanced custom keyboard shortcuts | :white_check_mark::moneybag: | | :white_check_mark::exclamation: | :white_check_mark::moneybag: | | |
-| Basic native OSD support | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::free: | | :white_check_mark::moneybag: | |
-| Combined native OSD support | :white_check_mark::free: | :white_check_mark::free: | | | | |
-| Software dimming (color table) | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | :white_check_mark::moneybag: |
-| Software dimming (overlay) | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | |
-| Combined dimming | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::exclamation: | | | |
-| Dimming to black | :white_check_mark::free: | :white_check_mark::free: | :white_check_mark::moneybag: | | | |
-| Color adjustments | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
-| Color temperature control | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
-| XDR extra brightness (advanced) | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
-| XDR extra brightness (overlay) | | | | | :white_check_mark::moneybag: | |
-| Third party HDR extra brightness | :white_check_mark::moneybag: | | :white_check_mark::moneybag: | | | |
-| Custom display timings for Intel Macs | | | | :white_check_mark::moneybag: | | |
-| DDC input switching | :hourglass::free: | | :white_check_mark::free: | | | :white_check_mark::moneybag: |
-| Command Line Integration | :hourglass::free: | | :white_check_mark::moneybag: | | | |
-| DIY hardware integration | | | :white_check_mark::moneybag: | | | |
-| Advanced Brightness syncing | :hourglass::free: | :white_check_mark::free: | :white_check_mark::moneybag: | | | |
-| Presets | :hourglass::moneybag: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | :white_check_mark::moneybag: |
-| Schedule based settings | :hourglass::moneybag: | | :white_check_mark::moneybag: | | | |
-| App specific settings | :hourglass::moneybag: | | :white_check_mark::moneybag: | :white_check_mark::moneybag: | | |
+| Custom scaled resolution editing | :free: | | | :moneybag: | | |
+| Native smooth scaling | :moneybag: | | | | | |
+| Night Shift for TVs | :free: | | | | | |
+| Display name override | :free: | | | :moneybag: | | |
+| Native, default resolution editing | :free: | | | | | |
+| Dummy display creation | :free: | | | | | |
+| Dummy-display association | :free: | | | | | |
+| Display mode selector menu | :free: | | :free: | :moneybag: | | |
+| Resolution slider | :free: | | | | | |
+| Picture in Picture | :moneybag: | | | | | |
+| Custom dummies | :moneybag: | | | | | |
+| Full screen streaming | :moneybag: | | | | | |
+| Stream/PIP, stretching, off-centering | :moneybag: | | | | | |
+| Stream/PIP rotation, portrait Sidecar | :moneybag: | | | | | |
+| Teleprompter mode (stream flipping) | :moneybag: | | | | | |
+| Mirror configuration | :moneybag: | | | | | |
+| DDC brightness control | :free: | :free: | :exclamation: | | | :moneybag: |
+| DDC volume control | :free: | :free: | :exclamation: | | | :moneybag: |
+| Native brightnesss and volume keys | :free: | :free: | :free: | | | |
+| Basic custom keyboard shortcuts | :free: | :free: | :free: | :moneybag: | :moneybag: | :moneybag: |
+| Advanced custom keyboard shortcuts | :moneybag: | | :exclamation: | :moneybag: | | |
+| Basic native OSD support | :free: | :free: | :free: | | :moneybag: | |
+| Combined native OSD support | :free: | :free: | | | | |
+| Software dimming (color table) | :free: | :free: | :exclamation: | | | :moneybag: |
+| Software dimming (overlay) | :free: | :free: | :exclamation: | | | |
+| Combined dimming | :free: | :free: | :exclamation: | | | |
+| Dimming to black | :free: | :free: | :moneybag: | | | |
+| Color adjustments | :moneybag: | | :moneybag: | | | |
+| Color temperature control | :moneybag: | | :moneybag: | | | |
+| XDR extra brightness (advanced) | :moneybag: | | :moneybag: | | | |
+| XDR extra brightness (overlay) | | | | | :moneybag: | |
+| Third party HDR extra brightness | :moneybag: | | :moneybag: | | | |
+| Display config protection | :moneybag: | | | | | |
+| Custom display timings for Intel Macs | | | | :moneybag: | | |
+| DDC input switching | :free: | | :free: | | | :moneybag: |
+| Command Line Integration | :hourglass::free: | | :moneybag: | | | |
+| DIY hardware integration | | | :moneybag: | | | |
+| Advanced Brightness syncing | :hourglass::free: | :free: | :moneybag: | | | |
+| Presets | :hourglass::moneybag: | | :moneybag: | :moneybag: | | :moneybag: |
+| Schedule based settings | :hourglass::moneybag: | | :moneybag: | | | |
+| App specific settings | :hourglass::moneybag: | | :moneybag: | :moneybag: | | |
 | | | | | | | |
 | Price | $15 | \$0 | $23 | $15 | €20 | $13 |
 | Trial days | 14 | \- | 14 | 10 | \- | \- |
 
-:white_check_mark: - Feature is available
-  
 :free: - Feature is completely free without limitation, even after trial
 
 :exclamation: - Feature is free with limitations imposed after trial (for Lunar: 100 adjustments per day)
