@@ -101,8 +101,7 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 | Dimming to black | :free: | :free: | :moneybag: | | | |
 | Color adjustments | :moneybag: | | :moneybag: | | | |
 | Color temperature control | :moneybag: | | :moneybag: | | | |
-| XDR extra brightness (advanced) | :moneybag: | | :moneybag: | | | |
-| XDR extra brightness (overlay) | | | | | :moneybag: | |
+| XDR extra brightness | :moneybag: | | :moneybag: | | :moneybag: | |
 | Third party HDR extra brightness | :moneybag: | | :moneybag: | | | |
 | Display config protection | :moneybag: | | | | | |
 | Custom display timings for Intel Macs | | | | :moneybag: | | |
