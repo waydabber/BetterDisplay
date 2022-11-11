@@ -105,8 +105,7 @@ _Note: featues marked with an asterisk (*) require a Pro license._
 | Third party HDR extra brightness | :moneybag: | | :moneybag: | | | |
 | Display config protection | :moneybag: | | | | | |
 | EDID retrieval for Apple Silicon | :free: | | | :moneybag: | | |
-| EDID retrieval for Intel | | | | :moneybag: | | |
-| Custom display timings for Intel | | | | :moneybag: | | |
+| EDID retrieval/editing for Intel | | | | :moneybag: | | |
 | DDC input switching | :free: | | :free: | | | :moneybag: |
 | Command Line Integration | :hourglass::free: | | :moneybag: | | | |
 | DIY hardware integration | | | :moneybag: | | | |
