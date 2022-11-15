@@ -205,6 +205,8 @@ It's that simple. Afterwards you should see your dummy mirrored to your display 
 
 Please note that the dummy/virtual screen mirroring method is a workaround and have some drawbacks compared to native smooth scaling - there might be sleep issues, color issues (flickering on some setups), mouse cursor related problems on Monterey 12.5 and beyond. Whenever possible, it is advised to use the native smooth scaling method.
 
+To help with mouse cursor related macOS bugs when a virtual screen is mirrored, you can go to `System Settings` > `Accessibility` > `Display` > `Pointer size` and slightly increase the pointer size above normal.
+
 <details>
 <summary><b>Notes and troubleshooting for the dummy mirroring method...</b></summary>
 <br/>
