@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment and Dummy Displays for Macs - a menubar app from a maker of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.3/BetterDisplay-v1.3.3.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.6/BetterDisplay-v1.3.6.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
