@@ -2,7 +2,7 @@
 
 <div>
 <h2>BetterDisplay</h2>
-<p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment and Dummy Displays for Macs - a menubar app from a maker of <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a>.<p>
+<p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment, Dummy Displays, Picture in Picture, Display Overrides - a macOS menubar app.<p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.6/BetterDisplay-v1.3.6.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
@@ -48,8 +48,7 @@
 - Create Picture in Picture window for any real or dummy displays. *
 - Redirect your display's contents (real or dummy) to an other screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
-- Scale Sidecar resolutions. *
-- Portrait SideCar support. *
+- Scale Sidecar resolutions and portrait SideCar support (via dummy full screen streaming). *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
 - Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
 - Quickly accessible refresh rate and screen rotation menu.
@@ -63,7 +62,7 @@
 - Create a dummy optimized for a real display. *
 - Export display EDID and show detailed display information (Apple Silicon).
 
-... and more is coming! :)
+... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
 
 _Note: featues marked with an asterisk (*) require a Pro license. Some features may be available in the latest pre-release version only._
 
@@ -224,13 +223,12 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 
 ## Compatibility
 
-- The app is compatible with all Apple Silicon macs running macOS Monterey (MacBook Air, Mini, 2020 and 2021 MacBook Pros). Development and testing also takes place on Apple Silicon.
-- Most features of the app is also compatible with Intel Macs capable of officially running macOS Big Sur or newer. However, dummy mirroring and unlocking native smooth resolution scale might not work as expected especially on some Intel Macs, especially those with AMD GPUs.
-- Native Smooth resolution scaling requires macOS Monterey 12.4 or newer and natively connected displays. Entry level M1 machines have a max. horizontal resolution limitation of 6K (8K on M1 Pro/Max/Ultra) with native smooth scaling.
-- Dummy mirroring based resolution unlock works with every Apple Silicon macs. Dummies have some limitations (60Hz refresh rate, lack of HDCP and HDR support). Additionally to this, dummy mirroring might cause other issues on some configurations (sleep issues, color issues, mouse cursor issues).
+- The app is compatible with all Apple Silicon and Intel Macs running macOS Big Sur, Monterey or Ventura.
+- Some features, like dummy mirroring might not work as expected especially on some Intel Macs, especially those with AMD GPUs.
+- Native Smooth resolution scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays. Entry level M1 machines have a max. horizontal resolution limitation of 6K (8K on M1 Pro/Max/Ultra) with native smooth scaling.
 - External display hardware backlight control and volume control require DDC capable, natively connected display or a natively supported Apple display. The HDMI ports of 2018+ Macs do not support DDC, so you have to use USB-C/DisplayPort (most USB-C to HDMI dongles work as well). Some docks (especially DisplayLink ones) do not work. Software brightness control is available with all displays.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended).
-- The app is compatible with headless macs to create custom dummy resolutions for remote access.
+- The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
 ## Supporting the project / purchasing BetterDisplay Pro
 
