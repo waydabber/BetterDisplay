@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment, Dummy Displays, Picture in Picture, Display Overrides - a macOS menubar app.<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.7/BetterDisplay-v1.3.7.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.8/BetterDisplay-v1.3.8.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
@@ -91,6 +91,8 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Mirror configuration | :moneybag: | | | | | |
 | DDC brightness control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC volume control | :free: | :free: | :exclamation: | | | :moneybag: |
+| DDC input switching | :free: | | :free: | | | :moneybag: |
+| DDC input customization | :free: | | | | | |
 | Native brightnesss and volume keys | :free: | :free: | :free: | | | |
 | Basic custom keyboard shortcuts | :free: | :free: | :free: | :moneybag: | :moneybag: | :moneybag: |
 | Advanced custom keyboard shortcuts | :moneybag: | | :exclamation: | :moneybag: | | |
@@ -105,9 +107,8 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | XDR extra brightness | :moneybag: | | :moneybag: | | :moneybag: | |
 | Third party HDR extra brightness | :moneybag: | | :moneybag: | | | |
 | Display config protection | :moneybag: | | | | | |
-| EDID retrieval for Apple Silicon | :free: | | | :moneybag: | | |
-| EDID retrieval/editing for Intel | | | | :moneybag: | | |
-| DDC input switching | :free: | | :free: | | | :moneybag: |
+| EDID retrieval | :free: | | | :moneybag: | | |
+| Custom timings on Intel | | | | :moneybag: | | |
 | Command Line Integration | :hourglass::free: | | :moneybag: | | | |
 | DIY hardware integration | | | :moneybag: | | | |
 | Advanced Brightness syncing | :hourglass::free: | :free: | :moneybag: | | | |
@@ -223,11 +224,10 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 
 ## Compatibility
 
-- The app is compatible with all Apple Silicon running macOS Big Sur, Monterey or Ventura.
-- The app also runs on Intel Macs - altough most of the features do work, some might not work as expected. Dummy mirroring is not supported on Macs using AMD GPUs. _Note: improving Intel compatibility and clarifying which features is in progress._
+- The app is compatible with all Apple Silicon and Intel Macs running macOS Big Sur, Monterey or Ventura.
+- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
 - Native Smooth resolution scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays. Entry level M1 machines have a max. horizontal resolution limitation of 6K (8K on M1 Pro/Max/Ultra) with native smooth scaling.
 - External display hardware backlight control and volume control require DDC capable, natively connected display or a natively supported Apple display. The HDMI port of Macs do not support DDC (however most USB-C to HDMI dongles do work). Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays.
-- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
 ## Supporting the project / purchasing BetterDisplay Pro
