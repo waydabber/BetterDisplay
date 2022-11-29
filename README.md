@@ -37,7 +37,7 @@
 ### Features
 
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
-- Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR brightness upscale! *
+- Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
 - Change display inputs via DDC on supported displays.
 - Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
