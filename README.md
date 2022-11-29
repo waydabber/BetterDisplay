@@ -28,7 +28,7 @@
   
 ## About
 
-**BetterDisplay** is a truly wonderful tool! It let's you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
+**BetterDisplay** is a truly wonderful tool! It let's you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays with Apple Silicon Macs), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
 
 <div align="center">
 <img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/196436511-fd96e089-aeff-42b0-a2e0-2e17f6c3cf73.png">
@@ -147,6 +147,8 @@ Here are some instructions on how to activate the most seeked-after features of 
 With BetterDisplay **you can fully unlock the maximum brightness** of your Apple XDR display as well as your third party HDR capable display.
 
 You don't have to do anything special to enable the display - once you start the app, you can simply use the brightness slider to increase the brightness level beyond 100% to produce up to 1600 nits on your Pro Display XDR. For other HDR displays, the app automatically sets up the maximum brightness upscaling level taking into account the reported maximum panel brightness.
+
+Please note that the XDR/HDR upscaling feature requires an **Apple Silicon** Mac!
 
 Some other steps that might be neccessary:
 
