@@ -158,7 +158,7 @@ Some other steps that might be neccessary:
 <img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/196447617-eb386296-9937-4762-b6b4-513ad0e06b66.png">
 </div>
   
-### Fully scalable HiDPI desktop with BetterDisplay with native smooth scaling
+### Fully scalable HiDPI desktop with BetterDisplay using native smooth scaling
 
 Some Macs have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though some 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
 
