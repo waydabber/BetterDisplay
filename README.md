@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment, Dummy Displays, Picture in Picture, Display Overrides - a macOS menubar app.<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.8/BetterDisplay-v1.3.8.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.8/BetterDisplay-v1.3.9.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
@@ -108,6 +108,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Third party HDR extra brightness | :moneybag: | | :moneybag: | | | |
 | Display config protection | :moneybag: | | | | | |
 | EDID retrieval | :free: | | | :moneybag: | | |
+| EDID override (Intel) | :free: | | | | | |
 | Custom timings on Intel | | | | :moneybag: | | |
 | Command Line Integration | :hourglass::free: | | :moneybag: | | | |
 | DIY hardware integration | | | :moneybag: | | | |
