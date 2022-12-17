@@ -201,8 +201,8 @@ An alternative (for some scenarios the only valid) approach is to create a mirro
 
 1. Start the app and locate the app menu (you'll see a BetterDisplay icon in the menu bar).
 2. In the app menu's Tools section locate the `Create New Dummy` option
-3. Click on the `Create and Configure for...` option at the bottom that matches your display.
-4. In the ensuing pop-up select `Connect and Set up Mirroring`.
+3. Click on the `Create and Associate to...` option at the bottom that matches your display.
+4. Connect the created dummy and mirror it to the display.
 
 It's that simple. Afterwards you should see your dummy mirrored to your display where you can use the slider to change the resolution quickly.
 
