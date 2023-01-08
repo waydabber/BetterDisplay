@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment, Dummy Displays, Picture in Picture, Display Overrides - a macOS menubar app.<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.9/BetterDisplay-v1.3.9.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.10/BetterDisplay-v1.3.10.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
