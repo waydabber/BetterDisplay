@@ -93,6 +93,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | DDC volume control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC input switching | :free: | | :free: | | | :moneybag: |
 | DDC input customization | :free: | | | | | |
+| DDC power control | :free: | | :free: | | | |
 | Native brightnesss and volume keys | :free: | :free: | :free: | | | |
 | Basic custom keyboard shortcuts | :free: | :free: | :free: | :moneybag: | :moneybag: | :moneybag: |
 | Advanced custom keyboard shortcuts | :moneybag: | | :exclamation: | :moneybag: | | |
@@ -106,6 +107,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Color temperature control | :moneybag: | | :moneybag: | | | |
 | XDR extra brightness | :moneybag: | | :moneybag: | | :moneybag: | |
 | Third party HDR extra brightness | :moneybag: | | :moneybag: | | | |
+| HDR extra brightness calibration | :moneybag: | | | | | |
 | Display config protection | :moneybag: | | | | | |
 | EDID retrieval | :free: | | | :moneybag: | | |
 | EDID override (Intel) | :free: | | | | | |
