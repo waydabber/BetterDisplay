@@ -119,7 +119,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Schedule based settings | :hourglass::moneybag: | | :moneybag: | | | |
 | App specific settings | :hourglass::moneybag: | | :moneybag: | :moneybag: | | |
 | | | | | | | |
-| Price | $15 | \$0 | $23 | $15 | €20 | $13 |
+| Price | $15 | \$0 | $23 | $15/€15 | €20 | $13 |
 | Trial days | 14 | \- | 14 | 10 | \- | \- |
 
 :free: - Feature is completely free without limitation, even after trial
@@ -240,7 +240,9 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 
 You can support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). 
 
-Check out the [license terms](https://github.com/waydabber/BetterDisplay/discussions/739) for the app.
+The **price of a Pro license is $15 / €15** (+ Sales Tax or VAT). Currency and tax level varies by location (note: you can customize your location during the checkout process and the displayed price will update accordingly).
+
+For more information on licensing and pricing, please read the [license terms](https://github.com/waydabber/BetterDisplay/discussions/739) for the app.
 
 For more info, see [this discussion](https://github.com/waydabber/BetterDisplay/discussions/233).
 
