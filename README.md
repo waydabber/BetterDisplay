@@ -38,6 +38,7 @@
 
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
+- DDC control via the built-in HDMI 2.0 port of M1 Macs (M1 Mac mini, M1 MacBook Pro, M1 Mac Studio) - _check out the latest beta!_
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
 - Change display inputs via DDC on supported displays.
 - Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
@@ -89,6 +90,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Stream/PIP rotation, portrait Sidecar | :moneybag: | | | | | |
 | Teleprompter mode (stream flipping) | :moneybag: | | | | | |
 | Mirror configuration | :moneybag: | | | | | |
+| DDC via the M1 built-in HDMI | :free: | | :free: | | | |
 | DDC brightness control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC volume control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC input switching | :free: | | :free: | | | :moneybag: |
