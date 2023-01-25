@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment, Dummy Displays, Picture in Picture, Display Overrides - a macOS menubar app.<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.10/BetterDisplay-v1.3.10b.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.3.14/BetterDisplay-v1.3.14.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
@@ -36,9 +36,10 @@
 
 ### Features
 
+- **NEW: DDC control on M2 Pro/Max Macs!**
+- **NEW: DDC control via the built-in HDMI 2.0 port of M1 Macs (M1 Mac mini, M1 MacBook Pro, M1 Mac Studio)**
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
-- DDC control via the built-in HDMI 2.0 port of M1 Macs (M1 Mac mini, M1 MacBook Pro, M1 Mac Studio)
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
 - Change display inputs via DDC on supported displays.
 - Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
