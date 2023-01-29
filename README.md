@@ -36,6 +36,7 @@
 
 ### Features
 
+- **NEW: Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon!**
 - **NEW: DDC control on M2 Pro/Max Macs!**
 - **NEW: DDC control via the built-in HDMI port of Apple Silicon Macs (mini, MacBook Pro, Mac Studio)!**
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
@@ -77,6 +78,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | --- | :-: | :-: | :-: | :-: | :-: | :-: |
 | Custom scaled resolution editing | :free: | | | :moneybag: | | |
 | Native smooth scaling | :moneybag: | | | | | |
+| Disconnect/connect displays | :moneybag: | | :moneybag: | | | |
 | Night Shift for TVs | :free: | | | | | |
 | Display name override | :free: | | | :moneybag: | | |
 | Native, default resolution editing | :free: | | | | | |
@@ -89,9 +91,11 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Full screen streaming | :moneybag: | | | | | |
 | Stream/PIP, stretching, off-centering | :moneybag: | | | | | |
 | Stream/PIP rotation, portrait Sidecar | :moneybag: | | | | | |
+| Stream/PIP crop feature | :moneybag: | | | | | |
 | Teleprompter mode (stream flipping) | :moneybag: | | | | | |
 | Mirror configuration | :moneybag: | | | | | |
 | DDC via the M1 built-in HDMI | :free: | | :free: | | | |
+| DDC for M2 Pro/Max | :free: | | :free: | | | |
 | DDC brightness control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC volume control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC input switching | :free: | | :free: | | | :moneybag: |
@@ -117,12 +121,13 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Custom timings on Intel | | | | :moneybag: | | |
 | Command Line Integration | :hourglass::free: | | :moneybag: | | | |
 | DIY hardware integration | | | :moneybag: | | | |
-| Advanced Brightness syncing | :hourglass::free: | :free: | :moneybag: | | | |
+| Basic brightness syncing | :hourglass::free: | :free: | :moneybag: | | | |
+| Advanced Brightness syncing | :hourglass::moneybag: | | :moneybag: | | | |
 | Presets | :hourglass::moneybag: | | :moneybag: | :moneybag: | | :moneybag: |
 | Schedule based settings | :hourglass::moneybag: | | :moneybag: | | | |
 | App specific settings | :hourglass::moneybag: | | :moneybag: | :moneybag: | | |
 | | | | | | | |
-| Price | $15 | \$0 | $23 | $15/€15 | €20 | $13 |
+| Price | $15/€15 | \$0 | $23 | €14 | €20 | $17 |
 | Trial days | 14 | \- | 14 | 10 | \- | \- |
 
 :free: - Feature is completely free without limitation, even after trial
