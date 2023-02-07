@@ -117,7 +117,8 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | HDR extra brightness calibration | :moneybag: | | | | | |
 | Display config protection | :moneybag: | | | | | |
 | EDID retrieval | :free: | | | :moneybag: | | |
-| EDID override (Intel) | :free: | | | | | |
+| EDID override (Apple Silicon) | :moneybag: | | | | | |
+| EDID override (Intel) | :moneybag: | | | | | |
 | Custom timings on Intel | | | | :moneybag: | | |
 | Command Line Integration | :hourglass::free: | | :moneybag: | | | |
 | DIY hardware integration | | | :moneybag: | | | |
