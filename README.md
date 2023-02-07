@@ -36,7 +36,8 @@
 
 ### Features
 
-- **NEW: Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon!** ([available as beta](https://github.com/waydabber/BetterDisplay/releases))  *
+- **NEW: EDID override support for Apple Silicon Macs!** *
+- **NEW: Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon!** *
 - **NEW: DDC control on M2 Pro/Max Macs!**
 - **NEW: DDC control via the built-in HDMI port of Apple Silicon Macs (mini, MacBook Pro, Mac Studio)!**
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
