@@ -266,6 +266,7 @@ I am thankful for each of you who [contributed to the project](https://opencolle
   
 Generous contributors, who donated $50 or more for the open-source project:
 
+- **David Brown** - $500
 - **Patrick Mast** - $222
 - **Riten Jaiswal** - $200
 - **Wesley** - $200
