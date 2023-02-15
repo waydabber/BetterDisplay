@@ -31,7 +31,7 @@
 **BetterDisplay** is a truly wonderful tool! It let's you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays with Apple Silicon Macs), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
 
 <div align="center">
-<img width="600" alt="Screenshot 2023-02-07 at 20 36 26" src="https://user-images.githubusercontent.com/37590873/217347543-d4c7d30c-37e1-4b1e-914b-3852ea9e56f2.png">
+<img width="600" alt="Screenshot" src="https://user-images.githubusercontent.com/37590873/219129720-053259e1-7165-4d60-b21c-d2292f1c43d7.png">
 </div>
 
 ### Features
