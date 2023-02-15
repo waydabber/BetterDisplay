@@ -1,9 +1,9 @@
-<img src=".github/Icon-1024.png" width="230" alt="App icon" align="left"/>
+<img src="https://user-images.githubusercontent.com/37590873/219133460-9022cd34-6293-4c8b-92a3-1b9616a8e4a2.png" width="230" alt="App icon" align="left"/>
 
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Brightness Adjustment, Dummy Displays, Picture in Picture, Display Overrides - a macOS menubar app.<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.3/BetterDisplay-v1.4.3.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.3/BetterDisplay-v1.4.3.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
