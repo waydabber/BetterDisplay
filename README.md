@@ -2,7 +2,7 @@
 
 <div>
 <h2>BetterDisplay</h2>
-<p>Custom Resolutions, XDR/HDR Extra Brightness, Dummy Displays, Brightness Adjustment, Picture in Picture, Display and EDID overrides.<p>
+<p>Custom Resolutions, XDR/HDR Extra Brightness, Dummy Displays, Brightness Adjustment, Picture in Picture, Display and EDID overrides + more!<p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.3/BetterDisplay-v1.4.3.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="175" alt="Download for macOS"/></a>
 </div>
 
