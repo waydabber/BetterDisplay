@@ -6,9 +6,9 @@
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.3/BetterDisplay-v1.4.3.dmg"><img src=".github/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
-<!--
-
 <br />
+
+<!--
 
 <div align="center">
 <a href="https://github.com/waydabber/BetterDisplay/releases">
