@@ -8,21 +8,21 @@
 
 <br />
 
+<!--
+
 <div align="center">
-<!-- shields -->
-<!-- downloads -->
 <a href="https://github.com/waydabber/BetterDisplay/releases">
 <img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat" alt="downloads"/>
 </a>
-<!-- version -->
 <a href="https://github.com/waydabber/BetterDisplay/releases">
 <img src="https://img.shields.io/github/release/waydabber/BetterDisplay.svg?include_prereleases&style=flat" alt="latest version"/>
 </a>
-<!-- platform -->
 <a href="https://github.com/waydabber/BetterDisplay">
 <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
 </a>
 </div>
+
+-->
   
 <hr>
   
