@@ -8,8 +8,6 @@
 
 <br />
 
-<!--
-
 <div align="center">
 <a href="https://github.com/waydabber/BetterDisplay/releases">
 <img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat" alt="downloads"/>
@@ -21,8 +19,6 @@
 <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
 </a>
 </div>
-
--->
 
 <hr>
   
