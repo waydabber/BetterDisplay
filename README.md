@@ -236,6 +236,7 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 - Native Smooth resolution scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays.
 - Maximum Native Smooth scaling resolutions depend on GPU capabilities and the display's resolution (horizontal framebuffer size limit is 6K for M1/M2, 8K for M1/M2 Pro/Max/Ultra - this translates to 3K and 4K horizontal HiDPI resolutions).
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays.
+- The built-in HDMI port of the 2018 Intel Mac Mini is not supported _(note: if you have this Mac and would like support, please contact me - there is a good chance that with some help with testing support can be added - for newer Macs with the same HDMI chip the same issue was resolved successfully)._
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
 ## Supporting the project / purchasing BetterDisplay Pro
