@@ -232,9 +232,10 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 
 - The app is compatible with all Apple Silicon and Intel Macs running macOS Big Sur, Monterey or Ventura.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
+- The display connect/disconnect feature requires an Apple Silicon Mac running macOS Ventura.
 - Native Smooth resolution scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays.
-- Maximum Native Smooth scaling resolutions depend on GPU capabilities and the display's resolution.
-- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. The HDMI port of Macs do not support DDC (however most USB-C to HDMI dongles do work). Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays.
+- Maximum Native Smooth scaling resolutions depend on GPU capabilities and the display's resolution (horizontal framebuffer size limit is 6K for M1/M2, 8K for M1/M2 Pro/Max/Ultra - this translates to 3K and 4K horizontal HiDPI resolutions).
+- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays.
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
 ## Supporting the project / purchasing BetterDisplay Pro
