@@ -27,10 +27,9 @@
 
 ### Features
 
+- **NEW: BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI)**
 - **NEW: EDID override support for Apple Silicon Macs!** *
 - **NEW: Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (requires macOS Ventura)!** *
-- **NEW: DDC control on M2 Pro/Max Macs!**
-- **NEW: DDC control via the built-in HDMI port of Apple Silicon Macs (mini, MacBook Pro, Mac Studio)!**
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
@@ -88,6 +87,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 | Mirror configuration | :moneybag: | | | | | |
 | DDC via the M1 built-in HDMI | :free: | | :free: | | | |
 | DDC for M2 Pro/Max | :free: | | :free: | | | |
+| DDC for Intel 2018 mini built-in HDMI | :free: | | | | | |
 | DDC brightness control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC volume control | :free: | :free: | :exclamation: | | | :moneybag: |
 | DDC input switching | :free: | | :free: | | | :moneybag: |
@@ -235,7 +235,7 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 - The display connect/disconnect feature requires an Apple Silicon Mac running macOS Ventura.
 - Native Smooth resolution scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays.
 - Maximum Native Smooth scaling resolutions depend on GPU capabilities and the display's resolution (horizontal framebuffer size limit is 6K for M1/M2, 8K for M1/M2 Pro/Max/Ultra - this translates to 3K and 4K horizontal HiDPI resolutions).
-- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays.
+- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays. All built-in ports of all Macs that can officially run the supported macOS versions are supported for DDC communication (including M2 Pro/Max, M1 built-in HDMI, 2018 Intel mini built-in HDMI). 
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
 ## Supporting the project / purchasing BetterDisplay Pro
