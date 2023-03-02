@@ -27,7 +27,7 @@
 
 ### Features
 
-- **NEW: BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI)**
+- **NEW: BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI)** _(note: for 2018 mini HDMI support, please download the latest beta)_
 - **NEW: EDID override support for Apple Silicon Macs!** *
 - **NEW: Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (requires macOS Ventura)!** *
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
