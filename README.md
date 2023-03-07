@@ -37,6 +37,8 @@
 - Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
 - Create any number of dummies (virtual screens) with varying aspect ratios.
 - Enable Night Shift for your TV!
+- Change the resolution easily with alider!
+- Resolution favorites * _(available in the latest beta)_
 - Protect display configuration, forbid auto-switch to VRR etc. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real or dummy displays. *
