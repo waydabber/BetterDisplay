@@ -246,7 +246,7 @@ You can support development by purchasing a BetterDisplay Pro license directly i
 
 The **price of a Pro license is $15 / €15** (+ Sales Tax or VAT). Currency and tax level vary by location (note: you can customize your location during the checkout process and the displayed price will update accordingly and businesses can add their VAT ID for a VAT return).
 
-For more information on licensing and pricing, please read the [license terms](https://github.com/waydabber/BetterDisplay/discussions/739) for the app.
+For more information on licensing and pricing, please read the app's [license terms and refund policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
 
 ### To those who backed the project in the past (Open Collective)
 
