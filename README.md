@@ -240,7 +240,7 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays. All built-in ports of all Macs that can officially run the supported macOS versions are supported for DDC communication (including M2 Pro/Max, M1 built-in HDMI, 2018 Intel mini built-in HDMI). 
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
-## Purchasing BetterDisplay Pro, License Terms, Refund Policy
+## Purchasing BetterDisplay Pro, License Terms & Conditions, Refund Policy
 
 You can support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user).  _Note: a web-based checkout option will be available soon._
 
@@ -248,7 +248,7 @@ The **price of a Pro license is $15 / €15** (+ Sales Tax or VAT). Currency and
 
 Please make an informed purchase decision! The app comes with a generous 14 day unlimited trial (starts when the app is first opened) and several truly useful free features (for personal use only - business users are required to purchase a license) even after the trial is over - this gives ample time and opportunity before a purchase to evaluate the app. Because of this, as a general rule, purchases are final, refund is not available.
 
-For more information on licensing, trial, prices and refund, please read the [License Terms and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
+For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
 
 ### To those who backed the project in the past (Open Collective)
 
