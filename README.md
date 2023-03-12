@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Dummy Displays, Brightness Adjustment, Picture in Picture, Display and EDID overrides + more!<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.3/BetterDisplay-v1.4.3.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.6/BetterDisplay-v1.4.6.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br />
@@ -27,7 +27,7 @@
 
 ### Features
 
-- **NEW: BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI)** _(note: for 2018 mini HDMI support, please download the latest beta)_
+- **NEW: BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI)**
 - **NEW: EDID override support for Apple Silicon Macs!** *
 - **NEW: Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (requires macOS Ventura)!** *
 - Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
@@ -38,7 +38,7 @@
 - Create any number of dummies (virtual screens) with varying aspect ratios.
 - Enable Night Shift for your TV!
 - Change the resolution easily with a slider!
-- Resolution favorites * _(available in the latest beta)_
+- Resolution favorites *
 - Protect display configuration, forbid auto-switch to VRR etc. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real or dummy displays. *
