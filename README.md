@@ -152,7 +152,7 @@ Here are some instructions on how to activate the most seeked-after features of 
 
 With BetterDisplay **you can fully unlock the maximum brightness** of your Apple XDR display as well as your third party HDR capable display.
 
-You don't have to do anything special to enable the display - once you start the app, you can simply use the brightness slider to increase the brightness level beyond 100% to produce up to 1600 nits on your Pro Display XDR. For other HDR displays, the app automatically sets up the maximum brightness upscaling level taking into account the reported maximum panel brightness.
+You don't have to do anything special to enable upscaling on supported displays - once you start the app, you can simply use the brightness slider to increase the brightness level beyond 100% to produce up to 1600 nits on your Pro Display XDR. For other HDR displays (in HDR mode), the app automatically sets up the maximum brightness upscaling level taking into account the reported maximum panel brightness.
 
 Please note that the XDR/HDR upscaling feature requires an **Apple Silicon** Mac!
 
