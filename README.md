@@ -240,19 +240,27 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays. All built-in ports of all Macs that can officially run the supported macOS versions are supported for DDC communication (including M2 Pro/Max, M1 built-in HDMI, 2018 Intel mini built-in HDMI). 
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
-## Purchasing BetterDisplay Pro, License Terms & Conditions, Refund Policy
+## Supporting the development, Purchasing BetterDisplay Pro
 
 You can support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user).  _Note: a web-based checkout option will be available soon._
 
 The **price of a Pro license is $15 / €15** (+ Sales Tax or VAT). Currency and tax level vary by location (note: you can customize your location during the checkout process and the displayed price will update accordingly and businesses can add their VAT ID for a VAT return).
 
+If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
+
+### License Terms & Conditions, Refund Policy
+
 Please make an informed purchase decision! The app comes with a generous 14 day unlimited trial (starts when the app is first opened) and several truly useful free features (for personal use only - business users are required to purchase a license) even after the trial is over - this gives ample time and opportunity before a purchase to evaluate the app. Because of this, as a general rule, purchases are final, refund is not available.
 
 For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
 
-### To those who backed the project in the past (Open Collective)
+### Privacy Policy
 
-- I'd like to thank you for backing the open source project in the past by providing you with a coupon code so you can get a BetterDisplay Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message or opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code (some patience might be needed). Thank you!
+For information about data handled by the app and privacy, please read the app's [Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/1658)!
+
+## A tribute to those who backed the project in the past (Open Collective)
+
+I'd like to thank you for backing the open source project in the past by providing you with a coupon code so you can get a BetterDisplay Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message or opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code (some patience might be needed). Thank you!
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdisplay).
 
@@ -362,12 +370,4 @@ petertriho<br/>
 </tr></table>
   
 </details>
-  
-Please don't forget to star the GitHub page and spread the word about the app. :)
 
-## Privacy
-
-- Licensing uses the third party provider [Paddle](https://www.paddle.com) as backend. This also means that the app communicates over the network with Paddle's servers to verify licensing, trial status and facilitate check-out using Paddle's SDK. Besides data required for licensing purposes by Paddle's services, no other info is transferred over the network. You can read more about Paddle and Privacy [here](https://www.paddle.com/legal/privacy).
-- There is additional data collection in form of automatic crash detection and crash log collection starting from BetterDisplay v1.3.15. This data is handled by the third party provider [Sentry](https://sentry.io). You can read about Sentry and Privacy [here](https://sentry.io/trust/privacy/). Crash logs do not contain any personal data but might contain information about the hardware and software environment in which the app runs.
-- I decided not to have a marketing list (marketing opt-in) of any kind. I also do not build any usage database or collect unique (and not unique) IDs either - besides what Paddle and Sentry collects and presents on its dashboard for me (these are only used to keep track of valid software licenses and for crash analysis purposes).
-- Aside from Paddle and Sentry the only other form of network communication by the app is what is required for the built-in updater (Sparkle) to work in order to receive the update metadata and download the update binary from GitHub.
