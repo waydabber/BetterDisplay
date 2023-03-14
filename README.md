@@ -146,85 +146,21 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 
 ## Usage
 
-Here are some instructions on how to activate the most seeked-after features of the app.
+A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under construction (as a GitHub Wiki) to explain all the features of the app - please stay tunded. Until the Wiki/Guide is complete, you can search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history, most questions have been asked and answered several times over).
+
+Here are some instructions on how to use some of the most seeked-after features of the app:
 
 ### XDR/HDR extra brightness (XDR/HDR upscaling)
 
-With BetterDisplay **you can fully unlock the maximum brightness** of your Apple XDR display as well as your third party HDR capable display.
+With BetterDisplay **you can fully unlock the maximum brightness** of your Apple XDR display as well as your third party HDR capable display. You don't have to do anything special to enable upscaling on supported displays - once you start the app, you can simply use the brightness slider to increase the brightness level beyond 100% to produce up to 1600 nits on your Pro Display XDR. For other HDR displays (in HDR mode), the app automatically sets up the maximum brightness upscaling level taking into account the reported maximum panel brightness.
 
-You don't have to do anything special to enable upscaling on supported displays - once you start the app, you can simply use the brightness slider to increase the brightness level beyond 100% to produce up to 1600 nits on your Pro Display XDR. For other HDR displays (in HDR mode), the app automatically sets up the maximum brightness upscaling level taking into account the reported maximum panel brightness.
-
-Please note that the XDR/HDR upscaling feature requires an **Apple Silicon** Mac!
-
-Some other steps that might be neccessary:
-
-- If you want to use your native Apple keyboard brightness control keys, you need to set up the Accessibility Privileges. Follow the instructions under `Settings` (the gear icon at the bottom of the menu) / `Keyboard` / `Set up Accessibility Permissions`
-- For third party HDR displays, you need to enable HDR mode to use HDR brightness upscaling. You can do so in the app menu by clicking `Enable HDR Mode`. This is not required for XDR displays (these automatically switch to EDR/HDR mode).
-- Please note that on-screen HDR content will tone-map properly when the brightness slider is set to 100% (on third party HDR displays, or 50%-100% on XDR displays)
-
-<div align="center">
-<img width="600" alt="screenshot" src="https://user-images.githubusercontent.com/37590873/196447617-eb386296-9937-4762-b6b4-513ad0e06b66.png">
-</div>
+[For more information on how to use XDR/HDR upscaling, read the wiki entry!](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling)
   
 ### Fully scalable HiDPI desktop with BetterDisplay using native smooth scaling
 
-Some Macs have issues with custom resolutions. Apple Silicon Macs notoriously don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though some 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options for wide displays are too constrained.
+Some Macs have issues with custom resolutions. Some macOS versions don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though some 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options are too limited. BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size**. Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
 
-BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size**. Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
-
-To enable the native smooth scaling feature:
-
-1. Start the app and open the app menu (locate the BetterDisplay icon in the menu bar).
-2. Open `Settings` (the gear icon at the bottom of the menu).
-3. Navigate to the `Displays` section,
-4. Enable the `Edit the default system configuration of this display` feature under the display you want to make scalable, 
-5. Enable the `Set up native smooth resolution scaling` option just below it as it appears.
-6. You can also open `Show advanced settings for native smooth scaling` and enable `Add a near-native HiDPI variant for the native resolution` as well.
-7. If you did this for all the relevant displays, click on the `Apply Changes` button at the bottom of the screen.
-8. Enter your administrator level credentials and then reboot.
-9. After reboot, use the resolution sliders in the app menu to scale the desktop.
-
-<div align="center">
-<img width="600" alt="config" src="https://user-images.githubusercontent.com/37590873/196440045-cf721f83-3f8b-461b-a123-e50d0ae589fa.png">
-</div>
-
-<details>
-<summary><b>Notes and troubleshooting...</b></summary>
-<br/>
-
-- The native smooth scaling option can be enabled on a per display basis, so if you want more of your displays to have this feature, **don't forget to scroll down in the app `Settings` > `Displays` tab and make the setting for each of your displays!** :)
-- The feature is **compatible with macOS Monterey 12.4+, macOS Ventura** and works on natively connected (USB-C, DisplayPort, HDMI) and built-in displays. The maximum allowed scaled (HiDPI) desktop size can't exceed the native display resolution. You'll also need the latest BetterDisplay version.
-- The feature works if the system properly detects the `Native panel pixel resolution`. If this is not correctly shown for your display under `Settings` > `Displays`, please select the `Edit native panel pixel resolution` option and enter the correct values!
-- The slider 100% will be the `Default resolution` (on normally LoDPI display this tends to be the native resoltuion - which will mean the slider maxes out at 100%, on HiDPI display half of the native resolution - which will make the resolution slider max out at 200%). If you want to rescale the resolution slider, change the `Default resolution` to an accessible different resolution than it is set.
-- The maximum resolution that can be set for low PPI displays corresponds to the `Native panel pixel resolution` which is available only as normal resolution (not HiDPI). Converting the native resolution to HIDPI would not make sense (except for some special use cases like screenshot and accessibility zooming quality improvement) - for this or to achieve a higher-than-native-resolution scaling (for extra screen real estate) you can continue to use dummy mirroring.
-- The **maximum horizontal pixel count is constrained on the entry-level M1 configurations to 6K** (on M1 Pro/Max/Ultra to 8K) which might pose an issue to ultra-wide display users trying to go beyond a certain horizontal resolution.
-</details>
-
-### Alternate method for HiDPI scaling: dummy mirroring
-
-An alternative (for some scenarios the only valid) approach is to create a mirrored dummy in order to use custom resolutions. This works for Sidecar and other non-native devices (like DisplayLink) and also enables scaling beyond the native resolution of the display panel on Apple Silicon (for added screen real estate). Follow these steps to do this:
-
-1. Start the app and locate the app menu (you'll see a BetterDisplay icon in the menu bar).
-2. In the app menu's Tools section locate the `Create New Dummy` option
-3. Click on the `Create and Associate to...` option at the bottom that matches your display.
-4. Connect the created dummy and mirror it to the display.
-
-It's that simple. Afterwards you should see your dummy mirrored to your display where you can use the slider to change the resolution quickly.
-
-Please note that the dummy/virtual screen mirroring method is a workaround and have some drawbacks compared to native smooth scaling - there might be sleep issues, color issues (flickering on some setups), mouse cursor related problems on Monterey 12.5 and beyond. Whenever possible, it is advised to use the native smooth scaling method.
-
-To help with mouse cursor related macOS bugs when a virtual screen is mirrored, you can go to `System Settings` > `Accessibility` > `Display` > `Pointer size` and slightly increase the pointer size above normal.
-
-<details>
-<summary><b>Notes and troubleshooting for the dummy mirroring method...</b></summary>
-<br/>
-  
-- Due to the finnicky nature of macOS display and mirror management, sometimes setting up the mirror fails or the mirror reverts to work 'the other way around' (namely instead of the dummy being mirrored to the display, the display is being mirrored to the dummy). In this case you should stop the mirroring (select `Mirror Target` > `Stop Mirroring`) and reconfigure the mirror under the dummy in the display list `Mirror Target` > `Display Name`.
-- Sometimes the created mirror might not be the main display (the display with the menu bar and the one where windows are located by default) or a created but invisible dummy becomes the main display which makes moving forward difficult. You can easily change any display or mirror set to be main by simply choosing `Settings` > `Set as main` under the display in the app menu.
-- If you find that your new dummy or dummy mirror is not located where you actually want it to be relative to your other displays, you can easily move around a display using `Settings` > `Move Next to ...` from the app menu.
-- You can configure both mirroring, main status, resolution and everything else in System Preferences the old fashioned way as well. If you are not using Pro, you actually need to do this. Follow the [this guide](https://github.com/waydabber/BetterDisplay/discussions/477) on how to do this.
-- If you really can't set up what you want, just hop over to the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp) where you can lay out your problem and eventually we'll help you out! :)
-</details>
+[To read about more on how to set up HiDPI resolutions and flexible scaling, read the wiki entry!](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop)
 
 ## Discord channel
 
@@ -240,7 +176,7 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays. All built-in ports of all Macs that can officially run the supported macOS versions are supported for DDC communication (including M2 Pro/Max, M1 built-in HDMI, 2018 Intel mini built-in HDMI). 
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
-## Supporting the development, Purchasing BetterDisplay Pro
+## Supporting the development, purchasing BetterDisplay Pro
 
 You can support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user).  _Note: a web-based checkout option will be available soon._
 
@@ -258,11 +194,9 @@ For more information on licensing, trial, prices and refund, please read the [Li
 
 For information about data handled by the app and privacy, please read the app's [Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/1658)!
 
-## A tribute to those who backed the project in the past (Open Collective)
+## Thanks to those who backed the project in its Open Source phase
 
-I'd like to thank you for backing the open source project in the past by providing you with a coupon code so you can get a BetterDisplay Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message or opening a separate discussion and posting a screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code (some patience might be needed). Thank you!
-
-I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdisplay).
+I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdisplay) in its initial open source phase. I'd like to express my gratitude by providing you with a coupon code so you can get a Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message with the screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code to get the app for free!
 
 <details>
 <summary>Notabe contributors of the open-source project</summary>
