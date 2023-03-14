@@ -178,11 +178,11 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 
 ## Supporting the development, purchasing BetterDisplay Pro
 
-You can support development by purchasing a BetterDisplay Pro license directly in the app. Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`. Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user).  _Note: a web-based checkout option will be available soon._
+You can support development by **purchasing a Pro license directly in the app for $15 / €15** (+ Sales Tax or VAT may apply). Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
 
-The **price of a Pro license is $15 / €15** (+ Sales Tax or VAT). Currency and tax level vary by location (note: you can customize your location during the checkout process and the displayed price will update accordingly and businesses can add their VAT ID for a VAT return).
+[For more information on purchasing Pro, please click here!](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
 
-If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
+Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
 
 ### License Terms & Conditions, Refund Policy
 
