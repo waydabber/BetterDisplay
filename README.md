@@ -27,10 +27,10 @@
 
 ### Features
 
-- **NEW: BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI)**
-- **NEW: EDID override support for Apple Silicon Macs!** *
-- **NEW: Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (requires macOS Ventura)!** *
-- Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon - now even without mirroring a dummy (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
+- BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
+- EDID override support for both Intel and Apple Silicon Macs! *
+- Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (requires macOS Ventura)!**
+- Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays on Apple Silicon using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - Reach the full brightness potential of your XDR or HDR display - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
 - Change display inputs via DDC on supported displays.
@@ -38,7 +38,7 @@
 - Create any number of dummies (virtual screens) with varying aspect ratios.
 - Enable Night Shift for your TV!
 - Change the resolution easily with a slider!
-- Resolution favorites *
+- Define favorite resolutions and reach them via the app menu, resolution slider or keyboard shortcuts. *
 - Protect display configuration, forbid auto-switch to VRR etc. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real or dummy displays. *
@@ -52,11 +52,11 @@
 - Easily move around displays relative to each other using the app menu.
 - Quickly designate a display to be main display.
 - Associate dummies with displays for auto connect/disconnect.
-- Keyboard shortcuts for basic operations.
+- Keyboard shortcuts for brightness and audio control.
 - Advanced keyboard shortcuts support. *
 - Custom dummies (resolution, orientation, naming). *
 - Create a dummy optimized for a real display. *
-- Export display EDID and show detailed display information (Apple Silicon).
+- Export display EDID and show detailed display information (Intel and Apple Silicon).
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
 
@@ -133,7 +133,7 @@ _Note: featues marked with an asterisk (*) require a Pro license. Some features 
 
 :hourglass: - Feature is planned
 
-<i>Please note that this comparison is only meant to give you a big picture, does not contain all secondary and derived functionalities (free or paid) for each software and might not be a fair representation in every respect as I am not an expert on the alternative apps. I am pretty sure the devs of respective alternatives would feel the comparison is skewed in some way or I did miss an important aspect or unique advantage of the competing solution. For an educated decision you might want to try all apps that offer some sort of trial. If you feel the comparison is not fair, drop me a note a the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp)!</i>
+<i>Please note that this comparison is only meant to give you a big picture, does not contain all secondary and derived functionalities (free or paid) for each software, may not be up-to-date and may not be a fair representation in every respect as I am not an expert on the alternative apps. I am pretty sure the devs of respective alternatives would feel the comparison is skewed in some way or I did miss an important aspect or unique advantage of the competing solution. For an educated decision you might want to try all apps that offer some sort of trial. If you feel the comparison is not fair, drop me a note at the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp)!</i>
 
 </details>
 
@@ -171,9 +171,8 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 - The app is compatible with all Apple Silicon and Intel Macs running macOS Big Sur, Monterey or Ventura.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
 - The display connect/disconnect feature requires an Apple Silicon Mac running macOS Ventura.
-- Native Smooth resolution scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays.
-- Maximum Native Smooth scaling resolutions depend on GPU capabilities and the display's resolution (horizontal framebuffer size limit is 6K for M1/M2, 8K for M1/M2 Pro/Max/Ultra - this translates to 3K and 4K horizontal HiDPI resolutions).
-- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks (especially DisplayLink ones) might not support DDC. Software brightness control is available for all displays. All built-in ports of all Macs that can officially run the supported macOS versions are supported for DDC communication (including M2 Pro/Max, M1 built-in HDMI, 2018 Intel mini built-in HDMI). 
+- Native smooth scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays. Maximum native smooth scaling resolutions depend on the GPU capabilities and the display's resolution (horizontal width limit is 6144 pixels for M1/M2, 7680 pixels for M1/M2 Pro/Max/Ultra).
+- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication. 
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
 ## Supporting the development, purchasing BetterDisplay Pro
