@@ -162,10 +162,6 @@ Some Macs have issues with custom resolutions. Some macOS versions don't allow s
 
 [To read about more on how to set up HiDPI resolutions and flexible scaling, read the wiki entry!](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop)
 
-## Discord channel
-
-You can join the discussion on the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp). If you have any issues or questions, don't hesitate to ask!
-
 ## Compatibility
 
 - The app is compatible with all Apple Silicon and Intel Macs running macOS Big Sur, Monterey or Ventura.
@@ -184,6 +180,10 @@ You can support development by **purchasing a Pro license directly in the app fo
 Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
 
 For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
+
+## Discord channel
+
+You can join the discussion on the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp). If you have any issues or questions, don't hesitate to ask!
 
 ## Privacy
 
