@@ -184,13 +184,9 @@ You can support development by **purchasing a Pro license directly in the app fo
 
 Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
 
-### License Terms & Conditions, Refund Policy
-
-Please make an informed purchase decision! The app comes with a generous 14 day unlimited trial (starts when the app is first opened) and several truly useful free features (for personal use only - business users are required to purchase a license) even after the trial is over - this gives ample time and opportunity before a purchase to evaluate the app. Because of this, as a general rule, purchases are final, refund is not available.
-
 For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
 
-### Privacy Policy
+## Privacy
 
 For information about data handled by the app and privacy, please read the app's [Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/1658)!
 
