@@ -144,13 +144,15 @@ _Note: featues marked with an asterisk (*) require a [Pro license](https://githu
 1. Start the app.
 1. Use the app menu bar item to interact with the app.
 
-## Getting BetterDisplay Pro
+## Getting a Pro license to unlock all features of the app
 
-You can support development by **[purchasing a Pro license for $15 / €15](https://betterdisplay.pro/buy)** (+ Sales Tax or VAT may apply). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
+You can support development and unlock all features of the app by **[purchasing a Pro license for $15 / €15](https://betterdisplay.pro/buy)** (+ Sales Tax or VAT may apply). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
 
 [For more information on purchasing Pro, please click here!](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
 
-Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
+Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). A 14-day trial is also available to fully evaulate BetterDisplay Pro before purchase.
+
+If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
 
 For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
 
