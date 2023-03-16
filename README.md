@@ -60,7 +60,7 @@
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
 
-_Note: featues marked with an asterisk (*) require a Pro license. Some features may be available in the latest pre-release version only._
+_Note: featues marked with an asterisk (*) require a [Pro license](https://betterdisplay.pro/buy). Some features may be available in the latest pre-release version only._
 
 <details>
 <summary><b>For a more detailed list and comparison with some popular alternatives, click here...</b></summary>
