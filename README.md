@@ -173,7 +173,7 @@ Some Macs have issues with custom resolutions. Some macOS versions don't allow s
 
 ## Supporting the development, purchasing BetterDisplay Pro
 
-You can support development by **purchasing a Pro license directly in the app for $15 / €15** (+ Sales Tax or VAT may apply). Just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
+You can support development by **[purchasing a Pro license for $15 / €15](https://betterdisplay.pro/buy)** (+ Sales Tax or VAT may apply). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
 
 [For more information on purchasing Pro, please click here!](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
 
