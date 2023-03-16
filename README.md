@@ -158,19 +158,9 @@ For more information on licensing, trial, prices and refund, please read the [Li
 
 ## Using the app
 
-A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under construction (as a GitHub Wiki) to explain all the features of the app - please stay tunded. Until the Wiki/Guide is complete, you can search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history, most questions have been asked and answered several times over).
+A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under construction to explain all the features. Some useful guides are already available covering some of the more popular features of the app. More to come - please stay tuned!
 
-### XDR/HDR extra brightness (XDR/HDR upscaling)
-
-With BetterDisplay **you can fully unlock the maximum brightness** of your Apple XDR display as well as your third party HDR capable display. You don't have to do anything special to enable upscaling on supported displays - once you start the app, you can simply use the brightness slider to increase the brightness level beyond 100% to produce up to 1600 nits on your Pro Display XDR. For other HDR displays (in HDR mode), the app automatically sets up the maximum brightness upscaling level taking into account the reported maximum panel brightness.
-
-[For more information on how to use XDR/HDR upscaling, read the wiki entry!](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling)
-  
-### Fully scalable HiDPI desktop with BetterDisplay using native smooth scaling
-
-Some Macs have issues with custom resolutions. Some macOS versions don't allow sub-4K resolution displays to have HiDPI ("Retina") resolutions even though some 1440p display would greatly benefit from having a HiDPI "Retina" mode. On other Macs the resolution options are too limited. BetterDisplay solves the problem by **unlocking your screens making them fully scalable natively while providing a nice HiDPI resolution slider to freely scale the desktop size**. Also available is the option to create a flexible virtual "dummy" displays that support an unprecedented range of Retina resolutions. You can then utilize this dummy display as a mirror source for your display achieving any HiDPI resolution or for other purposes.
-
-[To read about more on how to set up HiDPI resolutions and flexible scaling, read the wiki entry!](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop)
+Until the Wiki/Guide is complete, you can search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history, most questions have been asked and answered several times over).
 
 ## Compatibility
 
