@@ -144,11 +144,19 @@ _Note: featues marked with an asterisk (*) require a [Pro license](https://githu
 1. Start the app.
 1. Use the app menu bar item to interact with the app.
 
-## Usage
+## Getting BetterDisplay Pro
+
+You can support development by **[purchasing a Pro license for $15 / €15](https://betterdisplay.pro/buy)** (+ Sales Tax or VAT may apply). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
+
+[For more information on purchasing Pro, please click here!](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
+
+Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
+
+For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
+
+## Using the app
 
 A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under construction (as a GitHub Wiki) to explain all the features of the app - please stay tunded. Until the Wiki/Guide is complete, you can search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history, most questions have been asked and answered several times over).
-
-Here are some instructions on how to use some of the most seeked-after features of the app:
 
 ### XDR/HDR extra brightness (XDR/HDR upscaling)
 
@@ -171,23 +179,13 @@ Some Macs have issues with custom resolutions. Some macOS versions don't allow s
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication. 
 - The app is compatible with headless Macs to create custom dummy resolutions for remote access.
 
-## Supporting the development, purchasing BetterDisplay Pro
+## Privacy
 
-You can support development by **[purchasing a Pro license for $15 / €15](https://betterdisplay.pro/buy)** (+ Sales Tax or VAT may apply). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
-
-[For more information on purchasing Pro, please click here!](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
-
-Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
-
-For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
+For information about data handled by the app and privacy, please read the app's [Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/1658)!
 
 ## Discord channel
 
 You can join the discussion on the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp). If you have any issues or questions, don't hesitate to ask!
-
-## Privacy
-
-For information about data handled by the app and privacy, please read the app's [Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/1658)!
 
 ## Thanks to those who backed the project in its Open Source phase
 
