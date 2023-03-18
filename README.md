@@ -25,7 +25,7 @@
 <img width="600" alt="Screenshot" src="https://user-images.githubusercontent.com/37590873/219129720-053259e1-7165-4d60-b21c-d2292f1c43d7.png">
 </div>
 
-### Features
+## Features
 
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
@@ -137,14 +137,11 @@ _Note: featues marked with an asterisk (*) require a [Pro license](https://githu
 
 </details>
 
-## Installation
-
-1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
-1. Open the DMG file and move the app to Applications folder on your Mac as instructed.
-1. Start the app.
-1. Use the app menu bar item to interact with the app.
-
 ## Getting a Pro license to unlock all features of the app
+
+<div align="center">
+<a href="https://betterdisplay.pro/buy"><img width="400" alt="payment" src="https://user-images.githubusercontent.com/37590873/226107830-8570d4dd-fde3-463d-a1b6-738c42226102.png"></a>
+</div>
 
 You can support development and unlock all features of the app by **[purchasing a Pro license for $15 / €15](https://betterdisplay.pro/buy)** (+ Sales Tax or VAT may apply). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
 
@@ -155,6 +152,13 @@ Please note that even if you don't buy the app, you can still use many of the fe
 If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
 
 For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
+
+## Installation
+
+1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
+1. Open the DMG file and move the app to Applications folder on your Mac as instructed.
+1. Start the app.
+1. Use the app menu bar item to interact with the app.
 
 ## Using the app
 
