@@ -169,7 +169,7 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 
 ## Compatibility
 
-- The app is compatible with all Apple Silicon and Intel Macs running macOS Mojave (at least 10.14.6 required), Catalina, Big Sur, Monterey or Ventura.
+- The latest version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Ventura**, **Monterey**, **Big Sur**, **Catalina** or **Mojave** (at least 10.14.6 required).
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
 - The display connect/disconnect feature requires an Apple Silicon Mac running macOS Ventura.
 - Native smooth scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays on Apple Silicon. For Intel there is no such limitation.
