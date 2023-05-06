@@ -19,7 +19,7 @@
   
 ## About
 
-**BetterDisplay** is a truly wonderful tool! It let's you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays with Apple Silicon Macs), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
+**BetterDisplay** is a truly wonderful tool! It lets you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays with Apple Silicon Macs), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
 
 <div align="center">
 <img width="600" alt="Screenshot" src="https://user-images.githubusercontent.com/37590873/219129720-053259e1-7165-4d60-b21c-d2292f1c43d7.png">
@@ -61,7 +61,7 @@
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
 
-_Note: featues marked with an asterisk (*) require a [Pro license](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License). Some features may be available in the latest pre-release version only._
+_Note: features marked with an asterisk (*) require a [Pro license](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License). Some features may be available in the latest pre-release version only._
 
 <details>
 <summary><b>For a more detailed list and comparison with some popular alternatives, click here...</b></summary>
