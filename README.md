@@ -29,7 +29,7 @@
 
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
-- Disconnect and reconnect displays (removing them from the display layout and adding them back) on Intel (pre-release app version required) and Apple Silicon (macOS Ventura required for Apple Silicon Macs)!**
+- Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
 - Option to auto-disconnect built-in screen upon connecting an external display (note: [set up under Settings/Advanced](https://user-images.githubusercontent.com/37590873/228214956-49466074-d045-4d4a-b0c9-11832941bde1.png)). *
 - [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
@@ -171,7 +171,7 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 
 - The latest version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Ventura**, **Monterey**, **Big Sur**, **Catalina** or **Mojave** (at least 10.14.6 required).
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
-- The display connect/disconnect feature requires Intel (all macOS versions supported - pre-release app version required) or an Apple Silicon Mac running macOS Ventura. External display sleep/suspend feature is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays and backlight off for Apple and built-in displays).
+- The display connect/disconnect feature requires an Apple Silicon Mac running macOS Ventura or Intel (all macOS versions supported - on Intel the feature is considered experimental and does cause issues on some configurations). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays and backlight off for Apple and built-in displays).
 - Native smooth scaling requires macOS Ventura or Monterey 12.4 (or newer) and natively connected displays on Apple Silicon. For Intel there is no such limitation.
 - Maximum native smooth scaling resolutions depend on the GPU capabilities and the display's resolution (horizontal width limit is 6144 pixels for M1/M2, 7680 pixels for M1/M2 Pro/Max/Ultra).
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication. 
