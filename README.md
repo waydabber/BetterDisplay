@@ -30,7 +30,7 @@
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
-- Option to auto-disconnect built-in screen upon connecting an external display (note: [set up under Settings/Advanced](https://user-images.githubusercontent.com/37590873/228214956-49466074-d045-4d4a-b0c9-11832941bde1.png)). *
+- Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: [set up under Settings/Advanced](https://user-images.githubusercontent.com/37590873/228214956-49466074-d045-4d4a-b0c9-11832941bde1.png)). *
 - [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
