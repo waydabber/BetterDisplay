@@ -10,7 +10,7 @@
 
 <div align="center">
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat&color=blue" alt="downloads"/></a>
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/release/waydabber/BetterDisplay.svg?style=flat&color=blue" alt="latest version"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/release/waydabber/BetterDisplay.svg?include_prereleases&style=flat&color=blue" alt="latest version"/>
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat&color=blue" alt="platform"/></a>
 <a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/discord/903276571773771796?label=chat&style=flat&color=blue&logo=discord" alt="platform"/></a>
 </div>
@@ -169,7 +169,7 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 
 ## Compatibility
 
-- The latest version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma** (beta), **Ventura**, **Monterey**, **Big Sur**, **Catalina** or **Mojave** (at least 10.14.6 required).
+- The latest stable version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma** (beta), **Ventura**, **Monterey**, **Big Sur**, **Catalina** or **Mojave** (at least 10.14.6 required). The (currently pre-release) v2.x versions require macOS Monterey 12.4 or higher.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
 - The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or Intel (all macOS versions supported - on Intel the feature is considered experimental and does cause issues on some configurations). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays and backlight off for Apple and built-in displays).
 - Native smooth scaling requires macOS Monterey 12.4 (or newer) and natively connected displays on Apple Silicon. For Intel there is no such limitation.
