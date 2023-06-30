@@ -23,9 +23,9 @@
 
 <div align="center">
 <img width="700" alt="Screenshot_v202" src="https://github.com/waydabber/BetterDisplay/assets/37590873/c11070d5-6f12-43fb-b8d2-d88c01a268c3">
-</div>
 
-_Note: screenshot shows pre-release version v2.0.2 running on macOS Sonoma (the v2.x version is a free update for those who purchase v1.x until a stable version is released). Pre-releases are available on the [Releases page](https://github.com/waydabber/BetterDisplay/releases)!_
+_Screenshot shows pre-release version v2.0.2 running on macOS Sonoma._
+</div>
 
 ## Features
 
