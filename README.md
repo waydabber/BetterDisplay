@@ -25,11 +25,11 @@
 <img width="700" alt="Screenshot_v202" src="https://github.com/waydabber/BetterDisplay/assets/37590873/c11070d5-6f12-43fb-b8d2-d88c01a268c3">
 </div>
 
-Note: screenshot shows pre-release version v2.0.2 running on macOS Sonoma (the v2.x version is a free update for those who purchase v1.x until a stable version is released). Pre-releases are available on the [Releases page](https://github.com/waydabber/BetterDisplay/releases)!
+_Note: screenshot shows pre-release version v2.0.2 running on macOS Sonoma (the v2.x version is a free update for those who purchase v1.x until a stable version is released). Pre-releases are available on the [Releases page](https://github.com/waydabber/BetterDisplay/releases)!_
 
 ## Features
 
-- **NEW: Full macOS Sonoma Beta compatibility with the pre-release version v2.x pre-release. The v2.x version will-bee a free update for those who purchase v1.x.** Pre-releases are available on the [Releases page](https://github.com/waydabber/BetterDisplay/releases).
+- **NEW: Full macOS Sonoma Beta compatibility with the pre-release version v2.x pre-release. The v2.x version will be a free update for those who purchase v1.x.** Pre-releases are available on the [Releases page](https://github.com/waydabber/BetterDisplay/releases).
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
