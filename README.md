@@ -22,11 +22,14 @@
 **BetterDisplay** is a truly wonderful tool! It lets you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays with Apple Silicon Macs), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
 
 <div align="center">
-<img width="600" alt="Screenshot" src="https://user-images.githubusercontent.com/37590873/219129720-053259e1-7165-4d60-b21c-d2292f1c43d7.png">
+<img width="700" alt="Screenshot_v202" src="https://github.com/waydabber/BetterDisplay/assets/37590873/c11070d5-6f12-43fb-b8d2-d88c01a268c3">
 </div>
+
+Note: screenshot shows pre-release version v2.0.2 running on macOS Sonoma (the v2.x version is a free update for those who purchase v1.x until a stable version is released). Pre-releases are available on the [Releases page](https://github.com/waydabber/BetterDisplay/releases)!
 
 ## Features
 
+- **NEW: Full macOS Sonoma Beta compatibility with the pre-release version v2.x pre-release. The v2.x version will-bee a free update for those who purchase v1.x.** Pre-releases are available on the [Releases page](https://github.com/waydabber/BetterDisplay/releases).
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
