@@ -2,7 +2,7 @@
 
 <div>
 <h2>BetterDisplay</h2>
-<p>Custom Resolutions, XDR/HDR Extra Brightness, Dummy Displays, Brightness Adjustment, Picture in Picture, Display and EDID overrides + more!<p>
+<p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Brightness Adjustment, Picture in Picture, Display and EDID overrides + more!<p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="175" alt="Download for macOS"/></a>
 </div>
 
@@ -19,7 +19,7 @@
   
 ## About
 
-**BetterDisplay** is a truly wonderful tool! It lets you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays with Apple Silicon Macs), **full dimming** to black, helps you **create and manage virtual displays (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
+**BetterDisplay** is a truly wonderful tool! It lets you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible displays with Apple Silicon Macs), **full dimming** to black, helps you **create and manage virtual screens (dummies)** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** easily from the menu bar.
 
 <div align="center">
 <img width="700" alt="Screenshot_v202" src="https://github.com/waydabber/BetterDisplay/assets/37590873/c11070d5-6f12-43fb-b8d2-d88c01a268c3">
@@ -39,27 +39,27 @@ _Screenshot shows pre-release version v2.0.2 running on macOS Sonoma._
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
 - Change display inputs via DDC on supported displays.
 - Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
-- Create any number of dummies (virtual screens) with varying aspect ratios.
+- Create any number of virtual screens (dummies) with varying aspect ratios.
 - Enable Night Shift for your TV!
 - Change the resolution easily with a slider!
 - Define favorite resolutions and reach them via the app menu, resolution slider or keyboard shortcuts. *
 - Protect display configuration, forbid auto-switch to VRR etc. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
-- Create Picture in Picture window for any real or dummy displays. *
-- Redirect your display's contents (real or dummy) to an other screen via streaming. *
+- Create Picture in Picture window for any real display or virtual screen (dummy). *
+- Redirect your display's contents (real or virtual) to an other screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
-- Scale Sidecar resolutions and portrait SideCar support (via dummy full screen streaming). *
+- Scale Sidecar resolutions and portrait SideCar support (via virtual screen full screen streaming). *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
-- Easily change the resolution of your real and dummy displays via a slider (or submenu) from the menubar.
+- Easily change the resolution of your real displays and virtual screens via a slider (or submenu) from the menubar.
 - Quickly accessible refresh rate and screen rotation menu.
 - Simplify creating mirrored sets. *
 - Easily move around displays relative to each other using the app menu.
 - Quickly designate a display to be main display.
-- Associate dummies with displays for auto connect/disconnect.
+- Associate virtual screens (dummies) with displays for auto connect/disconnect.
 - Keyboard shortcuts for brightness and audio control.
 - Advanced keyboard shortcuts support. *
-- Custom dummies (resolution, orientation, naming). *
-- Create a dummy optimized for a real display. *
+- Custom virtual screens(dummies) (resolution, orientation, naming etc). *
+- Create a virtual screen optimized for a real display. *
 - Export display EDID and show detailed display information (Intel and Apple Silicon).
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
@@ -79,12 +79,12 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 | Night Shift for TVs | :free: | | | | | |
 | Display name override | :free: | | | :moneybag: | | |
 | Native, default resolution editing | :free: | | | | | |
-| Dummy display creation | :free: | | | | | |
-| Dummy-display association | :free: | | | | | |
+| Virtual screen (dummy) creation | :free: | | | | | |
+| Virtual screen association | :free: | | | | | |
 | Display mode selector menu | :free: | | :free: | :moneybag: | | |
 | Resolution slider | :free: | | | | | |
 | Picture in Picture | :moneybag: | | | | | |
-| Custom dummies | :moneybag: | | | | | |
+| Custom virtual sceens (dummies) | :moneybag: | | | | | |
 | Full screen streaming | :moneybag: | | | | | |
 | Stream/PIP, stretching, off-centering | :moneybag: | | | | | |
 | Stream/PIP rotation, portrait Sidecar | :moneybag: | | | | | |
@@ -178,7 +178,7 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 - Native smooth scaling requires macOS Monterey 12.4 (or newer) and natively connected displays on Apple Silicon. For Intel there is no such limitation.
 - Maximum native smooth scaling resolutions depend on the GPU capabilities and the display's resolution (horizontal width limit is 6144 pixels for M1/M2, 7680 pixels for M1/M2 Pro/Max/Ultra).
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication. 
-- The app is compatible with headless Macs to create custom dummy resolutions for remote access.
+- The app is compatible with headless Macs to create custom virtual screen (dummy) resolutions for remote access.
 
 ## Privacy
 
