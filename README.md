@@ -1,4 +1,4 @@
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://user-images.githubusercontent.com/37590873/219133460-9022cd34-6293-4c8b-92a3-1b9616a8e4a2.png" width="230" alt="App icon" align="left"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/waydabber/BetterDisplay/assets/37590873/c9eaae81-78b8-4bd7-aeea-0ec445f1b0ea" width="230" alt="App icon" align="left"/></a>
 
 <div>
 <h2>BetterDisplay</h2>
