@@ -174,7 +174,7 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 
 ## Compatibility
 
-- The latest stable version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Ventura**, **Monterey**, **Big Sur**, **Catalina** and **Mojave**. The (currently pre-release) v2.x version requires macOS Monterey 12.4 or higher and is recommended with macOS **Sonoma** betas.
+- The latest stable version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Ventura**, **Monterey**, **Big Sur**, **Catalina** and **Mojave**. The (currently pre-release) v2.x version requires the latest macOS Monterey or newer and is recommended with macOS **Sonoma** betas.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
 - The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or Intel (all macOS versions supported - on Intel the feature is considered experimental and does cause issues on some configurations). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays and backlight off for Apple and built-in displays).
 - Native smooth scaling requires macOS Monterey 12.4 (or newer) and natively connected displays on Apple Silicon. For Intel there is no such limitation.
