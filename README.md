@@ -4,7 +4,7 @@
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Brightness Adjustment, Picture in Picture, Display and EDID overrides & more!<p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
-<sub>Also available <a href="https://github.com/waydabber/BetterDisplay/releases/tag/v2.0.7">the all-new v2.0.7</a> version (Release Candidate)!</sub>
+<sub>Also available: <a href="https://github.com/waydabber/BetterDisplay/releases/tag/v2.0.7">the all-new v2.0.7</a> version (release candidate)!</sub>
 </div>
 
 <br />
