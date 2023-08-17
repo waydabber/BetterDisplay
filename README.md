@@ -128,7 +128,7 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 | Schedule based settings | :hourglass::moneybag: | | :moneybag: | | | |
 | App specific settings | :hourglass::moneybag: | | :moneybag: | :moneybag: | | |
 | | | | | | | |
-| Price | $15/€15 | \$0 | $23 | €14 | €20 | $17 |
+| Price | $18/€18 | \$0 | $23 | €14 | €20 | $17 |
 | Trial days | 14 | \- | 14 | 10 | \- | \- |
 
 :free: - Feature is completely free without limitation, even after trial
@@ -149,7 +149,7 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 <a href="https://betterdisplay.pro/buy"><img width="500" alt="Screenshot 2023-03-18 at 14 07 43" src="https://user-images.githubusercontent.com/37590873/226108216-061249be-3d16-4674-bced-0ddec91861f8.png"></a>
 </div>
 
-You can support development and unlock all features of the app by **[purchasing a Pro license for $15 / €15](https://betterdisplay.pro/buy)** (+ Sales Tax or VAT may apply). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
+You can support development and unlock all features of the app by **[purchasing a Pro license for $18 / €18](https://betterdisplay.pro/buy)** (Sales Tax or VAT may also apply depending on selected territory). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
 
 [More information on purchasing Pro & payment methods](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
 
