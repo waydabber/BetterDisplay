@@ -1,10 +1,10 @@
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/waydabber/BetterDisplay/assets/37590873/c9eaae81-78b8-4bd7-aeea-0ec445f1b0ea" width="230" alt="App icon" align="left"/></a>
 
 <div>
-<h2>BetterDisplay</h2>
+<h2>BetterDisplay 2</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Brightness Adjustment, Picture in Picture, Display and EDID overrides & more!<p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.0.8/BetterDisplay-v2.0.8.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
-<sub>Not running macOS Monterey or newer? <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">Get the the v1.4.x version</a> (for macOS Mojave and up)!</sub>
+<sub>Not on macOS Monterey or newer? Get the the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.x version</a> (macOS Mojave and up)!</sub>
 </div>
 
 <br />
