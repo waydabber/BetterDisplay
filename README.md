@@ -31,7 +31,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 
 ## Features
 
-- **NEW: Updated UI, macOS Sonoma (Beta) compatibility and various improvements with the v2.x version. A free update for all Pro users!**
+- **NEW: Updated UI, macOS Sonoma (Beta) compatibility and various improvements with the v2.x version!**
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
