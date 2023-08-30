@@ -172,6 +172,18 @@ A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under c
 
 Until the Wiki/Guide is complete, you can search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history, most questions have been asked and answered several times over).
 
+## Localization
+
+The app now supports localization (as of v2.0.9). Currently the app is available in the following languages.
+
+- **Chinese, Simplified** (100%) - thanks to **[@brukaya](https://discord.com/channels/903276571773771796/1142501637961826404/1142861805190926406)** - #2145
+- **English** (100%) - language of app development
+- **Japanese** (100%) - thanks to  **[@SakiPapa](https://github.com/SakiPapa)**
+
+Special thanks to everybody who has contributed and is contributing to the localization effort!
+
+If you want BetterDisplay in your language and willing to contribute to the localization effort, hop over to the [Localization forum at the app's Discord channel](https://discord.com/channels/903276571773771796/1142501637961826404). More formal instructions will be laid out in a wiki entry in the near future!
+
 ## Compatibility
 
 - The current v2.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma** (beta), **Ventura** and **Monterey** (macOS 12.4 and up, latest recommended).
