@@ -50,7 +50,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Create Picture in Picture window for any real display or virtual screen (dummy). *
 - Redirect your display's contents (real or virtual) to an other screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
-- Scale Sidecar resolutions and portrait SideCar support (via virtual screen full screen streaming). *
+- [Scale Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
 - Easily change the resolution of your real displays and virtual screens via a slider (or submenu) from the menubar.
 - Quickly accessible refresh rate and screen rotation menu.
