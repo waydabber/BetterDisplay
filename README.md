@@ -180,9 +180,11 @@ The app now supports localization (as of v2.0.9). Currently the app is available
 - **English** (100%) - language of app development
 - **Japanese** (100%) - thanks to  **[@SakiPapa](https://github.com/SakiPapa)**
 
+More languages are being added continuously.
+
 Special thanks to everybody who has contributed and is contributing to the localization effort!
 
-If you want BetterDisplay in your language and willing to contribute to the localization effort, hop over to the [Localization forum at the app's Discord channel](https://discord.com/channels/903276571773771796/1142501637961826404). More formal instructions will be laid out in a wiki entry in the near future!
+If you want BetterDisplay in your language and willing to contribute to the localization effort, [check out the instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
 
 ## Compatibility
 
