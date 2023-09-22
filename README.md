@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay 2</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Display Disconnect, Display and EDID overrides & More!<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.0.9/BetterDisplay-v2.0.9.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.0.10/BetterDisplay-v2.0.10.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
 <sub>Not on macOS Monterey or newer? Get the the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.x version</a> (macOS Mojave and up)!</sub>
 </div>
 
@@ -174,17 +174,19 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 
 ## Localization
 
-The app now supports localization (as of v2.0.9). Currently the app is available in the following languages.
+The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
 
-- **Chinese, Simplified** (100%) - thanks to **[@brukaya](https://discord.com/channels/903276571773771796/1142501637961826404/1142861805190926406)** - #2145
-- **English** (100%) - language of app development
-- **Japanese** (100%) - thanks to  **[@SakiPapa](https://github.com/SakiPapa)**
+Currently available languages:
 
-More languages are being added continuously.
+- Chinese, Simplified - @brukaya
+- English** - language of app development
+- German** (in progress) - @mickimnet, @philipbrembeck
+- Japanese** - @SakiPapa
+- Portugese (Brazil) - @gpnunes75
+- Romainan- @mikevic18
+- Spanish (in progress) - @Bottacco
 
-Special thanks to everybody who has contributed and is contributing to the localization effort!
-
-If you want BetterDisplay in your language and willing to contribute to the localization effort, [check out the instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
+If you want BetterDisplay in your language and willing to contribute to the localization effort, [check out the localization status and instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
 
 ## Compatibility
 
