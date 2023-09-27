@@ -184,7 +184,7 @@ Current localizations:
 - **Japanese** - @SakiPapa
 - **Korean** (in progress) - @Ryan-Dia
 - **Portugese** (Brazil) - @gpnunes75
-- **Romainan** - @mikevic18
+- **Romanian** - @mikevic18
 - **Spanish** (in progress) - @Bottacco
 
 If you want BetterDisplay in your language and willing to contribute to the localization effort, [check out the localization status and instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
