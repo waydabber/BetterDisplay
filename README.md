@@ -191,9 +191,8 @@ If you want BetterDisplay in your language and willing to contribute to the loca
 
 ## Compatibility
 
-- The current v2.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma** (beta), **Ventura** and **Monterey** (macOS 12.4 and up, latest recommended).
+- The current v2.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma**, **Ventura** and **Monterey** (macOS 12.4 and up, latest recommended).
 - The current v1.x app version is compatible with macOS **Ventura**, **Monterey**, **Big Sur**, **Catalina** and **Mojave**.
-- BetterDisplay license codes work both for the v2.x and v1.x app versions.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
 - The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or Intel (all macOS versions supported - on Intel the feature is considered experimental and does cause issues on some configurations). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays and backlight off for Apple and built-in displays).
 - Native smooth scaling requires macOS Monterey 12.4 (or newer) and natively connected displays on Apple Silicon. For Intel there is no such limitation.
