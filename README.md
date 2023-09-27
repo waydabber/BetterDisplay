@@ -31,7 +31,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 
 ## Features
 
-- **NEW: Updated UI, macOS Sonoma (Beta) compatibility and various improvements with the v2.x version!**
+- Updated UI, macOS Sonoma compatibility and various improvements with the v2.x version.
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for M2 and M2 Pro/Max, M1 built-in HDMI, and 2018 mini built-in HDMI) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
@@ -176,15 +176,16 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 
 The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
 
-Currently available languages:
+Current localizations:
 
-- Chinese, Simplified - @brukaya
-- English** - language of app development
-- German** (in progress) - @mickimnet, @philipbrembeck
-- Japanese** - @SakiPapa
-- Portugese (Brazil) - @gpnunes75
-- Romainan- @mikevic18
-- Spanish (in progress) - @Bottacco
+- **Chinese, Simplified** - @BingoKingo
+- **English** - language of app development
+- **German** (in progress) - @mickimnet, @philipbrembeck
+- **Japanese** - @SakiPapa
+- **Korean** (in progress) - @Ryan-Dia
+- **Portugese** (Brazil) - @gpnunes75
+- **Romainan** - @mikevic18
+- **Spanish** (in progress) - @Bottacco
 
 If you want BetterDisplay in your language and willing to contribute to the localization effort, [check out the localization status and instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
 
