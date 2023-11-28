@@ -45,7 +45,8 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Enable Night Shift for your TV!
 - Change the resolution easily with a slider!
 - Define favorite resolutions and reach them via the app menu, resolution slider or keyboard shortcuts. *
-- Protect display configuration, forbid auto-switch to VRR etc. *
+- Protect display configuration (resolution, refresh rate/VRR, rotation, color profile). *
+- Auto switch color profile for SDR and HDR modes. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real display or virtual screen (dummy). *
 - Redirect your display's contents (real or virtual) to an other screen via streaming. *
@@ -63,6 +64,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Custom virtual screens(dummies) (resolution, orientation, naming etc). *
 - Create a virtual screen optimized for a real display. *
 - Export display EDID and show detailed display information (Intel and Apple Silicon).
+- Color profile (and XDR Preset) selector
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
 
@@ -120,6 +122,8 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 | EDID override (Apple Silicon) | :moneybag: | | | | | |
 | EDID override (Intel) | :moneybag: | | | | | |
 | Custom timings on Intel | | | | :moneybag: | | |
+| Color profile selector | :free: | | | :moneybag: | | |
+| SDR/HDR color profile auto-switch | :moneybag: | | | | | |
 | Command Line Integration | :hourglass::free: | | :moneybag: | | | |
 | DIY hardware integration | | | :moneybag: | | | |
 | Basic brightness syncing | :hourglass::free: | :free: | :moneybag: | | | |
