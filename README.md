@@ -49,7 +49,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Auto switch color profile for SDR and HDR modes. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real display or virtual screen (dummy). *
-- Redirect your display's contents (real or virtual) to an other screen via streaming. *
+- Redirect your display's contents (real or virtual) to another screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
 - [Scale Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
@@ -88,7 +88,7 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 | Display mode selector menu | :free: | | :free: | :moneybag: | | |
 | Resolution slider | :free: | | | | | |
 | Picture in Picture | :moneybag: | | | | | |
-| Custom virtual sceens (dummies) | :moneybag: | | | | | |
+| Custom virtual screens (dummies) | :moneybag: | | | | | |
 | Full screen streaming | :moneybag: | | | | | |
 | Stream/PIP, stretching, off-centering | :moneybag: | | | | | |
 | Stream/PIP rotation, portrait Sidecar | :moneybag: | | | | | |
@@ -103,7 +103,7 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 | DDC input switching | :free: | | :free: | | | :moneybag: |
 | DDC input customization | :free: | | | | | |
 | DDC power control | :free: | | :free: | | | |
-| Native brightnesss and volume keys | :free: | :free: | :free: | | | |
+| Native brightness and volume keys | :free: | :free: | :free: | | | |
 | Basic custom keyboard shortcuts | :free: | :free: | :free: | :moneybag: | :moneybag: | :moneybag: |
 | Advanced custom keyboard shortcuts | :moneybag: | | :exclamation: | :moneybag: | | |
 | Basic native OSD support | :free: | :free: | :free: | | :moneybag: | |
@@ -157,7 +157,7 @@ You can support development and unlock all features of the app by **[purchasing 
 
 [More information on purchasing Pro & payment methods](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
 
-Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). A 14-day trial is also available to fully evaulate BetterDisplay Pro before purchase.
+Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). A 14-day trial is also available to fully evaluate BetterDisplay Pro before purchase.
 
 If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
 
@@ -217,7 +217,7 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdisplay) in its initial open source phase. I'd like to express my gratitude by providing you with a coupon code so you can get a Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message with the screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code to get the app for free!
 
 <details>
-<summary>Notabe contributors of the open-source project</summary>
+<summary>Notable contributors of the open-source project</summary>
 <br/>
   
 Generous contributors, who donated $50 or more for the open-source project:
