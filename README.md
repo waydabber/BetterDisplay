@@ -180,18 +180,9 @@ Until the Wiki/Guide is complete, you can search for answers under [Discussions]
 
 The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
 
-Current localizations:
+If you want BetterDisplay in your language and are willing to contribute, join the localization team!
 
-- **Chinese, Simplified** - @BingoKingo
-- **English** - language of app development
-- **German** (in progress) - @mickimnet, @philipbrembeck
-- **Japanese** - @SakiPapa
-- **Korean** (in progress) - @Ryan-Dia
-- **Portugese** (Brazil) - @gpnunes75
-- **Romanian** - @mikevic18
-- **Spanish** (in progress) - @Bottacco
-
-If you want BetterDisplay in your language and are willing to contribute to the localization effort, [check out the localization status and instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
+[Check out the current localization status and instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
 
 ## Compatibility
 
