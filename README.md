@@ -29,6 +29,19 @@
 _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 </div>
 
+- [Features](#features)
+- [Feature comparison](#feature-comparison)
+- [Getting a Pro license to unlock all features of the app](#getting-a-pro-license-to-unlock-all-features-of-the-app)
+- [Installation](#installation)
+  - [Manual](#manual)
+  - [Homebrew](#homebrew)
+- [Using the app](#using-the-app)
+- [Localization](#localization)
+- [Compatibility](#compatibility)
+- [Privacy](#privacy)
+- [Discord channel](#discord-channel)
+- [Thanks to those who backed the project in its Open Source phase](#thanks-to-those-who-backed-the-project-in-its-open-source-phase)
+
 ## Features
 
 - Updated UI, macOS Sonoma compatibility and various improvements with the v2.x version.
@@ -165,10 +178,17 @@ For more information on licensing, trial, prices and refund, please read the [Li
 
 ## Installation
 
+Install the app by one of the following methods:
+
+### Manual
 1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
-1. Open the DMG file and move the app to Applications folder on your Mac as instructed.
-1. Start the app.
-1. Use the app menu bar item to interact with the app.
+2. Open the `.dmg` file and move the app to `/Applications` folder.
+3. Start the app from `/Applications` folder or from Launchpad / Spotlight.
+4. Use the BetterDisplay icon in the menu bar to access the app's features.
+
+### Homebrew
+1. Install [Homebrew](https://brew.sh/)
+2. Run `brew install --cask betterdisplay`
 
 ## Using the app
 
