@@ -71,7 +71,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 _Note: features marked with an asterisk (*) require a [Pro license](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)._
 
 <details>
-<summary><b>For a more detailed list and comparison with MonitorControl, click here...</b></summary>
+<summary><b>For a more detailed list and comparison to an alternative, click here...</b></summary>
 
 ## Feature Comparison
 
