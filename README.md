@@ -71,79 +71,76 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 _Note: features marked with an asterisk (*) require a [Pro license](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)._
 
 <details>
-<summary><b>For a more detailed list and comparison with some popular alternatives, click here...</b></summary>
+<summary><b>For a more detailed list and comparison with MonitorControl, click here...</b></summary>
 
-## Feature comparison
+## Feature Comparison
 
-| | BetterDisplay | MonitorControl | Lunar | SwitchResX | Vivid | DisplayBuddy |
-| --- | :-: | :-: | :-: | :-: | :-: | :-: |
-| Custom scaled resolution editing | :free: | | | :moneybag: | | |
-| Native smooth scaling | :moneybag: | | | | | |
-| Disconnect/connect displays | :moneybag: | | :moneybag: | | | |
-| Night Shift for TVs | :free: | | | | | |
-| Display name override | :free: | | | :moneybag: | | |
-| Native, default resolution editing | :free: | | | | | |
-| Virtual screen (dummy) creation | :free: | | | | | |
-| Virtual screen association | :free: | | | | | |
-| Display mode selector menu | :free: | | :free: | :moneybag: | | |
-| Resolution slider | :free: | | | | | |
-| Picture in Picture | :moneybag: | | | | | |
-| Custom virtual screens (dummies) | :moneybag: | | | | | |
-| Full screen streaming | :moneybag: | | | | | |
-| Stream/PIP, stretching, off-centering | :moneybag: | | | | | |
-| Stream/PIP rotation, portrait Sidecar | :moneybag: | | | | | |
-| Stream/PIP crop feature | :moneybag: | | | | | |
-| Teleprompter mode (stream flipping) | :moneybag: | | | | | |
-| Mirror configuration | :moneybag: | | | | | |
-| DDC support for most Macs | :free: | :free: | :free: | | | :moneybag: |
-| DDC via the M1 built-in HDMI | :free: | | :free: | | | |
-| DDC for Intel 2018 mini built-in HDMI | :free: | | | | | |
-| DDC brightness control | :free: | :free: | :exclamation: | | | :moneybag: |
-| DDC volume control | :free: | :free: | :exclamation: | | | :moneybag: |
-| DDC input switching | :free: | | :free: | | | :moneybag: |
-| DDC input customization | :free: | | | | | |
-| DDC power control | :free: | | :free: | | | |
-| Native brightness and volume keys | :free: | :free: | :free: | | | |
-| Basic custom keyboard shortcuts | :free: | :free: | :free: | :moneybag: | :moneybag: | :moneybag: |
-| Advanced custom keyboard shortcuts | :moneybag: | | :exclamation: | :moneybag: | | |
-| Basic native OSD support | :free: | :free: | :free: | | :moneybag: | |
-| Combined native OSD support | :free: | :free: | | | | |
-| Software dimming (color table) | :free: | :free: | :exclamation: | | | :moneybag: |
-| Software dimming (overlay) | :free: | :free: | :exclamation: | | | |
-| Combined dimming | :free: | :free: | :exclamation: | | | |
-| Dimming to black | :free: | :free: | :moneybag: | | | |
-| Color adjustments | :moneybag: | | :moneybag: | | | |
-| Color temperature control | :moneybag: | | :moneybag: | | | |
-| XDR extra brightness | :moneybag: | | :moneybag: | | :moneybag: | |
-| Third party HDR extra brightness | :moneybag: | | :moneybag: | | | |
-| HDR extra brightness calibration | :moneybag: | | | | | |
-| Display config protection | :moneybag: | | | | | |
-| EDID retrieval | :free: | | | :moneybag: | | |
-| EDID override (Apple Silicon) | :moneybag: | | | | | |
-| EDID override (Intel) | :moneybag: | | | | | |
-| Custom timings on Intel | | | | :moneybag: | | |
-| Color profile selector | :free: | | | :moneybag: | | |
-| SDR/HDR color profile auto-switch | :moneybag: | | | | | |
-| Command Line Integration | :hourglass::free: | | :moneybag: | | | |
-| DIY hardware integration | | | :moneybag: | | | |
-| Basic brightness syncing | :hourglass::free: | :free: | :moneybag: | | | |
-| Advanced Brightness syncing | :hourglass::moneybag: | | :moneybag: | | | |
-| Presets | :hourglass::moneybag: | | :moneybag: | :moneybag: | | :moneybag: |
-| Schedule based settings | :hourglass::moneybag: | | :moneybag: | | | |
-| App specific settings | :hourglass::moneybag: | | :moneybag: | :moneybag: | | |
+| | BetterDisplay | MonitorControl |
+| --- | :-: | :-: |
+| Custom scaled resolution editing | :free: | |
+| Native smooth scaling | :moneybag: | |
+| Disconnect/connect displays | :moneybag: | |
+| Night Shift for TVs | :free: | |
+| Display name override | :free: | |
+| Native, default resolution editing | :free: |
+| Virtual screen (dummy) creation | :free: | |
+| Virtual screen association | :free: | |
+| Display mode selector menu | :free: | |
+| Resolution slider | :free: | |
+| Picture in Picture | :moneybag: | |
+| Custom virtual screens (dummies) | :moneybag: | |
+| Full screen streaming | :moneybag: | |
+| Stream/PIP, stretching, off-centering | :moneybag: | |
+| Stream/PIP rotation, portrait Sidecar | :moneybag: | |
+| Stream/PIP crop feature | :moneybag: | |
+| Teleprompter mode (stream flipping) | :moneybag: | |
+| Mirror configuration | :moneybag: | |
+| DDC support for most Macs | :free: | :free: |
+| DDC via the M1 built-in HDMI | :free: | |
+| DDC for Intel 2018 mini built-in HDMI | :free: | |
+| DDC brightness control | :free: | :free: |
+| DDC volume control | :free: | :free: |
+| DDC input switching | :free: | |
+| DDC input customization | :free: | |
+| DDC power control | :free: | | :free: | |
+| Native brightness and volume keys | :free: | :free: |
+| Basic custom keyboard shortcuts | :free: | :free: |
+| Advanced custom keyboard shortcuts | :moneybag: | |
+| Basic native OSD support | :free: | :free: |
+| Combined native OSD support | :free: | :free: |
+| Software dimming (color table) | :free: | :free: |
+| Software dimming (overlay) | :free: | :free: |
+| Combined dimming | :free: | :free: |
+| Dimming to black | :free: | :free: |
+| Color adjustments | :moneybag: | |
+| Color temperature control | :moneybag: | |
+| XDR extra brightness | :moneybag: | |
+| Third party HDR extra brightness | :moneybag: | |
+| HDR extra brightness calibration | :moneybag: | |
+| Display config protection | :moneybag: | |
+| EDID retrieval | :free: | |
+| EDID override (Apple Silicon) | :moneybag: | |
+| EDID override (Intel) | :moneybag: | |
+| Custom timings on Intel | | | | :moneybag: | |
+| Color profile selector | :free: | | | :moneybag: | |
+| SDR/HDR color profile auto-switch | :moneybag: | |
+| Command Line Integration | :hourglass::free: | |
+| Basic brightness syncing | :hourglass::free: | :free: |
+| Advanced Brightness syncing | :hourglass::moneybag: | |
+| Presets | :hourglass::moneybag: | |
+| Schedule based settings | :hourglass::moneybag: | |
+| App specific settings | :hourglass::moneybag: | |
 | | | | | | | |
-| Price | $18/€18 | \$0 | $23 | €14 | €20 | $17 |
-| Trial days | 14 | \- | 14 | 10 | \- | \- |
+| Price | $18/€18+tax | \$0 |
+| Trial days | 14 | \- |
 
 :free: - Feature is completely free without limitation, even after trial
-
-:exclamation: - Feature is free with limitations imposed after trial (for Lunar: 100 adjustments per day)
 
 :moneybag: - Feature is a paid/pro feature and is not available after a trial (for apps with trial)
 
 :hourglass: - Feature is planned
 
-<i>Please note that this comparison is only meant to give you a big picture, does not contain all secondary and derived functionalities (free or paid) for each software, may not be up-to-date and may not be a fair representation in every respect as I am not an expert on the alternative apps. I am pretty sure the devs of respective alternatives would feel the comparison is skewed in some way or I did miss an important aspect or unique advantage of the competing solution. For an educated decision you might want to try all apps that offer some sort of trial. If you feel the comparison is not fair, drop me a note at the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp)!</i>
+Please note that this comparison is only meant to give you a big picture, does not contain all secondary and derived functionalities (free or paid). During the 14 day long trial all Pro features are available for testing. To try how the app would behave in free mode (without purchasing Pro) after the trial, disable `Licensing & Pro Features` under `Settings (gear icon)` > `Application` > `Advanced settings & privacy`!
 
 </details>
 
@@ -165,11 +162,18 @@ For more information on licensing, trial, prices and refund, please read the [Li
 
 ## Installation
 
-1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
-1. Open the DMG file and move the app to Applications folder on your Mac as instructed.
-1. Start the app.
-1. Use the app menu bar item to interact with the app.
+Install the app by one of the following methods:
 
+### Manual
+1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
+1. Open the `.dmg` file and move the app to `/Applications` folder.
+1. Start the app from `/Applications` folder or from Launchpad / Spotlight.
+1. Use the BetterDisplay icon in the menu bar to access the app's features.
+
+### Homebrew
+1. Install [Homebrew](https://brew.sh/)
+1. Run `brew install --cask betterdisplay`
+   
 ## Using the app
 
 A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under construction to explain all the features. Some useful guides are already available covering some of the more popular features of the app. More to come - please stay tuned!
@@ -199,11 +203,11 @@ If you want BetterDisplay in your language and are willing to contribute, join t
 
 For information about data handled by the app and privacy, please read the app's [Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/1658)!
 
-## Discord channel
+## Discord Channel
 
 You can join the discussion on the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp). If you have any issues or questions, don't hesitate to ask!
 
-## Thanks to those who backed the project in its Open Source phase
+## Thanks To Early Backers
 
 I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdisplay) in its initial open source phase. I'd like to express my gratitude by providing you with a coupon code so you can get a Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message with the screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code to get the app for free!
 
