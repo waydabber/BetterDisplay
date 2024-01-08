@@ -33,17 +33,17 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 
 - Updated UI, macOS Sonoma compatibility and various improvements with the v2.x version.
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port) - DDC features are completely free for personal users without limitation.
-- EDID override support for both Intel and Apple Silicon Macs! *
-- Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
-- Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
 - [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
 - Change display inputs via DDC on supported displays.
+- Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
 - Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
 - Create any number of virtual screens (dummies) with varying aspect ratios.
 - Enable Night Shift for your TV!
 - Change the resolution easily with a slider!
+- EDID override support for both Intel and Apple Silicon Macs! *
+- Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
 - Define favorite resolutions and reach them via the app menu, resolution slider or keyboard shortcuts. *
 - Protect display configuration (resolution, refresh rate/VRR, rotation, color profile). *
 - Auto switch color profile for SDR and HDR modes. *
@@ -52,6 +52,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Redirect your display's contents (real or virtual) to another screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
 - [Scale Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
+- [Use your iPad or monitor as a DIY Teleprompter](https://github.com/waydabber/BetterDisplay/wiki/DIY-teleprompter-flipped-screen). *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
 - Easily change the resolution of your real displays and virtual screens via a slider (or submenu) from the menubar.
 - Quickly accessible refresh rate and screen rotation menu.
@@ -65,7 +66,7 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Create a virtual screen optimized for a real display. *
 - Export display EDID and show detailed display information (Intel and Apple Silicon).
 - Color profile (and XDR Preset) selector
-- Various CLI and app integration features (command line, custom URL schema, HTTP, notifications)
+- [Various CLI and app integration features](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI) (command line, custom URL schema, HTTP, notifications).
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
 
