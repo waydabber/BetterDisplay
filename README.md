@@ -124,7 +124,7 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 | Custom timings on Intel | | | | :moneybag: | |
 | Color profile selector | :free: | | | :moneybag: | |
 | SDR/HDR color profile auto-switch | :moneybag: | |
-| Command Line Integration | :hourglass::free: | |
+| Command Line Integration | :free: | |
 | Basic brightness syncing | :hourglass::free: | :free: |
 | Advanced Brightness syncing | :hourglass::moneybag: | |
 | Presets | :hourglass::moneybag: | |
