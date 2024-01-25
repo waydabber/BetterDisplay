@@ -26,15 +26,18 @@
 
 <img width="700" alt="Screenshot_v204" src="https://github.com/waydabber/BetterDisplay/assets/37590873/152b8766-6482-430c-9ec0-c0cbeab74e6c">
 
-_Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
+_Screenshot shows BetterDisplay v2.x running on macOS Sonoma._
 </div>
 
 ## Features
 
-- Updated UI, macOS Sonoma compatibility and various improvements with the v2.x version.
-- BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port) - DDC features are completely free for personal users without limitation.
+- Native XDR brightness upscaling - works with Apple XDR displays (built-in or external) and provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. - [available in the latest pre-release version as an experimental feature](https://github.com/waydabber/BetterDisplay/releases). *
+- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. Color table (Apple Silicon Macs) and Metal (works on Intel - available in app version v2.2.1 and up) methods are now both supported. *
 - [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
-- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. This feature requires an Apple Silicon Mac. *
+- BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port) - DDC features are completely free for personal users without limitation.
+- EDID override support for both Intel and Apple Silicon Macs! *
+- [Scale Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
+- [Use your iPad or monitor as a DIY Teleprompter](https://github.com/waydabber/BetterDisplay/wiki/DIY-teleprompter-flipped-screen). *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
 - Change display inputs via DDC on supported displays.
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
@@ -42,7 +45,6 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Create any number of virtual screens (dummies) with varying aspect ratios.
 - Enable Night Shift for your TV!
 - Change the resolution easily with a slider!
-- EDID override support for both Intel and Apple Silicon Macs! *
 - Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
 - Define favorite resolutions and reach them via the app menu, resolution slider or keyboard shortcuts. *
 - Protect display configuration (resolution, refresh rate/VRR, rotation, color profile). *
@@ -51,8 +53,6 @@ _Screenshot shows a BetterDisplay v2.x running on macOS Sonoma._
 - Create Picture in Picture window for any real display or virtual screen (dummy). *
 - Redirect your display's contents (real or virtual) to another screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
-- [Scale Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
-- [Use your iPad or monitor as a DIY Teleprompter](https://github.com/waydabber/BetterDisplay/wiki/DIY-teleprompter-flipped-screen). *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
 - Easily change the resolution of your real displays and virtual screens via a slider (or submenu) from the menubar.
 - Quickly accessible refresh rate and screen rotation menu.
