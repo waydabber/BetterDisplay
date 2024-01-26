@@ -3,7 +3,7 @@
 <div>
 <h2>BetterDisplay</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Display Disconnect, Display and EDID overrides & More!<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.2.0/BetterDisplay-v2.2.0.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.2.1/BetterDisplay-v2.2.1.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
 <sub>Not on macOS Monterey or newer? Get the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.x version</a> (macOS Mojave and up)!</sub>
 </div>
 
@@ -31,8 +31,8 @@ _Screenshot shows BetterDisplay v2.x running on macOS Sonoma._
 
 ## Features
 
-- Native XDR brightness upscaling - works with Apple XDR displays (built-in or external) and provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. - [available in the latest pre-release version as an experimental feature](https://github.com/waydabber/BetterDisplay/releases). *
-- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. Color table (Apple Silicon Macs) and Metal (works on Intel - available in app version v2.2.1 and up) methods are now both supported. *
+- Native XDR brightness upscaling - works with Apple XDR displays (built-in or external) and provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
+- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. Color table (Apple Silicon Macs) and Metal (Apple Silicon and Intel) methods are now both supported. *
 - [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
