@@ -31,8 +31,8 @@ _Screenshot shows BetterDisplay v2.x running on macOS Sonoma._
 
 ## Features
 
-- Native XDR brightness upscaling - works with Apple XDR displays (built-in or external) and provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
-- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. Color table (Apple Silicon Macs) and Metal (Apple Silicon and Intel) methods are now both supported. *
+- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. Native XDR (Apple Silicon, Intel), color table (Apple Silicon Macs) and Metal (Apple Silicon and Intel) methods are now both supported. *
+- Native brightness upscaling for Apple XDR displays (built-in or external) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
 - [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
