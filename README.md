@@ -65,8 +65,9 @@ _Screenshot shows BetterDisplay v2.x running on macOS Sonoma._
 - Custom virtual screens(dummies) (resolution, orientation, naming etc). *
 - Create a virtual screen optimized for a real display. *
 - Export display EDID and show detailed display information (Intel and Apple Silicon).
-- Color profile (and XDR Preset) selector
+- Color profile (and XDR Preset) selector.
 - [Various CLI and app integration features](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI) (command line, custom URL schema, HTTP, notifications).
+- macOS Shortcuts (App Intents) support for various operations.
 - [MediaMate](https://wouter01.github.io/MediaMate/) support for OSDs with fresh visuals (latest versions required for both apps). *
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
