@@ -43,7 +43,7 @@ _Screenshot shows BetterDisplay v2.x running on macOS Sonoma._
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
 - Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
 - Create any number of virtual screens (dummies) with varying aspect ratios.
-- Enable Night Shift for your TV!
+- [Enable Night Shift for your TV](https://github.com/waydabber/BetterDisplay/wiki/Enable-Night-Shift-for-televisions)
 - Change the resolution easily with a slider!
 - Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
 - Define favorite resolutions and reach them via the app menu, resolution slider or keyboard shortcuts. *
