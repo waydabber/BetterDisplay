@@ -89,7 +89,7 @@ Please note that even if you don't buy the app, you can still use many of the fe
 
 If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
 
-For more information on licensing, trial, prices and refund, please read the [License Terms & Conditions and Refund Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
+For more information on licensing, trial, prices and refund, privacy, please read the [License Terms & Conditions, Refund and Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
 
 ## Installation
 
@@ -111,14 +111,6 @@ A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under c
 
 Until the Wiki/Guide is complete, you can search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history, most questions have been asked and answered several times over).
 
-## Localization
-
-The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
-
-If you want BetterDisplay in your language and are willing to contribute, join the localization team!
-
-[Check out the current localization status and instructions](https://github.com/waydabber/BetterDisplay/discussions/2165)!
-
 ## Compatibility
 
 - The current v2.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma**, **Ventura** and **Monterey** (macOS 12.4 and up, latest recommended).
@@ -130,122 +122,13 @@ If you want BetterDisplay in your language and are willing to contribute, join t
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication. 
 - The app is compatible with headless Macs to create custom virtual screen (dummy) resolutions for remote access.
 
-## Privacy
-
-For information about data handled by the app and privacy, please read the app's [Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/1658)!
-
 ## Discord Channel
 
 You can join the discussion on the [BetterDisplay Discord channel](https://discord.gg/aKe5yCWXSp). If you have any issues or questions, don't hesitate to ask!
 
-## Thanks To Early Backers
+## Localization
 
-I am thankful for each of you who [contributed to the project](https://opencollective.com/betterdisplay) in its initial open source phase. I'd like to express my gratitude by providing you with a coupon code so you can get a Pro license for no additional cost. If you'd like to receive a code, please contact me at [Discord](https://discord.gg/aKe5yCWXSp) by sending a private message with the screenshot of the confirmation you received from Open Collective. I'll respond with a coupon code to get the app for free!
+The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
 
-<details>
-<summary>Notable contributors of the open-source project</summary>
-<br/>
-  
-Generous contributors, who donated $50 or more for the open-source project:
-
-- **David Brown** - $500
-- **Patrick Mast** - $222
-- **Riten Jaiswal** - $200
-- **Wesley** - $200
-- **Dean Herbert** - $150
-- **Myles Dear** - $100
-- **Jose Tejera** - $100
-- **Bill Southworth** - $100
-- **Will_from_CA** - $100
-- **MFB Technologies** - $100
-- **Brian Conway** - $60
-- **Ron W** - $61
-- **Michael Charo** - $50
-- **Jens Kielhorn** - $50
-- **Victor** - $50
-- **Nicholas Eidler** - $50
-- **Jeff Nash** - $50
-
-Additional notable contributors, who donated $20 or more:
-
-<table><tr><td valign="top" width="250">
-Derek Johnson<br/>
-Jerry C<br/>
-Jung Yeop (Steve) Kim<br/>
-Jason<br/>
-Kaz<br/>
-Nikola<br/>
-wanyeki<br/>
-Felix<br/>
-Emilio P Egido<br/>
-Thomas Varghese<br/>
-Reactual<br/>
-Stephen Richardson<br/>
-Peter Szombati<br/>
-NP<br/>
-David Verdonck<br/>
-Knut Holm<br/>
-Jan Behrmann<br/>
-Danilo<br/>
-Andrew Braithwaite<br/>
-Splay Display<br/>
-Incognito<br/>
-Florian Gross<br/>
-David Richardson<br/>
-Jari Hanhela<br/>
-</td><td valign="top" width="250">
-William Edney<br/>
-David W<br/>
-Chetan Kunte<br/>
-Martin Clayton<br/>
-Nikola Milojević<br/>
-Wolf1701<br/>
-Arthur Müller<br/>
-Tom Dai<br/>
-Jeff Lopes<br/>
-Jormsen<br/>
-Yeo Chang Long<br/>
-Wayne G<br/>
-Udome<br/>
-Bart Krijnen<br/>
-jviide<br/>
-Keezy<br/>
-SenPng<br/>
-Jakub Koňas<br/>
-docljn<br/>
-Adam Lounds<br/>
-Pablo Sichert<br/>
-Ville Rinne<br/>
-Gheorghe Aurel Pacurar<br/>
-Peter F.<br/>
-</td><td valign="top" width="250">
-Thomas Brian<br/>
-Jedrzej Gontarczyk<br/>
-Chris Brooks<br/>
-Wang Yang<br/>
-Arjen<br/>
-Peter Cole<br/>
-Simon Jarvis<br/>
-mgiiklel<br/>
-Eric<br/>
-Alasdair<br/>
-Friedemann Wachsmuth<br/>
-Pranav Raj S<br/>
-Eddy<br/>
-George Billios<br/>
-Alfred Visnevsky<br/>
-Martin Cohen<br/>
-HWM<br/>
-Oliver Eilhard<br/>
-Alastair Thomson<br/>
-Örn Arnarson<br/>
-Chris Spiegl<br/>
-Radim Balner<br/>
-yipru<br/>
-petertriho<br/>
-<br/>
-<i>+ guest supporters</i>
-</tr></table>
-  
-</details>
+[Check out the current localization status and on how to contribute!](https://github.com/waydabber/BetterDisplay/discussions/2165)!
 
