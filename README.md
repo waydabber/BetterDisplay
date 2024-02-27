@@ -31,7 +31,7 @@ _Screenshot shows BetterDisplay v2.x running on macOS Sonoma._
 
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
 - [Native brightness upscaling for Apple XDR displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling#enablingdisabling-hardware-native-xdr-upscaling-apple-silicon-intel-requires-apple-xdr-display) (built-in) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
-- [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using native smooth scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
+- [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using flexbile scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port) - DDC features are completely free for personal users without limitation.
 - EDID override support for both Intel and Apple Silicon Macs! *
 - [Scale Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
@@ -49,7 +49,7 @@ _Screenshot shows BetterDisplay v2.x running on macOS Sonoma._
 - Protect display configuration (resolution, refresh rate/VRR, rotation, color profile). *
 - Auto switch color profile for SDR and HDR modes. *
 - Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
-- Create Picture in Picture window for any real display or virtual screen (dummy). *
+- Create Picture in Picture window for any real display or virtual screen. *
 - Redirect your display's contents (real or virtual) to another screen via streaming. *
 - If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
 - Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
@@ -75,7 +75,7 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 
 [For a list of free and Pro features and comparison to MonitorControl, click here...](https://github.com/waydabber/BetterDisplay/wiki/List-of-free-and-Pro-features)
 
-## Getting a Pro license to unlock all features of the app
+## Getting a Pro license to unlock all features
 
 <div align="center">
 <a href="https://betterdisplay.pro/buy"><img width="500" alt="Screenshot 2023-03-18 at 14 07 43" src="https://user-images.githubusercontent.com/37590873/226108216-061249be-3d16-4674-bced-0ddec91861f8.png"></a>
@@ -87,13 +87,13 @@ You can support development and unlock all features of the app by **[purchasing 
 
 Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). A 14-day trial is also available to fully evaluate BetterDisplay Pro before purchase.
 
-If you are using the free functionalities of the app, please don't forget to star the GitHub page and spread the word about the app! :)
-
 For more information on licensing, trial, prices and refund, privacy, please read the [License Terms & Conditions, Refund and Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
+
+Please don't forget to star the GitHub page and spread the word about the app! :)
 
 ## Installation
 
-Install the app by one of the following methods:
+Install the app using one of the following methods:
 
 ### Manual
 1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
@@ -107,20 +107,20 @@ Install the app by one of the following methods:
    
 ## Using the app
 
-A new [User's Guide](https://github.com/waydabber/BetterDisplay/wiki) is under construction to explain all the features. Some useful guides are already available covering some of the more popular features of the app. More to come - please stay tuned!
+The app contains detailed explanations for most features (under `Settings` - click the gear icon at the bottom of the app menu). Check out the [Wiki section](https://github.com/waydabber/BetterDisplay/wiki) for more info on app usage.
 
-Until the Wiki/Guide is complete, you can search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history, most questions have been asked and answered several times over).
+If you have any questions, search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history and forum threads, most questions have been asked and answered several times over). If you don't find answers, feel free to create a new discussion or Discord forum thread!
 
 ## Compatibility
 
-- The current v2.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma**, **Ventura** and **Monterey** (macOS 12.4 and up, latest recommended).
-- The current v1.x app version is compatible with macOS **Ventura**, **Monterey**, **Big Sur**, **Catalina** and **Mojave**.
-- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected HDR display (VESA DisplayHDR 600 or higher recommended) and an Apple Silicon Mac.
-- The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or Intel (all macOS versions supported - on Intel the feature is considered experimental and does cause issues on some configurations). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays and backlight off for Apple and built-in displays).
-- Native smooth scaling requires macOS Monterey 12.4 (or newer) and natively connected displays on Apple Silicon. For Intel there is no such limitation.
-- Maximum native smooth scaling resolutions depend on the GPU capabilities and the display's resolution (horizontal width limit is 6144 pixels for entry level Apple Silicon Macs, 7680 pixels for the Pro/Max/Ultra versions.
-- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication. 
-- The app is compatible with headless Macs to create custom virtual screen (dummy) resolutions for remote access.
+- The v2.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sonoma**, **Ventura** and the latest version of **Monterey**.
+- The v1.x app version is compatible with macOS **Monterey**, **Big Sur**, **Catalina** and **Mojave**.
+- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected external HDR display (VESA DisplayHDR 600 or higher recommended).
+- The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or an Intel Mac (all macOS versions supported - on Intel the feature is experimental only). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays - backlight off works for Apple and built-in displays).
+- Flexible scaling requires macOS Monterey 12.4 (or newer) and natively connected displays. For Intel all macOS versions work.
+- Maximum flexible scaling resolutions depend on GPU capabilities and the display's resolution (horizontal width limit is 6144 pixels for entry level Apple Silicon Macs, 7680 pixels for the Pro/Max/Ultra versions.
+- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication.
+- The app is compatible with headless Macs to create custom virtual screen resolutions for remote access.
 
 ## Discord Channel
 
