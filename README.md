@@ -24,7 +24,7 @@
 <img width="832" alt="Screenshot" src="https://github.com/waydabber/BetterDisplay/assets/37590873/b3b9e58f-5cf8-4633-bb31-c7cd40208e64">
 </div>
 
-## Features
+## Key Features
 
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale depending on the display's capability. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
 - [Native brightness upscaling for Apple XDR displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling#enablingdisabling-hardware-native-xdr-upscaling-apple-silicon-intel-requires-apple-xdr-display) (built-in) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
@@ -97,7 +97,7 @@ Install the app using one of the following methods:
 1. Install [Homebrew](https://brew.sh/)
 1. Run `brew install --cask betterdisplay`
    
-## Using the app
+## Using the App
 
 The app contains detailed explanations for most features (under `Settings` - click the gear icon at the bottom of the app menu). Check out the [Wiki section](https://github.com/waydabber/BetterDisplay/wiki) for more info on app usage.
 
