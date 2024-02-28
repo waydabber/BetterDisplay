@@ -26,44 +26,39 @@
 
 ## Features
 
-- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale also supported. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
+- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale depending on the display's capability. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
 - [Native brightness upscaling for Apple XDR displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling#enablingdisabling-hardware-native-xdr-upscaling-apple-silicon-intel-requires-apple-xdr-display) (built-in) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
-- [Convert your internal and natively connected external displays to smoothly-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using flexbile scaling (displays with notch, HDR, HDCP, high refresh rate fully supported)! *
-- BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port) - DDC features are completely free for personal users without limitation.
-- EDID override support for both Intel and Apple Silicon Macs! *
-- [Scale Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
-- [Use your iPad or monitor as a DIY Teleprompter](https://github.com/waydabber/BetterDisplay/wiki/DIY-teleprompter-flipped-screen). *
-- Change the display's brightness, volume and colors via software and hardware (DDC) control via sliders and native or custom keyboard shortcuts!
-- Change display inputs via DDC on supported displays.
+- Change the display's brightness, volume and colors via software and hardware (DDC) control using sliders, native or custom keyboard shortcuts!
+- BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port).
+- Change display inputs using DDC on supported displays.
+- Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
+- [Convert your internal and natively connected external displays to flexible-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using flexbile scaling (displays with notch, HDR, HDCP, high refresh rate are all supported)! *
+- Change the resolution easily with a slider!
+- Quickly accessible refresh rate and screen rotation menu.
+- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays.
+- Define favorite resolutions and reach them using the app menu, resolution slider or keyboard shortcuts. *
+- Create custom HiDPI resolutions for real displays manually. Redefine various system display parameters!
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
-- Create custom HiDPI resolutions for real displays manually and redefine certain system display parameters!
-- Create any number of virtual screens (dummies) with varying aspect ratios.
+- Protect display configuration (resolution, refresh rate/VRR, rotation, color profile). *
+- Color profile (and XDR Preset) selector.
+- Auto switch color profile for SDR and HDR modes. *
+- EDID override support for both Intel and Apple Silicon Macs! *
+- Export display EDID and show detailed display information (Intel and Apple Silicon).
+- Create any number of virtual screens with varying aspect ratios and resolutions.
+- Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
+- [Scaled Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
+- [Use your iPad or monitor as a DIY Teleprompter](https://github.com/waydabber/BetterDisplay/wiki/DIY-teleprompter-flipped-screen). *
 - [Enable Night Shift for your TV](https://github.com/waydabber/BetterDisplay/wiki/Enable-Night-Shift-for-televisions).
 - [Help width display flickering (PWM, temporal dithering)](https://github.com/waydabber/BetterDisplay/wiki/Eye-care:-prevent-PWM-and-or-temporal-dithering).
-- Change the resolution easily with a slider!
-- Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
-- Define favorite resolutions and reach them via the app menu, resolution slider or keyboard shortcuts. *
-- Protect display configuration (resolution, refresh rate/VRR, rotation, color profile). *
-- Auto switch color profile for SDR and HDR modes. *
-- Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
 - Create Picture in Picture window for any real display or virtual screen. *
-- Redirect your display's contents (real or virtual) to another screen via streaming. *
-- If you are using a big TV up close, use the bottom half of your TV as a wide screen display (off-center streaming). *
-- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays
-- Easily change the resolution of your real displays and virtual screens via a slider (or submenu) from the menubar.
-- Quickly accessible refresh rate and screen rotation menu.
+- Redirect your display's contents (real or virtual) to another screen with local streaming. *
+- Use the bottom half of your TV as a wide screen display (off-center streaming). *
 - Simplify creating mirrored sets. *
 - Easily move around displays relative to each other using the app menu.
-- Quickly designate a display to be main display.
-- Associate virtual screens (dummies) with displays for auto connect/disconnect.
 - Keyboard shortcuts for brightness and audio control.
 - Advanced keyboard shortcuts support. *
-- Custom virtual screens(dummies) (resolution, orientation, naming etc). *
-- Create a virtual screen optimized for a real display. *
-- Export display EDID and show detailed display information (Intel and Apple Silicon).
-- Color profile (and XDR Preset) selector.
 - [Various CLI and app integration features](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI) (command line, [betterdisplaycli](https://github.com/waydabber/betterdisplaycli), custom URL schema, HTTP, notifications).
-- macOS Shortcuts (App Intents) support for various operations.
+- MacOS Shortcuts (App Intents) support for various operations.
 - [MediaMate](https://wouter01.github.io/MediaMate/) support for OSDs with fresh visuals (latest versions required for both apps). *
 
 ... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
