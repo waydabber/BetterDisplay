@@ -75,9 +75,9 @@ You can support development and unlock all features of the app by **[purchasing 
 <a href="https://betterdisplay.pro/buy"><img width="500" src="https://github.com/waydabber/BetterDisplay/assets/37590873/6a732657-1e72-4b98-91e6-7a56abb716d3"></a>
 </div>
 
-[More information on purchasing Pro & payment methods](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
-
 Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). A 14-day trial is also available to fully evaluate BetterDisplay Pro before purchase.
+
+[More information on purchasing Pro & payment methods](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
 
 For more information on licensing, trial, prices and refund, privacy, please read the [License Terms & Conditions, Refund and Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
 
