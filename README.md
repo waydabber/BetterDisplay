@@ -111,7 +111,6 @@ If you have any questions, search for answers under [Discussions](https://github
 - The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or an Intel Mac (all macOS versions supported - on Intel the feature is experimental only). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays - backlight off works for Apple and built-in displays).
 - Flexible scaling requires macOS Monterey 12.4 (or newer) and natively connected displays. For Intel all macOS versions work.
 - Maximum flexible scaling resolutions depend on GPU capabilities and the display's resolution (horizontal width limit is 6144 pixels for entry level Apple Silicon Macs, 7680 pixels for the Pro/Max/Ultra versions.
-- Display system configuration editing (display overrides) and flexible scaling is incompatible with the built-in display of the M3 MacBook Pros equipped with M3 Pro or M3 Max chips (this seems to be a macOS bug). Other features (brightness control, XDR upscaling etc) are not affected with this issue.
 - External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication.
 - The app is compatible with headless Macs to create custom virtual screen resolutions for remote access.
 
