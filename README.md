@@ -3,7 +3,7 @@
 <div>
 <h3>BetterDisplay</h3>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Display Disconnect, Display and EDID overrides & More!<p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.3/BetterDisplay-v2.3.3.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.4/BetterDisplay-v2.3.4.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="150" alt="Download for macOS"/></a><br/>
 <sub>Not on macOS Monterey or newer? Get the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.x version</a> (macOS Mojave and up)!</sub>
 </div>
 
@@ -30,6 +30,7 @@
 - [Native brightness upscaling for Apple XDR displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling#enablingdisabling-hardware-native-xdr-upscaling-apple-silicon-intel-requires-apple-xdr-display) (built-in) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
 - Display group and synchronization features - sync brightness and other image controls among multiple displays!
 - Display UI scale matching - synchronize display UI scale / resolution among multiple displays (recommended for displays with flexible scaling enabled). *
+- Layout protection - create and protect an adaptive display arrangement using anchor points for natural traversal among screens. *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control using sliders, native or custom keyboard shortcuts!
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port).
 - Change display inputs using DDC on supported displays.
