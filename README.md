@@ -13,7 +13,7 @@
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat&color=blue" alt="downloads"/></a>
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/release/waydabber/BetterDisplay.svg?style=flat&color=blue" alt="latest version"/></a>
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat&color=blue" alt="platform"/></a>
-<a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/badge/chat-discord_invite-blue?logo=discord&style=flat&" alt="discord"/></a>
+<a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/discord/903276571773771796?label=chat&style=flat&color=blue&logo=discord" alt="platform"/></a>
 </div>
 
 ## About BetterDisplay
