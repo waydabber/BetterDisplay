@@ -26,7 +26,9 @@
 
 ## Key Features
 
-- **NEW: Full support for **macOS Sequoia**.**
+- **NEW: Color mode (connection level) selector for Apple Silicon Macs** - change RGB, YCbCr, chroma subsampling, HDMI range settings. Requires v3.0.0 (available as [pre-release](https://github.com/waydabber/BetterDisplay/releases)).
+- **NEW: DDC auto-configuaration** - automatically detect and configure DDC capabilities. Requires v3.0.0 (available as [pre-release](https://github.com/waydabber/BetterDisplay/releases)).
+- **NEW: Full support for macOS Sequoia.**
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale depending on the display's capability. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
 - [Native brightness upscaling for Apple XDR displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling#enablingdisabling-hardware-native-xdr-upscaling-apple-silicon-intel-requires-apple-xdr-display) (built-in) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
 - Display group and synchronization features - sync brightness and other image controls among multiple displays!
@@ -109,7 +111,8 @@ If you have any questions, search for answers under [Discussions](https://github
 
 ## Compatibility
 
-- The latest v2.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sequoia** (app version v2.3.5 and up), **Sonoma**, **Ventura** and the latest version of **Monterey**.
+- The latest v3.x pre-release version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sequoia beta**, **Sonoma**, **Ventura** (13.2 or newer).
+- The latest stable v2.x version of the app supports **Sequoia beta** (app version v2.3.5 and up), **Sonoma**, **Ventura** and **Monterey**.
 - The v1.x app version is compatible with macOS **Monterey**, **Big Sur**, **Catalina** and **Mojave**.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected external HDR display (VESA DisplayHDR 600 or higher recommended).
 - The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or an Intel Mac (all macOS versions supported - on Intel the feature is experimental only). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays - backlight off works for Apple and built-in displays).
