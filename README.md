@@ -75,7 +75,7 @@ _Note: features marked with an asterisk (*) require a [Pro license](https://gith
 
 ## Getting a Pro license to unlock all features
 
-You can support development and unlock all features of the app by **[purchasing a Pro license for $18 / €18](https://betterdisplay.pro/buy)** (Sales Tax or VAT may also apply depending on selected territory). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
+You can support development and unlock all features of the app by **[purchasing a Pro license for $19 / €19](https://betterdisplay.pro/buy)** (Sales Tax or VAT may also apply depending on selected territory). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
 
 <div align="center">
 <a href="https://betterdisplay.pro/buy"><img width="500" src="https://github.com/waydabber/BetterDisplay/assets/37590873/6a732657-1e72-4b98-91e6-7a56abb716d3"></a>
