@@ -26,9 +26,9 @@
 
 ## Key Features
 
+- **NEW: Full support for the latest macOS Sequoia betas** - Requires the latest v3.x version (available as [pre-release](https://github.com/waydabber/BetterDisplay/releases))
 - **NEW: Color mode (connection level) selector for Apple Silicon Macs** - change RGB, YCbCr, chroma subsampling, HDMI range settings. Requires v3.x (available as [pre-release](https://github.com/waydabber/BetterDisplay/releases)).
 - **NEW: DDC auto-configuaration** - automatically detect and configure DDC capabilities. Requires v3.x (available as [pre-release](https://github.com/waydabber/BetterDisplay/releases)).
-- **NEW: Full support for macOS Sequoia.**
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale depending on the display's capability. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
 - [Native brightness upscaling for Apple XDR displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling#enablingdisabling-hardware-native-xdr-upscaling-apple-silicon-intel-requires-apple-xdr-display) (built-in) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
 - Display group and synchronization features - sync brightness and other image controls among multiple displays!
