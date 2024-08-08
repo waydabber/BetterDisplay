@@ -112,7 +112,7 @@ If you have any questions, search for answers under [Discussions](https://github
 ## Compatibility
 
 - The latest v3.x pre-release version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sequoia beta**, **Sonoma**, **Ventura** (13.2 or newer).
-- The latest stable v2.x version of the app supports **Sequoia beta** (app version v2.3.5 and up), **Sonoma**, **Ventura** and **Monterey**.
+- The latest stable v2.x version of the app supports macOS **Sonoma**, **Ventura** and **Monterey**.
 - The v1.x app version is compatible with macOS **Monterey**, **Big Sur**, **Catalina** and **Mojave**.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected external HDR display (VESA DisplayHDR 600 or higher recommended).
 - The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or an Intel Mac (all macOS versions supported - on Intel the feature is experimental only). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays - backlight off works for Apple and built-in displays).
