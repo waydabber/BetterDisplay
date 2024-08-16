@@ -4,7 +4,7 @@
 <h3>BetterDisplay</h3>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Soft-Disconnect, Config and EDID overrides, DDC & More!</p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.0.2/BetterDisplay-v3.0.2.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="140" alt="Download for macOS"/></a><br/>
-<sub>Legacy versions: for macOS Monterey <a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">get v2.3.9</a>, for Big Sur & older <a href="https://github.com/waydabber/BetterDisplay/releases/tag/v1.4.15">get v1.4.15</a></sub>
+<sub><b>Legacy versions also available:</b> macOS Monterey - <a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9</a>. Big Sur & older - <a href="https://github.com/waydabber/BetterDisplay/releases/tag/v1.4.15">v1.4.15</a></sub>
 </div>
 
 <br />
