@@ -1,7 +1,7 @@
 <div align="center">
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/waydabber/BetterDisplay/assets/37590873/c9eaae81-78b8-4bd7-aeea-0ec445f1b0ea" width="280" alt="BetterDisplay" align="center"/></a>
 
-<h3>BetterDisplay Pro</h3>
+<h2>BetterDisplay Pro</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Soft-Disconnect, Configuration and EDID overrides, DDC Control, Color Mode Selection, Syncing, Layout Protection and More!</p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.0.5/BetterDisplay-v3.0.5.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
 <sub><b>The <a href="https://github.com/waydabber/BetterDisplay/releases">latest app version</a> requires macOS Ventura or newer.<br>
