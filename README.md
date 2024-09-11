@@ -130,5 +130,5 @@ You can join the discussion on the [BetterDisplay Discord channel](https://disco
 
 The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
 
-[Check out the current localization status and on how to contribute!](https://github.com/waydabber/BetterDisplay/discussions/2165)!
+[Check out the current localization status and on how to contribute…](https://github.com/waydabber/BetterDisplay/discussions/2165)
 
