@@ -1,6 +1,6 @@
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/waydabber/BetterDisplay/assets/37590873/c9eaae81-78b8-4bd7-aeea-0ec445f1b0ea" width="210" alt="App icon" align="left"/></a>
+<div align="center">
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/waydabber/BetterDisplay/assets/37590873/c9eaae81-78b8-4bd7-aeea-0ec445f1b0ea" width="210" alt="App icon" align="center"/></a>
 
-<div>
 <h3>BetterDisplay</h3>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Soft-Disconnect, Config and EDID overrides, DDC & More!</p>
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.0.5/BetterDisplay-v3.0.5.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="140" alt="Download for macOS"/></a><br/>
