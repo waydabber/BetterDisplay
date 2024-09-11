@@ -27,7 +27,7 @@ Legacy versions: </b>macOS Monterey - <a href="https://github.com/waydabber/Bett
 
 ## Key Features
 
-- **NEW: Full support for the latest macOS Sequoia betas** - Requires the [latest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
+- **NEW: Full support for macOS Sequoia** - Requires the [latest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
 - **NEW: Color mode (connection level) selector for Apple Silicon Macs** - change RGB, YCbCr, chroma subsampling, HDMI range settings. Requires the [lastest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
 - **NEW: DDC auto-configuaration** - automatically detect and configure DDC capabilities. Requires the [latest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale depending on the display's capability. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
@@ -112,7 +112,7 @@ If you have any questions, search for answers under [Discussions](https://github
 
 ## Compatibility
 
-- The latest v3.x pre-release version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sequoia beta**, **Sonoma**, **Ventura** (13.2 or newer).
+- The latest v3.x pre-release version of the app is compatible with all **Apple Silicon** and **Intel** Macs running macOS **Sequoia**, **Sonoma**, **Ventura** (13.2 or newer).
 - The latest stable v2.x version of the app supports macOS **Sonoma**, **Ventura** and **Monterey** (12.4 or newer).
 - The v1.x app version is compatible with macOS **Monterey**, **Big Sur**, **Catalina** and **Mojave**.
 - XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected external HDR display (VESA DisplayHDR 600 or higher recommended).
