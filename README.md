@@ -3,7 +3,7 @@
 
 <h2>BetterDisplay Pro</h2>
 <p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Soft-Disconnect, Configuration and EDID overrides, DDC Control, Color Mode Selection, Syncing, Layout Protection and More!</p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.1.1/BetterDisplay-v3.1.1.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.1.2/BetterDisplay-v3.1.2.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
 <sub><b>The <a href="https://github.com/waydabber/BetterDisplay/releases">latest app version</a> requires macOS Ventura and is fully compatible with macOS Sequoia.<br>
 Legacy versions: </b>macOS Monterey - <a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9</a>. Big Sur & older - <a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.4.15</a></sub>
 </div>
@@ -28,14 +28,14 @@ Legacy versions: </b>macOS Monterey - <a href="https://github.com/waydabber/Bett
 ## Key Features
 
 - **NEW: Full support for macOS Sequoia** - Requires the [latest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
-- **NEW: Color mode (connection level) selector for Apple Silicon Macs** - change RGB, YCbCr, chroma subsampling, HDMI range settings. Requires the [lastest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
-- **NEW: DDC auto-configuaration** - automatically detect and configure DDC capabilities. Requires the [latest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
+- **NEW: Color mode selector and NTSC (/1001) refresh rates for Apple Silicon Macs** - change RGB, YCbCr, chroma subsampling, HDMI range settings. Requires the [lastest v3.x version](https://github.com/waydabber/BetterDisplay/releases)
 - [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale depending on the display's capability. Native XDR, color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
 - [Native brightness upscaling for Apple XDR displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling#enablingdisabling-hardware-native-xdr-upscaling-apple-silicon-intel-requires-apple-xdr-display) (built-in) - provides full unlock for the entire brightness range with no strings attached - no clipped or overblown HDR videos, full native sliders compatibility, no extra CPU/GPU usage. *
 - Display group and synchronization features - sync brightness and other image controls among multiple displays!
 - Display UI scale matching - synchronize display UI scale / resolution among multiple displays (recommended for displays with flexible scaling enabled). *
 - Layout protection - create and protect an adaptive display arrangement using anchor points for natural traversal among screens. *
 - Change the display's brightness, volume and colors via software and hardware (DDC) control using sliders, native or custom keyboard shortcuts!
+- DDC auto-configuaration** - automatically detect and configure DDC capabilities. Requires the [latest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
 - BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port).
 - Change display inputs using DDC on supported displays.
 - Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
