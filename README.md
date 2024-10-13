@@ -42,7 +42,7 @@ Legacy versions: </b>macOS Monterey - <a href="https://github.com/waydabber/Bett
 - [Convert your internal and natively connected external displays to flexible-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using flexbile scaling (displays with notch, HDR, HDCP, high refresh rate are all supported)! *
 - Change the resolution easily with a slider!
 - Quickly accessible refresh rate and screen rotation menu.
-- Better quality zooming (`System Preferences`»`Accessibility`»`Zoom`) or High Quality screenshots even on 1080p displays.
+- Better quality zooming (`System Settings` > `Accessibility` > `Zoom`) or High Quality screenshots even on 1080p displays.
 - Define favorite resolutions and reach them using the app menu, resolution slider or keyboard shortcuts. *
 - Create custom HiDPI resolutions for real displays manually. Redefine various system display parameters!
 - Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
