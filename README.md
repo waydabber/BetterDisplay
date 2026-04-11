@@ -147,6 +147,10 @@ The following third party notch apps support BetterDisplay using its [OSD integr
 - [Atoll](https://getatoll.app) - support available
 - [BoringNotch](https://theboring.name) - support [work in progress](https://github.com/TheBoredTeam/boring.notch/issues/943)
 
+### Raycast extension
+
+If you use [Raycast](https://raycast.com), there is a [BetterDisplay](https://www.raycast.com/pascal_burkhard/betterdisplay) extension available for interacting with BetterDisplay.
+
 ## Localization
 
 The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
