@@ -9,8 +9,8 @@
 <b>macOS Sequoia, Sonoma, and Ventura:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.6/BetterDisplay-v4.3.6.dmg">BetterDisplay v4.3.6</a><br/>
 Previous versions:
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9 — macOS Monterey</a> |
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.4.15 — macOS Mojave, Catalina, and Big Sur</a><br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9</a> — macOS Monterey |
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.4.15</a> — macOS Mojave, Catalina, and Big Sur<br/>
 <a href="https://github.com/waydabber/BetterDisplay/releases">Browse all releases</a>
 </sub>
 </div>
