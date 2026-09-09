@@ -2,171 +2,168 @@
 <a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/user-attachments/assets/3a3e7683-1bfc-4ba1-9a91-4a458488899f" width="290" height="290" alt="BetterDisplay" align="center"/></a>
 
 <h2>BetterDisplay Pro</h2>
-<p>Custom Resolutions, XDR/HDR Extra Brightness, Virtual Screens, Picture in Picture, Soft-Disconnect, Configuration and EDID overrides, DDC Control, Color Mode Selection, Syncing, Layout Protection and More!</p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.6/BetterDisplay-v4.3.6.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
+<p>Flexible HiDPI scaling, advanced image adjustments, custom 3D LUTs, XDR/HDR brightness, virtual screens, picture-in-picture, display arrangement, DDC and HDMI-CEC control, and more.</p>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.0.5/BetterDisplay-v5.0.5.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
 <sub>
-<b>macOS 26 Tahoe, Sequoia, Sonoma, Ventura</b>: Download the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.6/BetterDisplay-v4.3.6.dmg">current v4.3.6 release</a>.<br/>
-<b>macOS 27 Golden Gate public beta:</b> Download the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.0.4/BetterDisplay-v5.0.4-pre-release.dmg">v5.0.4 pre-release</a>.<br/>
-<b>macOS 27 developer beta:</b> Subscribe to the Internal Pre-Release updates under Settings > Application.<br>
-Previous versions: <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9</a> - macOS Monterey |
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.4.15</a> - Mojave, Catalina, Big Sur<br/>
-<a href="https://github.com/waydabber/BetterDisplay/releases">Browse all releases</a><br>
+<b>macOS 27 Golden Gate and macOS 26 Tahoe:</b> Download the <a href="https://github.com/waydabber/BetterDisplay/releases/tag/v5.0.5">v5.0.5 Release Candidate</a><br/>
+<b>macOS Sequoia, Sonoma, and Ventura:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.6/BetterDisplay-v4.3.6.dmg">BetterDisplay v4.3.6</a><br/>
+Previous versions:
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9 — macOS Monterey</a> |
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.4.15 — macOS Mojave, Catalina, and Big Sur</a><br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases">Browse all releases</a>
 </sub>
 </div>
 
 <br/>
 
 <div align="center">
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat&color=blue" alt="downloads"/></a>
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat&color=blue" alt="platform"/></a>
-<a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/discord/903276571773771796?label=chat&style=flat&color=blue&logo=discord" alt="platform"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat&color=blue" alt="Total downloads"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat&color=blue" alt="Platform: macOS"/></a>
+<a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/discord/903276571773771796?label=chat&style=flat&color=blue&logo=discord" alt="BetterDisplay Discord community"/></a>
 </div>
 
-<br />
+<br/>
 
 ## About BetterDisplay
 
-**BetterDisplay** is a truly wonderful tool! It lets you convert your displays to **fully scalable screens**, manage **display configuration overrides**, allows **brightness and color control**, provides **XDR/HDR brightness upscaling** (extra brightness beyond 100% for compatible XDR or HDR displays on Apple Silicon and Intel Macs - multiple methods available), **full dimming** to black, helps you **create and manage virtual screens** for your Mac, create **Picture in Picture** windows of your displays and gives you a host of other features to **manage your display's settings** like display and color mode easily from the menu bar. It can even **disconnect/reconnect displays** on-the-fly!
+**BetterDisplay** gives you control over your Mac’s displays from the menu bar. Configure **flexible HiDPI scaling**, adjust **brightness and color**, unlock additional brightness on compatible **XDR and HDR displays**, and manage **display arrangements, configuration overrides, and virtual screens**.
+
+Use **advanced image filters and custom 3D LUTs**, view displays or selected windows in **picture-in-picture**, and connect or disconnect displays without unplugging them. Hardware controls, display groups, keyboard shortcuts, and automation help you manage everything from a single monitor to a complex multi-display setup.
 
 <div align="center">
-<img width="832" height="630" src="https://github.com/user-attachments/assets/c9c9be58-d86b-402e-bf33-a7ddfb5915bf" />
+<img width="832" height="630" src="https://github.com/user-attachments/assets/c9c9be58-d86b-402e-bf33-a7ddfb5915bf" alt="BetterDisplay interface and display controls"/>
 </div>
 
 ## Key Features
 
-- Direct upscaling for built-in XDR displays on macOS 26.3+. *
-- Nits based normalized brightness syncing across displays. *
-- HDR capable and high-refresh rate virtual screens (requires compatible Macs). *
-- Forced HDR switch mode for some displays to achieve high refresh rate/high resolution HDR. *
-- Built-in LG webOS TV, Samsung Tizen TV, Philips Android TV and Yamaha AVR networked control support.
-- [Reach the full brightness potential of your XDR or HDR display](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling) - XDR brightness upscale to 1600 nits, external HDR display brightness upscale depending on the display's capability. Color table (Apple Silicon) and Metal (Apple Silicon and Intel) methods are all supported. *
-- Color mode selector and unexposed refresh rates for Apple Silicon Macs** - change RGB, YCbCr, chroma subsampling, HDMI range settings.
-- Display group and synchronization features - sync brightness and other image controls among multiple displays!
-- Display UI scale matching - synchronize display UI scale / resolution among multiple displays (recommended for displays with flexible scaling enabled). *
-- Layout protection - create and protect an adaptive display arrangement using anchor points for natural traversal among screens. *
-- Change the display's brightness, volume and colors via software and hardware (DDC) control using sliders, native or custom keyboard shortcuts!
-- Custom OSD styles with the option to bring back the classic OSD style on macOS Tahoe 26 reinterpreted for glass.
-- DDC auto-configuaration** - automatically detect and configure DDC capabilities. Requires the [latest v3.x version](https://github.com/waydabber/BetterDisplay/releases).
-- BetterDisplay is the only app currently with DDC control for all modern Macs (full DDC support for all Apple Silicon Macs including the M1 built-in HDMI ports, and 2018 mini built-in HDMI port).
-- Change display inputs using DDC on supported displays.
-- Option to auto-disconnect built-in screen upon connecting an external display - requires Apple Silicon (note: Settings/Displays/Overview/Connection management settings...). *
-- [Convert your internal and natively connected external displays to flexible-scaled HiDPI displays](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop) using flexbile scaling (displays with notch, HDR, HDCP, high refresh rate are all supported)! *
-- Video filters for PIP and local streaming. *
-- Apply filters directly to your screen using self-streaming and video filter windows. *
-- Control integration - control your device using shell scripts and URLs. *
-- Change the resolution easily with a slider!
-- Quickly accessible refresh rate and screen rotation menu.
-- Better quality zooming (`System Settings` > `Accessibility` > `Zoom`) or High Quality screenshots even on 1080p displays.
-- Define favorite resolutions and reach them using the app menu, resolution slider or keyboard shortcuts. *
-- Create custom HiDPI resolutions for real displays manually. Redefine various system display parameters!
-- Disconnect and reconnect displays (removing them from the display layout and adding them back) on Apple Silicon (macOS Ventura or newer required) and Intel (all macOS version supported - on Intel the feature is considered experimental and can cause issues)! *
-- Protect display configuration (resolution, refresh rate/VRR, rotation, color profile). *
-- Color profile (and XDR Preset) selector.
-- Auto switch color profile for SDR and HDR modes. *
-- EDID override support for both Intel and Apple Silicon Macs! *
-- Export display EDID and show detailed display information (Intel and Apple Silicon).
-- Create any number of virtual screens with varying aspect ratios and resolutions.
-- Use headless Macs (servers) with any resolution and HiDPI mode for remote access.
-- [Scaled Sidecar resolutions and portrait SideCar support (via virtual screen streaming)](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar). *
-- [Use your iPad or monitor as a DIY Teleprompter](https://github.com/waydabber/BetterDisplay/wiki/DIY-teleprompter-flipped-screen). *
-- [Enable Night Shift for your TV](https://github.com/waydabber/BetterDisplay/wiki/Enable-Night-Shift-for-televisions).
-- [Help width display flickering (PWM, temporal dithering)](https://github.com/waydabber/BetterDisplay/wiki/Eye-care:-prevent-PWM-and-or-temporal-dithering).
-- Create Picture in Picture window for any real display or virtual screen. *
-- Redirect your display's contents (real or virtual) to another screen with local streaming. *
-- Use the bottom half of your TV as a wide screen display (off-center streaming). *
-- Simplify creating mirrored sets. *
-- Easily move around displays relative to each other using the app menu.
-- Keyboard shortcuts for brightness and audio control.
-- Advanced keyboard shortcuts support. *
-- [Various CLI and app integration features](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI) (command line, [betterdisplaycli](https://github.com/waydabber/betterdisplaycli), custom URL schema, HTTP, notifications).
-- MacOS Shortcuts (App Intents) support for various operations.
+**NEW** marks features introduced or substantially expanded in BetterDisplay 5.
 
-... [and more is coming](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)! :)
+- **NEW — Advanced image adjustments:** Apply expanded compositor filters for sharpening, geometry, and color adjustments, with support for display-group syncing, the CLI, and macOS Shortcuts. \*
+- **NEW — Custom 3D LUTs:** Import and apply custom 3D LUTs to display image adjustments and PIP/stream video filters. \*
+- **NEW — Selected-window streaming:** Create picture-in-picture views of individual windows or window groups, with filters, presentation options, and target frame-rate controls. \*
+- **NEW — HDMI-CEC control:** Control TV volume, mute, power, and input selection through compatible HDMI connections, including through the CLI.
+- **NEW — Sidebar and refreshed app menu:** Choose an optional Control Center-style sidebar, use the updated Liquid Glass interface, and access common actions by right-clicking the menu bar icon.
+- **NEW — Visual display arrangement:** Arrange displays directly from the app menu using visual controls, on-screen guides, and grid snapping.
+- **NEW — Built-in console and expanded automation:** Access CLI features and app logs inside BetterDisplay. Configure per-display commands for connection, disconnection, sleep, and wake events. Per-display command integration requires Pro.
+- **NEW — Expanded display diagnostics:** Inspect connection, bandwidth, compression, and tiling information, and access EDID, DPCD, DSC, HDMI-CEC, and Apple brightness reports through the CLI.
+- **NEW — Broader localization:** Use BetterDisplay in 38 language and regional variants, with expanded translations and right-to-left interface support for Arabic, Hebrew, and Persian.
+- **Flexible HiDPI scaling:** [Make built-in and natively connected external displays fully scalable](https://github.com/waydabber/BetterDisplay/wiki/Fully-scalable-HiDPI-desktop), including support for notched displays, HDR, HDCP, and high refresh rates. \*
+- **XDR/HDR brightness upscaling:** [Access additional brightness on compatible displays](https://github.com/waydabber/BetterDisplay/wiki/XDR-and-HDR-brightness-upscaling), including up to 1600 nits on supported Apple XDR displays. Available methods depend on your Mac, display, and macOS version. \*
+- **Brightness, volume, and color control:** Adjust displays through software controls, DDC, sliders, and keyboard shortcuts, including software dimming down to black.
+- **Display groups and brightness syncing:** Synchronize brightness and image controls across displays, including normalized brightness matching in nits and automatic UI scale matching. Advanced synchronization features require Pro.
+- **Display connection management:** Disconnect and reconnect displays without unplugging them, automatically disconnect the built-in screen when an external display is connected on Apple Silicon, and quickly switch between one display and the rest of your setup. \*
+- **Layout and configuration protection:** Preserve display arrangements, resolution, refresh rate or VRR settings, rotation, and color profiles. Use adaptive layout anchors to maintain natural pointer movement between screens. \*
+- **Virtual screens:** Create virtual displays with custom resolutions and aspect ratios, including HiDPI desktops for headless Macs and remote access. HDR and high-refresh-rate virtual screens are available on compatible Macs. Advanced virtual-screen capabilities require Pro.
+- **Picture-in-picture and local streaming:** View a physical or virtual display in a PIP window, stream its contents to another display, and apply video filters. Supports workflows such as [portrait Sidecar](https://github.com/waydabber/BetterDisplay/wiki/Rotated-Sidecar) and [teleprompter displays](https://github.com/waydabber/BetterDisplay/wiki/DIY-teleprompter-flipped-screen). \*
+- **Custom resolutions and display overrides:** Create custom HiDPI resolutions and adjust system display parameters. EDID overrides are supported on both Apple Silicon and Intel Macs. EDID overrides require Pro.
+- **Color modes and HDR controls:** Select available RGB or YCbCr modes, chroma subsampling, HDMI range, and additional refresh rates on supported Apple Silicon configurations. Forced HDR switching is available for supported displays and requires Pro.
+- **Color profiles and XDR presets:** Select color profiles and XDR presets from the app menu. Automatic profile switching between SDR and HDR modes requires Pro.
+- **DDC hardware control:** Automatically detect supported DDC capabilities and control brightness, volume, and input selection on compatible displays, including through supported built-in HDMI ports.
+- **Network device control:** Control supported LG webOS, Samsung Tizen, and Philips Android TVs, as well as Yamaha AV receivers.
+- **Resolution and shortcut controls:** Change resolution with a slider and access refresh rate and rotation settings from the menu bar. Favorite resolutions and advanced keyboard shortcuts require Pro.
+- **Custom on-screen displays:** Choose modern or traditional OSD presentation for brightness and audio controls, with styling and placement adapted to macOS.
+- **Integration and scripting:** Use [CLI and app integration features](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI), including [betterdisplaycli](https://github.com/waydabber/betterdisplaycli), custom URL schemes, HTTP, notifications, and macOS Shortcuts. Control integration through shell scripts and URLs requires Pro.
 
-_Note: features marked with an asterisk (*) require a [Pro license](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)._
+_Features marked with an asterisk (\*) require a [Pro license](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License). Hardware and macOS requirements vary by feature._
 
-[For a list of free and Pro features and comparison to MonitorControl, click here...](https://github.com/waydabber/BetterDisplay/wiki/List-of-free-and-Pro-features)
+[Compare free and Pro features](https://github.com/waydabber/BetterDisplay/wiki/List-of-free-and-Pro-features) · [View planned enhancements](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)
 
-## Getting a Pro license to unlock all features
+## BetterDisplay Pro
 
-You can support development and unlock all features by **[purchasing a Pro license at betterdisplay.pro](https://betterdisplay.pro)**, the app's official site ($21.99 / €19.99 — price, currency, and taxes may vary by country or state). You can also get Pro inside the app - just navigate to `Settings` (gear icon) > `Pro` and click on `Buy BetterDisplay Pro`.
+Unlock all features and support development by **[purchasing a Pro license at betterdisplay.pro](https://betterdisplay.pro)**, the official website. Pricing is $21.99 / €19.99; price, currency, and taxes may vary by country or state. You can also purchase a license in the app under **Settings > Pro > Buy BetterDisplay Pro**.
 
-With a Pro license, you’ll get full access to the current main version of the app (and all previous versions if needed for compatibility). Your purchase also includes at least one year of free updates — including any major upgrades released during that time. Best of all, the Pro license is perpetual (not a subscription), so the versions you unlock are yours to keep and use.
+A Pro license provides access to the current major version and previous versions where needed for compatibility. Your purchase includes at least one year of updates, including major upgrades released during that period. The license is **perpetual, not a subscription**: you can continue using the versions covered by your license.
 
 <div align="center">
-<a href="https://betterdisplay.pro/#buy"><img width="500" src="https://github.com/waydabber/BetterDisplay/assets/37590873/6a732657-1e72-4b98-91e6-7a56abb716d3"></a>
+<a href="https://betterdisplay.pro/#buy"><img width="500" src="https://github.com/waydabber/BetterDisplay/assets/37590873/6a732657-1e72-4b98-91e6-7a56abb716d3" alt="Purchase BetterDisplay Pro"/></a>
 </div>
 
-Please note that even if you don't buy the app, you can still use many of the features for free (if you are a non-business user). A 14-day trial is also available to fully evaluate BetterDisplay Pro before purchase.
+Many features are available free for non-business use. A **14-day trial** lets you evaluate all Pro features before purchasing.
 
-[More information on purchasing Pro & payment methods](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
-
-For more information on licensing, trial, prices and refund, privacy, please read the [License Terms & Conditions, Refund and Privacy Policy](https://github.com/waydabber/BetterDisplay/discussions/739)!
-
-Please don't forget to star the GitHub page and spread the word about the app! :)
+- [Purchasing Pro and supported payment methods](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
+- [BetterDisplay 5 upgrade eligibility and outdated licenses](https://github.com/waydabber/BetterDisplay/discussions/5632)
+- [License terms, refunds, and privacy policy](https://github.com/waydabber/BetterDisplay/discussions/739)
 
 ## Installation
 
-Install the app using one of the following methods:
+### Manual installation
 
-### Manual
-1. Download the [latest version](https://github.com/waydabber/BetterDisplay/releases)
-1. Open the `.dmg` file and move the app to `/Applications` folder.
-1. Start the app from `/Applications` folder or from Launchpad / Spotlight.
-1. Use the BetterDisplay icon in the menu bar to access the app's features.
+1. Download the [release appropriate for your macOS version](https://github.com/waydabber/BetterDisplay/releases).
+2. Open the `.dmg` file and drag BetterDisplay to the `/Applications` folder.
+3. Open BetterDisplay from Applications or Spotlight.
+4. Click the BetterDisplay icon in the menu bar to access its controls.
 
 ### Homebrew
-1. Install [Homebrew](https://brew.sh/)
-1. Run:
+
+Install [Homebrew](https://brew.sh/), then run:
+
 ```bash
 brew install --cask betterdisplay
 ```
 
+To install a specific release candidate, use the manual download above.
+
 ## Using the App
 
-The app contains detailed explanations for most features (under `Settings` - click the gear icon at the bottom of the app menu). Check out the [Wiki section](https://github.com/waydabber/BetterDisplay/wiki) for more info on app usage.
+Most features include explanations in **Settings**, accessible through the gear icon in the app menu. The [BetterDisplay wiki](https://github.com/waydabber/BetterDisplay/wiki) provides additional guides and configuration examples.
 
-If you have any questions, search for answers under [Discussions](https://github.com/waydabber/BetterDisplay/discussions) and the BetterDisplay [Discord channel](https://discord.gg/aKe5yCWXSp) (it has an extensive history and forum threads, most questions have been asked and answered several times over). If you don't find answers, feel free to create a new discussion or Discord forum thread!
+For help, search [GitHub Discussions](https://github.com/waydabber/BetterDisplay/discussions) or the [BetterDisplay Discord community](https://discord.gg/aKe5yCWXSp). If you cannot find an answer, start a new discussion or Discord forum thread.
 
 ## Compatibility
 
-- The latest v5.x version of the app is compatible with all **Apple Silicon** and **Intel** Macs running **macOS 27 Golden Gate** or **macOS 26 Tahoe** (26.3 or newer).
-- The latest v4.x version of the app is compatible with all Macs running **macOS 27 Golden Gate**, **macOS 26 Tahoe**, **Sequoia**, **Sonoma** and **Ventura** (13.2 or newer).
-- The v3.5.6 version of the app supports **macOS Sequoia**, **Sonoma** and **Ventura** (13.2 or newer).
-- The latest stable v2.3.9 version of the app supports **macOS Sonoma**, **Ventura** and **Monterey** (12.4 or newer).
-- The v1.4.5 app version is compatible with **macOS Monterey**, **Big Sur**, **Catalina** and **Mojave**.
-- XDR/HDR upscaling requires an Apple XDR display (built-in or external) or a natively connected external HDR display (VESA DisplayHDR 600 or higher recommended).
-- The display connect/disconnect feature requires an Apple Silicon Mac running at least macOS Ventura or an Intel Mac (all macOS versions supported - on Intel the feature is experimental only). External display sleep/suspend on disconnect is available only on Apple Silicon (on Intel, dimming or DDC backlight off is available for third party displays - backlight off works for Apple and built-in displays).
-- Flexible scaling requires macOS Monterey 12.4 (or newer) and natively connected displays. For Intel all macOS versions work.
-- Maximum flexible scaling resolutions depend on GPU capabilities and the display's resolution (horizontal width limit is 6144 pixels for entry level Apple Silicon Macs, 7680 pixels for the Pro/Max/Ultra versions).
-- External display hardware backlight control and volume control require DDC capable, natively connected display or an Apple display. Some docks and dongles may not support DDC. All built-in ports of all Macs that can run the app are supported for DDC communication.
-- The app is compatible with headless Macs to create custom virtual screen resolutions for remote access.
+### macOS versions
 
-### Third party notch app integration support
+- **BetterDisplay 5:** Apple Silicon and Intel Macs running **macOS 26 Tahoe (26.3 or later)**, with full support for **macOS 27 Golden Gate**.
+- **BetterDisplay 4:** Macs running **macOS Ventura (13.2 or later)**, Sonoma, Sequoia, Tahoe, or Golden Gate.
+- **BetterDisplay 3.5.6:** macOS Ventura (13.2 or later), Sonoma, and Sequoia.
+- **BetterDisplay 2.3.9:** macOS Monterey (12.4 or later), Ventura, and Sonoma.
+- **BetterDisplay 1.4.15:** Available for older systems, including macOS Mojave, Catalina, and Big Sur.
 
-The following third party notch apps support BetterDisplay using its [OSD integration API](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI#osd-notification-dispatch-integration):
+### Hardware and feature requirements
 
-- [MediaMate](https://wouter01.github.io/MediaMate/) - support available
-- [DynamicLake](https://www.dynamiclake.com) - support available
-- [Alcove](https://tryalcove.com) - support available
-- [Atoll](https://getatoll.app) - support available
-- [BoringNotch](https://theboring.name) - support [work in progress](https://github.com/TheBoredTeam/boring.notch/issues/943)
+- **XDR/HDR brightness upscaling** requires a compatible Apple XDR display or a natively connected external HDR display. VESA DisplayHDR 600 or higher is recommended for external HDR displays.
+- **Display disconnection** is supported on Apple Silicon and Intel Macs. Intel support is experimental. Putting an external display to sleep when disconnected is available on Apple Silicon; Intel configurations may use dimming or supported backlight controls instead.
+- **Flexible scaling** requires a natively connected display. On Apple Silicon, it requires macOS Monterey 12.4 or later; use a compatible older BetterDisplay release for macOS versions predating the current app’s minimum requirements.
+- **Maximum scaling resolutions** depend on your GPU and display capabilities.
+- **Hardware brightness, volume, and input control** require a compatible Apple display or a DDC-capable display and connection. Some docks and adapters do not pass DDC commands.
+- **HDMI-CEC control** requires a compatible HDMI port or adapter and a CEC-capable device.
+- **Headless Macs** are supported through virtual screens with custom resolutions for remote access.
+
+### Third-party OSD integrations
+
+The following apps integrate with BetterDisplay through its [OSD integration API](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI#osd-notification-dispatch-integration):
+
+- [MediaMate](https://wouter01.github.io/MediaMate/)
+- [DynamicLake](https://www.dynamiclake.com)
+- [Alcove](https://tryalcove.com)
+- [Atoll](https://getatoll.app)
+
+See the [BoringNotch integration discussion](https://github.com/TheBoredTeam/boring.notch/issues/943) for that project’s implementation status.
 
 ### Raycast extension
 
-If you use [Raycast](https://raycast.com), a [BetterDisplay extension](https://www.raycast.com/pascal_burkhard/betterdisplay) is available for interacting with BetterDisplay.
+The [BetterDisplay extension for Raycast](https://www.raycast.com/pascal_burkhard/betterdisplay) provides another way to access BetterDisplay controls.
 
 ## Localization
 
-The app supports localization. Special thanks to everybody who has contributed and is contributing to the localization effort!
+BetterDisplay includes 38 language and regional variants:
 
-[Check out the current localization status and on how to contribute…](https://github.com/waydabber/BetterDisplay/discussions/2165)
+Arabic, Bulgarian, Catalan, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English, English (British), Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Norwegian Bokmål, Persian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, and Vietnamese.
 
-## Contact & Discord Community Server
+BetterDisplay 5 adds many new translations, improves existing localizations, and supports right-to-left layouts for Arabic, Hebrew, and Persian.
 
-Please check out the official homepage - https://betterdisplay.pro
+Thank you to everyone who contributes translations and improvements.
 
-Join the discussion on the [BetterDisplay Discord Community Server](https://discord.gg/aKe5yCWXSp) (you can also search for BetterDisplay under Discover/Servers). If you have any issues or questions, don't hesitate to ask!
+[View localization status and contribution information](https://github.com/waydabber/BetterDisplay/discussions/2165)
 
-The app is being developed by [@waydabber](https://github.com/waydabber) at [Kodeon Software](https://kodeonsoftware.com). The app's reseller is Paddle - regarding purchase related issues, please contact [Paddle Support](https://www.paddle.com). The best way **to get technical help or directly contact the developer is through the app's [Discord channel](https://discord.gg/aKe5yCWXSp)**. Alternatively you can send an email to <span>info<i>&#64;</i>kodeon</span>software<i>&#46;</i><span>com</span> - but this contact is strictly for licensing related issues (tech help is available via Discord).
+## Contact and Community
+
+- **Official website:** [betterdisplay.pro](https://betterdisplay.pro)
+- **Technical support and community:** [BetterDisplay Discord](https://discord.gg/aKe5yCWXSp)
+- **Questions and feature discussions:** [GitHub Discussions](https://github.com/waydabber/BetterDisplay/discussions)
+- **Purchase and payment support:** [Paddle Support](https://www.paddle.com)
+
+BetterDisplay is developed by [@waydabber](https://github.com/waydabber) at [Kodeon Software](https://kodeonsoftware.com). Paddle is the app’s reseller.
+
+For licensing inquiries, email <span>info<i>&#64;</i>kodeon</span>software<i>&#46;</i><span>com</span>. Please use Discord for technical support.
