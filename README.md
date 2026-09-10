@@ -32,7 +32,7 @@ Previous versions:
 Use **advanced image filters and custom 3D LUTs**, view displays or selected windows in **picture-in-picture**, and connect or disconnect displays without unplugging them. Hardware controls, display groups, keyboard shortcuts, and automation help you manage everything from a single monitor to a complex multi-display setup.
 
 <div align="center">
-<img width="832" height="630" src="https://github.com/user-attachments/assets/c9c9be58-d86b-402e-bf33-a7ddfb5915bf" alt="BetterDisplay interface and display controls"/>
+<img width="832" height="742" alt="BetterDisplay interface and display controls" src="https://github.com/user-attachments/assets/0c2911d0-9157-4993-a850-d751fda3708e" />
 </div>
 
 ## Key Features
