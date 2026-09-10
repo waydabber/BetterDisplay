@@ -155,14 +155,12 @@ BetterDisplay 5 adds many new translations, improves existing localizations, and
 
 Thank you to everyone who contributes translations and improvements.
 
-[View localization status and contribution information](https://github.com/waydabber/BetterDisplay/discussions/2165)
-
 ## Contact and Community
 
 - **Official website:** [betterdisplay.pro](https://betterdisplay.pro)
 - **Technical support and community:** [BetterDisplay Discord](https://discord.gg/aKe5yCWXSp)
 - **Questions and feature discussions:** [GitHub Discussions](https://github.com/waydabber/BetterDisplay/discussions)
-- **Purchase and payment support:** [Paddle Support](https://www.paddle.com)
+- **Purchase and payment support:** [Paddle Support](https://paddle.net)
 
 BetterDisplay is developed by [@waydabber](https://github.com/waydabber) at [Kodeon Software](https://kodeonsoftware.com). Paddle is the app’s reseller.
 
