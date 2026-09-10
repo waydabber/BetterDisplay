@@ -23,7 +23,7 @@ Previous versions:
 <a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/discord/903276571773771796?label=chat&style=flat&color=blue&logo=discord" alt="BetterDisplay Discord community"/></a>
 </div>
 
-<br/>
+<hr/>
 
 > [!WARNING]
 > **Please beware of lookalike websites offering downloads or asking for payment.**  
