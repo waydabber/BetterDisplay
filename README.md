@@ -25,6 +25,10 @@ Previous versions:
 
 <br/>
 
+> [!WARNING]
+> **Please beware of lookalike websites offering downloads or asking for payment.**  
+> The only official site is [betterdisplay.pro](https://betterdisplay.pro/), the GitHub repository is [waydabber/BetterDisplay](https://github.com/waydabber/BetterDisplay).  
+
 ## About BetterDisplay
 
 **BetterDisplay** gives you control over your Mac’s displays from the menu bar. Configure **flexible HiDPI scaling**, adjust **brightness and color**, unlock additional brightness on compatible **XDR and HDR displays**, and manage **display arrangements, configuration overrides, and virtual screens**.
