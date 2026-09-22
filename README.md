@@ -3,9 +3,9 @@
 
 <h2>BetterDisplay Pro</h2>
 <p>Flexible HiDPI scaling, advanced image adjustments, custom 3D LUTs, XDR/HDR brightness, virtual screens, picture-in-picture, display arrangement, DDC and HDMI-CEC control, and more.</p>
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.0.5/BetterDisplay-v5.0.5.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.0.6/BetterDisplay-v5.0.6.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
 <sub>
-<b>macOS 27 Golden Gate, macOS 26 Tahoe:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.0.5/BetterDisplay-v5.0.5.dmg">BetterDisplay v5.0.5</a><br/>
+<b>macOS 27 Golden Gate, macOS 26 Tahoe:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.0.6/BetterDisplay-v5.0.6.dmg">BetterDisplay v5.0.6</a><br/>
 <b>macOS Sequoia, Sonoma, Ventura:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.7/BetterDisplay-v4.3.7.dmg">BetterDisplay v4.3.7</a><br/>
 Previous versions:
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
