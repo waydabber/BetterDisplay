@@ -136,7 +136,7 @@ For help, search [GitHub Discussions](https://github.com/waydabber/BetterDisplay
 
 ### Third-party OSD integrations
 
-The following apps integrate with BetterDisplay through its [OSD integration API](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI#osd-notification-dispatch-integration):
+The following apps integrate with BetterDisplay through its [OSD integration API](https://betterdisplay.pro/guide/integration/third-party-apps/):
 
 - [MediaMate](https://wouter01.github.io/MediaMate/)
 - [DynamicLake](https://www.dynamiclake.com)
