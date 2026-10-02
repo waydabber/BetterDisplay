@@ -67,11 +67,11 @@ Use **advanced image filters and custom 3D LUTs**, view displays or selected win
 - **Network device control:** Control supported LG webOS, Samsung Tizen, and Philips Android TVs, as well as Yamaha AV receivers.
 - **Resolution and shortcut controls:** Change resolution with a slider and access refresh rate and rotation settings from the menu bar. Favorite resolutions and advanced keyboard shortcuts require Pro.
 - **Custom on-screen displays:** Choose modern or traditional OSD presentation for brightness and audio controls, with styling and placement adapted to macOS.
-- **Integration and scripting:** Use [CLI and app integration features](https://github.com/waydabber/BetterDisplay/wiki/Integration-features,-CLI), including [betterdisplaycli](https://github.com/waydabber/betterdisplaycli), custom URL schemes, HTTP, notifications, and macOS Shortcuts. Control integration through shell scripts and URLs requires Pro.
+- **Integration and scripting:** Use [CLI and app integration features](https://betterdisplay.pro/integration), including [betterdisplaycli](https://github.com/waydabber/betterdisplaycli), custom URL schemes, HTTP, notifications, and macOS Shortcuts. Control integration through shell scripts and URLs requires Pro.
 
-_Features marked with an asterisk (\*) require a [Pro license](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License). Hardware and macOS requirements vary by feature._
+_Features marked with an asterisk (\*) require a [Pro license](https://betterdisplay.pro/guide/licensing/getting-a-pro-license/). Hardware and macOS requirements vary by feature._
 
-[Compare free and Pro features](https://github.com/waydabber/BetterDisplay/wiki/List-of-free-and-Pro-features) · [View planned enhancements](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)
+[Compare free and Pro features](https://betterdisplay.pro/guide/licensing/free-and-pro-features/) · [View planned enhancements](https://github.com/waydabber/BetterDisplay/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aenhancement)
 
 ## BetterDisplay Pro
 
@@ -85,9 +85,9 @@ A Pro license provides access to the current major version and previous versions
 
 Many features are available free for non-business use. A **14-day trial** lets you evaluate all Pro features before purchasing.
 
-- [Purchasing Pro and supported payment methods](https://github.com/waydabber/BetterDisplay/wiki/Getting-a-Pro-License)
-- [BetterDisplay 5 upgrade eligibility and outdated licenses](https://github.com/waydabber/BetterDisplay/discussions/5632)
-- [License terms, refunds, and privacy policy](https://github.com/waydabber/BetterDisplay/discussions/739)
+- [Purchasing Pro and supported payment methods](https://betterdisplay.pro/guide/licensing/getting-a-pro-license/)
+- [BetterDisplay 5 upgrade eligibility and outdated licenses](https://betterdisplay.pro/guide/licensing/v5-upgrade-faq/)
+- [License terms, refunds, and privacy policy](https://betterdisplay.pro/license)
 
 ## Installation
 
@@ -110,7 +110,7 @@ To install a specific release candidate, use the manual download above.
 
 ## Using the App
 
-Most features include explanations in **Settings**, accessible through the gear icon in the app menu. The [BetterDisplay wiki](https://github.com/waydabber/BetterDisplay/wiki) provides additional guides and configuration examples.
+Most features include explanations in **Settings**, accessible through the gear icon in the app menu. The [BetterDisplay Guide](https://betterdisplay.pro/guide) provides additional guides and configuration examples.
 
 For help, search [GitHub Discussions](https://github.com/waydabber/BetterDisplay/discussions) or the [BetterDisplay Discord community](https://discord.gg/aKe5yCWXSp). If you cannot find an answer, start a new discussion or Discord forum thread.
 
@@ -153,7 +153,7 @@ The [BetterDisplay extension for Raycast](https://www.raycast.com/pascal_burkhar
 
 BetterDisplay includes 38 language and regional variants:
 
-Arabic, Bulgarian, Catalan, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English, English (British), Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Norwegian Bokmål, Persian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, and Vietnamese.
+Arabic, Bulgarian, Catalan, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English, English (British), Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Latvian, Malay, Norwegian Bokmål, Persian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, and Vietnamese.
 
 BetterDisplay 5 adds many new translations, improves existing localizations, and supports right-to-left layouts for Arabic, Hebrew, and Persian.
 
