@@ -43,17 +43,15 @@ Use **advanced image filters and custom 3D LUTs**, view displays or selected win
 
 Explore the BetterDisplay Guide at **[betterdisplay.pro/guide](https://betterdisplay.pro/guide/)** for a [detailed UI reference](https://betterdisplay.pro/guide/interface-reference/), [step-by-step tutorials](https://betterdisplay.pro/guide/tutorials/), and [answers to frequently asked questions](https://betterdisplay.pro/guide/faq/). Learn what each feature does, set up your displays, and find practical troubleshooting advice.
 
-**NEW** marks features introduced or substantially expanded in BetterDisplay 5.
-
-- **NEW — Advanced image adjustments:** Apply expanded compositor filters for sharpening, geometry, and color adjustments, with support for display-group syncing, the CLI, and macOS Shortcuts. \*
-- **NEW — Custom 3D LUTs:** Import and apply custom 3D LUTs to display image adjustments and PIP/stream video filters. \*
-- **NEW — Selected-window streaming:** Create picture-in-picture views of individual windows or window groups, with filters, presentation options, and target frame-rate controls. \*
-- **NEW — HDMI-CEC control:** Control TV volume, mute, power, and input selection through compatible HDMI connections, including through the CLI.
-- **NEW — Sidebar and refreshed app menu:** Choose an optional Control Center-style sidebar, use the updated Liquid Glass interface, and access common actions by right-clicking the menu bar icon.
-- **NEW — Visual display arrangement:** Arrange displays directly from the app menu using visual controls, on-screen guides, and grid snapping.
-- **NEW — Built-in console and expanded automation:** Access CLI features and app logs inside BetterDisplay. Configure per-display commands for connection, disconnection, sleep, and wake events. Per-display command integration requires Pro.
-- **NEW — Expanded display diagnostics:** Inspect connection, bandwidth, compression, and tiling information, and access EDID, DPCD, DSC, HDMI-CEC, and Apple brightness reports through the CLI.
-- **NEW — Broader localization:** Use BetterDisplay in 38 language and regional variants, with expanded translations and right-to-left interface support for Arabic, Hebrew, and Persian.
+-  :new:**Advanced image adjustments:** Apply expanded compositor filters for sharpening, geometry, and color adjustments, with support for display-group syncing, the CLI, and macOS Shortcuts. \*
+-  :new:**Selected-window streaming:** Create picture-in-picture views of individual windows or window groups, with filters, presentation options, and target frame-rate controls. \*
+-  :new:**HDMI-CEC control:** Control TV volume, mute, power, and input selection through compatible HDMI connections, including through the CLI.
+-  :new:**Sidebar and refreshed app menu:** Choose an optional Control Center-style sidebar, use the updated Liquid Glass interface, and access common actions by right-clicking the menu bar icon.
+- :new: **Visual display arrangement:** Arrange displays directly from the app menu using visual controls, on-screen guides, and grid snapping.
+- :new: **Built-in console and expanded automation:** Access CLI features and app logs inside BetterDisplay. Configure per-display commands for connection, disconnection, sleep, and wake events. Per-display command integration requires Pro.
+- :new: **Expanded display diagnostics:** Inspect connection, bandwidth, compression, and tiling information, and access EDID, DPCD, DSC, HDMI-CEC, and Apple brightness reports through the CLI.
+-  :new:**Custom 3D LUTs:** Import and apply custom 3D LUTs to display image adjustments and PIP/stream video filters. \*
+- :new: **Broader localization:** Use BetterDisplay in 38 language and regional variants, with expanded translations and right-to-left interface support for Arabic, Hebrew, and Persian.
 - **Flexible HiDPI scaling:** Make built-in and natively connected external displays fully scalable, including support for notched displays, HDR, HDCP, and high refresh rates. \*
 - **XDR/HDR brightness upscaling:** Access additional brightness on compatible displays, including up to 1600 or 2000 nits on supported Apple XDR displays. Available methods depend on your Mac, display, and macOS version. \*
 - **Brightness, volume, and color control:** Adjust displays through software controls, DDC, sliders, and keyboard shortcuts, including software dimming down to black.
