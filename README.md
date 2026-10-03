@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/user-attachments/assets/3a3e7683-1bfc-4ba1-9a91-4a458488899f" width="290" height="290" alt="BetterDisplay" align="center"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://github.com/user-attachments/assets/3a3e7683-1bfc-4ba1-9a91-4a458488899f" width="330" height="330" alt="BetterDisplay" align="center"/></a>
 
 <h2>BetterDisplay Pro</h2>
 <p>Flexible HiDPI scaling, advanced image adjustments, custom 3D LUTs, XDR/HDR brightness, virtual screens, picture-in-picture, display arrangement, DDC and HDMI-CEC control, and more.</p>
