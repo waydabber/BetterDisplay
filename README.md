@@ -41,6 +41,8 @@ Use **advanced image filters and custom 3D LUTs**, view displays or selected win
 
 ## Key Features
 
+Explore the BetterDisplay Guide at **[betterdisplay.pro/guide](https://betterdisplay.pro/guide/)** for a [detailed UI reference](https://betterdisplay.pro/guide/interface-reference/), [step-by-step tutorials](https://betterdisplay.pro/guide/tutorials/), and [answers to frequently asked questions](https://betterdisplay.pro/guide/faq/). Learn what each feature does, set up your displays, and find practical troubleshooting advice.
+
 **NEW** marks features introduced or substantially expanded in BetterDisplay 5.
 
 - **NEW — Advanced image adjustments:** Apply expanded compositor filters for sharpening, geometry, and color adjustments, with support for display-group syncing, the CLI, and macOS Shortcuts. \*
@@ -88,10 +90,6 @@ Many features are available free for non-business use. A **14-day trial** lets y
 - [Purchasing Pro and supported payment methods](https://betterdisplay.pro/guide/licensing/getting-a-pro-license/)
 - [BetterDisplay 5 upgrade eligibility and outdated licenses](https://betterdisplay.pro/guide/licensing/v5-upgrade-faq/)
 - [License terms, refunds, and privacy policy](https://betterdisplay.pro/license)
-
-## BetterDisplay Guide
-
-Explore the Guide at **[betterdisplay.pro/guide](https://betterdisplay.pro/guide/)** for a [detailed UI reference](https://betterdisplay.pro/guide/interface-reference/), [step-by-step tutorials](https://betterdisplay.pro/guide/tutorials/), and [answers to frequently asked questions](https://betterdisplay.pro/guide/faq/). Learn what each feature does, set up your displays, and find practical troubleshooting advice.
 
 ## Installation
 
