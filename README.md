@@ -36,7 +36,7 @@ Previous versions:
 Use **advanced image filters and custom 3D LUTs**, view displays or selected windows in **picture-in-picture**, and connect or disconnect displays without unplugging them. Hardware controls, display groups, keyboard shortcuts, and automation help you manage everything from a single monitor to a complex multi-display setup.
 
 <div align="center">
-<img width="832" height="742" alt="BetterDisplay interface and display controls" src="https://github.com/user-attachments/assets/0c2911d0-9157-4993-a850-d751fda3708e" />
+<img width="660" height="588" alt="BetterDisplay interface and display controls" src="https://github.com/user-attachments/assets/0c2911d0-9157-4993-a850-d751fda3708e" />
 </div>
 
 ## Key Features
@@ -89,6 +89,10 @@ Many features are available free for non-business use. A **14-day trial** lets y
 - [BetterDisplay 5 upgrade eligibility and outdated licenses](https://betterdisplay.pro/guide/licensing/v5-upgrade-faq/)
 - [License terms, refunds, and privacy policy](https://betterdisplay.pro/license)
 
+## BetterDisplay Guide
+
+Explore the Guide at **[betterdisplay.pro/guide](https://betterdisplay.pro/guide/)** for a [detailed UI reference](https://betterdisplay.pro/guide/interface-reference/), [step-by-step tutorials](https://betterdisplay.pro/guide/tutorials/), and [answers to frequently asked questions](https://betterdisplay.pro/guide/faq/). Learn what each feature does, set up your displays, and find practical troubleshooting advice.
+
 ## Installation
 
 ### Manual installation
@@ -110,7 +114,7 @@ To install a specific release candidate, use the manual download above.
 
 ## Using the App
 
-Most features include explanations in **Settings**, accessible through the gear icon in the app menu. The [BetterDisplay Guide](https://betterdisplay.pro/guide) provides additional guides and configuration examples.
+Most features include explanations in **Settings**, accessible through the gear icon in the app menu. The [BetterDisplay Guide](https://betterdisplay.pro/guide) provides additional help, UI reference, tutorials, FAQ and configuration examples.
 
 For help, search [GitHub Discussions](https://github.com/waydabber/BetterDisplay/discussions) or the [BetterDisplay Discord community](https://discord.gg/aKe5yCWXSp). If you cannot find an answer, start a new discussion or Discord forum thread.
 
@@ -119,20 +123,10 @@ For help, search [GitHub Discussions](https://github.com/waydabber/BetterDisplay
 ### macOS versions
 
 - **BetterDisplay 5:** Apple Silicon and Intel Macs running **macOS 26 Tahoe (26.3 or later)**, with full support for **macOS 27 Golden Gate**.
-- **BetterDisplay 4:** Macs running **macOS Ventura (13.2 or later)**, Sonoma, Sequoia, Tahoe, or Golden Gate.
+- **BetterDisplay 4:** Macs running **macOS Ventura (13.2 or later)**, Sonoma, Sequoia, Tahoe. The latest version of BetterDisplay 4 was updated with macOS 27 Golden Gate compatibility.
 - **BetterDisplay 3.5.6:** macOS Ventura (13.2 or later), Sonoma, and Sequoia.
 - **BetterDisplay 2.3.9:** macOS Monterey (12.4 or later), Ventura, and Sonoma.
 - **BetterDisplay 1.4.15:** Available for older systems, including macOS Mojave, Catalina, and Big Sur.
-
-### Hardware and feature requirements
-
-- **XDR/HDR brightness upscaling** requires a compatible Apple XDR display or a natively connected external HDR display. VESA DisplayHDR 600 or higher is recommended for external HDR displays.
-- **Display disconnection** is supported on Apple Silicon and Intel Macs. Intel support is experimental. Putting an external display to sleep when disconnected is available on Apple Silicon; Intel configurations may use dimming or supported backlight controls instead.
-- **Flexible scaling** requires a natively connected display. On Apple Silicon, it requires macOS Monterey 12.4 or later; use a compatible older BetterDisplay release for macOS versions predating the current app’s minimum requirements.
-- **Maximum scaling resolutions** depend on your GPU and display capabilities.
-- **Hardware brightness, volume, and input control** require a compatible Apple display or a DDC-capable display and connection. Some docks and adapters do not pass DDC commands.
-- **HDMI-CEC control** requires a compatible HDMI port or adapter and a CEC-capable device.
-- **Headless Macs** are supported through virtual screens with custom resolutions for remote access.
 
 ### Third-party OSD integrations
 
@@ -162,6 +156,7 @@ Thank you to everyone who contributes translations and improvements.
 ## Contact and Community
 
 - **Official website:** [betterdisplay.pro](https://betterdisplay.pro)
+- **BetterDisplay Guide:** [betterdisplay.pro/guide](https://betterdisplay.pro/guide)
 - **Technical support and community:** [BetterDisplay Discord](https://discord.gg/aKe5yCWXSp)
 - **Questions and feature discussions:** [GitHub Discussions](https://github.com/waydabber/BetterDisplay/discussions)
 - **Purchase and payment support:** [Paddle Support](https://paddle.net)
