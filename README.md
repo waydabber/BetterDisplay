@@ -78,7 +78,7 @@ _Features marked with an asterisk (\*) require a [Pro license](https://betterdis
 
 Unlock all features and support development by **[purchasing a Pro license at betterdisplay.pro](https://betterdisplay.pro)**, the official website. Pricing is $21.99 / €19.99; price, currency, and taxes may vary by country or state. You can also purchase a license in the app under **Settings > Pro > Buy BetterDisplay Pro**.
 
-A Pro license provides access to the current major version and previous versions where needed for compatibility. Your purchase includes at least one year of updates, including major upgrades released during that period. The license is **perpetual, not a subscription**: you can continue using the versions covered by your license.
+A Pro license provides access to the current major version and previous versions where needed for compatibility. Your purchase includes at least two years of updates, including major upgrades released during that period. The license is **perpetual, not a subscription**: you can continue using the versions covered by your license indefinitely.
 
 <div align="center">
 <a href="https://betterdisplay.pro/#buy"><img width="500" src="https://github.com/waydabber/BetterDisplay/assets/37590873/6a732657-1e72-4b98-91e6-7a56abb716d3" alt="Purchase BetterDisplay Pro"/></a>
