@@ -7,6 +7,7 @@
 <sub>
 <b>macOS 27 Golden Gate, macOS 26 Tahoe:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.2.1/BetterDisplay-v5.2.1.dmg">BetterDisplay v5.2.1</a><br/>
 <b>New PROLED MBP + macOS 27.3 beta:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.3.0/BetterDisplay-v5.3.0-pre-release.dmg">BetterDisplay v5.3.0 pre-release</a><br/>
+<br/>
 <b>macOS Sequoia, Sonoma, Ventura:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.7/BetterDisplay-v4.3.7.dmg">BetterDisplay v4.3.7</a><br/>
 Previous versions:
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
