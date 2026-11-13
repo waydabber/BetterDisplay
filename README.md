@@ -6,6 +6,7 @@
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.2.1/BetterDisplay-v5.2.1.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
 <sub>
 <b>macOS 27 Golden Gate, macOS 26 Tahoe:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.2.1/BetterDisplay-v5.2.1.dmg">BetterDisplay v5.2.1</a><br/>
+<b>New PROLED MBP + macOS 27.3 beta:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.3.0/BetterDisplay-v5.3.0.dmg">BetterDisplay v5.3.0 Pre-Release</a><br/>
 <b>macOS Sequoia, Sonoma, Ventura:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.7/BetterDisplay-v4.3.7.dmg">BetterDisplay v4.3.7</a><br/>
 Previous versions:
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
@@ -43,16 +44,21 @@ Use **advanced image filters and custom 3D LUTs**, view displays or selected win
 
 Explore the BetterDisplay Guide at **[betterdisplay.pro/guide](https://betterdisplay.pro/guide/)** for a [detailed UI reference](https://betterdisplay.pro/guide/interface-reference/), [step-by-step tutorials](https://betterdisplay.pro/guide/tutorials/), and [answers to frequently asked questions](https://betterdisplay.pro/guide/faq/). Learn what each feature does, set up your displays, and find practical troubleshooting advice.
 
-- :new: **Driverless software audio adjustments** Apply volume control and audio tuning effects even if a display or digital output does not support native, networked, DDC or HDMI-CEC volume control. \*
-- :new: **Advanced image adjustments:** Apply expanded compositor filters for sharpening, geometry, and color adjustments, with support for display-group syncing, the CLI, and macOS Shortcuts. \*
-- :new: **Selected-window streaming:** Create picture-in-picture views of individual windows or window groups, with filters, presentation options, and target frame-rate controls. \*
-- :new: **HDMI-CEC control:** Control TV volume, mute, power, and input selection through compatible HDMI connections, including through the CLI.
-- :new: **Sidebar and refreshed app menu:** Choose an optional Control Center-style sidebar, use the updated Liquid Glass interface, and access common actions by right-clicking the menu bar icon.
-- :new: **Visual display arrangement:** Arrange displays directly from the app menu using visual controls, on-screen guides, and grid snapping.
-- :new: **Built-in console and expanded automation:** Access CLI features and app logs inside BetterDisplay. Configure per-display commands for connection, disconnection, sleep, and wake events. Per-display command integration requires Pro.
-- :new: **Expanded display diagnostics:** Inspect connection, bandwidth, compression, and tiling information, and access EDID, DPCD, DSC, HDMI-CEC, and Apple brightness reports through the CLI.
-- :new: **Custom 3D LUTs:** Import and apply custom 3D LUTs to display image adjustments and PIP/stream video filters. \*
-- :new: **Broader localization:** Use BetterDisplay in 38 language and regional variants, with expanded translations and right-to-left interface support for Arabic, Hebrew, and Persian.
+- :new: **Touch support:** Use menus that adapt to touch with larger controls, more generous spacing, and natural gestures for navigating submenus and adjusting sliders. _(Requires v5.3.x, currently pre-release)_
+- :new: **Live Activities and Dynamic Island:** Show brightness, volume, and other adjustments in the menu bar or Dynamic Island, with configurable automatic expansion. Requires macOS 27.3 or later. _(Requires v5.3.x, currently pre-release)_
+- :new: **Apple logo lighting:** Adjust or turn off the illuminated Apple logo on supported PROLED MacBooks. Experimental Ambience mode follows screen content for an ambient glow when watching video. _(Requires v5.3.x, currently pre-release)_
+- :new: **Color Profile Retouch:** Customize saturation, hue, contrast, gamma, and color balance through generated color profiles, with live preview and no compositor filter required. _(Requires v5.3.x, currently pre-release)_
+- :new: **Experimental LUT color profiles:** Create color profiles from imported LUTs. macOS does not officially support LUT color profiles, and compatibility varies between apps. _(Requires v5.3.x, currently pre-release)_
+- **Driverless software audio adjustments** Apply volume control and audio tuning effects even if a display or digital output does not support native, networked, DDC or HDMI-CEC volume control. \*
+- **Advanced image adjustments:** Apply expanded compositor filters for sharpening, geometry, and color adjustments, with support for display-group syncing, the CLI, and macOS Shortcuts. \*
+- **Selected-window streaming:** Create picture-in-picture views of individual windows or window groups, with filters, presentation options, and target frame-rate controls. \*
+- **HDMI-CEC control:** Control TV volume, mute, power, and input selection through compatible HDMI connections, including through the CLI.
+- **Sidebar and refreshed app menu:** Choose an optional Control Center-style sidebar, use the updated Liquid Glass interface, and access common actions by right-clicking the menu bar icon.
+- **Visual display arrangement:** Arrange displays directly from the app menu using visual controls, on-screen guides, and grid snapping.
+- **Built-in console and expanded automation:** Access CLI features and app logs inside BetterDisplay. Configure per-display commands for connection, disconnection, sleep, and wake events. Per-display command integration requires Pro.
+- **Expanded display diagnostics:** Inspect connection, bandwidth, compression, and tiling information, and access EDID, DPCD, DSC, HDMI-CEC, and Apple brightness reports through the CLI.
+- **Custom 3D LUTs:** Import and apply custom 3D LUTs to display image adjustments and PIP/stream video filters or using experimental Color Profile creation. \*
+- **Broad localization:** Use BetterDisplay in 38 language and regional variants, with expanded translations and right-to-left interface support for Arabic, Hebrew, and Persian.
 - **Flexible HiDPI scaling:** Make built-in and natively connected external displays fully scalable, including support for notched displays, HDR, HDCP, and high refresh rates. \*
 - **XDR/HDR brightness upscaling:** Access additional brightness on compatible displays, including up to 1600 or 2000 nits on supported Apple XDR displays. Available methods depend on your Mac, display, and macOS version. \*
 - **Brightness, volume, and color control:** Adjust displays through software controls, DDC, sliders, and keyboard shortcuts, including software dimming down to black.
