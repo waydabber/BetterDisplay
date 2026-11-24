@@ -42,7 +42,7 @@ Previous versions:
         </a></b>
       </p>
       <p>
-        <i>One-time purchase · At least 2 years of free updates · Yours forever</i>
+        <i>One-time purchase · At least 2 years of free updates · Yours forever</i><br /><br />
       </p>
     </td>
   </tr>
