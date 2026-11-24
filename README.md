@@ -3,7 +3,32 @@
 
 <h2>BetterDisplay Pro</h2>
 <p>Flexible HiDPI scaling, advanced image adjustments, custom 3D LUTs, XDR/HDR brightness, virtual screens, picture-in-picture, display arrangement, DDC and HDMI-CEC control, and more.</p>
+
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.2.1/BetterDisplay-v5.2.1.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <h2>🎉 Black Friday &amp; Cyber Monday 2026</h2>
+      <h1>Get 33% off BetterDisplay Pro!</h1>
+      Use discount code
+      <h2><code>BFCM2026</code></h2>
+      <p>
+        <b>November 26 – December 1, 2026</b><br>
+        Starts November 26 at 11:00 UTC
+      </p>
+      <p>
+        <b><a href="https://betterdisplay.pro/">
+          Get BetterDisplay Pro
+        </a></b>
+      </p>
+      <p>
+        <i>One-time purchase · At least 2 years of free updates · Yours forever</i>
+      </p>
+    </td>
+  </tr>
+</table>
+
 <sub>
 <b>macOS 27 Golden Gate, macOS 26 Tahoe:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.2.1/BetterDisplay-v5.2.1.dmg">BetterDisplay v5.2.1</a><br/>
 Also available is the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.3.3/BetterDisplay-v5.3.3.dmg">BetterDisplay v5.3.3 pre-release</a> - recommended for the new PROLED MacBook Pro<br/>
