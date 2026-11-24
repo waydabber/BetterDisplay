@@ -6,6 +6,26 @@
 
 <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.2.1/BetterDisplay-v5.2.1.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
 
+<sub>
+<b>macOS 27 Golden Gate, macOS 26 Tahoe:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.3.3/BetterDisplay-v5.3.3.dmg">BetterDisplay v5.3.3</a><br/>
+<b>macOS Sequoia, Sonoma, Ventura:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.7/BetterDisplay-v4.3.7.dmg">BetterDisplay v4.3.7</a><br/>
+Previous versions:
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9</a> — macOS Monterey |
+<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.4.15</a> — macOS Big Sur, Catalina, Mojave<br/>
+<a href="https://github.com/waydabber/BetterDisplay/releases">Browse all releases</a><br/>
+</sub>
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat&color=blue" alt="Total downloads"/></a>
+<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat&color=blue" alt="Platform: macOS"/></a>
+<a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/discord/903276571773771796?label=chat&style=flat&color=blue&logo=discord" alt="BetterDisplay Discord community"/></a>
+</div>
+
+<br/>
+
 <table align="center">
   <tr>
     <td align="center">
@@ -28,25 +48,6 @@
   </tr>
 </table>
 
-<sub>
-<b>macOS 27 Golden Gate, macOS 26 Tahoe:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.2.1/BetterDisplay-v5.2.1.dmg">BetterDisplay v5.2.1</a><br/>
-Also available is the <a href="https://github.com/waydabber/BetterDisplay/releases/download/v5.3.3/BetterDisplay-v5.3.3.dmg">BetterDisplay v5.3.3 pre-release</a> - recommended for the new PROLED MacBook Pro<br/>
-<br/>
-<b>macOS Sequoia, Sonoma, Ventura:</b> Download <a href="https://github.com/waydabber/BetterDisplay/releases/download/v4.3.7/BetterDisplay-v4.3.7.dmg">BetterDisplay v4.3.7</a><br/>
-Previous versions:
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v3.5.6/BetterDisplay-v3.5.6b.dmg">v3.5.6</a> |
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg">v2.3.9</a> — macOS Monterey |
-<a href="https://github.com/waydabber/BetterDisplay/releases/download/v1.4.15/BetterDisplay-v1.4.15.dmg">v1.4.15</a> — macOS Big Sur, Catalina, Mojave<br/>
-<a href="https://github.com/waydabber/BetterDisplay/releases">Browse all releases</a>
-</sub>
-</div>
-
-<br/>
-
-<div align="center">
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/github/downloads/waydabber/BetterDisplay/total.svg?style=flat&color=blue" alt="Total downloads"/></a>
-<a href="https://github.com/waydabber/BetterDisplay/releases"><img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat&color=blue" alt="Platform: macOS"/></a>
-<a href="https://discord.gg/aKe5yCWXSp"><img src="https://img.shields.io/discord/903276571773771796?label=chat&style=flat&color=blue&logo=discord" alt="BetterDisplay Discord community"/></a>
 </div>
 
 <hr/>
