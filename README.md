@@ -34,7 +34,7 @@ Previous versions:
       Use discount code
       <h2><code>BFCM2026</code></h2>
       <p>
-        <b>November 26 – December 1, 2026</b><br>
+        <b>Available through Dec 1, 2026</b><br>
       </p>
       <p>
         <b><a href="https://betterdisplay.pro/">
