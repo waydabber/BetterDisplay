@@ -9,8 +9,8 @@
 <table align="center">
   <tr>
     <td align="center">
-      <h2>🎉 Black Friday &amp; Cyber Monday 2026</h2>
-      <h1>Get 33% off BetterDisplay Pro!</h1>
+      <h3>🎉 Black Friday &amp; Cyber Monday 2026</h2>
+      <h2>Get 33% off BetterDisplay Pro!</h1>
       Use discount code
       <h2><code>BFCM2026</code></h2>
       <p>
