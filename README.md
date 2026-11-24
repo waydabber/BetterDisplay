@@ -15,7 +15,6 @@
       <h2><code>BFCM2026</code></h2>
       <p>
         <b>November 26 – December 1, 2026</b><br>
-        Starts November 26 at 11:00 UTC
       </p>
       <p>
         <b><a href="https://betterdisplay.pro/">
